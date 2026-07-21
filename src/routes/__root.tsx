@@ -77,14 +77,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Void — A Living Digital Organism" },
-      { name: "description", content: "An interactive living canvas of light. Move, touch, and ignite bursts of particles in a space that breathes." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Void — A Living Digital Organism" },
-      { property: "og:description", content: "An interactive living canvas of light. Move, touch, and ignite bursts of particles in a space that breathes." },
+      { title: "Cover — AI cover letters that get replies" },
+      { name: "description", content: "Paste a job posting and your CV. Get a tailored, hiring-manager-ready cover letter in ten seconds." },
+      { property: "og:title", content: "Cover — AI cover letters that get replies" },
+      { property: "og:description", content: "Paste a job posting and your CV. Get a tailored, hiring-manager-ready cover letter in ten seconds." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
