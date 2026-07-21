@@ -33,9 +33,11 @@ export function LivingCanvas() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+
+    const c = canvas;
+    const c2d = ctx;
 
     let width = 0;
     let height = 0;
@@ -64,12 +66,12 @@ export function LivingCanvas() {
     const colorKeys = ["primary", "secondary", "accent", "ember"] as const;
 
     function resize() {
-      const rect = canvas.getBoundingClientRect();
+      const rect = c.getBoundingClientRect();
       dpr = Math.min(window.devicePixelRatio || 1, 2);
       width = rect.width * dpr;
       height = rect.height * dpr;
-      canvas.width = width;
-      canvas.height = height;
+      c.width = width;
+      c.height = height;
       initParticles();
     }
 
@@ -125,7 +127,6 @@ export function LivingCanvas() {
       time += 1;
 
       for (const p of particles) {
-        // gentle drift around home
         p.phase += p.pulseSpeed;
         const drift = Math.sin(p.phase) * 0.15;
         p.vx += (p.homeX - p.x) * 0.0003 + Math.cos(p.phase) * 0.003;
@@ -133,7 +134,6 @@ export function LivingCanvas() {
         p.vx *= 0.97;
         p.vy *= 0.97;
 
-        // pointer interaction
         if (pointer.active) {
           const dx = p.x - pointer.x;
           const dy = p.y - pointer.y;
@@ -165,11 +165,10 @@ export function LivingCanvas() {
     }
 
     function draw() {
-      ctx.setTransform(1, 0, 0, 1, 0, 0);
-      ctx.clearRect(0, 0, width, height);
+      c2d.setTransform(1, 0, 0, 1, 0, 0);
+      c2d.clearRect(0, 0, width, height);
 
-      // subtle gradient background
-      const gradient = ctx.createRadialGradient(
+      const gradient = c2d.createRadialGradient(
         width * 0.5,
         height * 0.5,
         0,
@@ -179,13 +178,12 @@ export function LivingCanvas() {
       );
       gradient.addColorStop(0, "rgba(20, 20, 45, 0)");
       gradient.addColorStop(1, "rgba(10, 10, 25, 0.35)");
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, width, height);
+      c2d.fillStyle = gradient;
+      c2d.fillRect(0, 0, width, height);
 
-      ctx.globalCompositeOperation = "screen";
+      c2d.globalCompositeOperation = "screen";
 
-      // draw connections
-      ctx.lineWidth = 0.5 * dpr;
+      c2d.lineWidth = 0.5 * dpr;
       const maxDist = 120 * dpr;
       for (let i = 0; i < particles.length; i++) {
         const a = particles[i];
@@ -196,41 +194,39 @@ export function LivingCanvas() {
           const dist = dx * dx + dy * dy;
           if (dist < maxDist * maxDist) {
             const alpha = 1 - Math.sqrt(dist) / maxDist;
-            ctx.strokeStyle = `rgba(160, 200, 255, ${alpha * 0.25})`;
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.stroke();
+            c2d.strokeStyle = `rgba(160, 200, 255, ${alpha * 0.25})`;
+            c2d.beginPath();
+            c2d.moveTo(a.x, a.y);
+            c2d.lineTo(b.x, b.y);
+            c2d.stroke();
           }
         }
       }
 
-      // draw sparks
       for (const s of sparks) {
         const pulse = 1 + Math.sin(s.phase + time * 0.15) * 0.3;
         const radius = s.size * pulse * dpr;
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, radius, 0, Math.PI * 2);
-        ctx.fillStyle = s.color;
-        ctx.shadowColor = s.glow;
-        ctx.shadowBlur = 20 * dpr;
-        ctx.fill();
+        c2d.beginPath();
+        c2d.arc(s.x, s.y, radius, 0, Math.PI * 2);
+        c2d.fillStyle = s.color;
+        c2d.shadowColor = s.glow;
+        c2d.shadowBlur = 20 * dpr;
+        c2d.fill();
       }
 
-      // draw particles
       for (const p of particles) {
         const pulse = 1 + Math.sin(p.phase + time * 0.05) * 0.25;
         const radius = p.size * pulse * dpr;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
-        ctx.fillStyle = p.color;
-        ctx.shadowColor = p.glow;
-        ctx.shadowBlur = 14 * dpr;
-        ctx.fill();
+        c2d.beginPath();
+        c2d.arc(p.x, p.y, radius, 0, Math.PI * 2);
+        c2d.fillStyle = p.color;
+        c2d.shadowColor = p.glow;
+        c2d.shadowBlur = 14 * dpr;
+        c2d.fill();
       }
 
-      ctx.shadowBlur = 0;
-      ctx.globalCompositeOperation = "source-over";
+      c2d.shadowBlur = 0;
+      c2d.globalCompositeOperation = "source-over";
     }
 
     function loop() {
@@ -240,7 +236,7 @@ export function LivingCanvas() {
     }
 
     function handleMove(clientX: number, clientY: number) {
-      const rect = canvas.getBoundingClientRect();
+      const rect = c.getBoundingClientRect();
       const x = (clientX - rect.left) * dpr;
       const y = (clientY - rect.top) * dpr;
       pointer.vx = x - lastPointer.x;
@@ -267,12 +263,12 @@ export function LivingCanvas() {
     };
     const onTouchEnd = () => handleEnd();
     const onClick = (e: MouseEvent) => {
-      const rect = canvas.getBoundingClientRect();
+      const rect = c.getBoundingClientRect();
       spawnBurst((e.clientX - rect.left) * dpr, (e.clientY - rect.top) * dpr);
     };
     const onTouchStart = (e: TouchEvent) => {
       if (e.touches[0]) {
-        const rect = canvas.getBoundingClientRect();
+        const rect = c.getBoundingClientRect();
         spawnBurst(
           (e.touches[0].clientX - rect.left) * dpr,
           (e.touches[0].clientY - rect.top) * dpr,
@@ -285,22 +281,22 @@ export function LivingCanvas() {
     loop();
 
     window.addEventListener("resize", onResize);
-    canvas.addEventListener("mousemove", onMouseMove);
-    canvas.addEventListener("mouseleave", onMouseLeave);
-    canvas.addEventListener("click", onClick);
-    canvas.addEventListener("touchmove", onTouchMove, { passive: true });
-    canvas.addEventListener("touchend", onTouchEnd);
-    canvas.addEventListener("touchstart", onTouchStart, { passive: true });
+    c.addEventListener("mousemove", onMouseMove);
+    c.addEventListener("mouseleave", onMouseLeave);
+    c.addEventListener("click", onClick);
+    c.addEventListener("touchmove", onTouchMove, { passive: true });
+    c.addEventListener("touchend", onTouchEnd);
+    c.addEventListener("touchstart", onTouchStart, { passive: true });
 
     return () => {
       cancelAnimationFrame(rafId);
       window.removeEventListener("resize", onResize);
-      canvas.removeEventListener("mousemove", onMouseMove);
-      canvas.removeEventListener("mouseleave", onMouseLeave);
-      canvas.removeEventListener("click", onClick);
-      canvas.removeEventListener("touchmove", onTouchMove);
-      canvas.removeEventListener("touchend", onTouchEnd);
-      canvas.removeEventListener("touchstart", onTouchStart);
+      c.removeEventListener("mousemove", onMouseMove);
+      c.removeEventListener("mouseleave", onMouseLeave);
+      c.removeEventListener("click", onClick);
+      c.removeEventListener("touchmove", onTouchMove);
+      c.removeEventListener("touchend", onTouchEnd);
+      c.removeEventListener("touchstart", onTouchStart);
     };
   }, []);
 
