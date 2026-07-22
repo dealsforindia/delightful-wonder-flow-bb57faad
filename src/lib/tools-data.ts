@@ -1,10 +1,18 @@
 // Auto-generated from FMHY (fmhy.net) — starred / top-picks only
-export type Category = "AI" | "Video" | "Image" | "Audio" | "Writing" | "Internet" | "System" | "Files" | "Social" | "Downloads" | "Storage" | "Learning" | "Gaming" | "Mobile" | "Reading" | "Code" | "Linux/Mac" | "Misc" | "Torrenting" | "Privacy";
+export type Category =
+  | "AI" | "Video" | "Image" | "Audio" | "Writing" | "Internet" | "System"
+  | "Files" | "Social" | "Downloads" | "Storage" | "Learning" | "Gaming"
+  | "Mobile" | "Reading" | "Code" | "Linux/Mac" | "Misc" | "Torrenting" | "Privacy";
 
-export type Tool = { name: string; url: string; category: Category; section: string };
-const _tools: Tool[] = [
+export interface Tool {
+  name: string;
+  url: string;
+  category: Category;
+  section: string;
+}
 
-export const TOOLS: ReadonlyArray<Tool> = ([
+// Cast to any first to prevent TS from inferring a huge literal union for `section`
+export const TOOLS: Tool[] = ([
   { name: "uBlock Origin", url: "https://github.com/gorhill/uBlock", category: "Privacy", section: "Adblocking" },
   { name: "uAssets", url: "https://github.com/uBlockOrigin/uAssets/issues", category: "Privacy", section: "Adblocking" },
   { name: "SponsorBlock", url: "https://sponsor.ajay.app/", category: "Privacy", section: "Adblocking" },
@@ -1688,6 +1696,6 @@ export const TOOLS: ReadonlyArray<Tool> = ([
   { name: "Quality / Release Type Guide", url: "https://www.reddit.com/r/Piracy/wiki/guides/video_quality_and_types_of_releases", category: "Video", section: "Helpful Sites / Tools" },
   { name: "Release Group Qualities", url: "https://docs.google.com/spreadsheets/u/0/d/1xz5zqrBumfMtLGA4VMt1VtOyh-47HDTv_swIYktX6AQ/htmlview", category: "Video", section: "Helpful Sites / Tools" },
   { name: "AnimeFillerList", url: "https://www.animefillerlist.com/", category: "Video", section: "Helpful Sites / Tools" },
-];
+] as unknown) as Tool[];
 
 export const CATEGORIES: Category[] = ["AI", "Audio", "Code", "Downloads", "Files", "Gaming", "Image", "Internet", "Learning", "Linux/Mac", "Misc", "Mobile", "Privacy", "Reading", "Social", "Storage", "System", "Torrenting", "Video", "Writing"] as Category[];
