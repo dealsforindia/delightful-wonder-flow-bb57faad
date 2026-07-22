@@ -361,7 +361,72 @@ function Palette() {
           Community-curated by FMHY. This is a keyboard-first mirror.
         </p>
       </section>
+
+      {(recipe || recipeLoading) && (
+        <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-background/80 p-4 backdrop-blur-md sm:p-10" onClick={closeRecipe}>
+          <div
+            className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-border/60 bg-card/90 shadow-2xl shadow-primary/20"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between border-b border-border/50 bg-gradient-to-r from-accent/10 via-primary/10 to-secondary/10 px-5 py-4">
+              <div className="flex items-center gap-2">
+                <Wand2 className="h-4 w-4 text-accent" />
+                <span className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">recipe</span>
+              </div>
+              <button onClick={closeRecipe} className="text-xs text-muted-foreground hover:text-foreground">close ✕</button>
+            </div>
+
+            {recipeLoading && (
+              <div className="space-y-3 p-6">
+                <div className="h-6 w-2/3 animate-pulse rounded bg-muted/40" />
+                {[0,1,2,3].map((i) => (
+                  <div key={i} className="h-20 animate-pulse rounded-lg bg-muted/30" style={{ animationDelay: `${i*120}ms` }} />
+                ))}
+                <p className="pt-2 text-center text-[11px] text-muted-foreground">Composing a plan across 1,683 tools…</p>
+              </div>
+            )}
+
+            {recipe && !recipeLoading && (
+              <div className="p-6">
+                <h2 className="mb-1 text-2xl font-light leading-tight tracking-tight">{recipe.title}</h2>
+                <p className="mb-6 text-xs text-muted-foreground">{recipe.steps.length} steps · every tool is free</p>
+                <ol className="space-y-3">
+                  {recipe.steps.map((s, i) => (
+                    <li key={i} className="group relative flex gap-4 rounded-xl border border-border/50 bg-background/60 p-4 transition-all hover:border-primary/50">
+                      <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-gradient-to-br from-primary to-secondary text-[13px] font-semibold text-primary-foreground shadow-lg shadow-primary/30">
+                        {i + 1}
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[14px] leading-snug text-foreground">{s.action}</p>
+                        <div className="mt-2 flex flex-wrap items-center gap-2 text-[11px]">
+                          <a
+                            href={s.tool.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 rounded-full border border-primary/50 bg-primary/10 px-2.5 py-1 font-medium text-primary transition-all hover:bg-primary/20"
+                          >
+                            {s.tool.name} <ArrowUpRight className="h-3 w-3" />
+                          </a>
+                          <span className="text-muted-foreground">→ {s.output}</span>
+                        </div>
+                      </div>
+                      {i < recipe.steps.length - 1 && (
+                        <ChevronRight className="pointer-events-none absolute -bottom-3 left-7 h-4 w-4 rotate-90 text-border" />
+                      )}
+                    </li>
+                  ))}
+                </ol>
+                <div className="mt-6 flex items-center justify-between border-t border-border/40 pt-4 text-[11px] text-muted-foreground">
+                  <span>generated for: <span className="text-foreground/80">{query}</span></span>
+                  <button onClick={() => void runRecipe()} className="rounded-full border border-border/60 px-3 py-1 hover:border-primary/50 hover:text-primary">↻ regenerate</button>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </main>
+
   );
 }
 
