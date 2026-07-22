@@ -230,9 +230,27 @@ function Palette() {
           </span>
         </h1>
         <p className="mx-auto mt-4 max-w-md text-sm text-muted-foreground">
-          Type a name to search. Or describe what you need and let AI pick.
+          Search 1,683 tools. Ask AI to pick. Or type a goal and get a step-by-step recipe.
         </p>
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-[11px] text-muted-foreground">
+          <span className="opacity-60">try:</span>
+          {[
+            "launch an anonymous blog for free",
+            "make a logo for a coffee shop",
+            "learn japanese in 30 days",
+            "download a youtube playlist as mp3",
+          ].map((s) => (
+            <button
+              key={s}
+              onClick={() => { setQuery(s); setTimeout(() => void runRecipe(), 0); }}
+              className="rounded-full border border-border/50 bg-card/40 px-2.5 py-1 transition-all hover:border-primary/50 hover:text-primary"
+            >
+              {s}
+            </button>
+          ))}
+        </div>
       </section>
+
 
       {/* palette */}
       <section className="mx-auto max-w-3xl px-5">
