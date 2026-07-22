@@ -2,8 +2,9 @@
 export type Category = "AI" | "Video" | "Image" | "Audio" | "Writing" | "Internet" | "System" | "Files" | "Social" | "Downloads" | "Storage" | "Learning" | "Gaming" | "Mobile" | "Reading" | "Code" | "Linux/Mac" | "Misc" | "Torrenting" | "Privacy";
 
 export type Tool = { name: string; url: string; category: Category; section: string };
+const _tools: Tool[] = [
 
-export const TOOLS: Tool[] = [
+export const TOOLS: ReadonlyArray<Tool> = ([
   { name: "uBlock Origin", url: "https://github.com/gorhill/uBlock", category: "Privacy", section: "Adblocking" },
   { name: "uAssets", url: "https://github.com/uBlockOrigin/uAssets/issues", category: "Privacy", section: "Adblocking" },
   { name: "SponsorBlock", url: "https://sponsor.ajay.app/", category: "Privacy", section: "Adblocking" },
