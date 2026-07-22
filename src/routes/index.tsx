@@ -262,26 +262,39 @@ function Palette() {
               value={query}
               onChange={(e) => { setQuery(e.target.value); if (aiMode) exitAi(); }}
               onKeyDown={onKeyDown}
-              placeholder={aiMode ? "AI is thinking…" : "Search, or ask: “remove background from photo”…"}
-              className="w-full bg-transparent py-4 pl-11 pr-32 text-[15px] text-foreground placeholder:text-muted-foreground/60 focus:outline-none"
+              placeholder={aiMode ? "AI is thinking…" : "Search a tool, or describe a goal…"}
+              className="w-full bg-transparent py-4 pl-11 pr-[210px] text-[15px] text-foreground placeholder:text-muted-foreground/60 focus:outline-none"
               spellCheck={false}
               autoComplete="off"
             />
-            <button
-              type="button"
-              onClick={() => (aiMode ? exitAi() : void runAi())}
-              disabled={aiLoading || query.trim().length < 2}
-              className={`absolute right-3 top-1/2 flex -translate-y-1/2 items-center gap-1.5 rounded-full border px-3 py-1.5 text-[11px] font-medium transition-all disabled:opacity-40 ${
-                aiMode
-                  ? "border-primary/60 bg-primary/20 text-primary"
-                  : "border-primary/40 bg-primary/10 text-primary hover:bg-primary/20"
-              }`}
-              title="Ask AI (Shift+Enter)"
-            >
-              <Sparkles className={`h-3 w-3 ${aiLoading ? "animate-pulse" : ""}`} />
-              {aiLoading ? "…" : aiMode ? "Exit AI" : "Ask AI"}
-            </button>
+            <div className="absolute right-3 top-1/2 flex -translate-y-1/2 items-center gap-1.5">
+              <button
+                type="button"
+                onClick={() => void runRecipe()}
+                disabled={recipeLoading || query.trim().length < 3}
+                className="flex items-center gap-1.5 rounded-full border border-accent/50 bg-accent/10 px-3 py-1.5 text-[11px] font-medium text-accent transition-all hover:bg-accent/20 disabled:opacity-40"
+                title="Build recipe"
+              >
+                <Wand2 className={`h-3 w-3 ${recipeLoading ? "animate-spin" : ""}`} />
+                {recipeLoading ? "…" : "Recipe"}
+              </button>
+              <button
+                type="button"
+                onClick={() => (aiMode ? exitAi() : void runAi())}
+                disabled={aiLoading || query.trim().length < 2}
+                className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[11px] font-medium transition-all disabled:opacity-40 ${
+                  aiMode
+                    ? "border-primary/60 bg-primary/20 text-primary"
+                    : "border-primary/40 bg-primary/10 text-primary hover:bg-primary/20"
+                }`}
+                title="Ask AI"
+              >
+                <Sparkles className={`h-3 w-3 ${aiLoading ? "animate-pulse" : ""}`} />
+                {aiLoading ? "…" : aiMode ? "Exit" : "Ask AI"}
+              </button>
+            </div>
           </div>
+
 
           {!aiMode && (
             <div className="flex gap-1.5 overflow-x-auto border-b border-border/40 px-3 py-2 scrollbar-none">
