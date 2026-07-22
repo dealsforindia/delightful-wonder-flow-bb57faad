@@ -155,6 +155,25 @@ function Palette() {
     setAiError(null);
   };
 
+  const runRecipe = async () => {
+    const q = query.trim();
+    if (q.length < 3) return;
+    setRecipeLoading(true);
+    setRecipe(null);
+    setAiError(null);
+    try {
+      const out = await runAiRecipe({ data: { goal: q } });
+      setRecipe(out);
+    } catch (err) {
+      setAiError(err instanceof Error ? err.message : "Recipe failed");
+    } finally {
+      setRecipeLoading(false);
+    }
+  };
+
+  const closeRecipe = () => setRecipe(null);
+
+
   const onKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "ArrowDown") { e.preventDefault(); setCursor((c) => Math.min(c + 1, results.length - 1)); }
     else if (e.key === "ArrowUp") { e.preventDefault(); setCursor((c) => Math.max(c - 1, 0)); }
