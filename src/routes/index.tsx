@@ -53,10 +53,14 @@ function Palette() {
   const [cursor, setCursor] = useState(0);
   const [favs, setFavs] = useState<Set<string>>(new Set());
   const [ready, setReady] = useState(false);
+  const [aiMode, setAiMode] = useState(false);
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiResults, setAiResults] = useState<Array<{ tool: Tool; why: string }>>([]);
+  const [aiError, setAiError] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
+  const runAiSearch = useServerFn(aiSearch);
 
-  // load favs after hydration
   useEffect(() => {
     try {
       const raw = localStorage.getItem(FAV_KEY);
@@ -72,7 +76,6 @@ function Palette() {
     } catch {}
   }, [favs, ready]);
 
-  // auto-focus + cmd-k
   useEffect(() => {
     inputRef.current?.focus();
     const onKey = (e: KeyboardEvent) => {
@@ -86,7 +89,7 @@ function Palette() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  const results = useMemo(() => {
+  const fuzzyResults = useMemo(() => {
     const q = query.trim();
     let base = TOOLS as Tool[];
     if (cat === "favorites") base = base.filter((t) => favs.has(t.url));
@@ -102,9 +105,12 @@ function Palette() {
     return scored.slice(0, 200).map((x) => x.t);
   }, [query, cat, favs]);
 
-  useEffect(() => setCursor(0), [query, cat]);
+  const results = aiMode
+    ? aiResults.map((r) => r.tool)
+    : fuzzyResults;
 
-  // keep highlighted item visible
+  useEffect(() => setCursor(0), [query, cat, aiMode, aiResults]);
+
   useEffect(() => {
     const el = listRef.current?.querySelector<HTMLElement>(`[data-idx="${cursor}"]`);
     el?.scrollIntoView({ block: "nearest" });
@@ -120,17 +126,47 @@ function Palette() {
 
   const open = (t: Tool) => window.open(t.url, "_blank", "noopener,noreferrer");
 
+  const runAi = async () => {
+    const q = query.trim();
+    if (q.length < 2) return;
+    setAiMode(true);
+    setAiLoading(true);
+    setAiError(null);
+    setAiResults([]);
+    try {
+      const out = await runAiSearch({ data: { query: q } });
+      setAiResults(out);
+    } catch (err) {
+      setAiError(err instanceof Error ? err.message : "AI search failed");
+    } finally {
+      setAiLoading(false);
+    }
+  };
+
+  const exitAi = () => {
+    setAiMode(false);
+    setAiResults([]);
+    setAiError(null);
+  };
+
   const onKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "ArrowDown") { e.preventDefault(); setCursor((c) => Math.min(c + 1, results.length - 1)); }
     else if (e.key === "ArrowUp") { e.preventDefault(); setCursor((c) => Math.max(c - 1, 0)); }
-    else if (e.key === "Enter") { e.preventDefault(); const t = results[cursor]; if (t) open(t); }
+    else if (e.key === "Enter") {
+      e.preventDefault();
+      if ((e.metaKey || e.ctrlKey || e.shiftKey) && !aiMode) { void runAi(); return; }
+      const t = results[cursor]; if (t) open(t);
+    }
+    else if (e.key === "Escape" && aiMode) { e.preventDefault(); exitAi(); }
     else if (e.key === "Tab") {
       e.preventDefault();
+      if (aiMode) exitAi();
       const filters: Filter[] = ["all", "favorites", ...CATEGORIES];
       const i = filters.indexOf(cat);
       setCat(filters[(i + (e.shiftKey ? -1 : 1) + filters.length) % filters.length]);
     }
   };
+
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-background text-foreground">
