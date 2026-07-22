@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowUpRight, Command, CornerDownLeft, Search, Star, StarOff } from "lucide-react";
+import { ArrowUpRight, Command, CornerDownLeft, Search, Sparkles, Star, StarOff } from "lucide-react";
 import { TOOLS, CATEGORIES, type Category, type Tool } from "@/lib/tools-data";
+import { aiSearch } from "@/lib/ai-search.functions";
 
 export const Route = createFileRoute("/")({
   component: Palette,
@@ -9,6 +11,7 @@ export const Route = createFileRoute("/")({
 
 type Filter = "all" | "favorites" | Category;
 const FAV_KEY = "fmhy.favs.v1";
+
 
 /* ---------- fuzzy scoring ---------- */
 function score(hay: string, needle: string): number {
@@ -50,10 +53,14 @@ function Palette() {
   const [cursor, setCursor] = useState(0);
   const [favs, setFavs] = useState<Set<string>>(new Set());
   const [ready, setReady] = useState(false);
+  const [aiMode, setAiMode] = useState(false);
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiResults, setAiResults] = useState<Array<{ tool: Tool; why: string }>>([]);
+  const [aiError, setAiError] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
+  const runAiSearch = useServerFn(aiSearch);
 
-  // load favs after hydration
   useEffect(() => {
     try {
       const raw = localStorage.getItem(FAV_KEY);
@@ -69,7 +76,6 @@ function Palette() {
     } catch {}
   }, [favs, ready]);
 
-  // auto-focus + cmd-k
   useEffect(() => {
     inputRef.current?.focus();
     const onKey = (e: KeyboardEvent) => {
@@ -83,7 +89,7 @@ function Palette() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  const results = useMemo(() => {
+  const fuzzyResults = useMemo(() => {
     const q = query.trim();
     let base = TOOLS as Tool[];
     if (cat === "favorites") base = base.filter((t) => favs.has(t.url));
@@ -99,9 +105,12 @@ function Palette() {
     return scored.slice(0, 200).map((x) => x.t);
   }, [query, cat, favs]);
 
-  useEffect(() => setCursor(0), [query, cat]);
+  const results = aiMode
+    ? aiResults.map((r) => r.tool)
+    : fuzzyResults;
 
-  // keep highlighted item visible
+  useEffect(() => setCursor(0), [query, cat, aiMode, aiResults]);
+
   useEffect(() => {
     const el = listRef.current?.querySelector<HTMLElement>(`[data-idx="${cursor}"]`);
     el?.scrollIntoView({ block: "nearest" });
@@ -117,17 +126,47 @@ function Palette() {
 
   const open = (t: Tool) => window.open(t.url, "_blank", "noopener,noreferrer");
 
+  const runAi = async () => {
+    const q = query.trim();
+    if (q.length < 2) return;
+    setAiMode(true);
+    setAiLoading(true);
+    setAiError(null);
+    setAiResults([]);
+    try {
+      const out = await runAiSearch({ data: { query: q } });
+      setAiResults(out);
+    } catch (err) {
+      setAiError(err instanceof Error ? err.message : "AI search failed");
+    } finally {
+      setAiLoading(false);
+    }
+  };
+
+  const exitAi = () => {
+    setAiMode(false);
+    setAiResults([]);
+    setAiError(null);
+  };
+
   const onKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "ArrowDown") { e.preventDefault(); setCursor((c) => Math.min(c + 1, results.length - 1)); }
     else if (e.key === "ArrowUp") { e.preventDefault(); setCursor((c) => Math.max(c - 1, 0)); }
-    else if (e.key === "Enter") { e.preventDefault(); const t = results[cursor]; if (t) open(t); }
+    else if (e.key === "Enter") {
+      e.preventDefault();
+      if ((e.metaKey || e.ctrlKey || e.shiftKey) && !aiMode) { void runAi(); return; }
+      const t = results[cursor]; if (t) open(t);
+    }
+    else if (e.key === "Escape" && aiMode) { e.preventDefault(); exitAi(); }
     else if (e.key === "Tab") {
       e.preventDefault();
+      if (aiMode) exitAi();
       const filters: Filter[] = ["all", "favorites", ...CATEGORIES];
       const i = filters.indexOf(cat);
       setCat(filters[(i + (e.shiftKey ? -1 : 1) + filters.length) % filters.length]);
     }
   };
+
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-background text-foreground">
@@ -166,7 +205,7 @@ function Palette() {
           </span>
         </h1>
         <p className="mx-auto mt-4 max-w-md text-sm text-muted-foreground">
-          Type anything. Arrow keys to pick. Star what matters. Zero tracking, zero fluff.
+          Type a name to search. Or describe what you need and let AI pick.
         </p>
       </section>
 
@@ -178,41 +217,72 @@ function Palette() {
             <input
               ref={inputRef}
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => { setQuery(e.target.value); if (aiMode) exitAi(); }}
               onKeyDown={onKeyDown}
-              placeholder="Search 1,600+ tools…"
-              className="w-full bg-transparent py-4 pl-11 pr-16 text-[15px] text-foreground placeholder:text-muted-foreground/60 focus:outline-none"
+              placeholder={aiMode ? "AI is thinking…" : "Search, or ask: “remove background from photo”…"}
+              className="w-full bg-transparent py-4 pl-11 pr-32 text-[15px] text-foreground placeholder:text-muted-foreground/60 focus:outline-none"
               spellCheck={false}
               autoComplete="off"
             />
-            <div className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] tabular-nums text-muted-foreground">
-              {results.length}
-            </div>
+            <button
+              type="button"
+              onClick={() => (aiMode ? exitAi() : void runAi())}
+              disabled={aiLoading || query.trim().length < 2}
+              className={`absolute right-3 top-1/2 flex -translate-y-1/2 items-center gap-1.5 rounded-full border px-3 py-1.5 text-[11px] font-medium transition-all disabled:opacity-40 ${
+                aiMode
+                  ? "border-primary/60 bg-primary/20 text-primary"
+                  : "border-primary/40 bg-primary/10 text-primary hover:bg-primary/20"
+              }`}
+              title="Ask AI (Shift+Enter)"
+            >
+              <Sparkles className={`h-3 w-3 ${aiLoading ? "animate-pulse" : ""}`} />
+              {aiLoading ? "…" : aiMode ? "Exit AI" : "Ask AI"}
+            </button>
           </div>
 
-          <div className="flex gap-1.5 overflow-x-auto border-b border-border/40 px-3 py-2 scrollbar-none">
-            <Chip active={cat === "all"} onClick={() => setCat("all")}>All</Chip>
-            <Chip active={cat === "favorites"} onClick={() => setCat("favorites")}>
-              ★ {favs.size > 0 && <span className="ml-1 text-muted-foreground">{favs.size}</span>}
-            </Chip>
-            {CATEGORIES.map((c) => (
-              <Chip key={c} active={cat === c} onClick={() => setCat(c)}>{c}</Chip>
-            ))}
-          </div>
+          {!aiMode && (
+            <div className="flex gap-1.5 overflow-x-auto border-b border-border/40 px-3 py-2 scrollbar-none">
+              <Chip active={cat === "all"} onClick={() => setCat("all")}>All</Chip>
+              <Chip active={cat === "favorites"} onClick={() => setCat("favorites")}>
+                ★ {favs.size > 0 && <span className="ml-1 text-muted-foreground">{favs.size}</span>}
+              </Chip>
+              {CATEGORIES.map((c) => (
+                <Chip key={c} active={cat === c} onClick={() => setCat(c)}>{c}</Chip>
+              ))}
+            </div>
+          )}
+
+          {aiMode && (
+            <div className="flex items-center gap-2 border-b border-border/40 bg-primary/5 px-4 py-2 text-[11px] text-primary">
+              <Sparkles className="h-3 w-3" />
+              <span className="truncate">
+                {aiLoading ? "Scanning 1,683 tools for the best match…" : aiError ? aiError : `AI picked ${aiResults.length} tools for “${query.trim()}”`}
+              </span>
+            </div>
+          )}
 
           <div ref={listRef} className="max-h-[58vh] overflow-y-auto p-1.5">
-            {results.length === 0 && (
+            {results.length === 0 && !aiLoading && (
               <div className="py-16 text-center text-sm text-muted-foreground">
-                {cat === "favorites" ? "No favorites yet. Star anything to pin it here." : "No matches."}
+                {aiMode ? (aiError ? "AI search failed. Try again." : "No matches.") :
+                  cat === "favorites" ? "No favorites yet. Star anything to pin it here." : "No matches."}
               </div>
             )}
-            {results.map((t, i) => (
+            {aiLoading && (
+              <div className="space-y-2 p-2">
+                {[0,1,2,3].map((i) => (
+                  <div key={i} className="h-14 animate-pulse rounded-lg bg-muted/30" style={{ animationDelay: `${i * 100}ms` }} />
+                ))}
+              </div>
+            )}
+            {!aiLoading && results.map((t, i) => (
               <Row
                 key={t.url}
                 tool={t}
                 active={i === cursor}
                 fav={favs.has(t.url)}
                 idx={i}
+                reason={aiMode ? aiResults[i]?.why : undefined}
                 onEnter={() => setCursor(i)}
                 onOpen={() => open(t)}
                 onFav={() => toggleFav(t.url)}
@@ -225,10 +295,11 @@ function Palette() {
               {results[cursor]?.category ?? "—"} · {results[cursor]?.section ?? ""}
             </span>
             <span className="flex items-center gap-1 whitespace-nowrap">
-              open <Kbd><CornerDownLeft className="h-2.5 w-2.5" /></Kbd>
+              {aiMode ? <>ai picks · esc to exit</> : <>open <Kbd><CornerDownLeft className="h-2.5 w-2.5" /></Kbd> · <Kbd>⇧↵</Kbd> ask ai</>}
             </span>
           </div>
         </div>
+
 
         <p className="my-10 text-center text-[11px] text-muted-foreground/70">
           Community-curated by FMHY. This is a keyboard-first mirror.
@@ -264,9 +335,9 @@ function Chip({ children, active, onClick }: { children: React.ReactNode; active
 }
 
 function Row({
-  tool, active, fav, idx, onEnter, onOpen, onFav,
+  tool, active, fav, idx, reason, onEnter, onOpen, onFav,
 }: {
-  tool: Tool; active: boolean; fav: boolean; idx: number;
+  tool: Tool; active: boolean; fav: boolean; idx: number; reason?: string;
   onEnter: () => void; onOpen: () => void; onFav: () => void;
 }) {
   let host = tool.url;
@@ -290,8 +361,11 @@ function Row({
           <span className="truncate text-[13.5px] font-medium">{tool.name}</span>
           <span className="hidden truncate text-[11px] text-muted-foreground sm:inline">— {tool.section}</span>
         </div>
-        <div className="truncate text-[11px] text-muted-foreground">{host}</div>
+        <div className="truncate text-[11px] text-muted-foreground">
+          {reason ? <span className="text-primary/80">✨ {reason}</span> : host}
+        </div>
       </div>
+
       <button
         type="button"
         onClick={(e) => { e.stopPropagation(); onFav(); }}
