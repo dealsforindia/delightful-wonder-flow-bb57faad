@@ -59,9 +59,13 @@ function Palette() {
   const [aiLoading, setAiLoading] = useState(false);
   const [aiResults, setAiResults] = useState<Array<{ tool: Tool; why: string }>>([]);
   const [aiError, setAiError] = useState<string | null>(null);
+  const [recipe, setRecipe] = useState<{ title: string; steps: Array<{ tool: Tool; action: string; output: string }> } | null>(null);
+  const [recipeLoading, setRecipeLoading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
   const runAiSearch = useServerFn(aiSearch);
+  const runAiRecipe = useServerFn(aiRecipe);
+
 
   useEffect(() => {
     try {
