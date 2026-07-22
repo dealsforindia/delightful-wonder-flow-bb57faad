@@ -335,9 +335,9 @@ function Chip({ children, active, onClick }: { children: React.ReactNode; active
 }
 
 function Row({
-  tool, active, fav, idx, onEnter, onOpen, onFav,
+  tool, active, fav, idx, reason, onEnter, onOpen, onFav,
 }: {
-  tool: Tool; active: boolean; fav: boolean; idx: number;
+  tool: Tool; active: boolean; fav: boolean; idx: number; reason?: string;
   onEnter: () => void; onOpen: () => void; onFav: () => void;
 }) {
   let host = tool.url;
@@ -361,8 +361,11 @@ function Row({
           <span className="truncate text-[13.5px] font-medium">{tool.name}</span>
           <span className="hidden truncate text-[11px] text-muted-foreground sm:inline">— {tool.section}</span>
         </div>
-        <div className="truncate text-[11px] text-muted-foreground">{host}</div>
+        <div className="truncate text-[11px] text-muted-foreground">
+          {reason ? <span className="text-primary/80">✨ {reason}</span> : host}
+        </div>
       </div>
+
       <button
         type="button"
         onClick={(e) => { e.stopPropagation(); onFav(); }}
