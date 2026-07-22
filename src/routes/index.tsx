@@ -1,13 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowUpRight, Command, CornerDownLeft, Search, Sparkles, Star, StarOff } from "lucide-react";
+import { ArrowUpRight, Command, CornerDownLeft, Search, Sparkles, Star, StarOff, Wand2, ChevronRight } from "lucide-react";
 import { TOOLS, CATEGORIES, type Category, type Tool } from "@/lib/tools-data";
 import { aiSearch } from "@/lib/ai-search.functions";
+import { aiRecipe } from "@/lib/ai-recipe.functions";
 
 export const Route = createFileRoute("/")({
   component: Palette,
 });
+
 
 type Filter = "all" | "favorites" | Category;
 const FAV_KEY = "fmhy.favs.v1";
@@ -57,9 +59,13 @@ function Palette() {
   const [aiLoading, setAiLoading] = useState(false);
   const [aiResults, setAiResults] = useState<Array<{ tool: Tool; why: string }>>([]);
   const [aiError, setAiError] = useState<string | null>(null);
+  const [recipe, setRecipe] = useState<{ title: string; steps: Array<{ tool: Tool; action: string; output: string }> } | null>(null);
+  const [recipeLoading, setRecipeLoading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
   const runAiSearch = useServerFn(aiSearch);
+  const runAiRecipe = useServerFn(aiRecipe);
+
 
   useEffect(() => {
     try {
@@ -149,6 +155,25 @@ function Palette() {
     setAiError(null);
   };
 
+  const runRecipe = async () => {
+    const q = query.trim();
+    if (q.length < 3) return;
+    setRecipeLoading(true);
+    setRecipe(null);
+    setAiError(null);
+    try {
+      const out = await runAiRecipe({ data: { goal: q } });
+      setRecipe(out);
+    } catch (err) {
+      setAiError(err instanceof Error ? err.message : "Recipe failed");
+    } finally {
+      setRecipeLoading(false);
+    }
+  };
+
+  const closeRecipe = () => setRecipe(null);
+
+
   const onKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "ArrowDown") { e.preventDefault(); setCursor((c) => Math.min(c + 1, results.length - 1)); }
     else if (e.key === "ArrowUp") { e.preventDefault(); setCursor((c) => Math.max(c - 1, 0)); }
@@ -205,9 +230,27 @@ function Palette() {
           </span>
         </h1>
         <p className="mx-auto mt-4 max-w-md text-sm text-muted-foreground">
-          Type a name to search. Or describe what you need and let AI pick.
+          Search 1,683 tools. Ask AI to pick. Or type a goal and get a step-by-step recipe.
         </p>
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-[11px] text-muted-foreground">
+          <span className="opacity-60">try:</span>
+          {[
+            "launch an anonymous blog for free",
+            "make a logo for a coffee shop",
+            "learn japanese in 30 days",
+            "download a youtube playlist as mp3",
+          ].map((s) => (
+            <button
+              key={s}
+              onClick={() => { setQuery(s); setTimeout(() => void runRecipe(), 0); }}
+              className="rounded-full border border-border/50 bg-card/40 px-2.5 py-1 transition-all hover:border-primary/50 hover:text-primary"
+            >
+              {s}
+            </button>
+          ))}
+        </div>
       </section>
+
 
       {/* palette */}
       <section className="mx-auto max-w-3xl px-5">
@@ -219,26 +262,39 @@ function Palette() {
               value={query}
               onChange={(e) => { setQuery(e.target.value); if (aiMode) exitAi(); }}
               onKeyDown={onKeyDown}
-              placeholder={aiMode ? "AI is thinking…" : "Search, or ask: “remove background from photo”…"}
-              className="w-full bg-transparent py-4 pl-11 pr-32 text-[15px] text-foreground placeholder:text-muted-foreground/60 focus:outline-none"
+              placeholder={aiMode ? "AI is thinking…" : "Search a tool, or describe a goal…"}
+              className="w-full bg-transparent py-4 pl-11 pr-[210px] text-[15px] text-foreground placeholder:text-muted-foreground/60 focus:outline-none"
               spellCheck={false}
               autoComplete="off"
             />
-            <button
-              type="button"
-              onClick={() => (aiMode ? exitAi() : void runAi())}
-              disabled={aiLoading || query.trim().length < 2}
-              className={`absolute right-3 top-1/2 flex -translate-y-1/2 items-center gap-1.5 rounded-full border px-3 py-1.5 text-[11px] font-medium transition-all disabled:opacity-40 ${
-                aiMode
-                  ? "border-primary/60 bg-primary/20 text-primary"
-                  : "border-primary/40 bg-primary/10 text-primary hover:bg-primary/20"
-              }`}
-              title="Ask AI (Shift+Enter)"
-            >
-              <Sparkles className={`h-3 w-3 ${aiLoading ? "animate-pulse" : ""}`} />
-              {aiLoading ? "…" : aiMode ? "Exit AI" : "Ask AI"}
-            </button>
+            <div className="absolute right-3 top-1/2 flex -translate-y-1/2 items-center gap-1.5">
+              <button
+                type="button"
+                onClick={() => void runRecipe()}
+                disabled={recipeLoading || query.trim().length < 3}
+                className="flex items-center gap-1.5 rounded-full border border-accent/50 bg-accent/10 px-3 py-1.5 text-[11px] font-medium text-accent transition-all hover:bg-accent/20 disabled:opacity-40"
+                title="Build recipe"
+              >
+                <Wand2 className={`h-3 w-3 ${recipeLoading ? "animate-spin" : ""}`} />
+                {recipeLoading ? "…" : "Recipe"}
+              </button>
+              <button
+                type="button"
+                onClick={() => (aiMode ? exitAi() : void runAi())}
+                disabled={aiLoading || query.trim().length < 2}
+                className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[11px] font-medium transition-all disabled:opacity-40 ${
+                  aiMode
+                    ? "border-primary/60 bg-primary/20 text-primary"
+                    : "border-primary/40 bg-primary/10 text-primary hover:bg-primary/20"
+                }`}
+                title="Ask AI"
+              >
+                <Sparkles className={`h-3 w-3 ${aiLoading ? "animate-pulse" : ""}`} />
+                {aiLoading ? "…" : aiMode ? "Exit" : "Ask AI"}
+              </button>
+            </div>
           </div>
+
 
           {!aiMode && (
             <div className="flex gap-1.5 overflow-x-auto border-b border-border/40 px-3 py-2 scrollbar-none">
@@ -305,7 +361,72 @@ function Palette() {
           Community-curated by FMHY. This is a keyboard-first mirror.
         </p>
       </section>
+
+      {(recipe || recipeLoading) && (
+        <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-background/80 p-4 backdrop-blur-md sm:p-10" onClick={closeRecipe}>
+          <div
+            className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-border/60 bg-card/90 shadow-2xl shadow-primary/20"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between border-b border-border/50 bg-gradient-to-r from-accent/10 via-primary/10 to-secondary/10 px-5 py-4">
+              <div className="flex items-center gap-2">
+                <Wand2 className="h-4 w-4 text-accent" />
+                <span className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">recipe</span>
+              </div>
+              <button onClick={closeRecipe} className="text-xs text-muted-foreground hover:text-foreground">close ✕</button>
+            </div>
+
+            {recipeLoading && (
+              <div className="space-y-3 p-6">
+                <div className="h-6 w-2/3 animate-pulse rounded bg-muted/40" />
+                {[0,1,2,3].map((i) => (
+                  <div key={i} className="h-20 animate-pulse rounded-lg bg-muted/30" style={{ animationDelay: `${i*120}ms` }} />
+                ))}
+                <p className="pt-2 text-center text-[11px] text-muted-foreground">Composing a plan across 1,683 tools…</p>
+              </div>
+            )}
+
+            {recipe && !recipeLoading && (
+              <div className="p-6">
+                <h2 className="mb-1 text-2xl font-light leading-tight tracking-tight">{recipe.title}</h2>
+                <p className="mb-6 text-xs text-muted-foreground">{recipe.steps.length} steps · every tool is free</p>
+                <ol className="space-y-3">
+                  {recipe.steps.map((s, i) => (
+                    <li key={i} className="group relative flex gap-4 rounded-xl border border-border/50 bg-background/60 p-4 transition-all hover:border-primary/50">
+                      <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-gradient-to-br from-primary to-secondary text-[13px] font-semibold text-primary-foreground shadow-lg shadow-primary/30">
+                        {i + 1}
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[14px] leading-snug text-foreground">{s.action}</p>
+                        <div className="mt-2 flex flex-wrap items-center gap-2 text-[11px]">
+                          <a
+                            href={s.tool.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 rounded-full border border-primary/50 bg-primary/10 px-2.5 py-1 font-medium text-primary transition-all hover:bg-primary/20"
+                          >
+                            {s.tool.name} <ArrowUpRight className="h-3 w-3" />
+                          </a>
+                          <span className="text-muted-foreground">→ {s.output}</span>
+                        </div>
+                      </div>
+                      {i < recipe.steps.length - 1 && (
+                        <ChevronRight className="pointer-events-none absolute -bottom-3 left-7 h-4 w-4 rotate-90 text-border" />
+                      )}
+                    </li>
+                  ))}
+                </ol>
+                <div className="mt-6 flex items-center justify-between border-t border-border/40 pt-4 text-[11px] text-muted-foreground">
+                  <span>generated for: <span className="text-foreground/80">{query}</span></span>
+                  <button onClick={() => void runRecipe()} className="rounded-full border border-border/60 px-3 py-1 hover:border-primary/50 hover:text-primary">↻ regenerate</button>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </main>
+
   );
 }
 
