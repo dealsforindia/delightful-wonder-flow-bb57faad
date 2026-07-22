@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowUpRight, Command, CornerDownLeft, Search, Star, StarOff } from "lucide-react";
+import { ArrowUpRight, Command, CornerDownLeft, Search, Sparkles, Star, StarOff } from "lucide-react";
 import { TOOLS, CATEGORIES, type Category, type Tool } from "@/lib/tools-data";
+import { aiSearch } from "@/lib/ai-search.functions";
 
 export const Route = createFileRoute("/")({
   component: Palette,
@@ -9,6 +11,7 @@ export const Route = createFileRoute("/")({
 
 type Filter = "all" | "favorites" | Category;
 const FAV_KEY = "fmhy.favs.v1";
+
 
 /* ---------- fuzzy scoring ---------- */
 function score(hay: string, needle: string): number {
