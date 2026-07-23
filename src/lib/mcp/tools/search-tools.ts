@@ -36,7 +36,7 @@ export default defineTool({
   name: "search_tools",
   title: "Search FMHY tools",
   description:
-    "Fuzzy-search the curated FMHY directory of 1,683 free tools by name, section, category, or URL. Returns the top matches with their category, section, and URL.",
+    "Fuzzy-search the curated FMHY directory of 14,800+ free tools by name, section, category, or URL. Returns the top matches with their category, section, and URL.",
   inputSchema: {
     query: z.string().min(1).describe("Search text (e.g. 'remove background', 'youtube downloader', 'anonymous email')."),
     category: z.string().optional().describe("Optional category filter (e.g. 'AI', 'Video', 'Privacy')."),
