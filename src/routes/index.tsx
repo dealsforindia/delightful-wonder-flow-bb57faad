@@ -93,6 +93,11 @@ function Palette() {
     return m;
   }, []);
 
+  const visibleCategories = useMemo(
+    () => CATEGORIES.filter((c) => (catCounts.get(c) ?? 0) > 0),
+    [catCounts],
+  );
+
   const fuzzyResults = useMemo(() => {
     const q = query.trim();
     let base = TOOLS as Tool[];
