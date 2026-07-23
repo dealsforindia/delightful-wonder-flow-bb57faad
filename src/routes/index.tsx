@@ -492,10 +492,10 @@ function Chip({ children, active, onClick }: { children: React.ReactNode; active
     <button
       type="button"
       onClick={onClick}
-      className={`shrink-0 rounded-full border px-2.5 py-1 text-[11px] transition-all ${
+      className={`shrink-0 border px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-widest transition-colors ${
         active
-          ? "border-primary/60 bg-primary/15 text-primary shadow-sm shadow-primary/20"
-          : "border-border/50 bg-transparent text-muted-foreground hover:border-primary/40 hover:text-foreground"
+          ? "border-primary bg-primary text-primary-foreground"
+          : "border-white/10 text-muted-foreground hover:bg-white hover:text-black"
       }`}
     >
       {children}
@@ -516,38 +516,43 @@ function Row({
       data-idx={idx}
       onMouseEnter={onEnter}
       onClick={onOpen}
-      className={`group flex cursor-pointer items-center gap-3 rounded-lg px-3 py-2.5 transition-colors ${
-        active ? "bg-primary/12 text-foreground" : "text-foreground/90 hover:bg-card/70"
+      className={`group flex cursor-pointer items-center gap-6 border-b border-white/5 p-4 transition-colors ${
+        active ? "bg-white/5" : "hover:bg-white/[0.03]"
       }`}
     >
-      <div className={`grid h-8 w-8 shrink-0 place-items-center rounded-md text-[11px] font-semibold uppercase ${
-        active ? "bg-primary/25 text-primary" : "bg-muted/60 text-muted-foreground"
-      }`}>
-        {tool.name.slice(0, 2)}
-      </div>
+      <span className="w-8 shrink-0 font-mono text-[10px] tabular-nums text-muted-foreground/40">
+        {String(idx + 1).padStart(2, "0")}
+      </span>
       <div className="min-w-0 flex-1">
-        <div className="flex items-center gap-2">
-          <span className="truncate text-[13.5px] font-medium">{tool.name}</span>
-          <span className="hidden truncate text-[11px] text-muted-foreground sm:inline">— {tool.section}</span>
-        </div>
-        <div className="truncate text-[11px] text-muted-foreground">
-          {reason ? <span className="text-primary/80">✨ {reason}</span> : host}
-        </div>
+        <h3 className={`truncate text-base font-bold transition-colors ${
+          active ? "text-primary" : "text-foreground group-hover:text-primary"
+        }`}>
+          {tool.name}
+        </h3>
+        <p className="truncate text-xs font-medium text-muted-foreground">
+          {reason ? <span className="text-primary/80">✨ {reason}</span> : <>{tool.section} · {host}</>}
+        </p>
       </div>
-
+      <div className="hidden items-center gap-2 sm:flex">
+        <div
+          className={`h-2 w-2 rounded-full ${active ? "bg-primary shadow-[0_0_8px_var(--color-primary)]" : "bg-secondary/60"}`}
+        />
+        <span className="font-mono text-[10px] uppercase text-muted-foreground">{tool.category}</span>
+      </div>
       <button
         type="button"
         onClick={(e) => { e.stopPropagation(); onFav(); }}
-        className={`shrink-0 rounded-md p-1.5 transition-colors ${
-          fav ? "text-primary" : "text-muted-foreground/50 hover:text-foreground"
+        className={`shrink-0 p-1.5 transition-colors ${
+          fav ? "text-primary" : "text-muted-foreground/40 hover:text-foreground"
         }`}
         aria-label={fav ? "Unstar" : "Star"}
       >
         {fav ? <Star className="h-3.5 w-3.5 fill-current" /> : <StarOff className="h-3.5 w-3.5" />}
       </button>
-      <ArrowUpRight className={`h-3.5 w-3.5 shrink-0 transition-colors ${
-        active ? "text-primary" : "text-muted-foreground/50 group-hover:text-foreground"
+      <ArrowUpRight className={`h-4 w-4 shrink-0 transition-all ${
+        active ? "text-primary" : "text-muted-foreground/40 group-hover:translate-x-0.5 group-hover:text-foreground"
       }`} />
     </div>
   );
 }
+
