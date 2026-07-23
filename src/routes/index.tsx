@@ -87,6 +87,24 @@ function Palette() {
     try { localStorage.setItem(FAV_KEY, JSON.stringify(Array.from(favs))); } catch {}
   }, [favs, ready]);
 
+  // ⌘K / Ctrl+K / "/" focuses search
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const el = document.activeElement as HTMLElement | null;
+      const typing = el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA" || el.isContentEditable);
+      if ((e.key === "k" && (e.metaKey || e.ctrlKey)) || (e.key === "/" && !typing)) {
+        e.preventDefault();
+        inputRef.current?.focus();
+        inputRef.current?.select();
+      }
+      if (e.key === "Escape" && document.activeElement === inputRef.current) {
+        inputRef.current?.blur();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
   const catCounts = useMemo(() => {
     const m = new Map<string, number>();
     for (const t of TOOLS) m.set(t.category, (m.get(t.category) ?? 0) + 1);
@@ -217,10 +235,14 @@ function Palette() {
                 ref={inputRef}
                 value={query}
                 onChange={(e) => { setQuery(e.target.value); if (aiMode) exitAi(); }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !aiMode && fuzzyResults[0]) { e.preventDefault(); open(fuzzyResults[0]); }
+                }}
                 placeholder="Search 26,000+ tools — try 'remove background', 'youtube downloader'…"
-                className="w-full rounded-xl border border-border bg-background py-3 pl-11 pr-4 text-[15px] outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
+                className="w-full rounded-xl border border-border bg-background py-3 pl-11 pr-20 text-[15px] outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
                 spellCheck={false}
               />
+              <kbd className="pointer-events-none absolute right-3 top-1/2 hidden -translate-y-1/2 rounded border border-border bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground sm:inline">⌘K</kbd>
             </div>
             <button
               onClick={() => (aiMode ? exitAi() : void runAi())}
@@ -402,11 +424,18 @@ function Card({ tool, fav, reason, onOpen, onFav }: { tool: Tool; fav: boolean; 
   let host = tool.url;
   try { host = new URL(tool.url).hostname.replace(/^www\./, ""); } catch {}
   const { Icon, tint, bg } = catMeta(tool.category);
+  const [imgOk, setImgOk] = useState(true);
+  const favicon = `https://www.google.com/s2/favicons?sz=64&domain=${host}`;
   return (
     <div onClick={onOpen}
-      className="group flex cursor-pointer items-start gap-3 rounded-xl border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-md">
-      <div className={`grid h-10 w-10 shrink-0 place-items-center rounded-lg ${bg}`}>
-        <Icon className={`h-5 w-5 ${tint}`} />
+      className="group relative flex cursor-pointer items-start gap-3 overflow-hidden rounded-xl border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-md">
+      <div className={`grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-lg ${bg}`}>
+        {imgOk ? (
+          <img src={favicon} alt="" width={24} height={24} loading="lazy"
+            className="h-6 w-6 rounded" onError={() => setImgOk(false)} />
+        ) : (
+          <Icon className={`h-5 w-5 ${tint}`} />
+        )}
       </div>
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-2">
