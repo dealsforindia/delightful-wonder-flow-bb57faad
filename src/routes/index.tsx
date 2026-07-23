@@ -218,11 +218,23 @@ function Palette() {
               </div>
             </div>
           </div>
-          <div className="hidden items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] text-muted-foreground sm:flex">
-            <Kbd>↑↓</Kbd> nav <Kbd>↵</Kbd> open <Kbd>Tab</Kbd> filter
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setShowConstellation(true)}
+              className="flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-3 py-1.5 text-[11px] font-medium text-primary transition-all hover:bg-primary/20"
+              title="Open constellation view"
+            >
+              <Orbit className="h-3 w-3" />
+              Constellation
+            </button>
+            <div className="hidden items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] text-muted-foreground sm:flex">
+              <Kbd>↑↓</Kbd> nav <Kbd>↵</Kbd> open <Kbd>Tab</Kbd> filter
+            </div>
           </div>
         </div>
       </header>
+
+      {showConstellation && <Constellation onClose={() => setShowConstellation(false)} />}
 
       <section className="mx-auto max-w-3xl px-5 pt-14 pb-6 text-center">
         <h1 className="text-4xl font-light leading-[1.05] tracking-tight sm:text-6xl">
