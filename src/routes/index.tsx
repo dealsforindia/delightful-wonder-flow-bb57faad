@@ -169,7 +169,7 @@ function Palette() {
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
               {TOOLS.length.toLocaleString()} tools indexed
             </div>
-            <h1 className="bg-gradient-to-r from-brand-pink via-brand-purple to-brand-blue bg-clip-text text-5xl font-extrabold leading-[1.02] tracking-tight text-transparent sm:text-6xl md:text-7xl">
+            <h1 className="bg-gradient-to-r from-brand-pink via-brand-purple to-brand-blue bg-clip-text text-4xl font-extrabold leading-[1.02] tracking-tight text-transparent sm:text-5xl lg:text-6xl">
               freemediaheckyeah
             </h1>
             <p className="mt-5 max-w-lg text-lg leading-snug text-muted-foreground">
