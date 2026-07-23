@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "sdk_version": "0.24.0",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "fmhy-palette-mcp",
+      "version": "0.1.0",
+      "title": "FMHY Palette"
+    },
+    "tools": [
+      {
+        "name": "search_tools",
+        "title": "Search FMHY tools",
+        "description": "Fuzzy-search the curated FMHY directory of 1,683 free tools by name, section, category, or URL. Returns the top matches with their category, section, and URL.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Search text (e.g. 'remove background', 'youtube downloader', 'anonymous email')."
+            },
+            "category": {
+              "type": "string",
+              "description": "Optional category filter (e.g. 'AI', 'Video', 'Privacy')."
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50,
+              "default": 15,
+              "description": "Maximum number of results to return."
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_categories",
+        "title": "List categories",
+        "description": "List every category in the FMHY directory with tool counts and the sections within each category.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "browse_category",
+        "title": "Browse category",
+        "description": "List all tools in a given FMHY category. Optionally filter by section (e.g. 'Text-To-Image AI'). Use list_categories to discover valid categories and sections.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string",
+              "description": "Category name, e.g. 'AI', 'Video', 'Privacy'."
+            },
+            "section": {
+              "type": "string",
+              "description": "Optional section name to filter within the category."
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 500,
+              "default": 100,
+              "description": "Maximum number of tools to return."
+            }
+          },
+          "required": [
+            "category"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
