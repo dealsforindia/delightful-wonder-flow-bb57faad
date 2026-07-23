@@ -267,10 +267,10 @@ function Palette() {
         <section className="mx-auto max-w-7xl px-6 py-6">
           <div className="mb-4 flex items-baseline justify-between">
             <h2 className="text-lg font-semibold tracking-tight">Or browse these pages ✨</h2>
-            <span className="text-[12px] text-muted-foreground">{CATEGORIES.length} categories</span>
+            <span className="text-[12px] text-muted-foreground">{visibleCategories.length} categories</span>
           </div>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-            {CATEGORIES.map((c) => {
+            {visibleCategories.map((c) => {
               const { Icon, tint, bg } = catMeta(c);
               return (
                 <button key={c} onClick={() => { setCat(c); scrollToList(); }}
