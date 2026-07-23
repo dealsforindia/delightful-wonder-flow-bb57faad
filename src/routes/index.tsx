@@ -87,6 +87,24 @@ function Palette() {
     try { localStorage.setItem(FAV_KEY, JSON.stringify(Array.from(favs))); } catch {}
   }, [favs, ready]);
 
+  // ⌘K / Ctrl+K / "/" focuses search
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const el = document.activeElement as HTMLElement | null;
+      const typing = el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA" || el.isContentEditable);
+      if ((e.key === "k" && (e.metaKey || e.ctrlKey)) || (e.key === "/" && !typing)) {
+        e.preventDefault();
+        inputRef.current?.focus();
+        inputRef.current?.select();
+      }
+      if (e.key === "Escape" && document.activeElement === inputRef.current) {
+        inputRef.current?.blur();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
   const catCounts = useMemo(() => {
     const m = new Map<string, number>();
     for (const t of TOOLS) m.set(t.category, (m.get(t.category) ?? 0) + 1);
