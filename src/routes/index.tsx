@@ -58,7 +58,7 @@ function Palette() {
   const [aiMode, setAiMode] = useState(false);
   const [aiLoading, setAiLoading] = useState(false);
   const [aiResults, setAiResults] = useState<Array<{ tool: Tool; why: string }>>([]);
-  const [showConstellation, setShowConstellation] = useState(false);
+  
   const [aiError, setAiError] = useState<string | null>(null);
   const [recipe, setRecipe] = useState<{ title: string; steps: Array<{ tool: Tool; action: string; output: string }> } | null>(null);
   const [recipeLoading, setRecipeLoading] = useState(false);
