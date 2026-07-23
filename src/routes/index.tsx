@@ -291,11 +291,9 @@ function Palette() {
               </button>
             ))}
           </div>
+          {/* palette */}
+          <div className="max-w-3xl">
 
-
-
-      {/* palette */}
-      <section className="mx-auto max-w-3xl px-5">
         <div className="overflow-hidden rounded-2xl border border-border/60 bg-card/50 shadow-2xl shadow-black/40 backdrop-blur-2xl">
           <div className="relative border-b border-border/50">
             <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
