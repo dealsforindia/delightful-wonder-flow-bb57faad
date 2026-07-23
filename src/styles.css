@@ -154,8 +154,13 @@
     font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: "Syne", "Inter", system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-mono {
+    font-family: "Space Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   }
 
   body {
@@ -163,3 +168,9 @@
     color: var(--color-foreground);
   }
 }
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
