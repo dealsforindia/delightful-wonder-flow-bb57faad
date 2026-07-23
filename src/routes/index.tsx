@@ -93,6 +93,11 @@ function Palette() {
     return m;
   }, []);
 
+  const visibleCategories = useMemo(
+    () => CATEGORIES.filter((c) => (catCounts.get(c) ?? 0) > 0),
+    [catCounts],
+  );
+
   const fuzzyResults = useMemo(() => {
     const q = query.trim();
     let base = TOOLS as Tool[];
@@ -164,7 +169,7 @@ function Palette() {
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
               {TOOLS.length.toLocaleString()} tools indexed
             </div>
-            <h1 className="bg-gradient-to-r from-brand-pink via-brand-purple to-brand-blue bg-clip-text text-5xl font-extrabold leading-[1.02] tracking-tight text-transparent sm:text-6xl md:text-7xl">
+            <h1 className="bg-gradient-to-r from-brand-pink via-brand-purple to-brand-blue bg-clip-text text-4xl font-extrabold leading-[1.02] tracking-tight text-transparent sm:text-5xl lg:text-6xl">
               freemediaheckyeah
             </h1>
             <p className="mt-5 max-w-lg text-lg leading-snug text-muted-foreground">
@@ -262,10 +267,10 @@ function Palette() {
         <section className="mx-auto max-w-7xl px-6 py-6">
           <div className="mb-4 flex items-baseline justify-between">
             <h2 className="text-lg font-semibold tracking-tight">Or browse these pages ✨</h2>
-            <span className="text-[12px] text-muted-foreground">{CATEGORIES.length} categories</span>
+            <span className="text-[12px] text-muted-foreground">{visibleCategories.length} categories</span>
           </div>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-            {CATEGORIES.map((c) => {
+            {visibleCategories.map((c) => {
               const { Icon, tint, bg } = catMeta(c);
               return (
                 <button key={c} onClick={() => { setCat(c); scrollToList(); }}
@@ -289,7 +294,7 @@ function Palette() {
           <Pill active={cat === "favorites"} onClick={() => setCat("favorites")}>
             <Star className="h-3 w-3 fill-current" /> Favorites{favs.size > 0 && <span className="opacity-60">· {favs.size}</span>}
           </Pill>
-          {CATEGORIES.map((c) => <Pill key={c} active={cat === c} onClick={() => setCat(c)}>{c}</Pill>)}
+          {visibleCategories.map((c) => <Pill key={c} active={cat === c} onClick={() => setCat(c)}>{c}</Pill>)}
         </div>
       </section>
 
