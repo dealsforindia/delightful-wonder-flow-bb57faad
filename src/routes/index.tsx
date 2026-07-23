@@ -364,7 +364,7 @@ function Palette() {
           </h2>
           <div className="mx-4 h-px flex-1 bg-gradient-to-r from-border to-transparent" />
           <span className="font-mono text-[10px] text-muted-foreground">
-            {results.length.toLocaleString()} shown
+            {results.length.toLocaleString()} / {allResults.length.toLocaleString()} shown
           </span>
         </div>
 
