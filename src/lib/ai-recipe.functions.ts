@@ -4,11 +4,23 @@ import { TOOLS } from "./tools-data";
 
 const InputSchema = z.object({ goal: z.string().min(3).max(400) });
 
-let INDEX_CACHE: string | null = null;
-function buildIndex() {
-  if (INDEX_CACHE) return INDEX_CACHE;
-  INDEX_CACHE = TOOLS.map((t, i) => `${i}|${t.name}|${t.category}|${t.section}`).join("\n");
-  return INDEX_CACHE;
+// Prefilter: score tools by keyword overlap with goal, keep top 500 + broad sample.
+function prefilter(goal: string, k = 500) {
+  const terms = goal.toLowerCase().split(/\s+/).filter((t) => t.length > 2);
+  const scored: Array<{ i: number; s: number }> = [];
+  for (let i = 0; i < TOOLS.length; i++) {
+    const t = TOOLS[i];
+    const hay = (t.name + " " + t.section + " " + t.category).toLowerCase();
+    let s = 0;
+    for (const term of terms) if (hay.includes(term)) s += 10;
+    if (s > 0) scored.push({ i, s });
+  }
+  scored.sort((a, b) => b.s - a.s);
+  const picks = scored.slice(0, k).map((p) => p.i);
+  // Broaden with a sample so the model can propose non-obvious combos
+  const step = Math.max(1, Math.floor(TOOLS.length / 200));
+  for (let i = 0; i < TOOLS.length && picks.length < k + 200; i += step) picks.push(i);
+  return Array.from(new Set(picks));
 }
 
 export const aiRecipe = createServerFn({ method: "POST" })
@@ -17,7 +29,8 @@ export const aiRecipe = createServerFn({ method: "POST" })
     const apiKey = process.env.LOVABLE_API_KEY;
     if (!apiKey) throw new Error("LOVABLE_API_KEY missing");
 
-    const index = buildIndex();
+    const ids = prefilter(data.goal);
+    const index = ids.map((i) => `${i}|${TOOLS[i].name}|${TOOLS[i].category}|${TOOLS[i].section}`).join("\n");
     const system = `You are a resourceful strategist. Given a real-world goal, design a 3-6 step RECIPE that uses ONLY the free tools from the directory below (referenced by INDEX number).
 Each step must be a concrete action. Combine tools cleverly. Prefer non-obvious combinations over single-tool answers.
 
@@ -25,7 +38,8 @@ Reply ONLY with JSON:
 {"title":"catchy plan title","steps":[{"i":INDEX,"action":"imperative sentence, 10-18 words","output":"what you have after this step, 4-8 words"}]}
 No prose, no markdown fences.`;
 
-    const user = `GOAL: ${data.goal}\n\nDIRECTORY (${TOOLS.length} tools):\n${index}`;
+    const user = `GOAL: ${data.goal}\n\nCANDIDATES (${ids.length} of ${TOOLS.length} total):\n${index}`;
+
 
     const res = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",

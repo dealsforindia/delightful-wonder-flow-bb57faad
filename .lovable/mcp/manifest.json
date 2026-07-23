@@ -15,7 +15,7 @@
       {
         "name": "search_tools",
         "title": "Search FMHY tools",
-        "description": "Fuzzy-search the curated FMHY directory of 1,683 free tools by name, section, category, or URL. Returns the top matches with their category, section, and URL.",
+        "description": "Fuzzy-search the curated FMHY directory of 14,800+ free tools by name, section, category, or URL. Returns the top matches with their category, section, and URL.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,

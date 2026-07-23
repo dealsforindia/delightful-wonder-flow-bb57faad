@@ -4,12 +4,30 @@ import { TOOLS } from "./tools-data";
 
 const InputSchema = z.object({ query: z.string().min(2).max(300) });
 
-// Compact index built once per worker isolate
-let INDEX_CACHE: string | null = null;
-function buildIndex() {
-  if (INDEX_CACHE) return INDEX_CACHE;
-  INDEX_CACHE = TOOLS.map((t, i) => `${i}|${t.name}|${t.section}|${t.category}`).join("\n");
-  return INDEX_CACHE;
+// Lightweight fuzzy prefilter — with 14k+ tools we can't ship the whole index
+// to the LLM every call. Score & keep top 400 candidates, then let AI rank.
+function prefilter(query: string, k = 400) {
+  const q = query.toLowerCase();
+  const terms = q.split(/\s+/).filter(Boolean);
+  const scored: Array<{ i: number; s: number }> = [];
+  for (let i = 0; i < TOOLS.length; i++) {
+    const t = TOOLS[i];
+    const hay = (t.name + " " + t.section + " " + t.category).toLowerCase();
+    let s = 0;
+    for (const term of terms) {
+      const idx = hay.indexOf(term);
+      if (idx >= 0) s += 100 - Math.min(idx, 80) + (t.name.toLowerCase().includes(term) ? 50 : 0);
+    }
+    if (s > 0) scored.push({ i, s });
+  }
+  scored.sort((a, b) => b.s - a.s);
+  const picks = scored.slice(0, k);
+  // If prefilter is thin, top up with a random sample so the LLM still gets breadth
+  if (picks.length < 80) {
+    const step = Math.max(1, Math.floor(TOOLS.length / (k - picks.length)));
+    for (let i = 0; i < TOOLS.length && picks.length < k; i += step) picks.push({ i, s: 0 });
+  }
+  return picks.map((p) => p.i);
 }
 
 export const aiSearch = createServerFn({ method: "POST" })
@@ -18,13 +36,15 @@ export const aiSearch = createServerFn({ method: "POST" })
     const apiKey = process.env.LOVABLE_API_KEY;
     if (!apiKey) throw new Error("LOVABLE_API_KEY missing");
 
-    const index = buildIndex();
+    const ids = prefilter(data.query);
+    const index = ids.map((i) => `${i}|${TOOLS[i].name}|${TOOLS[i].section}|${TOOLS[i].category}`).join("\n");
     const system = `You are a search engine over a curated directory of ${TOOLS.length} free tools from FMHY.
 Each line: INDEX|NAME|SECTION|CATEGORY.
 Given a user intent, return the 8 MOST RELEVANT tools ranked best-first.
 Reply ONLY with a JSON array like [{"i":123,"why":"short 6-word reason"}]. No prose, no markdown.`;
 
-    const user = `INTENT: ${data.query}\n\nDIRECTORY:\n${index}`;
+    const user = `INTENT: ${data.query}\n\nCANDIDATES:\n${index}`;
+
 
     const res = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",
