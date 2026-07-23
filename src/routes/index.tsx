@@ -348,7 +348,7 @@ function Palette() {
           <div className="mb-4 flex items-center gap-2 border border-primary/40 bg-primary/5 px-4 py-2 text-[11px] text-primary">
             <Sparkles className="h-3 w-3" />
             <span className="truncate">
-              {aiLoading ? "Scanning 14,800+ tools for the best match…" : aiError ? aiError : `AI picked ${aiResults.length} tools for “${query.trim()}”`}
+              {aiLoading ? "Scanning 300 tools for the best match…" : aiError ? aiError : `AI picked ${aiResults.length} tools for “${query.trim()}”`}
             </span>
           </div>
         )}
@@ -423,7 +423,7 @@ function Palette() {
                 {[0,1,2,3].map((i) => (
                   <div key={i} className="h-20 animate-pulse rounded-lg bg-muted/30" style={{ animationDelay: `${i*120}ms` }} />
                 ))}
-                <p className="pt-2 text-center text-[11px] text-muted-foreground">Composing a plan across 14,800+ tools…</p>
+                <p className="pt-2 text-center text-[11px] text-muted-foreground">Composing a plan across 300 tools…</p>
               </div>
             )}
 

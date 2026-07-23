@@ -8,6 +8,6 @@ export default defineMcp({
   title: "FMHY Palette",
   version: "0.1.0",
   instructions:
-    "Access a curated directory of 14,800+ free tools from FreeMediaHeckYeah (FMHY). Use `search_tools` for keyword or fuzzy search, `list_categories` to see the taxonomy, and `browse_category` to enumerate tools in a category or section.",
+    "Access a curated directory of 300 free tools from FreeMediaHeckYeah (FMHY). Use `search_tools` for keyword or fuzzy search, `list_categories` to see the taxonomy, and `browse_category` to enumerate tools in a category or section.",
   tools: [searchTools, listCategories, browseCategory],
 });
