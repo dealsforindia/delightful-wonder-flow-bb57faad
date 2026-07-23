@@ -235,10 +235,14 @@ function Palette() {
                 ref={inputRef}
                 value={query}
                 onChange={(e) => { setQuery(e.target.value); if (aiMode) exitAi(); }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !aiMode && fuzzyResults[0]) { e.preventDefault(); open(fuzzyResults[0]); }
+                }}
                 placeholder="Search 26,000+ tools — try 'remove background', 'youtube downloader'…"
-                className="w-full rounded-xl border border-border bg-background py-3 pl-11 pr-4 text-[15px] outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
+                className="w-full rounded-xl border border-border bg-background py-3 pl-11 pr-20 text-[15px] outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
                 spellCheck={false}
               />
+              <kbd className="pointer-events-none absolute right-3 top-1/2 hidden -translate-y-1/2 rounded border border-border bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground sm:inline">⌘K</kbd>
             </div>
             <button
               onClick={() => (aiMode ? exitAi() : void runAi())}
