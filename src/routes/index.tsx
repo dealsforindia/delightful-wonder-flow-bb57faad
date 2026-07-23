@@ -197,26 +197,35 @@ function Palette() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-background text-foreground">
-      {/* subtle grid + vignette */}
+      {/* prismatic backdrop glows */}
       <div
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.06]"
+        aria-hidden
+        className="pointer-events-none absolute -top-40 -left-40 -z-10 h-[36rem] w-[36rem] rounded-full opacity-40 blur-[140px]"
+        style={{ background: "var(--color-primary)" }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-40 -right-40 -z-10 h-[32rem] w-[32rem] rounded-full opacity-30 blur-[140px]"
+        style={{ background: "var(--color-secondary)" }}
+      />
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.04]"
         style={{
           backgroundImage:
             "linear-gradient(var(--color-foreground) 1px, transparent 1px), linear-gradient(90deg, var(--color-foreground) 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
+          backgroundSize: "64px 64px",
         }}
       />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,var(--color-primary)/0.08,transparent_55%)]" />
 
       {/* status bar */}
       <div className="fixed left-0 right-0 top-0 z-40 flex items-center justify-between border-b border-border/60 bg-background/70 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground backdrop-blur-md sm:px-8">
         <div className="flex items-center gap-3">
           <span className="inline-flex items-center gap-2 text-primary">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary shadow-[0_0_8px_var(--color-primary)]" />
-            status: online
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary shadow-[0_0_10px_var(--color-primary)]" />
+            system active
           </span>
           <span className="hidden h-[1px] w-8 bg-border sm:block" />
-          <span className="hidden sm:inline">FMHY mirror v.4.2</span>
+          <span className="hidden sm:inline">FMHY mirror · v.4.2</span>
         </div>
         <div className="flex items-center gap-3">
           <button
@@ -225,94 +234,87 @@ function Palette() {
           >
             [ constellation ]
           </button>
-          <span className="hidden sm:inline">{TOOLS.length.toLocaleString()} entries</span>
+          <span className="hidden sm:inline">{TOOLS.length.toLocaleString()} index points</span>
         </div>
       </div>
 
       {showConstellation && <Constellation onClose={() => setShowConstellation(false)} />}
 
-      {/* massive corner wordmark */}
-      <div
-        aria-hidden
-        className="pointer-events-none fixed bottom-0 right-0 select-none text-[22vw] font-black leading-[0.8] tracking-tighter text-foreground/[0.035] sm:text-[16vw]"
-        style={{ fontFamily: "Syne, sans-serif" }}
-      >
-        FMHY
-      </div>
-
       {/* hero + palette container */}
-      <section className="relative mx-auto max-w-6xl px-5 pt-24 pb-16 sm:px-12 sm:pt-32">
-        <div className="relative border-l border-border pl-6 sm:pl-16">
-          {/* accent rail */}
-          <div className="absolute left-0 top-0 h-40 w-[2px] bg-gradient-to-b from-primary via-primary/40 to-transparent shadow-[0_0_20px_var(--color-primary)]" />
-
-          <header className="mb-14">
-            <div className="mb-6 flex flex-wrap items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em]">
-              <span className="border border-primary px-2 py-0.5 text-primary">Index / 001</span>
-              <span className="h-[1px] w-10 bg-border" />
-              <span className="text-muted-foreground">A curated mirror. No ads. No tracking.</span>
-            </div>
-            <h1
-              className="font-display text-6xl font-extrabold uppercase leading-[0.85] tracking-tighter sm:text-8xl lg:text-[9rem]"
-            >
-              Free
-              <br />
-              <span
-                className="text-transparent"
-                style={{ WebkitTextStroke: "1.5px oklch(0.98 0 0 / 0.35)" }}
-              >
-                The
-              </span>
-              <br />
-              Internet<span className="text-primary">.</span>
-            </h1>
-            <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              An index of {TOOLS.length.toLocaleString()} verified tools —
-              privacy software, media, learning, AI. Search directly, ask AI to pick,
-              or describe a goal and get a step-by-step recipe.
-            </p>
-          </header>
-
-          {/* try chips — small mono */}
-          <div className="mb-6 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            <span className="text-primary">// try</span>
-            {[
-              "launch an anonymous blog for free",
-              "make a logo for a coffee shop",
-              "learn japanese in 30 days",
-              "download a youtube playlist as mp3",
-            ].map((s) => (
-              <button
-                key={s}
-                onClick={() => { setQuery(s); setTimeout(() => void runRecipe(), 0); }}
-                className="lowercase tracking-normal underline-offset-4 transition-colors hover:text-primary hover:underline"
-              >
-                {s}
-              </button>
-            ))}
+      <section className="relative mx-auto max-w-4xl px-5 pt-24 pb-24 sm:px-8 sm:pt-32">
+        {/* header */}
+        <header className="mb-12 space-y-5">
+          <div className="flex items-center gap-4">
+            <span className="bg-primary px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.25em] text-primary-foreground">
+              System Active
+            </span>
+            <div className="h-px flex-1 bg-border" />
+            <span className="font-mono text-[10px] uppercase tracking-tighter text-muted-foreground">
+              {TOOLS.length.toLocaleString()} Index Points
+            </span>
           </div>
-          {/* palette */}
-          <div className="max-w-3xl">
+          <h1
+            className="font-display text-6xl font-extrabold uppercase italic leading-[0.85] tracking-tighter sm:text-8xl lg:text-[9rem]"
+          >
+            Free the
+            <br />
+            <span
+              className="text-transparent"
+              style={{ WebkitTextStroke: "1.5px oklch(0.98 0 0 / 0.32)" }}
+            >
+              Internet
+            </span>
+          </h1>
+          <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
+            An index of {TOOLS.length.toLocaleString()} verified tools — privacy software, media,
+            learning, AI. Search directly, ask AI to pick, or describe a goal and get a
+            step-by-step recipe.
+          </p>
+        </header>
 
-        <div className="overflow-hidden rounded-2xl border border-border/60 bg-card/50 shadow-2xl shadow-black/40 backdrop-blur-2xl">
-          <div className="relative border-b border-border/50">
+        {/* try chips */}
+        <div className="mb-6 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+          <span className="text-primary">// try</span>
+          {[
+            "launch an anonymous blog for free",
+            "make a logo for a coffee shop",
+            "learn japanese in 30 days",
+            "download a youtube playlist as mp3",
+          ].map((s) => (
+            <button
+              key={s}
+              onClick={() => { setQuery(s); setTimeout(() => void runRecipe(), 0); }}
+              className="lowercase tracking-normal underline-offset-4 transition-colors hover:text-primary hover:underline"
+            >
+              {s}
+            </button>
+          ))}
+        </div>
+
+        {/* search cluster */}
+        <div className="group relative mb-6">
+          <div
+            className="absolute -inset-[1px] rounded-none opacity-40 blur-md transition duration-700 group-focus-within:opacity-100"
+            style={{ background: "linear-gradient(90deg, var(--color-primary), var(--color-secondary))" }}
+          />
+          <div className="relative flex bg-black border border-white/10">
             <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <input
               ref={inputRef}
               value={query}
               onChange={(e) => { setQuery(e.target.value); if (aiMode) exitAi(); }}
               onKeyDown={onKeyDown}
-              placeholder={aiMode ? "AI is thinking…" : "Search a tool, or describe a goal…"}
-              className="w-full bg-transparent py-4 pl-11 pr-[210px] text-[15px] text-foreground placeholder:text-muted-foreground/60 focus:outline-none"
+              placeholder={aiMode ? "AI is thinking…" : "Search the FMHY mirror…"}
+              className="w-full bg-transparent py-5 pl-11 pr-2 text-base text-foreground placeholder:text-muted-foreground/60 focus:outline-none"
               spellCheck={false}
               autoComplete="off"
             />
-            <div className="absolute right-3 top-1/2 flex -translate-y-1/2 items-center gap-1.5">
+            <div className="flex items-center gap-2 p-2">
               <button
                 type="button"
                 onClick={() => void runRecipe()}
                 disabled={recipeLoading || query.trim().length < 3}
-                className="flex items-center gap-1.5 rounded-full border border-accent/50 bg-accent/10 px-3 py-1.5 text-[11px] font-medium text-accent transition-all hover:bg-accent/20 disabled:opacity-40"
+                className="flex items-center gap-1.5 border border-white/10 px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-foreground transition-colors hover:bg-white hover:text-black disabled:cursor-not-allowed disabled:opacity-30"
                 title="Build recipe"
               >
                 <Wand2 className={`h-3 w-3 ${recipeLoading ? "animate-spin" : ""}`} />
@@ -322,10 +324,10 @@ function Palette() {
                 type="button"
                 onClick={() => (aiMode ? exitAi() : void runAi())}
                 disabled={aiLoading || query.trim().length < 2}
-                className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[11px] font-medium transition-all disabled:opacity-40 ${
+                className={`flex items-center gap-1.5 px-4 py-3 text-[10px] font-bold uppercase tracking-widest transition-colors disabled:cursor-not-allowed disabled:opacity-30 ${
                   aiMode
-                    ? "border-primary/60 bg-primary/20 text-primary"
-                    : "border-primary/40 bg-primary/10 text-primary hover:bg-primary/20"
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-white text-black hover:bg-primary hover:text-primary-foreground"
                 }`}
                 title="Ask AI"
               >
@@ -334,74 +336,78 @@ function Palette() {
               </button>
             </div>
           </div>
+        </div>
 
+        {/* category chips */}
+        {!aiMode && (
+          <div className="mb-8 flex flex-wrap gap-2">
+            <Chip active={cat === "all"} onClick={() => setCat("all")}>All</Chip>
+            <Chip active={cat === "favorites"} onClick={() => setCat("favorites")}>
+              ★ {favs.size > 0 && <span className="ml-1 opacity-70">{favs.size}</span>}
+            </Chip>
+            {CATEGORIES.map((c) => (
+              <Chip key={c} active={cat === c} onClick={() => setCat(c)}>{c}</Chip>
+            ))}
+          </div>
+        )}
 
-          {!aiMode && (
-            <div className="flex gap-1.5 overflow-x-auto border-b border-border/40 px-3 py-2 scrollbar-none">
-              <Chip active={cat === "all"} onClick={() => setCat("all")}>All</Chip>
-              <Chip active={cat === "favorites"} onClick={() => setCat("favorites")}>
-                ★ {favs.size > 0 && <span className="ml-1 text-muted-foreground">{favs.size}</span>}
-              </Chip>
-              {CATEGORIES.map((c) => (
-                <Chip key={c} active={cat === c} onClick={() => setCat(c)}>{c}</Chip>
+        {aiMode && (
+          <div className="mb-4 flex items-center gap-2 border border-primary/40 bg-primary/5 px-4 py-2 text-[11px] text-primary">
+            <Sparkles className="h-3 w-3" />
+            <span className="truncate">
+              {aiLoading ? "Scanning 14,800+ tools for the best match…" : aiError ? aiError : `AI picked ${aiResults.length} tools for “${query.trim()}”`}
+            </span>
+          </div>
+        )}
+
+        {/* tool slabs */}
+        <div className="mb-4 flex items-center justify-between">
+          <h2 className="font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground">
+            {aiMode ? "AI Picks" : cat === "favorites" ? "Favorites" : cat === "all" ? "Directory" : cat}
+          </h2>
+          <div className="mx-4 h-px flex-1 bg-gradient-to-r from-border to-transparent" />
+          <span className="font-mono text-[10px] text-muted-foreground">
+            {results.length.toLocaleString()} shown
+          </span>
+        </div>
+
+        <div ref={listRef} className="max-h-[68vh] overflow-y-auto">
+          {results.length === 0 && !aiLoading && (
+            <div className="py-16 text-center text-sm text-muted-foreground">
+              {aiMode ? (aiError ? "AI search failed. Try again." : "No matches.") :
+                cat === "favorites" ? "No favorites yet. Star anything to pin it here." : "No matches."}
+            </div>
+          )}
+          {aiLoading && (
+            <div className="space-y-1">
+              {[0,1,2,3].map((i) => (
+                <div key={i} className="h-16 animate-pulse border-b border-white/5 bg-muted/20" style={{ animationDelay: `${i * 100}ms` }} />
               ))}
             </div>
           )}
-
-          {aiMode && (
-            <div className="flex items-center gap-2 border-b border-border/40 bg-primary/5 px-4 py-2 text-[11px] text-primary">
-              <Sparkles className="h-3 w-3" />
-              <span className="truncate">
-                {aiLoading ? "Scanning 14,800+ tools for the best match…" : aiError ? aiError : `AI picked ${aiResults.length} tools for “${query.trim()}”`}
-              </span>
-            </div>
-          )}
-
-          <div ref={listRef} className="max-h-[58vh] overflow-y-auto p-1.5">
-            {results.length === 0 && !aiLoading && (
-              <div className="py-16 text-center text-sm text-muted-foreground">
-                {aiMode ? (aiError ? "AI search failed. Try again." : "No matches.") :
-                  cat === "favorites" ? "No favorites yet. Star anything to pin it here." : "No matches."}
-              </div>
-            )}
-            {aiLoading && (
-              <div className="space-y-2 p-2">
-                {[0,1,2,3].map((i) => (
-                  <div key={i} className="h-14 animate-pulse rounded-lg bg-muted/30" style={{ animationDelay: `${i * 100}ms` }} />
-                ))}
-              </div>
-            )}
-            {!aiLoading && results.map((t, i) => (
-              <Row
-                key={t.url}
-                tool={t}
-                active={i === cursor}
-                fav={favs.has(t.url)}
-                idx={i}
-                reason={aiMode ? aiResults[i]?.why : undefined}
-                onEnter={() => setCursor(i)}
-                onOpen={() => open(t)}
-                onFav={() => toggleFav(t.url)}
-              />
-            ))}
-          </div>
-
-          <div className="flex items-center justify-between border-t border-border/40 bg-background/40 px-4 py-2 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            <span className="truncate">
-              {results[cursor]?.category ?? "—"} · {results[cursor]?.section ?? ""}
-            </span>
-            <span className="flex items-center gap-1 whitespace-nowrap">
-              {aiMode ? <>ai picks · esc to exit</> : <>open <Kbd><CornerDownLeft className="h-2.5 w-2.5" /></Kbd> · <Kbd>⇧↵</Kbd> ask ai</>}
-            </span>
-          </div>
+          {!aiLoading && results.map((t, i) => (
+            <Row
+              key={t.url}
+              tool={t}
+              active={i === cursor}
+              fav={favs.has(t.url)}
+              idx={i}
+              reason={aiMode ? aiResults[i]?.why : undefined}
+              onEnter={() => setCursor(i)}
+              onOpen={() => open(t)}
+              onFav={() => toggleFav(t.url)}
+            />
+          ))}
         </div>
-          </div>
 
-          <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground/70">
-            // Community-curated by FMHY — keyboard-first mirror
-          </p>
+        <div className="mt-8 flex items-center justify-between border-t border-border/40 pt-4 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground/70">
+          <span>// end of stack</span>
+          <span className="flex items-center gap-2">
+            {aiMode ? <>ai picks · esc to exit</> : <>open <Kbd><CornerDownLeft className="h-2.5 w-2.5" /></Kbd> · <Kbd>⇧↵</Kbd> ask ai</>}
+          </span>
         </div>
       </section>
+
 
 
       {(recipe || recipeLoading) && (
@@ -486,10 +492,10 @@ function Chip({ children, active, onClick }: { children: React.ReactNode; active
     <button
       type="button"
       onClick={onClick}
-      className={`shrink-0 rounded-full border px-2.5 py-1 text-[11px] transition-all ${
+      className={`shrink-0 border px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-widest transition-colors ${
         active
-          ? "border-primary/60 bg-primary/15 text-primary shadow-sm shadow-primary/20"
-          : "border-border/50 bg-transparent text-muted-foreground hover:border-primary/40 hover:text-foreground"
+          ? "border-primary bg-primary text-primary-foreground"
+          : "border-white/10 text-muted-foreground hover:bg-white hover:text-black"
       }`}
     >
       {children}
@@ -510,38 +516,43 @@ function Row({
       data-idx={idx}
       onMouseEnter={onEnter}
       onClick={onOpen}
-      className={`group flex cursor-pointer items-center gap-3 rounded-lg px-3 py-2.5 transition-colors ${
-        active ? "bg-primary/12 text-foreground" : "text-foreground/90 hover:bg-card/70"
+      className={`group flex cursor-pointer items-center gap-6 border-b border-white/5 p-4 transition-colors ${
+        active ? "bg-white/5" : "hover:bg-white/[0.03]"
       }`}
     >
-      <div className={`grid h-8 w-8 shrink-0 place-items-center rounded-md text-[11px] font-semibold uppercase ${
-        active ? "bg-primary/25 text-primary" : "bg-muted/60 text-muted-foreground"
-      }`}>
-        {tool.name.slice(0, 2)}
-      </div>
+      <span className="w-8 shrink-0 font-mono text-[10px] tabular-nums text-muted-foreground/40">
+        {String(idx + 1).padStart(2, "0")}
+      </span>
       <div className="min-w-0 flex-1">
-        <div className="flex items-center gap-2">
-          <span className="truncate text-[13.5px] font-medium">{tool.name}</span>
-          <span className="hidden truncate text-[11px] text-muted-foreground sm:inline">— {tool.section}</span>
-        </div>
-        <div className="truncate text-[11px] text-muted-foreground">
-          {reason ? <span className="text-primary/80">✨ {reason}</span> : host}
-        </div>
+        <h3 className={`truncate text-base font-bold transition-colors ${
+          active ? "text-primary" : "text-foreground group-hover:text-primary"
+        }`}>
+          {tool.name}
+        </h3>
+        <p className="truncate text-xs font-medium text-muted-foreground">
+          {reason ? <span className="text-primary/80">✨ {reason}</span> : <>{tool.section} · {host}</>}
+        </p>
       </div>
-
+      <div className="hidden items-center gap-2 sm:flex">
+        <div
+          className={`h-2 w-2 rounded-full ${active ? "bg-primary shadow-[0_0_8px_var(--color-primary)]" : "bg-secondary/60"}`}
+        />
+        <span className="font-mono text-[10px] uppercase text-muted-foreground">{tool.category}</span>
+      </div>
       <button
         type="button"
         onClick={(e) => { e.stopPropagation(); onFav(); }}
-        className={`shrink-0 rounded-md p-1.5 transition-colors ${
-          fav ? "text-primary" : "text-muted-foreground/50 hover:text-foreground"
+        className={`shrink-0 p-1.5 transition-colors ${
+          fav ? "text-primary" : "text-muted-foreground/40 hover:text-foreground"
         }`}
         aria-label={fav ? "Unstar" : "Star"}
       >
         {fav ? <Star className="h-3.5 w-3.5 fill-current" /> : <StarOff className="h-3.5 w-3.5" />}
       </button>
-      <ArrowUpRight className={`h-3.5 w-3.5 shrink-0 transition-colors ${
-        active ? "text-primary" : "text-muted-foreground/50 group-hover:text-foreground"
+      <ArrowUpRight className={`h-4 w-4 shrink-0 transition-all ${
+        active ? "text-primary" : "text-muted-foreground/40 group-hover:translate-x-0.5 group-hover:text-foreground"
       }`} />
     </div>
   );
 }
+
