@@ -1,11 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowUpRight, Command, CornerDownLeft, Search, Sparkles, Star, StarOff, Wand2, ChevronRight, Orbit } from "lucide-react";
+import { ArrowUpRight, Command, CornerDownLeft, Search, Sparkles, Star, StarOff, Wand2, ChevronRight } from "lucide-react";
 import { TOOLS, CATEGORIES, type Category, type Tool } from "@/lib/tools-data";
 import { aiSearch } from "@/lib/ai-search.functions";
 import { aiRecipe } from "@/lib/ai-recipe.functions";
-import { Constellation } from "@/components/Constellation";
 
 export const Route = createFileRoute("/")({
   component: Palette,
