@@ -102,19 +102,23 @@ function Palette() {
     if (cat === "favorites") base = base.filter((t) => favs.has(t.url));
     else if (cat !== "all") base = base.filter((t) => t.category === cat);
 
-    if (!q) return base.slice(0, 500);
+    if (!q) return base;
     const scored: Array<{ t: Tool; s: number }> = [];
     for (const t of base) {
       const s = toolScore(t, q);
       if (s > 0) scored.push({ t, s });
     }
     scored.sort((a, b) => b.s - a.s);
-    return scored.slice(0, 200).map((x) => x.t);
+    return scored.map((x) => x.t);
   }, [query, cat, favs]);
 
-  const results = aiMode
+  const allResults = aiMode
     ? aiResults.map((r) => r.tool)
     : fuzzyResults;
+
+  const [visible, setVisible] = useState(300);
+  useEffect(() => setVisible(300), [query, cat, aiMode]);
+  const results = allResults.slice(0, visible);
 
   useEffect(() => setCursor(0), [query, cat, aiMode, aiResults]);
 
