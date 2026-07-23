@@ -395,12 +395,14 @@ function Palette() {
             </span>
           </div>
         </div>
+          </div>
 
-
-        <p className="my-10 text-center text-[11px] text-muted-foreground/70">
-          Community-curated by FMHY. This is a keyboard-first mirror.
-        </p>
+          <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground/70">
+            // Community-curated by FMHY — keyboard-first mirror
+          </p>
+        </div>
       </section>
+
 
       {(recipe || recipeLoading) && (
         <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-background/80 p-4 backdrop-blur-md sm:p-10" onClick={closeRecipe}>
