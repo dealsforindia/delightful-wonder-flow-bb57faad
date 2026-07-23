@@ -395,6 +395,14 @@ function Palette() {
               onFav={() => toggleFav(t.url)}
             />
           ))}
+          {!aiLoading && results.length < allResults.length && (
+            <button
+              onClick={() => setVisible((v) => v + 500)}
+              className="mt-4 w-full border border-dashed border-border/60 py-4 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground transition hover:border-primary/60 hover:text-primary"
+            >
+              Load {Math.min(500, allResults.length - results.length).toLocaleString()} more · {(allResults.length - results.length).toLocaleString()} remaining
+            </button>
+          )}
         </div>
 
         <div className="mt-8 flex items-center justify-between border-t border-border/40 pt-4 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground/70">
