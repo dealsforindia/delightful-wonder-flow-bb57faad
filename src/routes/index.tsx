@@ -197,77 +197,103 @@ function Palette() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-background text-foreground">
-      {/* ambient glow */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-40 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-primary/20 blur-[140px]" />
-        <div className="absolute top-1/3 -right-40 h-[380px] w-[520px] rounded-full bg-secondary/15 blur-[120px]" />
-        <div className="absolute bottom-0 -left-40 h-[380px] w-[520px] rounded-full bg-accent/10 blur-[120px]" />
-      </div>
+      {/* subtle grid + vignette */}
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.06]"
+        style={{
+          backgroundImage:
+            "linear-gradient(var(--color-foreground) 1px, transparent 1px), linear-gradient(90deg, var(--color-foreground) 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
+        }}
+      />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,var(--color-primary)/0.08,transparent_55%)]" />
 
-      {/* top bar */}
-      <header className="sticky top-0 z-30 border-b border-border/40 bg-background/70 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-3">
-          <div className="flex items-center gap-2">
-            <div className="grid h-7 w-7 place-items-center rounded-md bg-gradient-to-br from-primary to-secondary text-primary-foreground shadow-lg shadow-primary/30">
-              <Command className="h-3.5 w-3.5" strokeWidth={2.5} />
-            </div>
-            <div className="leading-tight">
-              <div className="text-[13px] font-semibold tracking-tight">fmhy palette</div>
-              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                {TOOLS.length.toLocaleString()} tools · press ⌘K
-              </div>
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setShowConstellation(true)}
-              className="flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-3 py-1.5 text-[11px] font-medium text-primary transition-all hover:bg-primary/20"
-              title="Open constellation view"
-            >
-              <Orbit className="h-3 w-3" />
-              Constellation
-            </button>
-            <div className="hidden items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] text-muted-foreground sm:flex">
-              <Kbd>↑↓</Kbd> nav <Kbd>↵</Kbd> open <Kbd>Tab</Kbd> filter
-            </div>
-          </div>
+      {/* status bar */}
+      <div className="fixed left-0 right-0 top-0 z-40 flex items-center justify-between border-b border-border/60 bg-background/70 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground backdrop-blur-md sm:px-8">
+        <div className="flex items-center gap-3">
+          <span className="inline-flex items-center gap-2 text-primary">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary shadow-[0_0_8px_var(--color-primary)]" />
+            status: online
+          </span>
+          <span className="hidden h-[1px] w-8 bg-border sm:block" />
+          <span className="hidden sm:inline">FMHY mirror v.4.2</span>
         </div>
-      </header>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => setShowConstellation(true)}
+            className="text-primary transition-colors hover:text-foreground"
+          >
+            [ constellation ]
+          </button>
+          <span className="hidden sm:inline">{TOOLS.length.toLocaleString()} entries</span>
+        </div>
+      </div>
 
       {showConstellation && <Constellation onClose={() => setShowConstellation(false)} />}
 
-      <section className="mx-auto max-w-3xl px-5 pt-14 pb-6 text-center">
-        <h1 className="text-4xl font-light leading-[1.05] tracking-tight sm:text-6xl">
-          The whole free internet,
-          <span className="block bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-            in one keystroke.
-          </span>
-        </h1>
-        <p className="mx-auto mt-4 max-w-md text-sm text-muted-foreground">
-          Search 1,683 tools. Ask AI to pick. Or type a goal and get a step-by-step recipe.
-        </p>
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-[11px] text-muted-foreground">
-          <span className="opacity-60">try:</span>
-          {[
-            "launch an anonymous blog for free",
-            "make a logo for a coffee shop",
-            "learn japanese in 30 days",
-            "download a youtube playlist as mp3",
-          ].map((s) => (
-            <button
-              key={s}
-              onClick={() => { setQuery(s); setTimeout(() => void runRecipe(), 0); }}
-              className="rounded-full border border-border/50 bg-card/40 px-2.5 py-1 transition-all hover:border-primary/50 hover:text-primary"
+      {/* massive corner wordmark */}
+      <div
+        aria-hidden
+        className="pointer-events-none fixed bottom-0 right-0 select-none text-[22vw] font-black leading-[0.8] tracking-tighter text-foreground/[0.035] sm:text-[16vw]"
+        style={{ fontFamily: "Syne, sans-serif" }}
+      >
+        FMHY
+      </div>
+
+      {/* hero + palette container */}
+      <section className="relative mx-auto max-w-6xl px-5 pt-24 pb-16 sm:px-12 sm:pt-32">
+        <div className="relative border-l border-border pl-6 sm:pl-16">
+          {/* accent rail */}
+          <div className="absolute left-0 top-0 h-40 w-[2px] bg-gradient-to-b from-primary via-primary/40 to-transparent shadow-[0_0_20px_var(--color-primary)]" />
+
+          <header className="mb-14">
+            <div className="mb-6 flex flex-wrap items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em]">
+              <span className="border border-primary px-2 py-0.5 text-primary">Index / 001</span>
+              <span className="h-[1px] w-10 bg-border" />
+              <span className="text-muted-foreground">A curated mirror. No ads. No tracking.</span>
+            </div>
+            <h1
+              className="font-display text-6xl font-extrabold uppercase leading-[0.85] tracking-tighter sm:text-8xl lg:text-[9rem]"
             >
-              {s}
-            </button>
-          ))}
-        </div>
-      </section>
+              Free
+              <br />
+              <span
+                className="text-transparent"
+                style={{ WebkitTextStroke: "1.5px oklch(0.98 0 0 / 0.35)" }}
+              >
+                The
+              </span>
+              <br />
+              Internet<span className="text-primary">.</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
+              An index of {TOOLS.length.toLocaleString()} verified tools —
+              privacy software, media, learning, AI. Search directly, ask AI to pick,
+              or describe a goal and get a step-by-step recipe.
+            </p>
+          </header>
 
+          {/* try chips — small mono */}
+          <div className="mb-6 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+            <span className="text-primary">// try</span>
+            {[
+              "launch an anonymous blog for free",
+              "make a logo for a coffee shop",
+              "learn japanese in 30 days",
+              "download a youtube playlist as mp3",
+            ].map((s) => (
+              <button
+                key={s}
+                onClick={() => { setQuery(s); setTimeout(() => void runRecipe(), 0); }}
+                className="lowercase tracking-normal underline-offset-4 transition-colors hover:text-primary hover:underline"
+              >
+                {s}
+              </button>
+            ))}
+          </div>
+          {/* palette */}
+          <div className="max-w-3xl">
 
-      {/* palette */}
-      <section className="mx-auto max-w-3xl px-5">
         <div className="overflow-hidden rounded-2xl border border-border/60 bg-card/50 shadow-2xl shadow-black/40 backdrop-blur-2xl">
           <div className="relative border-b border-border/50">
             <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -369,12 +395,14 @@ function Palette() {
             </span>
           </div>
         </div>
+          </div>
 
-
-        <p className="my-10 text-center text-[11px] text-muted-foreground/70">
-          Community-curated by FMHY. This is a keyboard-first mirror.
-        </p>
+          <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground/70">
+            // Community-curated by FMHY — keyboard-first mirror
+          </p>
+        </div>
       </section>
+
 
       {(recipe || recipeLoading) && (
         <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-background/80 p-4 backdrop-blur-md sm:p-10" onClick={closeRecipe}>
