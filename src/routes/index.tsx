@@ -227,17 +227,11 @@ function Palette() {
           <span className="hidden sm:inline">FMHY mirror · v.4.2</span>
         </div>
         <div className="flex items-center gap-3">
-          <button
-            onClick={() => setShowConstellation(true)}
-            className="text-primary transition-colors hover:text-foreground"
-          >
-            [ constellation ]
-          </button>
           <span className="hidden sm:inline">{TOOLS.length.toLocaleString()} index points</span>
         </div>
       </div>
 
-      {showConstellation && <Constellation onClose={() => setShowConstellation(false)} />}
+
 
       {/* hero + palette container */}
       <section className="relative mx-auto max-w-4xl px-5 pt-24 pb-24 sm:px-8 sm:pt-32">
