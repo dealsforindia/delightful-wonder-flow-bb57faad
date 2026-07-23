@@ -420,11 +420,18 @@ function Card({ tool, fav, reason, onOpen, onFav }: { tool: Tool; fav: boolean; 
   let host = tool.url;
   try { host = new URL(tool.url).hostname.replace(/^www\./, ""); } catch {}
   const { Icon, tint, bg } = catMeta(tool.category);
+  const [imgOk, setImgOk] = useState(true);
+  const favicon = `https://www.google.com/s2/favicons?sz=64&domain=${host}`;
   return (
     <div onClick={onOpen}
-      className="group flex cursor-pointer items-start gap-3 rounded-xl border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-md">
-      <div className={`grid h-10 w-10 shrink-0 place-items-center rounded-lg ${bg}`}>
-        <Icon className={`h-5 w-5 ${tint}`} />
+      className="group relative flex cursor-pointer items-start gap-3 overflow-hidden rounded-xl border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-md">
+      <div className={`grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-lg ${bg}`}>
+        {imgOk ? (
+          <img src={favicon} alt="" width={24} height={24} loading="lazy"
+            className="h-6 w-6 rounded" onError={() => setImgOk(false)} />
+        ) : (
+          <Icon className={`h-5 w-5 ${tint}`} />
+        )}
       </div>
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-2">
