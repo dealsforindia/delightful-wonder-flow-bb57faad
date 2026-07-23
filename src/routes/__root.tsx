@@ -77,10 +77,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "FMHY Mirror — 14,800+ starred free tools, searchable" },
+      { title: "FMHY Mirror — 300 starred free tools, searchable" },
       { name: "description", content: "A fast, searchable mirror of every starred tool from FMHY (fmhy.net) — AI, video, audio, gaming, learning, privacy and more." },
       { property: "og:title", content: "FMHY Mirror — the community's best tools in one search box" },
-      { property: "og:description", content: "14,800+ starred free tools from FMHY, searchable and grouped by category." },
+      { property: "og:description", content: "300 starred free tools from FMHY, searchable and grouped by category." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

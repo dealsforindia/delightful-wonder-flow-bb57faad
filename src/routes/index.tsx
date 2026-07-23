@@ -1,11 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowUpRight, Command, CornerDownLeft, Search, Sparkles, Star, StarOff, Wand2, ChevronRight, Orbit } from "lucide-react";
+import { ArrowUpRight, Command, CornerDownLeft, Search, Sparkles, Star, StarOff, Wand2, ChevronRight } from "lucide-react";
 import { TOOLS, CATEGORIES, type Category, type Tool } from "@/lib/tools-data";
 import { aiSearch } from "@/lib/ai-search.functions";
 import { aiRecipe } from "@/lib/ai-recipe.functions";
-import { Constellation } from "@/components/Constellation";
 
 export const Route = createFileRoute("/")({
   component: Palette,
@@ -59,7 +58,7 @@ function Palette() {
   const [aiMode, setAiMode] = useState(false);
   const [aiLoading, setAiLoading] = useState(false);
   const [aiResults, setAiResults] = useState<Array<{ tool: Tool; why: string }>>([]);
-  const [showConstellation, setShowConstellation] = useState(false);
+  
   const [aiError, setAiError] = useState<string | null>(null);
   const [recipe, setRecipe] = useState<{ title: string; steps: Array<{ tool: Tool; action: string; output: string }> } | null>(null);
   const [recipeLoading, setRecipeLoading] = useState(false);
@@ -228,17 +227,11 @@ function Palette() {
           <span className="hidden sm:inline">FMHY mirror · v.4.2</span>
         </div>
         <div className="flex items-center gap-3">
-          <button
-            onClick={() => setShowConstellation(true)}
-            className="text-primary transition-colors hover:text-foreground"
-          >
-            [ constellation ]
-          </button>
           <span className="hidden sm:inline">{TOOLS.length.toLocaleString()} index points</span>
         </div>
       </div>
 
-      {showConstellation && <Constellation onClose={() => setShowConstellation(false)} />}
+
 
       {/* hero + palette container */}
       <section className="relative mx-auto max-w-4xl px-5 pt-24 pb-24 sm:px-8 sm:pt-32">
@@ -355,7 +348,7 @@ function Palette() {
           <div className="mb-4 flex items-center gap-2 border border-primary/40 bg-primary/5 px-4 py-2 text-[11px] text-primary">
             <Sparkles className="h-3 w-3" />
             <span className="truncate">
-              {aiLoading ? "Scanning 14,800+ tools for the best match…" : aiError ? aiError : `AI picked ${aiResults.length} tools for “${query.trim()}”`}
+              {aiLoading ? "Scanning 300 tools for the best match…" : aiError ? aiError : `AI picked ${aiResults.length} tools for “${query.trim()}”`}
             </span>
           </div>
         )}
@@ -430,7 +423,7 @@ function Palette() {
                 {[0,1,2,3].map((i) => (
                   <div key={i} className="h-20 animate-pulse rounded-lg bg-muted/30" style={{ animationDelay: `${i*120}ms` }} />
                 ))}
-                <p className="pt-2 text-center text-[11px] text-muted-foreground">Composing a plan across 14,800+ tools…</p>
+                <p className="pt-2 text-center text-[11px] text-muted-foreground">Composing a plan across 300 tools…</p>
               </div>
             )}
 
