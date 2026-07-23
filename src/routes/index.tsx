@@ -294,7 +294,7 @@ function Palette() {
           <Pill active={cat === "favorites"} onClick={() => setCat("favorites")}>
             <Star className="h-3 w-3 fill-current" /> Favorites{favs.size > 0 && <span className="opacity-60">· {favs.size}</span>}
           </Pill>
-          {CATEGORIES.map((c) => <Pill key={c} active={cat === c} onClick={() => setCat(c)}>{c}</Pill>)}
+          {visibleCategories.map((c) => <Pill key={c} active={cat === c} onClick={() => setCat(c)}>{c}</Pill>)}
         </div>
       </section>
 
