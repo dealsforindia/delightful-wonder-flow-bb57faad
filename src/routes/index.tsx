@@ -102,19 +102,23 @@ function Palette() {
     if (cat === "favorites") base = base.filter((t) => favs.has(t.url));
     else if (cat !== "all") base = base.filter((t) => t.category === cat);
 
-    if (!q) return base.slice(0, 500);
+    if (!q) return base;
     const scored: Array<{ t: Tool; s: number }> = [];
     for (const t of base) {
       const s = toolScore(t, q);
       if (s > 0) scored.push({ t, s });
     }
     scored.sort((a, b) => b.s - a.s);
-    return scored.slice(0, 200).map((x) => x.t);
+    return scored.map((x) => x.t);
   }, [query, cat, favs]);
 
-  const results = aiMode
+  const allResults = aiMode
     ? aiResults.map((r) => r.tool)
     : fuzzyResults;
+
+  const [visible, setVisible] = useState(300);
+  useEffect(() => setVisible(300), [query, cat, aiMode]);
+  const results = allResults.slice(0, visible);
 
   useEffect(() => setCursor(0), [query, cat, aiMode, aiResults]);
 
@@ -360,7 +364,7 @@ function Palette() {
           </h2>
           <div className="mx-4 h-px flex-1 bg-gradient-to-r from-border to-transparent" />
           <span className="font-mono text-[10px] text-muted-foreground">
-            {results.length.toLocaleString()} shown
+            {results.length.toLocaleString()} / {allResults.length.toLocaleString()} shown
           </span>
         </div>
 
@@ -391,6 +395,14 @@ function Palette() {
               onFav={() => toggleFav(t.url)}
             />
           ))}
+          {!aiLoading && results.length < allResults.length && (
+            <button
+              onClick={() => setVisible((v) => v + 500)}
+              className="mt-4 w-full border border-dashed border-border/60 py-4 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground transition hover:border-primary/60 hover:text-primary"
+            >
+              Load {Math.min(500, allResults.length - results.length).toLocaleString()} more · {(allResults.length - results.length).toLocaleString()} remaining
+            </button>
+          )}
         </div>
 
         <div className="mt-8 flex items-center justify-between border-t border-border/40 pt-4 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground/70">
