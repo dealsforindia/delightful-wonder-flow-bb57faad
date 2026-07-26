@@ -1,14 +1,16 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, type UIMessage } from "ai";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { FmhyLayout } from "@/components/FmhyLayout";
+import { MarkdownView } from "@/components/MarkdownView";
 
-type AiSearchParams = { q?: string };
+type AiSearchParams = { q?: string; mode?: "search" | "roadmap" };
 
 export const Route = createFileRoute("/ai")({
   validateSearch: (search: Record<string, unknown>): AiSearchParams => ({
     q: typeof search.q === "string" ? search.q : undefined,
+    mode: search.mode === "search" || search.mode === "roadmap" ? search.mode : undefined,
   }),
   head: () => ({
     meta: [
@@ -29,39 +31,16 @@ export const Route = createFileRoute("/ai")({
 
 const STORAGE_KEY = "unlocked.ai.chat.v1";
 
-type ToolResult =
-  | {
-      name: "search_tools";
-      output: {
-        query: string;
-        results: Array<{ i: number; name: string; url: string; category: string; section: string }>;
-      };
-    }
-  | {
-      name: "build_roadmap";
-      output: {
-        goal: string;
-        title: string;
-        totalMinutes: number;
-        steps: Array<{
-          i: number;
-          name: string;
-          url: string;
-          category: string;
-          section: string;
-          action: string;
-          output: string;
-          why: string;
-          estMinutes: number;
-        }>;
-      };
-    };
-
-const EXAMPLES = [
-  "I want to earn from affiliate marketing — where do I start?",
+const SEARCH_EXAMPLES = [
   "Free tools to remove image background without watermark",
   "Self-host my own Netflix from scratch",
   "Read paywalled articles for free",
+];
+
+const ROADMAP_EXAMPLES = [
+  "I want to earn from affiliate marketing — where do I start?",
+  "Build a fully automated YouTube Shorts channel",
+  "Set up a private cloud backup system",
 ];
 
 function loadInitial(): UIMessage[] {
@@ -84,14 +63,21 @@ function textOf(m: UIMessage): string {
 
 function AiRoute() {
   const search = Route.useSearch();
+  const navigate = useNavigate({ from: Route.fullPath });
   const [initial] = useState<UIMessage[]>(loadInitial);
   const [input, setInput] = useState("");
   const composerRef = useRef<HTMLTextAreaElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const { messages, sendMessage, status, error, setMessages } = useChat({
+  const mode = search.mode ?? "auto";
+  const transport = useMemo(
+    () => new DefaultChatTransport({ api: "/api/ai-chat", body: { mode } }),
+    [mode],
+  );
+
+  const { messages, sendMessage, status, error, setMessages, stop, regenerate } = useChat({
     messages: initial,
-    transport: new DefaultChatTransport({ api: "/api/ai-chat" }),
+    transport,
   });
 
   const busy = status === "submitted" || status === "streaming";
@@ -111,15 +97,24 @@ function AiRoute() {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages, status]);
 
-  // seed from ?q= (only once, only when chat is empty)
+  // seed from ?q= / ?mode= (only once, only when chat is empty)
   const seeded = useRef(false);
   useEffect(() => {
     if (seeded.current) return;
     if (!search.q || search.q.trim().length < 3) return;
     if (messages.length > 0) return;
     seeded.current = true;
-    void sendMessage({ text: search.q.trim() });
-  }, [search.q, messages.length, sendMessage]);
+    const q = search.q.trim();
+    const prompt =
+      mode === "roadmap"
+        ? `Build me a roadmap for: ${q}`
+        : mode === "search"
+          ? `Find the best free tools for: ${q}`
+          : q;
+    void sendMessage({ text: prompt });
+    // remove query from URL so reloads don't re-trigger the same seed
+    void navigate({ search: { mode: undefined, q: undefined } as unknown as AiSearchParams });
+  }, [search.q, search.mode, messages.length, sendMessage, navigate, mode]);
 
   async function submit(e?: React.FormEvent) {
     e?.preventDefault();
@@ -146,6 +141,8 @@ function AiRoute() {
     composerRef.current?.focus();
   }
 
+  const examples = mode === "roadmap" ? ROADMAP_EXAMPLES : SEARCH_EXAMPLES;
+
   return (
     <FmhyLayout>
       <div className="max-w-3xl mx-auto flex flex-col h-[calc(100vh-8rem)]">
@@ -162,14 +159,16 @@ function AiRoute() {
               </span>
             </h1>
           </div>
-          {messages.length > 0 && (
-            <button
-              onClick={reset}
-              className="text-xs px-2.5 py-1.5 rounded-md border border-border hover:bg-accent shrink-0"
-            >
-              + New chat
-            </button>
-          )}
+          <div className="flex items-center gap-2">
+            {messages.length > 0 && (
+              <button
+                onClick={reset}
+                className="text-xs px-2.5 py-1.5 rounded-md border border-border hover:bg-accent shrink-0"
+              >
+                + New chat
+              </button>
+            )}
+          </div>
         </div>
 
         <div ref={scrollRef} className="flex-1 overflow-y-auto py-4 space-y-6 scrollbar-hide">
@@ -180,7 +179,7 @@ function AiRoute() {
                 Follow up in the same chat: "cheaper?", "no signup", "swap step 3".
               </p>
               <div className="flex flex-wrap gap-1.5 pt-1">
-                {EXAMPLES.map((ex) => (
+                {examples.map((ex) => (
                   <button
                     key={ex}
                     onClick={() => sendMessage({ text: ex })}
@@ -228,13 +227,33 @@ function AiRoute() {
               className="flex-1 min-h-[44px] max-h-40 px-4 py-2.5 rounded-xl bg-muted border border-border resize-none focus:outline-none focus:ring-2 focus:ring-ring text-sm"
               autoFocus
             />
-            <button
-              type="submit"
-              disabled={busy || input.trim().length < 2}
-              className="px-4 h-11 rounded-xl bg-primary text-primary-foreground font-medium disabled:opacity-50 shrink-0"
-            >
-              {busy ? "…" : "Send"}
-            </button>
+            {busy ? (
+              <button
+                type="button"
+                onClick={() => stop()}
+                className="px-4 h-11 rounded-xl border border-destructive text-destructive font-medium hover:bg-destructive/10 shrink-0"
+              >
+                Stop
+              </button>
+            ) : (
+              <button
+                type="submit"
+                disabled={busy || input.trim().length < 2}
+                className="px-4 h-11 rounded-xl bg-primary text-primary-foreground font-medium disabled:opacity-50 shrink-0"
+              >
+                Send
+              </button>
+            )}
+            {messages.length > 0 && !busy && (
+              <button
+                type="button"
+                onClick={() => regenerate()}
+                className="px-4 h-11 rounded-xl border border-border hover:bg-accent font-medium text-muted-foreground shrink-0"
+                title="Regenerate the last assistant response"
+              >
+                ↻
+              </button>
+            )}
           </div>
         </form>
       </div>
@@ -263,8 +282,8 @@ function MessageView({ message, onAskAbout }: { message: UIMessage; onAskAbout: 
         if (part.type === "text") {
           if (!part.text.trim()) return null;
           return (
-            <div key={idx} className="text-sm leading-relaxed whitespace-pre-wrap break-words">
-              {part.text}
+            <div key={idx} className="text-sm leading-relaxed prose-fmhy-small">
+              <MarkdownView source={part.text} />
             </div>
           );
         }
@@ -283,7 +302,7 @@ function MessageView({ message, onAskAbout }: { message: UIMessage; onAskAbout: 
             );
           }
           if (state === "output-available") {
-            const tr: ToolResult = { name: name as ToolResult["name"], output: p.output };
+            const tr = { name: name as ToolResult["name"], output: p.output } as ToolResult;
             return <ToolResultCard key={idx} result={tr} />;
           }
           if (state === "output-error") {
@@ -311,6 +330,34 @@ function MessageView({ message, onAskAbout }: { message: UIMessage; onAskAbout: 
     </div>
   );
 }
+
+type ToolResult =
+  | {
+      name: "search_tools";
+      output: {
+        query: string;
+        results: Array<{ i: number; name: string; url: string; category: string; section: string }>;
+      };
+    }
+  | {
+      name: "build_roadmap";
+      output: {
+        goal: string;
+        title: string;
+        totalMinutes: number;
+        steps: Array<{
+          i: number;
+          name: string;
+          url: string;
+          category: string;
+          section: string;
+          action: string;
+          output: string;
+          why: string;
+          estMinutes: number;
+        }>;
+      };
+    };
 
 function ToolResultCard({ result }: { result: ToolResult }) {
   if (result.name === "search_tools") {
