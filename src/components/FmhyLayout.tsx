@@ -200,7 +200,11 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
               🗺️ Plan
             </button>
           </div>
-          <div className="p-3 grid gap-2 overflow-y-auto">
+          <div className="flex-1 min-h-0 p-3 grid gap-2 overflow-y-auto content-start">
+            <Link to="/browse" search={{ q: q.trim() || undefined }} className="p-3 rounded-lg border border-border bg-muted/40 hover:bg-accent text-sm">
+              <span className="font-medium">🔍 Browse all 26k tools{q.trim() ? ` for "${q}"` : ""}</span>
+              <span className="block text-xs text-muted-foreground">Fast fuzzy search across the full FMHY index</span>
+            </Link>
             {filtered.slice(0, 20).map((p) => (
               <Link key={p.slug} to="/$page" params={{ page: p.slug }} className="p-3 rounded-lg border border-border hover:bg-accent text-sm">
                 <span className="font-medium" style={{ color: p.color }}>{p.title}</span>
