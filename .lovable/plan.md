@@ -1,48 +1,49 @@
-# Upgrade AI features on `/ai`
 
-Today the AI page has two modes: **Find** (returns a list of tools) and **Plan** (returns a static step list). Both are one-shot text calls that don't actually understand the 26k catalog deeply and don't help the user *act* on the answer. Here's how to make it feel genuinely intelligent.
+## How the current AI works (quick explainer)
+
+`/ai` has two one-shot modes:
+
+- **Find tools** (`aiSearch` in `src/lib/ai-search.functions.ts`): takes your query → prefilters ~26k tools with fuzzy match → sends the top ~80 candidates + your query to Gemini → model returns a ranked list with a reason per tool.
+- **Plan a workflow** (`aiRecipe` in `src/lib/ai-recipe.functions.ts`): takes your goal → asks Gemini to expand it into 3–7 workflow keywords → prefilters tools per keyword → sends candidates to Gemini → model returns a 3–7 step roadmap (tool + why + est. time).
+
+Both are stateless single shots. That's the ceiling — no memory, no follow-up understanding, no ability to reference "that third tool" or "the section you just showed me". That's why it feels useless.
 
 ## What to build
 
-### 1. Streaming answers instead of "wait 6 seconds for a wall of text"
-Switch `ai-search.functions.ts` and `ai-recipe.functions.ts` from `generateText` to `streamText` with `useChat` on the client. The user sees the answer type out live, and can cancel.
+Turn `/ai` from a one-shot form into a real **conversational assistant** with two upgrades:
 
-### 2. Roadmaps become interactive checklists, not static text
-Today Plan returns prose. Change it so each step is a structured object:
-```
-{ step, goal, tool: {name, url, category}, why, estMinutes, prereq }
-```
-Render each step as a card with:
-- ✅ Checkbox (progress saved to `localStorage`)
-- 🔗 "Open tool" button (direct link, tracks completion)
-- 🔄 "Swap tool" button → asks AI for an alternative from the same category
-- ⏱️ Time estimate + total roadmap time at the top
-- 📤 "Export" → copy as markdown / share link (roadmap encoded in URL)
+### 1. Conversation with memory
+- Replace the two-mode form with a chat interface (streaming, `useChat` + AI SDK).
+- Every turn sends the full history to the model, so follow-ups like *"cheaper alternatives to #2"* or *"what about the second option?"* actually work.
+- The assistant decides per turn whether to answer, search the directory, or build a roadmap — using **tools** (`searchTools`, `buildRoadmap`) instead of separate routes.
+- Persistence: `localStorage` only, single conversation, "New chat" button clears it. (No thread list, no DB — keeps it simple.)
 
-### 3. Follow-up chat on any answer
-After the first response, show a chat input: *"refine this — cheaper options / no signup only / Mac-friendly / add a step for X"*. Keeps conversation context so the user iterates instead of restarting.
+### 2. "Ask about this" — select-to-question
+- Any assistant message (or any tool/roadmap card inside it) gets a **📌 Ask about this** button.
+- Clicking it quotes that block into the composer as context (`> quoted text\n\n`) so the next question is grounded in exactly that snippet.
+- Also: highlight text in a message → floating "Ask about selection" pill appears → same behavior.
 
-### 4. Smarter tool selection (retrieval, not guessing)
-Right now we send a fuzzy-prefiltered list to the model. Upgrade to:
-- **Query rewriting**: model first expands "I want to make a podcast" → keywords `[recording, editing, hosting, transcription, cover art]`
-- **Per-keyword retrieval**: fuzzy search the 26k catalog for each keyword separately, dedupe, then hand the model a much richer candidate pool
-- Result: roadmaps that actually cover the full workflow instead of missing obvious steps
+### 3. Example the user gave, working end-to-end
+User: *"I want to earn from affiliate marketing"*
+→ Assistant replies with a short plan (pick niche → build site → traffic → monetize), calls `buildRoadmap` tool inline, roadmap renders as a card in the chat.
+User selects step 3 → **Ask about this** → *"cheaper option?"*
+→ Assistant calls `searchTools` scoped to that step's category, replies with 2–3 alternatives in-thread.
 
-### 5. Compare mode
-New third tab: **Compare**. User picks 2–4 tools from the catalog (or types names), AI returns a structured comparison table (features, pricing, signup required, platforms, best-for). Cached by tool-set hash so repeat comparisons are instant/free.
+## Technical section
 
-### 6. Save & share
-- Every AI answer gets a shareable URL (`/ai/r/<id>`) — roadmap or search encoded in the path, no backend needed initially (base64 in URL) or Cloud-backed if we want a public gallery
-- "My roadmaps" drawer in the sidebar, stored in `localStorage`
+- **New route**: rewrite `src/routes/ai.tsx` as a chat UI (AI Elements-style messages, streaming, composer). Delete the current two-tab form.
+- **New server route**: `src/routes/api/ai-chat.ts` — `POST` handler using AI SDK `streamText` + `toUIMessageStreamResponse`, model `google/gemini-3.6-flash`, `stopWhen: stepCountIs(50)`.
+- **Tools registered on the server**:
+  - `searchTools({ query, limit })` → reuses existing prefilter from `tools-data.server.ts`, returns compact `{name, url, category, description}[]`.
+  - `buildRoadmap({ goal })` → reuses the keyword-expansion + step logic already in `ai-recipe.functions.ts`, returns a structured `Step[]`.
+- **Client**: `useChat({ transport: DefaultChatTransport({ api: "/api/ai-chat" }) })`, render `message.parts` (text + tool-result parts, each tool result renders as a card).
+- **Persistence**: single `unlocked.ai.chat` localStorage key holding `UIMessage[]`; restored on mount; "New chat" clears it.
+- **Ask-about**: per-message button appends `> {message text}\n\n` to the composer input; text-selection listener on `.assistant-message` shows a floating pill that does the same for the selected substring.
+- **Header search**: the ✨ Ask / 🗺️ Plan buttons in `FmhyLayout` forward `?q=` to `/ai` — change to seed the first chat message and auto-send.
+- **Keep** existing `aiSearch` / `aiRecipe` / `aiSwapStep` server functions for now (MCP server references them); the new chat route wraps their internals.
 
-## Technical notes
+## Non-goals for this change
 
-- Model: keep `google/gemini-3.6-flash` for streaming + tool selection; use `google/gemini-3.1-pro-preview` only for Compare where quality matters
-- Structured output for roadmaps and comparisons via the AI SDK `Output.object` API (keep schemas flat, no bounds — clamp in code)
-- New files: `src/lib/ai-chat.functions.ts` (streaming chat route as `src/routes/api/ai.ts`), `src/lib/query-expand.ts`, `src/components/RoadmapCard.tsx`, `src/components/CompareTable.tsx`
-- Refactor `src/routes/ai.tsx` into three tabs (Find / Plan / Compare) sharing one composer + streaming panel
-- No new backend tables needed for v1; `localStorage` for saved roadmaps, URL encoding for share links
-
-## Scope check
-
-Big enough to feel like a real upgrade, small enough to ship in one pass. Want me to include all of 1–6, or trim? I'd suggest **1, 2, 3, 4** as the core (search feels alive + roadmaps become useful), and **5, 6** as a follow-up if you like the direction.
+- No DB, no auth, no thread list.
+- No changes to `/browse` or the 26k directory.
+- No model switch or provider change.
