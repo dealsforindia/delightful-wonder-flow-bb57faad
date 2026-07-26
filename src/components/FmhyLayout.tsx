@@ -34,10 +34,10 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
     ? PAGES.filter((p) => (p.title + " " + p.short + " " + p.details).toLowerCase().includes(q.toLowerCase()))
     : PAGES;
 
-  function askAi(mode: "search" | "roadmap") {
+  function askAi(_mode: "search" | "roadmap") {
     const query = q.trim();
     if (query.length < 3) return;
-    navigate({ to: "/ai", search: { q: query, mode } });
+    navigate({ to: "/ai", search: { q: query } });
     setQ("");
     setSearchOpen(false);
   }
