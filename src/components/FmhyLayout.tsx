@@ -24,10 +24,12 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
             <span className="sm:hidden">fmhy</span>
           </Link>
           <nav className="hidden lg:flex items-center gap-1 text-sm ml-4">
+            <Link to="/ai" className="px-3 py-1.5 rounded hover:bg-accent font-medium bg-gradient-to-r from-brand-pink/10 to-brand-blue/10">✨ AI</Link>
             <Link to="/beginners-guide" className="px-3 py-1.5 rounded hover:bg-accent">Guide</Link>
             <Link to="/posts" className="px-3 py-1.5 rounded hover:bg-accent">Posts</Link>
             <Link to="/browse" className="px-3 py-1.5 rounded hover:bg-accent">Browse all</Link>
           </nav>
+
           <div className="flex-1" />
           <input
             value={q}
