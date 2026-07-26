@@ -55,8 +55,8 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
           </button>
           <Link to="/" className="flex items-center gap-2 font-bold tracking-tight shrink-0">
             <span className="inline-block h-6 w-6 rounded bg-gradient-to-br from-brand-pink via-brand-purple to-brand-blue" />
-            <span className="hidden sm:inline">freemediaheckyeah</span>
-            <span className="sm:hidden">fmhy</span>
+            <span className="hidden sm:inline">Unlocked</span>
+            <span className="sm:hidden">Unlocked</span>
           </Link>
           <nav className="hidden lg:flex items-center gap-1 text-sm ml-4">
             <Link to="/ai" className="px-3 py-1.5 rounded hover:bg-accent font-medium bg-gradient-to-r from-brand-pink/10 to-brand-blue/10">✨ AI</Link>
@@ -147,7 +147,7 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
             <div className="flex items-center justify-between p-4 border-b border-border">
               <Link to="/" className="flex items-center gap-2 font-bold tracking-tight">
                 <span className="inline-block h-6 w-6 rounded bg-gradient-to-br from-brand-pink via-brand-purple to-brand-blue" />
-                fmhy
+                Unlocked
               </Link>
               <button onClick={() => setNavOpen(false)} className="h-8 w-8 grid place-items-center rounded-lg border border-border hover:bg-accent">✕</button>
             </div>

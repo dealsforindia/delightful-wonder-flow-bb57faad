@@ -30,8 +30,8 @@ function HomeRoute() {
         <div className="inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-full border border-border bg-muted/50 mb-6">
           🔒 Fight Chat Control
         </div>
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter bg-gradient-to-r from-brand-pink via-brand-purple to-brand-blue bg-clip-text text-transparent">
-          freemediaheckyeah
+        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter bg-gradient-to-r from-brand-pink via-brand-purple to-brand-blue bg-clip-text text-transparent break-words">
+          Unlocked
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">The largest collection of free stuff on the internet.</p>
         <div className="mt-3 text-xs text-muted-foreground">
