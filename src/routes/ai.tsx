@@ -1,5 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
 import { FmhyLayout } from "@/components/FmhyLayout";
 import { aiSearch } from "@/lib/ai-search.functions";
 import { aiRecipe } from "@/lib/ai-recipe.functions";
@@ -26,7 +28,6 @@ export const Route = createFileRoute("/ai")({
   component: AiRoute,
 });
 
-type Tool = (typeof TOOLS)[number];
 type SearchHit = { tool: Tool; why: string };
 type RecipeStep = { tool: Tool; action: string; output: string };
 type Recipe = { title: string; steps: RecipeStep[] };
