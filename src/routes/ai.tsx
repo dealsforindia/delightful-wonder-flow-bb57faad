@@ -69,7 +69,10 @@ function AiRoute() {
   const composerRef = useRef<HTMLTextAreaElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const mode = search.mode ?? "auto";
+  const [mode, setMode] = useState<"auto" | "search" | "roadmap">(search.mode ?? "auto");
+  useEffect(() => {
+    if (search.mode) setMode(search.mode);
+  }, [search.mode]);
   const transport = useMemo(
     () => new DefaultChatTransport({ api: "/api/ai-chat", body: { mode } }),
     [mode],
@@ -146,20 +149,20 @@ function AiRoute() {
   return (
     <FmhyLayout>
       <div className="max-w-3xl mx-auto flex flex-col h-[calc(100vh-8rem)]">
-        <div className="flex items-center justify-between gap-3 pb-3 border-b border-border">
-          <div>
+        <div className="flex items-start justify-between gap-3 pb-3 border-b border-border">
+          <div className="min-w-0">
             <div className="flex items-center gap-2 text-xs text-muted-foreground">
               <span className="inline-block h-2 w-2 rounded-full bg-brand-pink animate-pulse" />
               AI Concierge · Gemini · 26k tools
             </div>
-            <h1 className="mt-1 text-2xl font-extrabold tracking-tight">
+            <h1 className="mt-1 text-xl sm:text-2xl font-extrabold tracking-tight">
               Ask.{" "}
               <span className="bg-gradient-to-r from-brand-pink via-brand-purple to-brand-blue bg-clip-text text-transparent">
                 Get the right free tool.
               </span>
             </h1>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 shrink-0">
             {messages.length > 0 && (
               <button
                 onClick={reset}
@@ -169,6 +172,31 @@ function AiRoute() {
               </button>
             )}
           </div>
+        </div>
+
+        <div className="flex items-center gap-1.5 pt-3 pb-1 overflow-x-auto scrollbar-hide">
+          {([
+            ["auto", "✨ Auto", "Let AI decide"],
+            ["search", "🔍 Ask", "Find tools"],
+            ["roadmap", "🗺️ Plan", "Step-by-step"],
+          ] as const).map(([value, label, hint]) => {
+            const active = mode === value;
+            return (
+              <button
+                key={value}
+                type="button"
+                onClick={() => setMode(value)}
+                title={hint}
+                className={`px-3 py-1.5 rounded-full text-xs font-medium border whitespace-nowrap transition ${
+                  active
+                    ? "bg-gradient-to-r from-brand-pink/25 to-brand-blue/25 border-brand-purple/50 text-foreground"
+                    : "border-border text-muted-foreground hover:bg-accent"
+                }`}
+              >
+                {label}
+              </button>
+            );
+          })}
         </div>
 
         <div ref={scrollRef} className="flex-1 overflow-y-auto py-4 space-y-6 scrollbar-hide">
