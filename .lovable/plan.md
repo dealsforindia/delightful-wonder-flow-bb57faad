@@ -1,49 +1,66 @@
+# Plan: Upgrade the AI concierge to actually rank tools and feel responsive
 
-## How the current AI works (quick explainer)
+## Problem
+The AI concierge currently finds tools with simple substring matching, so it misses good results for natural-language queries. Assistant replies are plain text, there is no stop/regenerate control, and the header "Ask" / "Plan" buttons both send the same prompt.
 
-`/ai` has two one-shot modes:
+## Goal
+Rewire the concierge so the same LLM-ranked engine used by the standalone AI search also powers the chat, while improving the chat UI with markdown, stop/regenerate, and distinct Ask/Plan entry points.
 
-- **Find tools** (`aiSearch` in `src/lib/ai-search.functions.ts`): takes your query → prefilters ~26k tools with fuzzy match → sends the top ~80 candidates + your query to Gemini → model returns a ranked list with a reason per tool.
-- **Plan a workflow** (`aiRecipe` in `src/lib/ai-recipe.functions.ts`): takes your goal → asks Gemini to expand it into 3–7 workflow keywords → prefilters tools per keyword → sends candidates to Gemini → model returns a 3–7 step roadmap (tool + why + est. time).
+## Implementation steps
 
-Both are stateless single shots. That's the ceiling — no memory, no follow-up understanding, no ability to reference "that third tool" or "the section you just showed me". That's why it feels useless.
+### 1. Shared AI ranking & planning helper
+Create `src/lib/ai-tools.server.ts` (server-only) that contains:
+- `scoreTools(query, k)` — lightweight fuzzy prefilter.
+- `expandKeywords(goal, apiKey)` — ask a small model for workflow keywords.
+- `rankTools(query, limit, previousIds, apiKey)` — prefilter + LLM ranking of the best candidates.
+- `buildRoadmap(goal, apiKey)` — keyword expansion + candidate pool + LLM planner.
 
-## What to build
+Use the existing `createLovableAiGatewayProvider` helper with the correct `Lovable-API-Key` header (no `Authorization: Bearer`). Use:
+- `google/gemini-3.1-flash-lite` for keyword expansion
+- `google/gemini-3.6-flash` for ranking and planning
 
-Turn `/ai` from a one-shot form into a real **conversational assistant** with two upgrades:
+### 2. Thin server-function wrappers
+Refactor:
+- `src/lib/ai-search.functions.ts` → call `rankTools`.
+- `src/lib/ai-recipe.functions.ts` → call `buildRoadmap`.
 
-### 1. Conversation with memory
-- Replace the two-mode form with a chat interface (streaming, `useChat` + AI SDK).
-- Every turn sends the full history to the model, so follow-ups like *"cheaper alternatives to #2"* or *"what about the second option?"* actually work.
-- The assistant decides per turn whether to answer, search the directory, or build a roadmap — using **tools** (`searchTools`, `buildRoadmap`) instead of separate routes.
-- Persistence: `localStorage` only, single conversation, "New chat" button clears it. (No thread list, no DB — keeps it simple.)
+Switch validation to `.inputValidator` and ensure the gateway request uses `Lovable-API-Key`.
 
-### 2. "Ask about this" — select-to-question
-- Any assistant message (or any tool/roadmap card inside it) gets a **📌 Ask about this** button.
-- Clicking it quotes that block into the composer as context (`> quoted text\n\n`) so the next question is grounded in exactly that snippet.
-- Also: highlight text in a message → floating "Ask about selection" pill appears → same behavior.
+### 3. Upgrade the chat endpoint
+In `src/routes/api/ai-chat.ts`:
+- Replace the simple `scoreTools` in the `search_tools` tool with `rankTools`.
+- Replace the inline `build_roadmap` planner with `buildRoadmap`.
+- Upgrade the chat model to `google/gemini-3.6-flash`.
+- Keep `stopWhen: stepCountIs(6)`.
 
-### 3. Example the user gave, working end-to-end
-User: *"I want to earn from affiliate marketing"*
-→ Assistant replies with a short plan (pick niche → build site → traffic → monetize), calls `buildRoadmap` tool inline, roadmap renders as a card in the chat.
-User selects step 3 → **Ask about this** → *"cheaper option?"*
-→ Assistant calls `searchTools` scoped to that step's category, replies with 2–3 alternatives in-thread.
+### 4. Improve the chat UI
+In `src/routes/ai.tsx`:
+- Add `mode` search param (`search` | `roadmap`).
+- When seeding from `?q`, use a mode-specific first message:
+  - Ask: "Find the best free tools for: {q}"
+  - Plan: "Build a step-by-step roadmap for: {q}"
+- Render assistant text as markdown (bold, lists, links).
+- Add a stop button while streaming and a regenerate button after the last assistant message.
+- Surface 429 / 402 errors with clear, actionable messages.
 
-## Technical section
+### 5. Wire the header buttons
+In `src/components/FmhyLayout.tsx`:
+- "Ask" navigates to `/ai?mode=search&q=...`
+- "Plan" navigates to `/ai?mode=roadmap&q=...`
 
-- **New route**: rewrite `src/routes/ai.tsx` as a chat UI (AI Elements-style messages, streaming, composer). Delete the current two-tab form.
-- **New server route**: `src/routes/api/ai-chat.ts` — `POST` handler using AI SDK `streamText` + `toUIMessageStreamResponse`, model `google/gemini-3.6-flash`, `stopWhen: stepCountIs(50)`.
-- **Tools registered on the server**:
-  - `searchTools({ query, limit })` → reuses existing prefilter from `tools-data.server.ts`, returns compact `{name, url, category, description}[]`.
-  - `buildRoadmap({ goal })` → reuses the keyword-expansion + step logic already in `ai-recipe.functions.ts`, returns a structured `Step[]`.
-- **Client**: `useChat({ transport: DefaultChatTransport({ api: "/api/ai-chat" }) })`, render `message.parts` (text + tool-result parts, each tool result renders as a card).
-- **Persistence**: single `unlocked.ai.chat` localStorage key holding `UIMessage[]`; restored on mount; "New chat" clears it.
-- **Ask-about**: per-message button appends `> {message text}\n\n` to the composer input; text-selection listener on `.assistant-message` shows a floating pill that does the same for the selected substring.
-- **Header search**: the ✨ Ask / 🗺️ Plan buttons in `FmhyLayout` forward `?q=` to `/ai` — change to seed the first chat message and auto-send.
-- **Keep** existing `aiSearch` / `aiRecipe` / `aiSwapStep` server functions for now (MCP server references them); the new chat route wraps their internals.
+### 6. Verify end-to-end
+- Ensure `LOVABLE_API_KEY` is provisioned.
+- Run typecheck and lint.
+- Smoke-test the chat, browse, and MCP routes.
+- Check AI gateway logs to confirm the correct model and headers are used.
 
-## Non-goals for this change
+## What will change for the user
+- The AI finds better tools because it uses LLM ranking instead of just keyword matching.
+- Assistant replies show formatted text and clickable links.
+- Streaming can be stopped and a bad reply can be regenerated.
+- The Ask and Plan buttons produce different first messages.
 
-- No DB, no auth, no thread list.
-- No changes to `/browse` or the 26k directory.
-- No model switch or provider change.
+## Out of scope
+- Accounts or database persistence
+- New data sources beyond the existing FMHY index
+- New non-AI browsing features
