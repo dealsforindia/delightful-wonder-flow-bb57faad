@@ -143,18 +143,35 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
       {navOpen && (
         <div className="fixed inset-0 z-50 md:hidden">
           <div className="absolute inset-0 bg-black/50" onClick={() => setNavOpen(false)} />
-          <div className="absolute left-0 top-0 bottom-0 w-[260px] bg-background border-r border-border p-4 overflow-y-auto">
-            <div className="flex items-center justify-between mb-4">
-              <span className="font-bold tracking-tight">Menu</span>
+          <div className="absolute left-0 top-0 bottom-0 w-[280px] bg-background border-r border-border flex flex-col">
+            <div className="flex items-center justify-between p-4 border-b border-border">
+              <Link to="/" className="flex items-center gap-2 font-bold tracking-tight">
+                <span className="inline-block h-6 w-6 rounded bg-gradient-to-br from-brand-pink via-brand-purple to-brand-blue" />
+                fmhy
+              </Link>
               <button onClick={() => setNavOpen(false)} className="h-8 w-8 grid place-items-center rounded-lg border border-border hover:bg-accent">✕</button>
             </div>
-            <SideNav pathname={pathname} />
+            <div className="p-3 border-b border-border grid grid-cols-2 gap-2">
+              <Link to="/ai" className="px-3 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-brand-pink/15 to-brand-blue/15 border border-border text-center">✨ AI</Link>
+              <Link to="/browse" className="px-3 py-2 rounded-lg text-sm font-medium border border-border text-center hover:bg-accent">Browse all</Link>
+              <Link to="/beginners-guide" className="px-3 py-2 rounded-lg text-sm font-medium border border-border text-center hover:bg-accent">Guide</Link>
+              <Link to="/posts" className="px-3 py-2 rounded-lg text-sm font-medium border border-border text-center hover:bg-accent">Posts</Link>
+            </div>
+            <div className="flex-1 overflow-y-auto p-4">
+              <SideNav pathname={pathname} />
+            </div>
+            <div className="p-3 border-t border-border flex items-center justify-between text-xs text-muted-foreground">
+              <span>Theme</span>
+              <button onClick={toggleTheme} className="h-8 px-3 rounded-lg border border-border hover:bg-accent">
+                {dark ? "☀️ Light" : "🌙 Dark"}
+              </button>
+            </div>
           </div>
         </div>
       )}
 
       {searchOpen && (
-        <div className="fixed inset-0 z-50 md:hidden bg-background">
+        <div className="fixed inset-0 z-50 md:hidden bg-background flex flex-col">
           <div className="flex items-center gap-2 p-3 border-b border-border">
           <input
             autoFocus
@@ -183,7 +200,11 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
               🗺️ Plan
             </button>
           </div>
-          <div className="p-3 grid gap-2 overflow-y-auto">
+          <div className="flex-1 min-h-0 p-3 grid gap-2 overflow-y-auto content-start">
+            <Link to="/browse" search={{ q: q.trim() || undefined }} className="p-3 rounded-lg border border-border bg-muted/40 hover:bg-accent text-sm">
+              <span className="font-medium">🔍 Browse all 26k tools{q.trim() ? ` for "${q}"` : ""}</span>
+              <span className="block text-xs text-muted-foreground">Fast fuzzy search across the full FMHY index</span>
+            </Link>
             {filtered.slice(0, 20).map((p) => (
               <Link key={p.slug} to="/$page" params={{ page: p.slug }} className="p-3 rounded-lg border border-border hover:bg-accent text-sm">
                 <span className="font-medium" style={{ color: p.color }}>{p.title}</span>
