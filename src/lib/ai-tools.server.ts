@@ -114,8 +114,7 @@ export async function rankTools(
 
   const system = `You are a search engine over a curated directory of ${TOOLS.length} free tools from FMHY.
 Each line: INDEX|NAME|SECTION|CATEGORY.
-Given a user intent, return the ${limit} MOST RELEVANT tools ranked best-first.
-Reply ONLY with JSON matching the schema. No prose, no markdown.`;
+Given a user intent, return the ${limit} MOST RELEVANT tools ranked best-first as a JSON object: {"results":[{"i":INDEX,"why":"short reason"}]}. No prose, no markdown.`;
 
   const user = `INTENT: ${query}${refineBlock}${prior}\n\nCANDIDATES:\n${index}`;
 
@@ -134,14 +133,24 @@ Reply ONLY with JSON matching the schema. No prose, no markdown.`;
     parsed = result.experimental_output;
   } catch (error) {
     if (NoObjectGeneratedError.isInstance(error)) {
-      parsed = safeJsonParse<z.infer<typeof RankSchema>>(error.text ?? "", { results: [] });
+      const raw = safeJsonParse<z.infer<typeof RankSchema> | Array<{ i: number; why?: string }>>(
+        error.text ?? "",
+        { results: [] },
+      );
+      parsed = Array.isArray(raw) ? { results: raw } : raw;
     }
   }
 
-  return parsed.results
+  const chosen = parsed.results
     .filter((r) => Number.isInteger(r.i) && r.i >= 0 && r.i < TOOLS.length)
-    .slice(0, limit)
-    .map((r) => ({ i: r.i, tool: TOOLS[r.i], why: String(r.why ?? "").slice(0, 120) }));
+    .slice(0, limit);
+
+  if (chosen.length === 0) {
+    // Fallback to fuzzy prefilter so the user never sees a blank result.
+    return ids.slice(0, limit).map((i) => ({ i, tool: TOOLS[i], why: "Top fuzzy match" }));
+  }
+
+  return chosen.map((r) => ({ i: r.i, tool: TOOLS[r.i], why: String(r.why ?? "").slice(0, 120) }));
 }
 
 const RoadmapSchema = z.object({
