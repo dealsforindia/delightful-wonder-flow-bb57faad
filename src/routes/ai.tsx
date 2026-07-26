@@ -69,7 +69,10 @@ function AiRoute() {
   const composerRef = useRef<HTMLTextAreaElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const mode = search.mode ?? "auto";
+  const [mode, setMode] = useState<"auto" | "search" | "roadmap">(search.mode ?? "auto");
+  useEffect(() => {
+    if (search.mode) setMode(search.mode);
+  }, [search.mode]);
   const transport = useMemo(
     () => new DefaultChatTransport({ api: "/api/ai-chat", body: { mode } }),
     [mode],
