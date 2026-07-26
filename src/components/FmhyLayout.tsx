@@ -7,8 +7,24 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
   const navigate = useNavigate();
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
+  const [dark, setDark] = useState(false);
 
   useEffect(() => setOpen(false), [pathname]);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("fmhy-theme");
+    const prefers = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const isDark = saved ? saved === "dark" : prefers;
+    setDark(isDark);
+    document.documentElement.classList.toggle("dark", isDark);
+  }, []);
+
+  function toggleTheme() {
+    const next = !dark;
+    setDark(next);
+    document.documentElement.classList.toggle("dark", next);
+    localStorage.setItem("fmhy-theme", next ? "dark" : "light");
+  }
 
   const filtered = q.trim()
     ? PAGES.filter((p) => (p.title + " " + p.short + " " + p.details).toLowerCase().includes(q.toLowerCase()))
