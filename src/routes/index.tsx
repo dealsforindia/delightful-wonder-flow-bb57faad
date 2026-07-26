@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useQuery } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
 import { FmhyLayout } from "@/components/FmhyLayout";
 import { PAGES } from "@/lib/fmhy-pages";
 import { getToolsCount } from "@/lib/tools-data.functions";
@@ -18,6 +20,8 @@ export const Route = createFileRoute("/")({
 });
 
 function HomeRoute() {
+  const fetchCount = useServerFn(getToolsCount);
+  const { data: count } = useQuery({ queryKey: ["tools-count"], queryFn: () => fetchCount() });
   const main = PAGES.filter((p) => p.group === "main");
   const tools = PAGES.filter((p) => p.group === "tools");
   return (
@@ -31,7 +35,7 @@ function HomeRoute() {
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">The largest collection of free stuff on the internet.</p>
         <div className="mt-3 text-xs text-muted-foreground">
-          Mirroring {TOOLS.length.toLocaleString()} entries across {PAGES.length} pages.
+          Mirroring {count?.toLocaleString() ?? "26,000+"} entries across {PAGES.length} pages.
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-2">
           <Link to="/$page" params={{ page: "beginners-guide" }} className="px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90">See Beginners Guide</Link>
