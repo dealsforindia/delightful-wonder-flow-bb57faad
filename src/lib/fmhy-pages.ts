@@ -7,7 +7,10 @@ export interface FmhyPage {
   color: string;
   icon: string; // lucide icon name
   group: "main" | "tools" | "meta";
+  /** Optional external/anchor link used by the sidebar instead of the /$page route. */
+  href?: string;
 }
+
 
 export const PAGES: FmhyPage[] = [
   { slug: "privacy", title: "Adblocking / Privacy", short: "Privacy", details: "Learn how to block ads, trackers and other nasty things.", color: "#D05A6E", icon: "shield", group: "main" },
