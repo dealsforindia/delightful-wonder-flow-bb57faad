@@ -130,7 +130,7 @@ function SideNav({ pathname }: { pathname: string }) {
     ["Meta", PAGES.filter((p) => p.group === "meta")],
   ];
   return (
-    <nav className="text-sm space-y-6 sticky top-20">
+    <nav className="text-sm space-y-6 sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-2">
       {groups.map(([label, items]) => (
         <div key={label}>
           <div className="text-xs uppercase tracking-wider text-muted-foreground mb-2 px-2">{label}</div>
