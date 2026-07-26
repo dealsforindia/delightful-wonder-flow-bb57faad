@@ -6,10 +6,14 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const navigate = useNavigate();
   const [q, setQ] = useState("");
-  const [open, setOpen] = useState(false);
+  const [navOpen, setNavOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [dark, setDark] = useState(false);
 
-  useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    setNavOpen(false);
+    setSearchOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     const saved = localStorage.getItem("fmhy-theme");
@@ -35,14 +39,21 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
     if (query.length < 3) return;
     navigate({ to: "/ai", search: { q: query, mode } });
     setQ("");
+    setSearchOpen(false);
   }
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-40 backdrop-blur-xl bg-background/80 border-b border-border">
-        <div className="mx-auto max-w-[1400px] px-4 md:px-6 h-14 flex items-center gap-4">
-          <button className="md:hidden" onClick={() => setOpen((v) => !v)} aria-label="Toggle menu">☰</button>
-          <Link to="/" className="flex items-center gap-2 font-bold tracking-tight">
+        <div className="mx-auto max-w-[1400px] px-4 md:px-6 h-14 flex items-center gap-3">
+          <button
+            className="md:hidden h-9 w-9 grid place-items-center rounded-lg border border-border hover:bg-accent"
+            onClick={() => setNavOpen(true)}
+            aria-label="Open menu"
+          >
+            ☰
+          </button>
+          <Link to="/" className="flex items-center gap-2 font-bold tracking-tight shrink-0">
             <span className="inline-block h-6 w-6 rounded bg-gradient-to-br from-brand-pink via-brand-purple to-brand-blue" />
             <span className="hidden sm:inline">freemediaheckyeah</span>
             <span className="sm:hidden">fmhy</span>
@@ -81,17 +92,24 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
             </button>
           </div>
           <button
+            onClick={() => setSearchOpen(true)}
+            aria-label="Search"
+            className="md:hidden h-9 w-9 grid place-items-center rounded-lg border border-border hover:bg-accent text-sm"
+          >
+            🔍
+          </button>
+          <button
             onClick={toggleTheme}
             aria-label="Toggle theme"
             title="Toggle theme"
-            className="ml-2 h-9 w-9 grid place-items-center rounded-lg border border-border hover:bg-accent text-sm"
+            className="h-9 w-9 grid place-items-center rounded-lg border border-border hover:bg-accent text-sm"
           >
             {dark ? "☀️" : "🌙"}
           </button>
-
         </div>
+
         {q && (
-          <div className="border-t border-border bg-popover">
+          <div className="border-t border-border bg-popover hidden md:block">
             <div className="mx-auto max-w-[1400px] px-4 md:px-6 py-3 grid sm:grid-cols-2 md:grid-cols-3 gap-2">
               {filtered.slice(0, 12).map((p) => (
                 <Link key={p.slug} to="/$page" params={{ page: p.slug }} className="p-2 rounded hover:bg-accent text-sm">
@@ -109,16 +127,78 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
           </div>
         )}
       </header>
-      <div className="mx-auto max-w-[1400px] px-4 md:px-6 grid grid-cols-1 md:grid-cols-[220px_1fr] lg:grid-cols-[240px_1fr_260px] gap-8 py-8">
-        <aside className={`${open ? "block" : "hidden"} md:block`}>
+
+      <div className="mx-auto max-w-[1400px] px-4 md:px-6 grid grid-cols-1 md:grid-cols-[220px_1fr] lg:grid-cols-[240px_1fr_260px] gap-6 md:gap-8 py-6 md:py-8">
+        <aside className="hidden md:block">
           <SideNav pathname={pathname} />
         </aside>
         <main className="min-w-0">{children}</main>
         <aside className="hidden lg:block">{aside}</aside>
       </div>
-      <footer className="border-t border-border mt-16 py-8 text-center text-xs text-muted-foreground">
+
+      <footer className="border-t border-border mt-12 md:mt-16 py-8 text-center text-xs text-muted-foreground">
         Community mirror of <a href="https://fmhy.net" className="underline" target="_blank" rel="noopener noreferrer">fmhy.net</a> · content by the FMHY community
       </footer>
+
+      {navOpen && (
+        <div className="fixed inset-0 z-50 md:hidden">
+          <div className="absolute inset-0 bg-black/50" onClick={() => setNavOpen(false)} />
+          <div className="absolute left-0 top-0 bottom-0 w-[260px] bg-background border-r border-border p-4 overflow-y-auto">
+            <div className="flex items-center justify-between mb-4">
+              <span className="font-bold tracking-tight">Menu</span>
+              <button onClick={() => setNavOpen(false)} className="h-8 w-8 grid place-items-center rounded-lg border border-border hover:bg-accent">✕</button>
+            </div>
+            <SideNav pathname={pathname} />
+          </div>
+        </div>
+      )}
+
+      {searchOpen && (
+        <div className="fixed inset-0 z-50 md:hidden bg-background">
+          <div className="flex items-center gap-2 p-3 border-b border-border">
+          <input
+            autoFocus
+            data-testid="mobile-search"
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            onKeyDown={(e) => { if (e.key === "Enter") askAi("search"); }}
+            placeholder="Search sections or ask AI…"
+            className="flex-1 h-10 px-3 rounded-lg bg-muted border border-border text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+          />
+            <button onClick={() => setSearchOpen(false)} className="h-10 px-3 rounded-lg border border-border hover:bg-accent text-sm">Cancel</button>
+          </div>
+          <div className="p-3 flex gap-2">
+            <button
+              onClick={() => askAi("search")}
+              disabled={q.trim().length < 3}
+              className="flex-1 h-10 rounded-lg text-sm font-medium border border-border bg-gradient-to-r from-brand-pink/15 to-brand-purple/15 disabled:opacity-40"
+            >
+              ✨ Ask AI
+            </button>
+            <button
+              onClick={() => askAi("roadmap")}
+              disabled={q.trim().length < 3}
+              className="flex-1 h-10 rounded-lg text-sm font-medium border border-border bg-gradient-to-r from-brand-purple/15 to-brand-blue/15 disabled:opacity-40"
+            >
+              🗺️ Plan
+            </button>
+          </div>
+          <div className="p-3 grid gap-2 overflow-y-auto">
+            {filtered.slice(0, 20).map((p) => (
+              <Link key={p.slug} to="/$page" params={{ page: p.slug }} className="p-3 rounded-lg border border-border hover:bg-accent text-sm">
+                <span className="font-medium" style={{ color: p.color }}>{p.title}</span>
+                <span className="block text-xs text-muted-foreground truncate">{p.details}</span>
+              </Link>
+            ))}
+            {q.trim() && filtered.length === 0 && (
+              <button onClick={() => askAi("search")} className="p-3 rounded-lg border border-border hover:bg-accent text-sm text-left">
+                <span className="font-medium">✨ Ask AI: "{q}"</span>
+                <span className="block text-xs text-muted-foreground">No sections matched — let AI search all 26k tools</span>
+              </button>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -130,7 +210,7 @@ function SideNav({ pathname }: { pathname: string }) {
     ["Meta", PAGES.filter((p) => p.group === "meta")],
   ];
   return (
-    <nav className="text-sm space-y-6 sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-2">
+    <nav className="text-sm space-y-6 md:sticky md:top-20 md:max-h-[calc(100vh-6rem)] md:overflow-y-auto md:pr-2">
       {groups.map(([label, items]) => (
         <div key={label}>
           <div className="text-xs uppercase tracking-wider text-muted-foreground mb-2 px-2">{label}</div>
@@ -143,7 +223,7 @@ function SideNav({ pathname }: { pathname: string }) {
                 <li key={p.slug}>
                   {p.href ? (
                     <a href={p.href} className={cls}>
-                      <span className="inline-block h-2 w-2 rounded-full" style={{ background: p.color }} />
+                      <span className="inline-block h-2 w-2 rounded-full shrink-0" style={{ background: p.color }} />
                       {p.title}
                     </a>
                   ) : (
@@ -153,14 +233,13 @@ function SideNav({ pathname }: { pathname: string }) {
                       className={cls}
                       style={active ? { color: p.color } : undefined}
                     >
-                      <span className="inline-block h-2 w-2 rounded-full" style={{ background: p.color }} />
+                      <span className="inline-block h-2 w-2 rounded-full shrink-0" style={{ background: p.color }} />
                       {p.title}
                     </Link>
                   )}
                 </li>
               );
             })}
-
           </ul>
         </div>
       ))}

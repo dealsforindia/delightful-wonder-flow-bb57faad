@@ -1,6 +1,7 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 import { z } from "zod";
-import { TOOLS, type Tool } from "@/lib/tools-data";
+import { TOOLS } from "@/lib/tools-data.server";
+import type { Tool } from "@/lib/tools-data";
 
 export default defineTool({
   name: "browse_category",

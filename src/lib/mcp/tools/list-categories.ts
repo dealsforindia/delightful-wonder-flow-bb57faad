@@ -1,5 +1,5 @@
 import { defineTool } from "@lovable.dev/mcp-js";
-import { TOOLS } from "@/lib/tools-data";
+import { TOOLS } from "@/lib/tools-data.server";
 
 export default defineTool({
   name: "list_categories",

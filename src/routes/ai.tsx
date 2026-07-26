@@ -1,9 +1,12 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
 import { FmhyLayout } from "@/components/FmhyLayout";
 import { aiSearch } from "@/lib/ai-search.functions";
 import { aiRecipe } from "@/lib/ai-recipe.functions";
-import { TOOLS } from "@/lib/tools-data";
+import { getToolsCount } from "@/lib/tools-data.functions";
+import type { Tool } from "@/lib/tools-data";
 
 type AiSearch = { q?: string; mode?: "search" | "roadmap" };
 
@@ -25,7 +28,6 @@ export const Route = createFileRoute("/ai")({
   component: AiRoute,
 });
 
-type Tool = (typeof TOOLS)[number];
 type SearchHit = { tool: Tool; why: string };
 type RecipeStep = { tool: Tool; action: string; output: string };
 type Recipe = { title: string; steps: RecipeStep[] };
@@ -33,6 +35,8 @@ type Recipe = { title: string; steps: RecipeStep[] };
 function AiRoute() {
   const search = Route.useSearch();
   const navigate = useNavigate();
+  const fetchCount = useServerFn(getToolsCount);
+  const { data: count } = useQuery({ queryKey: ["tools-count"], queryFn: () => fetchCount() });
   const [mode, setMode] = useState<"search" | "roadmap">(search.mode ?? "search");
   const [q, setQ] = useState(search.q ?? "");
   const [loading, setLoading] = useState(false);
@@ -91,7 +95,7 @@ function AiRoute() {
       <div className="max-w-3xl">
         <div className="flex items-center gap-2 text-xs text-muted-foreground">
           <span className="inline-block h-2 w-2 rounded-full bg-brand-pink animate-pulse" />
-          AI Concierge · powered by Gemini · indexes {TOOLS.length.toLocaleString()} tools
+          AI Concierge · powered by Gemini · indexes {count?.toLocaleString() ?? "26,000+"} tools
         </div>
         <h1 className="mt-3 text-4xl md:text-5xl font-extrabold tracking-tight">
           Ask.{" "}
