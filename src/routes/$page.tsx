@@ -12,7 +12,7 @@ export const Route = createFileRoute("/$page")({
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "Not found" }, { name: "robots", content: "noindex" }] };
     const meta = PAGE_MAP[loaderData.slug];
-    const title = meta ? `${meta.title} — FMHY` : "FMHY";
+    const title = meta ? `${meta.title} — Unlocked` : "Unlocked";
     const desc = meta?.details ?? "Free tools and resources from the FMHY community.";
     return {
       meta: [

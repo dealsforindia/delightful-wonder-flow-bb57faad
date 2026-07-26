@@ -17,9 +17,9 @@ export const Route = createFileRoute("/ai")({
   }),
   head: () => ({
     meta: [
-      { title: "AI Concierge — find tools & build roadmaps · FMHY mirror" },
-      { name: "description", content: "Describe what you want to do. AI picks the right free tools from 26,000+ FMHY entries and builds a step-by-step roadmap." },
-      { property: "og:title", content: "FMHY AI Concierge" },
+      { title: "AI Concierge — find tools & build roadmaps · Unlocked" },
+      { name: "description", content: "Describe what you want to do. AI picks the right free tools from 26,000+ Unlocked entries and builds a step-by-step roadmap." },
+      { property: "og:title", content: "Unlocked AI Concierge" },
       { property: "og:description", content: "Ask in plain English. Get tools + a roadmap." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
@@ -104,7 +104,7 @@ function AiRoute() {
           </span>
         </h1>
         <p className="mt-3 text-muted-foreground">
-          Describe your goal in plain English. AI reads the whole FMHY index and picks tools that fit — or builds a multi-step roadmap chaining several of them together.
+          Describe your goal in plain English. AI reads the whole Unlocked index and picks tools that fit — or builds a multi-step roadmap chaining several of them together.
         </p>
 
         <div className="mt-6 inline-flex p-1 rounded-lg border border-border bg-muted">

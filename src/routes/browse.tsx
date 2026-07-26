@@ -31,10 +31,10 @@ export const Route = createFileRoute("/browse")({
   }),
   head: () => ({
     meta: [
-      { title: "Browse all tools — FMHY mirror" },
-      { name: "description", content: "Fuzzy search across every FMHY tool by name, category, or section." },
-      { property: "og:title", content: "Browse all FMHY tools" },
-      { property: "og:description", content: "Fuzzy search across every FMHY tool." },
+      { title: "Browse all tools — Unlocked" },
+      { name: "description", content: "Fuzzy search across every free tool by name, category, or section." },
+      { property: "og:title", content: "Browse all Unlocked tools" },
+      { property: "og:description", content: "Fuzzy search across every free tool." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -82,7 +82,7 @@ function BrowseRoute() {
       <div className="max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Browse all tools</h1>
         <p className="text-muted-foreground mt-2">
-          {tools ? `Search across ${tools.length.toLocaleString()} FMHY entries.` : "Loading the index…"}
+          {tools ? `Search across ${tools.length.toLocaleString()} entries.` : "Loading the index…"}
         </p>
 
         <input

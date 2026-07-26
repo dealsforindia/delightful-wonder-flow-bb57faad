@@ -8,9 +8,9 @@ import { getToolsCount } from "@/lib/tools-data.functions";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "freemediaheckyeah — the largest collection of free stuff on the internet" },
+      { title: "Unlocked — the largest collection of free stuff on the internet" },
       { name: "description", content: "A community mirror of FMHY: 26,000+ free tools, guides and resources across AI, streaming, gaming, learning, privacy, and more." },
-      { property: "og:title", content: "freemediaheckyeah — mirror" },
+      { property: "og:title", content: "Unlocked — the largest collection of free stuff on the internet" },
       { property: "og:description", content: "The largest collection of free stuff on the internet." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -30,8 +30,8 @@ function HomeRoute() {
         <div className="inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-full border border-border bg-muted/50 mb-6">
           🔒 Fight Chat Control
         </div>
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter bg-gradient-to-r from-brand-pink via-brand-purple to-brand-blue bg-clip-text text-transparent">
-          freemediaheckyeah
+        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter bg-gradient-to-r from-brand-pink via-brand-purple to-brand-blue bg-clip-text text-transparent break-words">
+          Unlocked
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">The largest collection of free stuff on the internet.</p>
         <div className="mt-3 text-xs text-muted-foreground">
