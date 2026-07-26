@@ -310,17 +310,17 @@ export async function swapStep(
 
   let parsed: z.infer<typeof SwapSchema> = { i: null, why: null };
   try {
-    const { output } = await generateText({
+    const result = await generateText({
       model,
       system,
       prompt: user,
-      output: Output.object({ schema: SwapSchema }),
+      experimental_output: Output.object({ schema: SwapSchema }),
       temperature: 0.6,
     });
-    parsed = output;
+    parsed = result.experimental_output;
   } catch (error) {
     if (NoObjectGeneratedError.isInstance(error)) {
-      parsed = safeJsonParse<z.infer<typeof SwapSchema>>(error.text, { i: null, why: null });
+      parsed = safeJsonParse<z.infer<typeof SwapSchema>>(error.text ?? "", { i: null, why: null });
     }
   }
 
