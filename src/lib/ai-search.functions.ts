@@ -2,13 +2,17 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { TOOLS } from "./tools-data.server";
 
-const InputSchema = z.object({ query: z.string().min(2).max(300) });
+const InputSchema = z.object({
+  query: z.string().min(2).max(300),
+  refine: z.string().max(300).optional(),
+  previousIds: z.array(z.number().int().nonnegative()).max(20).optional(),
+});
 
-// Lightweight fuzzy prefilter — with 14k+ tools we can't ship the whole index
+// Lightweight fuzzy prefilter — with 26k tools we can't ship the whole index
 // to the LLM every call. Score & keep top 400 candidates, then let AI rank.
-function prefilter(query: string, k = 400) {
-  const q = query.toLowerCase();
-  const terms = q.split(/\s+/).filter(Boolean);
+function prefilter(query: string, refine: string | undefined, k = 500) {
+  const q = (query + " " + (refine ?? "")).toLowerCase();
+  const terms = q.split(/[\s,./;]+/).filter((t) => t.length > 2);
   const scored: Array<{ i: number; s: number }> = [];
   for (let i = 0; i < TOOLS.length; i++) {
     const t = TOOLS[i];
@@ -22,7 +26,6 @@ function prefilter(query: string, k = 400) {
   }
   scored.sort((a, b) => b.s - a.s);
   const picks = scored.slice(0, k);
-  // If prefilter is thin, top up with a random sample so the LLM still gets breadth
   if (picks.length < 80) {
     const step = Math.max(1, Math.floor(TOOLS.length / (k - picks.length)));
     for (let i = 0; i < TOOLS.length && picks.length < k; i += step) picks.push({ i, s: 0 });
@@ -36,15 +39,21 @@ export const aiSearch = createServerFn({ method: "POST" })
     const apiKey = process.env.LOVABLE_API_KEY;
     if (!apiKey) throw new Error("LOVABLE_API_KEY missing");
 
-    const ids = prefilter(data.query);
-    const index = ids.map((i) => `${i}|${TOOLS[i].name}|${TOOLS[i].section}|${TOOLS[i].category}`).join("\n");
+    const ids = prefilter(data.query, data.refine);
+    const index = ids
+      .map((i) => `${i}|${TOOLS[i].name}|${TOOLS[i].section}|${TOOLS[i].category}`)
+      .join("\n");
+    const prior = data.previousIds?.length
+      ? `\nPREVIOUS RESULTS (already shown, prefer different picks unless still best): ${data.previousIds.join(",")}`
+      : "";
+    const refine = data.refine ? `\nUSER REFINEMENT: ${data.refine}` : "";
+
     const system = `You are a search engine over a curated directory of ${TOOLS.length} free tools from FMHY.
 Each line: INDEX|NAME|SECTION|CATEGORY.
 Given a user intent, return the 8 MOST RELEVANT tools ranked best-first.
 Reply ONLY with a JSON array like [{"i":123,"why":"short 6-word reason"}]. No prose, no markdown.`;
 
-    const user = `INTENT: ${data.query}\n\nCANDIDATES:\n${index}`;
-
+    const user = `INTENT: ${data.query}${refine}${prior}\n\nCANDIDATES:\n${index}`;
 
     const res = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",
@@ -83,5 +92,5 @@ Reply ONLY with a JSON array like [{"i":123,"why":"short 6-word reason"}]. No pr
     return parsed
       .filter((r) => Number.isInteger(r.i) && r.i >= 0 && r.i < TOOLS.length)
       .slice(0, 8)
-      .map((r) => ({ tool: TOOLS[r.i], why: String(r.why ?? "").slice(0, 120) }));
+      .map((r) => ({ i: r.i, tool: TOOLS[r.i], why: String(r.why ?? "").slice(0, 120) }));
   });
