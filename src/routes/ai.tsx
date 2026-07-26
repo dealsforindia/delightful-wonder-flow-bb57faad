@@ -69,7 +69,7 @@ function decodeRoadmapFromUrl(r: string): Roadmap | null {
     // Rehydrate tools from indexes we can't reach on client; use minimal shape.
     const steps: RoadmapStep[] = parsed.s.map((s) => ({
       i: s.i,
-      tool: { name: `Tool #${s.i}`, url: "#", category: "", section: "", subcategory: "" } as Tool,
+      tool: { name: `Tool #${s.i}`, url: "#", category: "Misc", section: "" } as Tool,
       action: s.a,
       output: s.o,
       why: s.w ?? "",
