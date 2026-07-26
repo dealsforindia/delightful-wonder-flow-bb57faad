@@ -8,9 +8,9 @@ import { getToolsCount } from "@/lib/tools-data.functions";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "freemediaheckyeah — the largest collection of free stuff on the internet" },
+      { title: "Unlocked — the largest collection of free stuff on the internet" },
       { name: "description", content: "A community mirror of FMHY: 26,000+ free tools, guides and resources across AI, streaming, gaming, learning, privacy, and more." },
-      { property: "og:title", content: "freemediaheckyeah — mirror" },
+      { property: "og:title", content: "Unlocked — the largest collection of free stuff on the internet" },
       { property: "og:description", content: "The largest collection of free stuff on the internet." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
