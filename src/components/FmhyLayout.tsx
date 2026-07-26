@@ -171,7 +171,7 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
       )}
 
       {searchOpen && (
-        <div className="fixed inset-0 z-50 md:hidden bg-background">
+        <div className="fixed inset-0 z-50 md:hidden bg-background flex flex-col">
           <div className="flex items-center gap-2 p-3 border-b border-border">
           <input
             autoFocus
