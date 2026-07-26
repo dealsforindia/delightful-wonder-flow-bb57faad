@@ -24,11 +24,12 @@ export function createSearchIndex(tools: Tool[]) {
 }
 
 export function searchTools(index: Fuse<Tool>, tools: Tool[], filters: SearchFilters): Tool[] {
-  const { q, category, sort } = filters;
+  const { q, category } = filters;
+  const effectiveSort = q?.trim() ? (filters.sort ?? "relevance") : "name";
   const base = category ? tools.filter((t) => t.category.toLowerCase() === category.toLowerCase()) : tools;
 
   if (!q?.trim()) {
-    return sortResults(base, sort ?? "name");
+    return sortResults(base, effectiveSort);
   }
 
   const results = index.search(q.trim());
@@ -36,12 +37,7 @@ export function searchTools(index: Fuse<Tool>, tools: Tool[], filters: SearchFil
   if (category) {
     out = out.filter((t) => t.category.toLowerCase() === category.toLowerCase());
   }
-  if (sort === "name") {
-    out.sort((a, b) => a.name.localeCompare(b.name));
-  } else if (sort === "category") {
-    out.sort((a, b) => a.category.localeCompare(b.category) || a.name.localeCompare(b.name));
-  }
-  return out;
+  return sortResults(out, effectiveSort);
 }
 
 function sortResults(tools: Tool[], sort: "relevance" | "name" | "category"): Tool[] {
