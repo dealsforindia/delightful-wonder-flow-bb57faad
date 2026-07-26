@@ -1,6 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-import { TOOLS } from "./tools-data";
+import { TOOLS } from "./tools-data.server";
 
 const InputSchema = z.object({ goal: z.string().min(3).max(400) });
 
