@@ -137,21 +137,30 @@ function SideNav({ pathname }: { pathname: string }) {
           <ul className="space-y-0.5">
             {items.map((p) => {
               const to = `/${p.slug}`;
-              const active = pathname === to;
+              const active = !p.href && pathname === to;
+              const cls = `flex items-center gap-2 px-2 py-1.5 rounded-md border-l-2 ${active ? "bg-accent border-current font-medium" : "border-transparent hover:bg-accent/60"}`;
               return (
                 <li key={p.slug}>
-                  <Link
-                    to="/$page"
-                    params={{ page: p.slug }}
-                    className={`flex items-center gap-2 px-2 py-1.5 rounded-md border-l-2 ${active ? "bg-accent border-current font-medium" : "border-transparent hover:bg-accent/60"}`}
-                    style={active ? { color: p.color } : undefined}
-                  >
-                    <span className="inline-block h-2 w-2 rounded-full" style={{ background: p.color }} />
-                    {p.title}
-                  </Link>
+                  {p.href ? (
+                    <a href={p.href} className={cls}>
+                      <span className="inline-block h-2 w-2 rounded-full" style={{ background: p.color }} />
+                      {p.title}
+                    </a>
+                  ) : (
+                    <Link
+                      to="/$page"
+                      params={{ page: p.slug }}
+                      className={cls}
+                      style={active ? { color: p.color } : undefined}
+                    >
+                      <span className="inline-block h-2 w-2 rounded-full" style={{ background: p.color }} />
+                      {p.title}
+                    </Link>
+                  )}
                 </li>
               );
             })}
+
           </ul>
         </div>
       ))}
