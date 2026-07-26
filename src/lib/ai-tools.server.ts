@@ -65,20 +65,20 @@ export async function expandKeywords(apiKey: string, goal: string): Promise<stri
   const gateway = createLovableAiGatewayProvider(apiKey);
   const model = gateway(KEYWORD_MODEL);
   try {
-    const { output } = await generateText({
+    const result = await generateText({
       model,
       system:
         'Break the user goal into 3-7 short workflow keywords, each 1-3 words, covering distinct sub-tasks needed end-to-end. Reply with JSON only: {"keywords":["...","..."]}. No prose.',
       prompt: goal,
-      output: Output.object({
+      experimental_output: Output.object({
         schema: z.object({ keywords: z.array(z.string()) }),
       }),
       temperature: 0.3,
     });
-    return output.keywords.map((k) => String(k).toLowerCase()).filter(Boolean).slice(0, 8);
+    return result.experimental_output.keywords.map((k) => String(k).toLowerCase()).filter(Boolean).slice(0, 8);
   } catch (error) {
     if (NoObjectGeneratedError.isInstance(error)) {
-      const parsed = safeJsonParse<{ keywords?: string[] }>(error.text, {});
+      const parsed = safeJsonParse<{ keywords?: string[] }>(error.text ?? "", {});
       if (Array.isArray(parsed.keywords)) {
         return parsed.keywords.map((k) => String(k).toLowerCase()).filter(Boolean).slice(0, 8);
       }
