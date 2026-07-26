@@ -124,17 +124,17 @@ Reply ONLY with JSON matching the schema. No prose, no markdown.`;
 
   let parsed: z.infer<typeof RankSchema> = { results: [] };
   try {
-    const { output } = await generateText({
+    const result = await generateText({
       model,
       system,
       prompt: user,
-      output: Output.object({ schema: RankSchema }),
+      experimental_output: Output.object({ schema: RankSchema }),
       temperature: 0.2,
     });
-    parsed = output;
+    parsed = result.experimental_output;
   } catch (error) {
     if (NoObjectGeneratedError.isInstance(error)) {
-      parsed = safeJsonParse<z.infer<typeof RankSchema>>(error.text, { results: [] });
+      parsed = safeJsonParse<z.infer<typeof RankSchema>>(error.text ?? "", { results: [] });
     }
   }
 
