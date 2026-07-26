@@ -74,7 +74,7 @@ function BrowseRoute() {
   });
 
   function update(params: Partial<BrowseSearch>) {
-    navigate({ search: (prev) => ({ ...prev, ...params }) });
+    navigate({ search: (prev: BrowseSearch) => ({ ...prev, ...params }) });
   }
 
   return (
