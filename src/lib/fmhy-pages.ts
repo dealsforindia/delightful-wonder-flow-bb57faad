@@ -11,7 +11,7 @@ export interface FmhyPage {
 
 export const PAGES: FmhyPage[] = [
   { slug: "privacy", title: "Adblocking / Privacy", short: "Privacy", details: "Learn how to block ads, trackers and other nasty things.", color: "#D05A6E", icon: "shield", group: "main" },
-  { slug: "ai", title: "Artificial Intelligence", short: "AI", details: "Explore the world of AI and machine learning.", color: "#91989F", icon: "bot", group: "main" },
+  { slug: "artificial-intelligence", title: "Artificial Intelligence", short: "AI", details: "Explore the world of AI and machine learning.", color: "#91989F", icon: "bot", group: "main" },
   { slug: "video", title: "Streaming", short: "Streaming", details: "Stream, download, torrent and binge all your favourite movies and shows!", color: "#7aa2f7", icon: "tv", group: "main" },
   { slug: "audio", title: "Listening", short: "Audio", details: "Stream, download and torrent songs, podcasts and more!", color: "#7c82fe", icon: "music", group: "main" },
   { slug: "gaming", title: "Gaming", short: "Gaming", details: "Download and play all your favourite games or emulate some old but gold ones!", color: "#49d3e9", icon: "gamepad", group: "main" },
