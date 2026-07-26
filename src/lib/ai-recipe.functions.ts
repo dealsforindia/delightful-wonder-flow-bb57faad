@@ -24,7 +24,7 @@ function prefilter(goal: string, k = 500) {
 }
 
 export const aiRecipe = createServerFn({ method: "POST" })
-  .inputValidator((data) => InputSchema.parse(data))
+  .validator((data) => InputSchema.parse(data))
   .handler(async ({ data }) => {
     const apiKey = process.env.LOVABLE_API_KEY;
     if (!apiKey) throw new Error("LOVABLE_API_KEY missing");
