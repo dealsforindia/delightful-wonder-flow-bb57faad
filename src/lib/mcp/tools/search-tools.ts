@@ -1,6 +1,7 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 import { z } from "zod";
-import { TOOLS, type Tool } from "@/lib/tools-data.server";
+import { TOOLS } from "@/lib/tools-data.server";
+import type { Tool } from "@/lib/tools-data";
 
 function score(hay: string, needle: string): number {
   if (!needle) return 0;

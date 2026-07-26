@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { FmhyLayout } from "@/components/FmhyLayout";
 import { PAGES } from "@/lib/fmhy-pages";
-import { TOOLS } from "@/lib/tools-data";
+import { getToolsCount } from "@/lib/tools-data.functions";
 
 export const Route = createFileRoute("/")({
   head: () => ({

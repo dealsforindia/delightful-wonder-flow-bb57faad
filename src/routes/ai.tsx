@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import { FmhyLayout } from "@/components/FmhyLayout";
 import { aiSearch } from "@/lib/ai-search.functions";
 import { aiRecipe } from "@/lib/ai-recipe.functions";
-import { TOOLS } from "@/lib/tools-data";
+import { getToolsCount } from "@/lib/tools-data.functions";
+import type { Tool } from "@/lib/tools-data";
 
 type AiSearch = { q?: string; mode?: "search" | "roadmap" };
 
