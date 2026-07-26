@@ -137,7 +137,9 @@ Given a user intent, return the ${limit} MOST RELEVANT tools ranked best-first a
         error.text ?? "",
         { results: [] },
       );
-      parsed = Array.isArray(raw) ? { results: raw } : raw;
+      parsed = Array.isArray(raw)
+        ? { results: raw.map((r) => ({ i: r.i, why: r.why ?? "" })) }
+        : raw;
     }
   }
 
