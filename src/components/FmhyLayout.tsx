@@ -80,6 +80,15 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
               🗺️ Plan
             </button>
           </div>
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            title="Toggle theme"
+            className="ml-2 h-9 w-9 grid place-items-center rounded-lg border border-border hover:bg-accent text-sm"
+          >
+            {dark ? "☀️" : "🌙"}
+          </button>
+
         </div>
         {q && (
           <div className="border-t border-border bg-popover">
