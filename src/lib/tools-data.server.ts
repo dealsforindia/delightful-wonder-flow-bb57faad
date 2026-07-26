@@ -1,16 +1,4 @@
-// Auto-generated from FMHY (github.com/fmhy/edit) — complete link scrape
-export type Category =
-  | "AI" | "Audio" | "Code" | "Downloads" | "Files" | "Gaming" | "Guides" | "Image" | "Internet" | "Learning" | "Linux/Mac" | "Misc" | "Mobile" | "Non-English" | "Privacy" | "Reading" | "Social" | "Storage" | "System" | "Torrenting" | "Video" | "Writing";
-
-export interface Tool {
-  name: string;
-  url: string;
-  category: Category;
-  section: string;
-}
-
-export const CATEGORIES: Category[] = ["AI", "Audio", "Code", "Downloads", "Files", "Gaming", "Guides", "Image", "Internet", "Learning", "Linux/Mac", "Misc", "Mobile", "Non-English", "Privacy", "Reading", "Social", "Storage", "System", "Torrenting", "Video", "Writing"];
-
+import type { Tool, Category } from "./tools-data";
 export const TOOLS: Tool[] = ([
   { n:"◄◄ Back to Wiki Index", u:"https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/index", c:"AI", s:"General" },
   { n:"Qwen Studio", u:"https://chat.qwen.ai/", c:"AI", s:"▷ Official Model Sites" },
