@@ -43,6 +43,11 @@ export const PAGES: FmhyPage[] = [
 
   { slug: "beginners-guide", title: "Beginners Guide", short: "Guide", details: "New to FMHY? Start here.", color: "#7aa2f7", icon: "book", group: "meta" },
   { slug: "posts", title: "Posts", short: "Posts", details: "Community write-ups and news.", color: "#DDD23B", icon: "newspaper", group: "meta" },
+  { slug: "faq", title: "FAQ", short: "FAQ", details: "Frequently asked questions about FMHY.", color: "#7c82fe", icon: "help", group: "meta" },
+  { slug: "contributing", title: "Contributing", short: "Contribute", details: "How to help improve and grow the wiki.", color: "#3ccd93", icon: "hand", group: "meta" },
+  { slug: "backups", title: "Backups", short: "Backups", details: "Mirrors and backups of the wiki.", color: "#BEC23F", icon: "archive", group: "meta" },
+  { slug: "selfhosting", title: "Self-Hosting", short: "Self-Host", details: "Host FMHY yourself for full offline access.", color: "#49d3e9", icon: "server", group: "meta" },
+  { slug: "wallpapers", title: "Wallpapers", short: "Wallpapers", details: "Community-curated wallpaper packs.", color: "#8A6BBE", icon: "image", group: "meta" },
   { slug: "sandbox", title: "Sandbox", short: "Sandbox", details: "Experimental / staged edits.", color: "#91989F", icon: "beaker", group: "meta" },
   { slug: "feedback", title: "Feedback", short: "Feedback", details: "Report issues or suggest changes.", color: "#D05A6E", icon: "message", group: "meta" },
   { slug: "unsafe", title: "Unsafe Sites", short: "Unsafe", details: "Sites you should probably avoid.", color: "#D05A6E", icon: "alert", group: "meta" },
@@ -50,3 +55,4 @@ export const PAGES: FmhyPage[] = [
 ];
 
 export const PAGE_MAP: Record<string, FmhyPage> = Object.fromEntries(PAGES.map((p) => [p.slug, p]));
+
