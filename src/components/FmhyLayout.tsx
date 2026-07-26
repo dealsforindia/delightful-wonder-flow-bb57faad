@@ -156,14 +156,15 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
       {searchOpen && (
         <div className="fixed inset-0 z-50 md:hidden bg-background">
           <div className="flex items-center gap-2 p-3 border-b border-border">
-            <input
-              autoFocus
-              value={q}
-              onChange={(e) => setQ(e.target.value)}
-              onKeyDown={(e) => { if (e.key === "Enter") askAi("search"); }}
-              placeholder="Search sections or ask AI…"
-              className="flex-1 h-10 px-3 rounded-lg bg-muted border border-border text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-            />
+          <input
+            autoFocus
+            data-testid="mobile-search"
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            onKeyDown={(e) => { if (e.key === "Enter") askAi("search"); }}
+            placeholder="Search sections or ask AI…"
+            className="flex-1 h-10 px-3 rounded-lg bg-muted border border-border text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+          />
             <button onClick={() => setSearchOpen(false)} className="h-10 px-3 rounded-lg border border-border hover:bg-accent text-sm">Cancel</button>
           </div>
           <div className="p-3 flex gap-2">
