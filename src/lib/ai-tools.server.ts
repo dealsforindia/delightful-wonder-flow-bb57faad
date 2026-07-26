@@ -223,17 +223,17 @@ Reply ONLY with JSON matching the schema. No prose, no markdown fences.`;
 
   let parsed: z.infer<typeof RoadmapSchema> = { title: null, steps: [] };
   try {
-    const { output } = await generateText({
+    const result = await generateText({
       model,
       system,
       prompt: user,
-      output: Output.object({ schema: RoadmapSchema }),
+      experimental_output: Output.object({ schema: RoadmapSchema }),
       temperature: 0.7,
     });
-    parsed = output;
+    parsed = result.experimental_output;
   } catch (error) {
     if (NoObjectGeneratedError.isInstance(error)) {
-      parsed = safeJsonParse<z.infer<typeof RoadmapSchema>>(error.text, { title: null, steps: [] });
+      parsed = safeJsonParse<z.infer<typeof RoadmapSchema>>(error.text ?? "", { title: null, steps: [] });
     }
   }
 
