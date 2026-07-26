@@ -1,9 +1,10 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import { PAGES } from "@/lib/fmhy-pages";
 
 export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: ReactNode }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const navigate = useNavigate();
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
 
@@ -12,6 +13,13 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
   const filtered = q.trim()
     ? PAGES.filter((p) => (p.title + " " + p.short + " " + p.details).toLowerCase().includes(q.toLowerCase()))
     : PAGES;
+
+  function askAi(mode: "search" | "roadmap") {
+    const query = q.trim();
+    if (query.length < 3) return;
+    navigate({ to: "/ai", search: { q: query, mode } });
+    setQ("");
+  }
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -31,12 +39,31 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
           </nav>
 
           <div className="flex-1" />
-          <input
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-            placeholder="Search sections…"
-            className="hidden md:block w-64 h-9 px-3 rounded-lg bg-muted border border-border text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-          />
+          <div className="hidden md:flex items-stretch">
+            <input
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+              onKeyDown={(e) => { if (e.key === "Enter") askAi("search"); }}
+              placeholder="Search sections or ask AI…"
+              className="w-72 h-9 px-3 rounded-l-lg bg-muted border border-border text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+            />
+            <button
+              onClick={() => askAi("search")}
+              disabled={q.trim().length < 3}
+              title="Ask AI to find tools"
+              className="h-9 px-2.5 text-xs font-medium border-y border-border bg-gradient-to-r from-brand-pink/15 to-brand-purple/15 hover:from-brand-pink/25 hover:to-brand-purple/25 disabled:opacity-40"
+            >
+              ✨ Ask
+            </button>
+            <button
+              onClick={() => askAi("roadmap")}
+              disabled={q.trim().length < 3}
+              title="Build a step-by-step plan"
+              className="h-9 px-2.5 text-xs font-medium border rounded-r-lg border-border bg-gradient-to-r from-brand-purple/15 to-brand-blue/15 hover:from-brand-purple/25 hover:to-brand-blue/25 disabled:opacity-40"
+            >
+              🗺️ Plan
+            </button>
+          </div>
         </div>
         {q && (
           <div className="border-t border-border bg-popover">
@@ -47,7 +74,12 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
                   <span className="block text-xs text-muted-foreground truncate">{p.details}</span>
                 </Link>
               ))}
-              {filtered.length === 0 && <span className="text-sm text-muted-foreground">No matches</span>}
+              {filtered.length === 0 && (
+                <button onClick={() => askAi("search")} className="p-2 rounded hover:bg-accent text-sm text-left col-span-full">
+                  <span className="font-medium">✨ Ask AI: "{q}"</span>
+                  <span className="block text-xs text-muted-foreground">No sections matched — let AI search all 26k tools</span>
+                </button>
+              )}
             </div>
           </div>
         )}

@@ -1,11 +1,17 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { FmhyLayout } from "@/components/FmhyLayout";
 import { aiSearch } from "@/lib/ai-search.functions";
 import { aiRecipe } from "@/lib/ai-recipe.functions";
 import { TOOLS } from "@/lib/tools-data";
 
+type AiSearch = { q?: string; mode?: "search" | "roadmap" };
+
 export const Route = createFileRoute("/ai")({
+  validateSearch: (search: Record<string, unknown>): AiSearch => ({
+    q: typeof search.q === "string" ? search.q : undefined,
+    mode: search.mode === "roadmap" ? "roadmap" : search.mode === "search" ? "search" : undefined,
+  }),
   head: () => ({
     meta: [
       { title: "AI Concierge — find tools & build roadmaps · FMHY mirror" },
@@ -25,23 +31,23 @@ type RecipeStep = { tool: Tool; action: string; output: string };
 type Recipe = { title: string; steps: RecipeStep[] };
 
 function AiRoute() {
-  const [mode, setMode] = useState<"search" | "roadmap">("search");
-  const [q, setQ] = useState("");
+  const search = Route.useSearch();
+  const navigate = useNavigate();
+  const [mode, setMode] = useState<"search" | "roadmap">(search.mode ?? "search");
+  const [q, setQ] = useState(search.q ?? "");
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState<string | null>(null);
   const [hits, setHits] = useState<SearchHit[] | null>(null);
   const [recipe, setRecipe] = useState<Recipe | null>(null);
 
-  async function run(e?: React.FormEvent) {
-    e?.preventDefault();
-    const query = q.trim();
+  async function execute(query: string, m: "search" | "roadmap") {
     if (query.length < 3) return;
     setLoading(true);
     setErr(null);
     setHits(null);
     setRecipe(null);
     try {
-      if (mode === "search") {
+      if (m === "search") {
         const res = await aiSearch({ data: { query } });
         setHits(res as SearchHit[]);
       } else {
@@ -54,6 +60,26 @@ function AiRoute() {
       setLoading(false);
     }
   }
+
+  // Auto-run when arriving with ?q=&mode= from the header search
+  useEffect(() => {
+    if (search.q && search.q.trim().length >= 3) {
+      const m = search.mode ?? "search";
+      setMode(m);
+      setQ(search.q);
+      execute(search.q.trim(), m);
+    }
+     
+  }, [search.q, search.mode]);
+
+  async function run(e?: React.FormEvent) {
+    e?.preventDefault();
+    const query = q.trim();
+    if (query.length < 3) return;
+    navigate({ to: "/ai", search: { q: query, mode }, replace: true });
+    execute(query, mode);
+  }
+
 
   const examples =
     mode === "search"
