@@ -35,6 +35,8 @@ type Recipe = { title: string; steps: RecipeStep[] };
 function AiRoute() {
   const search = Route.useSearch();
   const navigate = useNavigate();
+  const fetchCount = useServerFn(getToolsCount);
+  const { data: count } = useQuery({ queryKey: ["tools-count"], queryFn: () => fetchCount() });
   const [mode, setMode] = useState<"search" | "roadmap">(search.mode ?? "search");
   const [q, setQ] = useState(search.q ?? "");
   const [loading, setLoading] = useState(false);
@@ -93,7 +95,7 @@ function AiRoute() {
       <div className="max-w-3xl">
         <div className="flex items-center gap-2 text-xs text-muted-foreground">
           <span className="inline-block h-2 w-2 rounded-full bg-brand-pink animate-pulse" />
-          AI Concierge · powered by Gemini · indexes {TOOLS.length.toLocaleString()} tools
+          AI Concierge · powered by Gemini · indexes {count?.toLocaleString() ?? "26,000+"} tools
         </div>
         <h1 className="mt-3 text-4xl md:text-5xl font-extrabold tracking-tight">
           Ask.{" "}
