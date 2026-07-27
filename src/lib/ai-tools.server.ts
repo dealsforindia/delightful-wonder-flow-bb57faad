@@ -196,17 +196,13 @@ export async function buildRoadmap(
   },
 ): Promise<RoadmapResult> {
   const keywords = await expandKeywords(apiKey, goal);
-  const goalTerms = goal.toLowerCase().split(/\s+/).filter((t) => t.length > 2);
   const perKeyword = keywords.map((k) => k.split(/\s+/).filter(Boolean));
-  const ids = scoreTools(goal, 200);
-  const merged = new Set<number>(ids);
+  const merged = new Set<number>(scoreTools(goal, 200));
   for (const kw of perKeyword) {
-    for (const id of scoreTools(kw.join(" "), 30)) merged.add(id);
+    for (const id of scoreTools(kw.join(" "), 40)) merged.add(id);
   }
-  const step = Math.max(1, Math.floor(TOOLS.length / 200));
-  const seen = new Set(merged);
-  for (let i = 0; i < TOOLS.length && seen.size < 700; i += step) seen.add(i);
-  const finalIds = Array.from(seen);
+  const finalIds = Array.from(merged);
+
 
   const index = finalIds
     .map((i) => `${i}|${TOOLS[i].name}|${TOOLS[i].category}|${TOOLS[i].section}`)
