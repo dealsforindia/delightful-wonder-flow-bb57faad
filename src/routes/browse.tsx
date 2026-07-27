@@ -79,7 +79,7 @@ function BrowseRoute() {
 
   return (
     <FmhyLayout>
-      <div className="max-w-3xl">
+      <div>
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Browse all tools</h1>
         <p className="text-muted-foreground mt-2">
           {tools ? `Search across ${tools.length.toLocaleString()} entries.` : "Loading the index…"}
@@ -90,7 +90,7 @@ function BrowseRoute() {
           value={search.q ?? ""}
           onChange={(e) => update({ q: e.target.value || undefined })}
           placeholder="Search anything…"
-          className="mt-6 w-full h-12 px-4 rounded-xl bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-ring"
+          className="mt-6 w-full max-w-2xl h-12 px-4 rounded-xl bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-ring"
         />
 
         <div className="mt-4 flex flex-col sm:flex-row sm:items-center gap-3">

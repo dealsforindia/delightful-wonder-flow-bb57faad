@@ -128,7 +128,7 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
         )}
       </header>
 
-      <div className="mx-auto max-w-[1400px] px-4 md:px-6 grid grid-cols-1 md:grid-cols-[220px_1fr] lg:grid-cols-[240px_1fr_260px] gap-6 md:gap-8 py-6 md:py-8">
+      <div className={`mx-auto max-w-[1400px] px-4 md:px-6 grid grid-cols-1 md:grid-cols-[220px_1fr] gap-6 md:gap-8 py-6 md:py-8 ${aside ? "lg:grid-cols-[240px_1fr_260px]" : "lg:grid-cols-[240px_1fr]"}`}>
         <aside className="hidden md:block">
           <SideNav pathname={pathname} />
         </aside>
