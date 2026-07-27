@@ -11,7 +11,10 @@ for (const [path, content] of Object.entries(raw)) {
 }
 
 // ── source-identifying links get flattened to plain text ─────────────
-const SOURCE_HOST = /^https?:\/\/(?:[^)\s]*\.)?(?:fmhy\.(?:net|pages\.dev|xyz|lol|si|vercel\.app)|rentry\.co\/FMHY|rentry\.org\/FMHY|reddit\.com\/r\/FREEMEDIAHECKYEAH|github\.com\/fmhy)/i;
+const SOURCE_HOST = /^https?:\/\/(?:[^)\s]*\.)?(?:fmhy\.(?:net|pages\.dev|xyz|lol|si|vercel\.app)|rentry\.co\/FMHY|rentry\.org\/(?:FMHY|ircfmhy)|reddit\.com\/r\/FREEMEDIAHECKYEAH|github\.com\/fmhy|cdn\.jsdelivr\.net\/gh\/fmhy)/i;
+// broad URL matcher for bare/autolinked URLs anywhere in text
+const SOURCE_URL_ANY = /https?:\/\/[^\s)>\]"']*(?:fmhy|freemediaheckyeah|rentry\.(?:co|org)\/(?:FMHY|ircfmhy))[^\s)>\]"']*/gi;
+
 
 // ── section-index across all pages so we can inline "link-only" headings
 function normalizeKey(s: string): string {
@@ -111,13 +114,28 @@ function clean(md: string): string {
     return m;
   });
 
+  // Kill VitePress <Wallpaper> / <img> tags that reference fmhy CDN
+  out = out.replace(/<Wallpaper[\s\S]*?\/>\s*/gi, "");
+  out = out.replace(/<img[^>]*src=["'][^"']*(?:fmhy|freemediaheckyeah)[^"']*["'][^>]*>/gi, "");
+
+  // Strip bare/autolinked URLs pointing to source-identifying hosts
+  out = out.replace(/<(https?:\/\/[^>]+)>/g, (m, url) => (SOURCE_URL_ANY.test(url) ? "" : m));
+  SOURCE_URL_ANY.lastIndex = 0;
+  out = out.replace(SOURCE_URL_ANY, "");
+
+  // Drop shell/code lines that clone the upstream repo
+  out = out.replace(/^.*git\s+clone\s+https?:\/\/[^\s]*fmhy[^\s]*.*$/gim, "");
+  out = out.replace(/^\s*link:\s*https?:\/\/[^\s]*(?:fmhy|freemediaheckyeah)[^\s]*\s*$/gim, "");
+
   // Words: don't out the source
-  out = out.replace(/\bFreeMediaHeckYeah\b/g, "Unlocked");
+  out = out.replace(/\bFreeMediaHeckYeah\b/gi, "Unlocked");
   out = out.replace(/\br\/FREEMEDIAHECKYEAH\b/gi, "Unlocked");
-  out = out.replace(/\bFMHY\b/g, "Unlocked");
+  out = out.replace(/\bFMHY\b/gi, "Unlocked");
+  out = out.replace(/\bfmhy\b/gi, "unlocked");
 
   return out;
 }
+
 
 export function getPageMarkdown(slug: string): string | null {
   const raw = RAW_MAP[slug];
