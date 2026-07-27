@@ -4,9 +4,9 @@ import { createLovableAiGatewayProvider } from "./ai-gateway.server";
 import { TOOLS } from "./tools-data.server";
 import type { Tool } from "./tools-data";
 
-const KEYWORD_MODEL = "google/gemini-3.1-flash-lite";
-const RANKING_MODEL = "google/gemini-3.6-flash";
-const PLANNING_MODEL = "google/gemini-3.6-flash";
+const KEYWORD_MODEL = "google/gemini-2.5-flash";
+const RANKING_MODEL = "google/gemini-2.5-flash";
+const PLANNING_MODEL = "google/gemini-2.5-flash";
 
 function safeJsonParse<T>(text: string, fallback: T): T {
   const cleaned = text.replace(/```json|```/g, "").trim();

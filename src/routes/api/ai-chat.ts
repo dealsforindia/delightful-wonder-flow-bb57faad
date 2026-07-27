@@ -22,9 +22,8 @@ export const Route = createFileRoute("/api/ai-chat")({
         }
 
         const gateway = createLovableAiGatewayProvider();
-        // gemini-3.6-flash = latest-gen Flash, strong reasoning, works on Gemini free tier.
-        // Pro-preview requires a paid Gemini plan (free tier quota = 0), so we stay on Flash.
-        const model = gateway("google/gemini-3.6-flash");
+        // Real Gemini model id available on Google's free tier.
+        const model = gateway("google/gemini-2.5-flash");
 
         const mode = body.mode === "roadmap" ? "roadmap" : body.mode === "search" ? "search" : "auto";
         const modeHint =
@@ -178,9 +177,6 @@ ${modeHint}${memoryBlock}`;
           tools,
           stopWhen: stepCountIs(12),
           temperature: 0.4,
-          providerOptions: {
-            lovable: { reasoning: { effort: "low" } },
-          },
         });
 
         return result.toUIMessageStreamResponse({
