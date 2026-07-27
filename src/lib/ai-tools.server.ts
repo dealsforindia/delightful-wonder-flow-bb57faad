@@ -197,12 +197,18 @@ export async function buildRoadmap(
 ): Promise<RoadmapResult> {
   const keywords = await expandKeywords(apiKey, goal);
   const perKeyword = keywords.map((k) => k.split(/\s+/).filter(Boolean));
-  const merged = new Set<number>(scoreTools(goal, 200));
+  const merged = new Set<number>(scoreTools(goal, 300));
   for (const kw of perKeyword) {
-    for (const id of scoreTools(kw.join(" "), 40)) merged.add(id);
+    for (const id of scoreTools(kw.join(" "), 80)) merged.add(id);
   }
-  const finalIds = Array.from(merged);
+  let finalIds = Array.from(merged);
 
+  // If fuzzy matching is too sparse, pull a wider ranked net from the LLM.
+  if (finalIds.length < 20) {
+    const ranked = await rankTools(goal, options?.refine ?? undefined, 60, undefined, apiKey);
+    for (const r of ranked) merged.add(r.i);
+    finalIds = Array.from(merged);
+  }
 
   const index = finalIds
     .map((i) => `${i}|${TOOLS[i].name}|${TOOLS[i].category}|${TOOLS[i].section}`)
@@ -246,7 +252,7 @@ Reply ONLY with JSON matching the schema. No prose, no markdown fences.`;
     }
   }
 
-  const steps = (parsed.steps ?? [])
+  let steps = (parsed.steps ?? [])
     .filter((s) => Number.isInteger(s.i) && s.i >= 0 && s.i < TOOLS.length)
     .slice(0, 6)
     .map((s) => {
@@ -263,6 +269,25 @@ Reply ONLY with JSON matching the schema. No prose, no markdown fences.`;
         estMinutes: Math.max(5, Math.min(240, Math.round(Number(s.estMinutes ?? 20)))),
       };
     });
+
+  // Fallback: if the AI couldn't compose a chain, build one from the best ranked matches.
+  if (steps.length === 0 && finalIds.length > 0) {
+    const ranked = await rankTools(goal, options?.refine ?? undefined, 6, undefined, apiKey);
+    steps = ranked.slice(0, 6).map((r, idx) => {
+      const t = r.tool;
+      return {
+        i: r.i,
+        name: t.name,
+        url: t.url,
+        category: t.category,
+        section: t.section,
+        action: `Use ${t.name} for the "${goal}" workflow — ${t.section}.`,
+        output: `Completed work with ${t.name}`,
+        why: r.why,
+        estMinutes: 20 + idx * 10,
+      };
+    });
+  }
 
   return {
     goal,
