@@ -35,13 +35,9 @@ export function prefilter(query: string, refine: string | undefined, k = 500): n
     if (s > 0) scored.push({ i, s });
   }
   scored.sort((a, b) => b.s - a.s);
-  const picks = scored.slice(0, k);
-  if (picks.length < 80) {
-    const step = Math.max(1, Math.floor(TOOLS.length / (k - picks.length)));
-    for (let i = 0; i < TOOLS.length && picks.length < k; i += step) picks.push({ i, s: 0 });
-  }
-  return picks.map((p) => p.i);
+  return scored.slice(0, k).map((p) => p.i);
 }
+
 
 export function scoreTools(query: string, k: number): number[] {
   const terms = query.toLowerCase().split(/[\s,./;]+/).filter((t) => t.length > 2);
