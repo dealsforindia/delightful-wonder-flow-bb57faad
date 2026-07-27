@@ -252,7 +252,7 @@ Reply ONLY with JSON matching the schema. No prose, no markdown fences.`;
     }
   }
 
-  const steps = (parsed.steps ?? [])
+  let steps = (parsed.steps ?? [])
     .filter((s) => Number.isInteger(s.i) && s.i >= 0 && s.i < TOOLS.length)
     .slice(0, 6)
     .map((s) => {
@@ -269,6 +269,25 @@ Reply ONLY with JSON matching the schema. No prose, no markdown fences.`;
         estMinutes: Math.max(5, Math.min(240, Math.round(Number(s.estMinutes ?? 20)))),
       };
     });
+
+  // Fallback: if the AI couldn't compose a chain, build one from the best ranked matches.
+  if (steps.length === 0 && finalIds.length > 0) {
+    const ranked = await rankTools(goal, options?.refine ?? undefined, 6, undefined, apiKey);
+    steps = ranked.slice(0, 6).map((r, idx) => {
+      const t = r.tool;
+      return {
+        i: r.i,
+        name: t.name,
+        url: t.url,
+        category: t.category,
+        section: t.section,
+        action: `Use ${t.name} for the "${goal}" workflow — ${t.section}.`,
+        output: `Completed work with ${t.name}`,
+        why: r.why,
+        estMinutes: 20 + idx * 10,
+      };
+    });
+  }
 
   return {
     goal,
