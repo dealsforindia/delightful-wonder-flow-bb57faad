@@ -33,10 +33,7 @@ const SwapSchema = z.object({
 export const aiRecipe = createServerFn({ method: "POST" })
   .validator((data) => GoalSchema.parse(data))
   .handler(async ({ data }) => {
-    const apiKey = process.env.LOVABLE_API_KEY;
-    if (!apiKey) throw new Error("LOVABLE_API_KEY missing");
-
-    const roadmap = await buildRoadmap(data.goal, apiKey, {
+    const roadmap = await buildRoadmap(data.goal, "", {
       refine: data.refine,
       previous: data.previous,
     });
