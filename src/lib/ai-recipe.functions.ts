@@ -33,10 +33,7 @@ const SwapSchema = z.object({
 export const aiRecipe = createServerFn({ method: "POST" })
   .validator((data) => GoalSchema.parse(data))
   .handler(async ({ data }) => {
-    const apiKey = process.env.LOVABLE_API_KEY;
-    if (!apiKey) throw new Error("LOVABLE_API_KEY missing");
-
-    const roadmap = await buildRoadmap(data.goal, apiKey, {
+    const roadmap = await buildRoadmap(data.goal, "", {
       refine: data.refine,
       previous: data.previous,
     });
@@ -59,10 +56,7 @@ export const aiRecipe = createServerFn({ method: "POST" })
 export const aiSwapStep = createServerFn({ method: "POST" })
   .validator((data) => SwapSchema.parse(data))
   .handler(async ({ data }) => {
-    const apiKey = process.env.LOVABLE_API_KEY;
-    if (!apiKey) throw new Error("LOVABLE_API_KEY missing");
-
-    const result = await swapStep(data, apiKey);
+    const result = await swapStep(data, "");
     if ("tool" in result && result.tool === null) return { tool: null as null };
     return {
       i: result.i,

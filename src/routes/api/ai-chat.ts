@@ -21,12 +21,7 @@ export const Route = createFileRoute("/api/ai-chat")({
           return new Response("messages required", { status: 400 });
         }
 
-        const apiKey = process.env.LOVABLE_API_KEY;
-        if (!apiKey) {
-          return new Response("Missing LOVABLE_API_KEY", { status: 500 });
-        }
-
-        const gateway = createLovableAiGatewayProvider(apiKey);
+        const gateway = createLovableAiGatewayProvider();
         // Upgraded from flash to pro for stronger reasoning + planning.
         const model = gateway("google/gemini-3.1-pro-preview");
 
@@ -75,7 +70,7 @@ ${modeHint}${memoryBlock}`;
               limit: z.number().int().min(1).max(10).default(6),
             }),
             execute: async ({ query, limit }) => {
-              const ranked = await rankTools(query, undefined, limit, undefined, apiKey);
+              const ranked = await rankTools(query, undefined, limit, undefined, "");
               return {
                 query,
                 results: ranked.map(({ i, tool: t, why }) => ({
@@ -88,7 +83,7 @@ ${modeHint}${memoryBlock}`;
             description: "Design a 3–6 step workflow to achieve a real-world GOAL, chaining free tools from the directory.",
             inputSchema: z.object({ goal: z.string().min(3) }),
             execute: async ({ goal }) => {
-              const roadmap = await buildRoadmap(goal, apiKey);
+              const roadmap = await buildRoadmap(goal, "");
               return {
                 goal: roadmap.goal,
                 title: roadmap.title,

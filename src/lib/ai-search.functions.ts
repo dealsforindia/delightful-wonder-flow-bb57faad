@@ -12,10 +12,7 @@ const InputSchema = z.object({
 export const aiSearch = createServerFn({ method: "POST" })
   .validator((data) => InputSchema.parse(data))
   .handler(async ({ data }) => {
-    const apiKey = process.env.LOVABLE_API_KEY;
-    if (!apiKey) throw new Error("LOVABLE_API_KEY missing");
-
-    const ranked = await rankTools(data.query, data.refine, data.limit, data.previousIds, apiKey);
+    const ranked = await rankTools(data.query, data.refine, data.limit, data.previousIds, "");
 
     return ranked.map(({ i, tool, why }) => ({
       i,
