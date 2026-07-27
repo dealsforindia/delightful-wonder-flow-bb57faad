@@ -237,7 +237,7 @@ Reply ONLY with JSON matching the schema. No prose, no markdown fences.`;
       system,
       prompt: user,
       experimental_output: Output.object({ schema: RoadmapSchema }),
-      temperature: 0.7,
+      temperature: 0.2,
     });
     parsed = result.experimental_output;
   } catch (error) {
