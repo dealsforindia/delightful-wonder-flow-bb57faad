@@ -197,12 +197,18 @@ export async function buildRoadmap(
 ): Promise<RoadmapResult> {
   const keywords = await expandKeywords(apiKey, goal);
   const perKeyword = keywords.map((k) => k.split(/\s+/).filter(Boolean));
-  const merged = new Set<number>(scoreTools(goal, 200));
+  const merged = new Set<number>(scoreTools(goal, 300));
   for (const kw of perKeyword) {
-    for (const id of scoreTools(kw.join(" "), 40)) merged.add(id);
+    for (const id of scoreTools(kw.join(" "), 80)) merged.add(id);
   }
-  const finalIds = Array.from(merged);
+  let finalIds = Array.from(merged);
 
+  // If fuzzy matching is too sparse, pull a wider ranked net from the LLM.
+  if (finalIds.length < 20) {
+    const ranked = await rankTools(goal, options?.refine ?? undefined, 60, undefined, apiKey);
+    for (const r of ranked) merged.add(r.i);
+    finalIds = Array.from(merged);
+  }
 
   const index = finalIds
     .map((i) => `${i}|${TOOLS[i].name}|${TOOLS[i].category}|${TOOLS[i].section}`)
