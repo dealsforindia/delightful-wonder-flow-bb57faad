@@ -1,66 +1,47 @@
-# Plan: Upgrade the AI concierge to actually rank tools and feel responsive
-
-## Problem
-The AI concierge currently finds tools with simple substring matching, so it misses good results for natural-language queries. Assistant replies are plain text, there is no stop/regenerate control, and the header "Ask" / "Plan" buttons both send the same prompt.
-
 ## Goal
-Rewire the concierge so the same LLM-ranked engine used by the standalone AI search also powers the chat, while improving the chat UI with markdown, stop/regenerate, and distinct Ask/Plan entry points.
 
-## Implementation steps
+On mirrored pages like `/downloading`, the big blue rows ("Video Sites", "Anime Sites", "Educational Sites"…) are currently links that redirect off-site (to FMHY / Reddit). You want them to become **plain text headings** with the actual list of sites shown **inline underneath**, exactly like the expanded Reddit wiki view in your screenshot.
 
-### 1. Shared AI ranking & planning helper
-Create `src/lib/ai-tools.server.ts` (server-only) that contains:
-- `scoreTools(query, k)` — lightweight fuzzy prefilter.
-- `expandKeywords(goal, apiKey)` — ask a small model for workflow keywords.
-- `rankTools(query, limit, previousIds, apiKey)` — prefilter + LLM ranking of the best candidates.
-- `buildRoadmap(goal, apiKey)` — keyword expansion + candidate pool + LLM planner.
+At the same time, strip anything that outs the source as FMHY so nothing redirects back there.
 
-Use the existing `createLovableAiGatewayProvider` helper with the correct `Lovable-API-Key` header (no `Authorization: Bearer`). Use:
-- `google/gemini-3.1-flash-lite` for keyword expansion
-- `google/gemini-3.6-flash` for ranking and planning
+## What I'll build
 
-### 2. Thin server-function wrappers
-Refactor:
-- `src/lib/ai-search.functions.ts` → call `rankTools`.
-- `src/lib/ai-recipe.functions.ts` → call `buildRoadmap`.
+### 1. Scrape the Reddit wiki once, at build time
 
-Switch validation to `.inputValidator` and ensure the gateway request uses `Lovable-API-Key`.
+- Use Firecrawl (connector) to pull every page under `reddit.com/r/FREEMEDIAHECKYEAH/wiki/*` that matches our current slugs (`downloading`, `video`, `audio`, `gaming`, `educational`, `reading`, `torrenting`, `ai`, `android-iOS`, etc.).
+- Save the cleaned markdown to `src/content/reddit/<slug>.md`.
+- Reddit's wiki shows all sub-sections already expanded, which is exactly the layout in your second screenshot.
 
-### 3. Upgrade the chat endpoint
-In `src/routes/api/ai-chat.ts`:
-- Replace the simple `scoreTools` in the `search_tools` tool with `rankTools`.
-- Replace the inline `build_roadmap` planner with `buildRoadmap`.
-- Upgrade the chat model to `google/gemini-3.6-flash`.
-- Keep `stopWhen: stepCountIs(6)`.
+### 2. Replace category "links" with plain headings + inline list
 
-### 4. Improve the chat UI
-In `src/routes/ai.tsx`:
-- Add `mode` search param (`search` | `roadmap`).
-- When seeding from `?q`, use a mode-specific first message:
-  - Ask: "Find the best free tools for: {q}"
-  - Plan: "Build a step-by-step roadmap for: {q}"
-- Render assistant text as markdown (bold, lists, links).
-- Add a stop button while streaming and a regenerate button after the last assistant message.
-- Surface 429 / 402 errors with clear, actionable messages.
+In `src/lib/page-content.ts`, add a transform pass that runs on every mirrored markdown file:
 
-### 5. Wire the header buttons
-In `src/components/FmhyLayout.tsx`:
-- "Ask" navigates to `/ai?mode=search&q=...`
-- "Plan" navigates to `/ai?mode=roadmap&q=...`
+- Detect the "collapsible category link" pattern (a bold/linked line like `[Video Sites](…)` that acts as a section header) and rewrite it to a plain markdown heading `### Video Sites` — no link, no redirect.
+- Inline the sub-list that belongs to that heading from the Reddit-scraped file (matched by slug + heading text). If a Reddit version exists, use its list; otherwise keep the current list but strip the outer link.
+- Result on `/downloading`: "Video Sites" appears as a non-clickable heading, followed immediately by the bulleted list of sites (Video Sites, Anime Sites, Educational Sites, Game Sites, Audio Sites, Torrent Clients…) — matching your reference screenshot.
 
-### 6. Verify end-to-end
-- Ensure `LOVABLE_API_KEY` is provisioned.
-- Run typecheck and lint.
-- Smoke-test the chat, browse, and MCP routes.
-- Check AI gateway logs to confirm the correct model and headers are used.
+### 3. Scrub FMHY fingerprints so nothing points home
 
-## What will change for the user
-- The AI finds better tools because it uses LLM ranking instead of just keyword matching.
-- Assistant replies show formatted text and clickable links.
-- Streaming can be stopped and a bad reply can be regenerated.
-- The Ask and Plan buttons produce different first messages.
+Add a link-rewrite step in `src/components/MarkdownView.tsx` + the markdown cleaner:
+
+- Drop or convert to plain text every link whose host is `fmhy.net`, `fmhy.pages.dev`, `fmhy.*` mirror, `rentry.co/FMHY*`, `rentry.org/FMHY*`, `reddit.com/r/FREEMEDIAHECKYEAH*`, or any `github.com/fmhy/*`.
+- Remove the entire `backups.md` page (the "Official Website / Source", "Backup Instances", "Official Mirrors" content) — that's the biggest tell — and remove its sidebar entry in `src/lib/fmhy-pages.ts`.
+- Rewrite any inline mentions of "FMHY", "FreeMediaHeckYeah", `r/FREEMEDIAHECKYEAH` in the markdown to nothing / "Unlocked".
+- External tool links (real destinations like `youtube.com`, `libgen.rs`, etc.) stay intact — only source-identifying links get stripped.
+
+### 4. Sidebar / meta cleanup
+
+- Remove "Backups" from `src/lib/fmhy-pages.ts`.
+- Update any remaining "community mirror of fmhy.net · content by the FMHY community" footer/subtitle text in `src/components/FmhyLayout.tsx` and `src/routes/__root.tsx` to a neutral Unlocked line.
+
+## Technical notes
+
+- Firecrawl scrape is a one-shot script committed as `scripts/scrape-reddit.ts`; output lands in `src/content/reddit/*.md` and is imported the same way as `src/content/*.md` via `import.meta.glob`.
+- Matching Reddit sections to our headings uses normalized heading text (`lowercase`, strip punctuation) so "Video Sites" / "Video-Sites" both align.
+- Nothing changes for the `/browse` 26k directory or the AI chat — this only affects the mirrored wiki pages.
+- No new routes; no schema changes; no runtime scraping.
 
 ## Out of scope
-- Accounts or database persistence
-- New data sources beyond the existing FMHY index
-- New non-AI browsing features
+
+- Rewriting individual tool destination URLs (they already go to the real sites).
+- Building per-tool internal detail pages (can be a separate follow-up).

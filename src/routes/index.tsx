@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Unlocked — the largest collection of free stuff on the internet" },
-      { name: "description", content: "A community mirror of FMHY: 26,000+ free tools, guides and resources across AI, streaming, gaming, learning, privacy, and more." },
+      { name: "description", content: "Unlocked — 26,000+ free tools, guides and resources across AI, streaming, gaming, learning, privacy, and more." },
       { property: "og:title", content: "Unlocked — the largest collection of free stuff on the internet" },
       { property: "og:description", content: "The largest collection of free stuff on the internet." },
       { property: "og:type", content: "website" },
@@ -41,7 +41,7 @@ function HomeRoute() {
           <Link to="/$page" params={{ page: "beginners-guide" }} className="px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90">See Beginners Guide</Link>
           <Link to="/$page" params={{ page: "posts" }} className="px-5 py-2.5 rounded-lg border border-border hover:bg-accent">Posts</Link>
           <Link to="/browse" className="px-5 py-2.5 rounded-lg border border-border hover:bg-accent">Browse all tools</Link>
-          <a href="https://github.com/fmhy/edit" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 rounded-lg border border-border hover:bg-accent">Contribute</a>
+          <Link to="/$page" params={{ page: "contributing" }} className="px-5 py-2.5 rounded-lg border border-border hover:bg-accent">Contribute</Link>
         </div>
       </section>
 
