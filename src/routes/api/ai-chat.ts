@@ -22,8 +22,8 @@ export const Route = createFileRoute("/api/ai-chat")({
         }
 
         const gateway = createLovableAiGatewayProvider();
-        // Upgraded from flash to pro for stronger reasoning + planning.
-        const model = gateway("google/gemini-3.1-pro-preview");
+        // Flash works on Gemini's free tier; pro-preview requires a paid plan.
+        const model = gateway("google/gemini-2.5-flash");
 
         const mode = body.mode === "roadmap" ? "roadmap" : body.mode === "search" ? "search" : "auto";
         const modeHint =
