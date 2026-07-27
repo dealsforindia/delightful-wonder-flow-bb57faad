@@ -6,7 +6,7 @@ import type { Tool } from "./tools-data";
 
 const KEYWORD_MODEL = "google/gemini-3.1-flash-lite";
 const RANKING_MODEL = "google/gemini-3.6-flash";
-const PLANNING_MODEL = "google/gemini-3.6-flash";
+const PLANNING_MODEL = "google/gemini-3.1-pro-preview";
 
 function safeJsonParse<T>(text: string, fallback: T): T {
   const cleaned = text.replace(/```json|```/g, "").trim();
