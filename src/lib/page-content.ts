@@ -11,7 +11,10 @@ for (const [path, content] of Object.entries(raw)) {
 }
 
 // ── source-identifying links get flattened to plain text ─────────────
-const SOURCE_HOST = /^https?:\/\/(?:[^)\s]*\.)?(?:fmhy\.(?:net|pages\.dev|xyz|lol|si|vercel\.app)|rentry\.co\/FMHY|rentry\.org\/FMHY|reddit\.com\/r\/FREEMEDIAHECKYEAH|github\.com\/fmhy)/i;
+const SOURCE_HOST = /^https?:\/\/(?:[^)\s]*\.)?(?:fmhy\.(?:net|pages\.dev|xyz|lol|si|vercel\.app)|rentry\.co\/FMHY|rentry\.org\/(?:FMHY|ircfmhy)|reddit\.com\/r\/FREEMEDIAHECKYEAH|github\.com\/fmhy|cdn\.jsdelivr\.net\/gh\/fmhy)/i;
+// broad URL matcher for bare/autolinked URLs anywhere in text
+const SOURCE_URL_ANY = /https?:\/\/[^\s)>\]"']*(?:fmhy|freemediaheckyeah|rentry\.(?:co|org)\/(?:FMHY|ircfmhy))[^\s)>\]"']*/gi;
+
 
 // ── section-index across all pages so we can inline "link-only" headings
 function normalizeKey(s: string): string {
