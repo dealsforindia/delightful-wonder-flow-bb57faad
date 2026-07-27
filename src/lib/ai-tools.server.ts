@@ -324,7 +324,7 @@ export async function swapStep(
       system,
       prompt: user,
       experimental_output: Output.object({ schema: SwapSchema }),
-      temperature: 0.6,
+      temperature: 0.2,
     });
     parsed = result.experimental_output;
   } catch (error) {
