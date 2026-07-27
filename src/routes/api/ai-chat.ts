@@ -21,12 +21,7 @@ export const Route = createFileRoute("/api/ai-chat")({
           return new Response("messages required", { status: 400 });
         }
 
-        const apiKey = process.env.LOVABLE_API_KEY;
-        if (!apiKey) {
-          return new Response("Missing LOVABLE_API_KEY", { status: 500 });
-        }
-
-        const gateway = createLovableAiGatewayProvider(apiKey);
+        const gateway = createLovableAiGatewayProvider();
         // Upgraded from flash to pro for stronger reasoning + planning.
         const model = gateway("google/gemini-3.1-pro-preview");
 
