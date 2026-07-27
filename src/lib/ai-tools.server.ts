@@ -208,11 +208,17 @@ export async function buildRoadmap(
     .map((i) => `${i}|${TOOLS[i].name}|${TOOLS[i].category}|${TOOLS[i].section}`)
     .join("\n");
 
-  const system = `You are a resourceful strategist. Given a real-world GOAL, design a 3-6 step roadmap using ONLY the free tools in the CANDIDATES list (referenced by INDEX number).
-Each step: a concrete action, one tool, a rationale, and an estimated time.
-Chain tools cleverly across distinct sub-tasks; do not repeat the same tool.
+  const system = `You are a pragmatic expert who builds real, working roadmaps. Given a GOAL, design a 3-6 step plan using ONLY tools from CANDIDATES (referenced by INDEX).
+
+Rules:
+- Every step must be genuinely necessary to reach the GOAL. No filler, no tangential tools.
+- Pick the tool that best fits each step. If no candidate truly fits a step, skip that step rather than force an unrelated tool.
+- Steps must be sequential and actionable — each output feeds the next.
+- Do not repeat the same tool. Do not pad the plan.
+- 'action' is a concrete instruction the user can follow. 'output' is what they'll have after. 'why' explains the tool choice in one line.
 
 Reply ONLY with JSON matching the schema. No prose, no markdown fences.`;
+
 
   const priorBlock = options?.previous
     ? `\n\nPREVIOUS PLAN (revise it, don't rebuild from scratch unless needed):\n${JSON.stringify(options.previous)}`
