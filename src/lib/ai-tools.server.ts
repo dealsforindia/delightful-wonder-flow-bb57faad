@@ -35,13 +35,9 @@ export function prefilter(query: string, refine: string | undefined, k = 500): n
     if (s > 0) scored.push({ i, s });
   }
   scored.sort((a, b) => b.s - a.s);
-  const picks = scored.slice(0, k);
-  if (picks.length < 80) {
-    const step = Math.max(1, Math.floor(TOOLS.length / (k - picks.length)));
-    for (let i = 0; i < TOOLS.length && picks.length < k; i += step) picks.push({ i, s: 0 });
-  }
-  return picks.map((p) => p.i);
+  return scored.slice(0, k).map((p) => p.i);
 }
+
 
 export function scoreTools(query: string, k: number): number[] {
   const terms = query.toLowerCase().split(/[\s,./;]+/).filter((t) => t.length > 2);
@@ -200,27 +196,29 @@ export async function buildRoadmap(
   },
 ): Promise<RoadmapResult> {
   const keywords = await expandKeywords(apiKey, goal);
-  const goalTerms = goal.toLowerCase().split(/\s+/).filter((t) => t.length > 2);
   const perKeyword = keywords.map((k) => k.split(/\s+/).filter(Boolean));
-  const ids = scoreTools(goal, 200);
-  const merged = new Set<number>(ids);
+  const merged = new Set<number>(scoreTools(goal, 200));
   for (const kw of perKeyword) {
-    for (const id of scoreTools(kw.join(" "), 30)) merged.add(id);
+    for (const id of scoreTools(kw.join(" "), 40)) merged.add(id);
   }
-  const step = Math.max(1, Math.floor(TOOLS.length / 200));
-  const seen = new Set(merged);
-  for (let i = 0; i < TOOLS.length && seen.size < 700; i += step) seen.add(i);
-  const finalIds = Array.from(seen);
+  const finalIds = Array.from(merged);
+
 
   const index = finalIds
     .map((i) => `${i}|${TOOLS[i].name}|${TOOLS[i].category}|${TOOLS[i].section}`)
     .join("\n");
 
-  const system = `You are a resourceful strategist. Given a real-world GOAL, design a 3-6 step roadmap using ONLY the free tools in the CANDIDATES list (referenced by INDEX number).
-Each step: a concrete action, one tool, a rationale, and an estimated time.
-Chain tools cleverly across distinct sub-tasks; do not repeat the same tool.
+  const system = `You are a pragmatic expert who builds real, working roadmaps. Given a GOAL, design a 3-6 step plan using ONLY tools from CANDIDATES (referenced by INDEX).
+
+Rules:
+- Every step must be genuinely necessary to reach the GOAL. No filler, no tangential tools.
+- Pick the tool that best fits each step. If no candidate truly fits a step, skip that step rather than force an unrelated tool.
+- Steps must be sequential and actionable — each output feeds the next.
+- Do not repeat the same tool. Do not pad the plan.
+- 'action' is a concrete instruction the user can follow. 'output' is what they'll have after. 'why' explains the tool choice in one line.
 
 Reply ONLY with JSON matching the schema. No prose, no markdown fences.`;
+
 
   const priorBlock = options?.previous
     ? `\n\nPREVIOUS PLAN (revise it, don't rebuild from scratch unless needed):\n${JSON.stringify(options.previous)}`
@@ -239,7 +237,7 @@ Reply ONLY with JSON matching the schema. No prose, no markdown fences.`;
       system,
       prompt: user,
       experimental_output: Output.object({ schema: RoadmapSchema }),
-      temperature: 0.7,
+      temperature: 0.2,
     });
     parsed = result.experimental_output;
   } catch (error) {
@@ -326,7 +324,7 @@ export async function swapStep(
       system,
       prompt: user,
       experimental_output: Output.object({ schema: SwapSchema }),
-      temperature: 0.6,
+      temperature: 0.2,
     });
     parsed = result.experimental_output;
   } catch (error) {
