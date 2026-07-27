@@ -4,10 +4,12 @@ import { z } from "zod";
 import { createLovableAiGatewayProvider } from "@/lib/ai-gateway.server";
 import { buildRoadmap, rankTools } from "@/lib/ai-tools.server";
 import { TOOLS } from "@/lib/tools-data.server";
+import type { Tool } from "@/lib/tools-data";
 
 type ChatRequestBody = {
   messages?: UIMessage[];
   mode?: "search" | "roadmap";
+  memory?: string;
 };
 
 export const Route = createFileRoute("/api/ai-chat")({
@@ -25,7 +27,8 @@ export const Route = createFileRoute("/api/ai-chat")({
         }
 
         const gateway = createLovableAiGatewayProvider(apiKey);
-        const model = gateway("google/gemini-3.6-flash");
+        // Upgraded from flash to pro for stronger reasoning + planning.
+        const model = gateway("google/gemini-3.1-pro-preview");
 
         const mode = body.mode === "roadmap" ? "roadmap" : body.mode === "search" ? "search" : "auto";
         const modeHint =
@@ -35,24 +38,31 @@ export const Route = createFileRoute("/api/ai-chat")({
               ? "The user is here to find tools. Prefer search_tools."
               : "";
 
-        const system = `You are Unlocked's concierge — a resourceful, plainspoken guide to a curated directory of ${TOOLS.length.toLocaleString()} FREE tools (mirror of FMHY).
+        const memoryBlock = body.memory && body.memory.trim()
+          ? `\n\nWHAT YOU REMEMBER ABOUT THIS USER (persisted across chats — treat as ground truth unless contradicted):\n${body.memory.trim()}\n\nIf the user shares a new stable fact about themselves (goal, budget, OS, skill level, hardware, tolerance for signup, etc.), call remember_user to save it. Do NOT save one-off preferences.`
+          : `\n\nYou have no memory of this user yet. When they reveal a stable fact (goal, budget, OS, skill level, hardware, no-signup preference, etc.), call remember_user to persist it.`;
+
+        const system = `You are Unlocked's concierge — a resourceful, plainspoken guide to a curated directory of ${TOOLS.length.toLocaleString()} FREE tools.
 
 How you help:
-- The user tells you what they want to DO (make money, back up photos, learn a language, etc.). You give them a specific, opinionated answer.
-- You have two tools available:
-  • search_tools(query) — finds the best matching tools in the directory. Use it whenever the user asks for a tool, an alternative, "what should I use for X", or wants to compare options.
-  • build_roadmap(goal) — designs a 3-6 step workflow chaining several tools from the directory. Use it when the user describes a multi-step outcome ("start a blog", "earn from X", "self-host Y").
-- ALWAYS call the appropriate tool instead of listing tools from memory. The tool returns real entries with working URLs.
-- After a tool returns, write a SHORT reply (2-4 sentences) telling the user what you found and what to do next. Do NOT re-list every tool — the UI renders them as cards. Reference them by name.
-- If the user quotes an earlier part of the conversation (a line starting with "> ..."), treat that quote as the specific thing they want to dig into. Answer about THAT.
-- Be concrete. No filler like "great question!" or long disclaimers. Talk like a friend who happens to know every free tool.
-- If the question is not about tools/workflows, answer briefly and steer back.
-${modeHint}`;
+- The user tells you what they want to DO. You give them a specific, opinionated answer grounded in the directory.
+- Tools available:
+  • search_tools(query) — best matches for an intent.
+  • build_roadmap(goal) — 3–6 step chained workflow.
+  • list_categories() — see the taxonomy (use when the user asks "what's here" or before browsing).
+  • browse_category(category, section?) — enumerate a slice of the directory.
+  • compare_tools(names) — side-by-side of specific named tools (pulls real entries from the directory).
+  • remember_user(fact) — persist a stable fact about the user.
+- ALWAYS call a tool instead of listing tools from memory. Chain tools when useful (e.g. list_categories → browse_category → search_tools).
+- Think first. If the ask is vague, ask ONE sharp clarifying question before spending a tool call.
+- After tools return, write a SHORT reply (2–4 sentences). Do NOT re-list tools — the UI renders cards. Reference by name.
+- If the user quotes an earlier reply (line starting with "> "), answer about THAT specific thing.
+- Be concrete. No filler. Talk like a friend who happens to know every free tool.
+${modeHint}${memoryBlock}`;
 
         const tools = {
           search_tools: tool({
-            description:
-              "Search the Unlocked directory of 26,000+ free tools for the best matches to a user's intent.",
+            description: "Search the Unlocked directory for the best matches to a user's intent.",
             inputSchema: z.object({
               query: z.string().min(2).describe("Natural-language description of what the user needs"),
               limit: z.number().int().min(1).max(10).default(6),
@@ -61,22 +71,15 @@ ${modeHint}`;
               const ranked = await rankTools(query, undefined, limit, undefined, apiKey);
               return {
                 query,
-                results: ranked.map(({ i, tool: t }) => ({
-                  i,
-                  name: t.name,
-                  url: t.url,
-                  category: t.category,
-                  section: t.section,
+                results: ranked.map(({ i, tool: t, why }) => ({
+                  i, name: t.name, url: t.url, category: t.category, section: t.section, why,
                 })),
               };
             },
           }),
           build_roadmap: tool({
-            description:
-              "Design a 3-6 step workflow to achieve a real-world GOAL, chaining free tools from the Unlocked directory.",
-            inputSchema: z.object({
-              goal: z.string().min(3).describe("The end outcome the user wants"),
-            }),
+            description: "Design a 3–6 step workflow to achieve a real-world GOAL, chaining free tools from the directory.",
+            inputSchema: z.object({ goal: z.string().min(3) }),
             execute: async ({ goal }) => {
               const roadmap = await buildRoadmap(goal, apiKey);
               return {
@@ -84,17 +87,83 @@ ${modeHint}`;
                 title: roadmap.title,
                 totalMinutes: roadmap.totalMinutes,
                 steps: roadmap.steps.map((s) => ({
-                  i: s.i,
-                  name: s.name,
-                  url: s.url,
-                  category: s.category,
-                  section: s.section,
-                  action: s.action,
-                  output: s.output,
-                  why: s.why,
-                  estMinutes: s.estMinutes,
+                  i: s.i, name: s.name, url: s.url, category: s.category, section: s.section,
+                  action: s.action, output: s.output, why: s.why, estMinutes: s.estMinutes,
                 })),
               };
+            },
+          }),
+          list_categories: tool({
+            description: "List every category in the directory with tool counts and sections. Use before browse_category.",
+            inputSchema: z.object({}),
+            execute: async () => {
+              const byCat = new Map<string, { count: number; sections: Map<string, number> }>();
+              for (const t of TOOLS) {
+                const c = byCat.get(t.category) ?? { count: 0, sections: new Map() };
+                c.count++;
+                c.sections.set(t.section, (c.sections.get(t.section) ?? 0) + 1);
+                byCat.set(t.category, c);
+              }
+              const categories = Array.from(byCat.entries())
+                .map(([category, v]) => ({
+                  category, count: v.count,
+                  sections: Array.from(v.sections.entries())
+                    .map(([name, count]) => ({ name, count }))
+                    .sort((a, b) => b.count - a.count)
+                    .slice(0, 12),
+                }))
+                .sort((a, b) => b.count - a.count)
+                .slice(0, 30);
+              return { total: TOOLS.length, categories };
+            },
+          }),
+          browse_category: tool({
+            description: "Enumerate tools in a category (optionally scoped to a section). Use list_categories first to find valid names.",
+            inputSchema: z.object({
+              category: z.string().min(2),
+              section: z.string().optional(),
+              limit: z.number().int().min(1).max(20).default(10),
+            }),
+            execute: async ({ category, section, limit }) => {
+              const c = category.toLowerCase();
+              const s = section?.toLowerCase();
+              let results: Tool[] = TOOLS.filter((t) => t.category.toLowerCase() === c);
+              if (s) results = results.filter((t) => t.section.toLowerCase() === s);
+              const slice = results.slice(0, limit);
+              return {
+                category, section: section ?? null, totalInCategory: results.length,
+                results: slice.map((t, i) => ({
+                  i: TOOLS.indexOf(t), name: t.name, url: t.url, category: t.category, section: t.section,
+                  _rank: i,
+                })),
+              };
+            },
+          }),
+          compare_tools: tool({
+            description: "Look up specific named tools from the directory and return them side-by-side. Use when the user asks 'X vs Y' or 'compare A, B, C'.",
+            inputSchema: z.object({
+              names: z.array(z.string().min(2)).min(2).max(6),
+            }),
+            execute: async ({ names }) => {
+              const results = names.map((n) => {
+                const needle = n.toLowerCase();
+                const exact = TOOLS.find((t) => t.name.toLowerCase() === needle);
+                const partial = exact ?? TOOLS.find((t) => t.name.toLowerCase().includes(needle));
+                return partial
+                  ? { query: n, found: true as const, i: TOOLS.indexOf(partial), name: partial.name, url: partial.url, category: partial.category, section: partial.section }
+                  : { query: n, found: false as const };
+              });
+              return { results };
+            },
+          }),
+          remember_user: tool({
+            description: "Persist a stable fact about the user for future chats (e.g. 'wants passive income, prefers no-signup, on Windows'). Keep facts short and durable. Do NOT save one-off asks.",
+            inputSchema: z.object({
+              fact: z.string().min(3).max(200).describe("A single stable fact, phrased in third person."),
+            }),
+            execute: async ({ fact }) => {
+              // Client persists — server just echoes so client-side effect picks it up.
+              return { saved: true, fact };
             },
           }),
         };
@@ -104,11 +173,17 @@ ${modeHint}`;
           system,
           messages: convertToModelMessages(body.messages),
           tools,
-          stopWhen: stepCountIs(8),
-          temperature: 0.5,
+          stopWhen: stepCountIs(12),
+          temperature: 0.4,
+          providerOptions: {
+            lovable: { reasoning: { effort: "low" } },
+          },
         });
 
-        return result.toUIMessageStreamResponse({ originalMessages: body.messages });
+        return result.toUIMessageStreamResponse({
+          originalMessages: body.messages,
+          sendReasoning: true,
+        });
       },
     },
   },
