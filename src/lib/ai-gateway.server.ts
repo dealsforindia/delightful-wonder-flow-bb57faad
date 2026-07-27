@@ -1,12 +1,63 @@
 import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
 
-export function createLovableAiGatewayProvider(lovableApiKey: string) {
-  return createOpenAICompatible({
-    name: "lovable",
-    baseURL: "https://ai.gateway.lovable.dev/v1",
-    headers: {
-      "Lovable-API-Key": lovableApiKey,
-      "X-Lovable-AIG-SDK": "vercel-ai-sdk",
-    },
-  });
+/**
+ * BYO-keys AI gateway.
+ *
+ * Set one or both of these env vars on your server:
+ *   GOOGLE_API_KEY   -> used for any "google/..." model (via Gemini OpenAI-compatible endpoint)
+ *   OPENAI_API_KEY   -> used for any "openai/..." model (via OpenAI directly)
+ *
+ * The old LOVABLE_API_KEY is no longer required. If you still have it set,
+ * it's ignored — this app now talks directly to the model providers you pay for.
+ *
+ * Usage stays the same everywhere in the app:
+ *   const gateway = createLovableAiGatewayProvider();
+ *   const model = gateway("google/gemini-3.6-flash");
+ */
+export function createLovableAiGatewayProvider(_ignoredApiKey?: string) {
+  const googleKey = process.env.GOOGLE_API_KEY;
+  const openaiKey = process.env.OPENAI_API_KEY;
+
+  const google = googleKey
+    ? createOpenAICompatible({
+        name: "google",
+        baseURL: "https://generativelanguage.googleapis.com/v1beta/openai",
+        headers: { Authorization: `Bearer ${googleKey}` },
+      })
+    : null;
+
+  const openai = openaiKey
+    ? createOpenAICompatible({
+        name: "openai",
+        baseURL: "https://api.openai.com/v1",
+        headers: { Authorization: `Bearer ${openaiKey}` },
+      })
+    : null;
+
+  return (fullModelId: string) => {
+    const [vendor, ...rest] = fullModelId.split("/");
+    const bareModel = rest.join("/") || fullModelId;
+
+    if (vendor === "google") {
+      if (!google) {
+        throw new Error(
+          "GOOGLE_API_KEY is not set. Add it to your .env to use google/* models.",
+        );
+      }
+      return google(bareModel);
+    }
+
+    if (vendor === "openai") {
+      if (!openai) {
+        throw new Error(
+          "OPENAI_API_KEY is not set. Add it to your .env to use openai/* models.",
+        );
+      }
+      return openai(bareModel);
+    }
+
+    throw new Error(
+      `Unsupported model vendor "${vendor}". Use "google/..." or "openai/..." model ids.`,
+    );
+  };
 }
