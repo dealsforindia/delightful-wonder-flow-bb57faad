@@ -18,7 +18,8 @@ export default defineConfig({
   },
   // Override the default Cloudflare preset so the app can be deployed to Vercel.
   nitro: {
-    preset: process.env.NITRO_PRESET || "vercel",
+    preset: "vercel",
   },
+
 });
 
