@@ -16,4 +16,9 @@ export default defineConfig({
   vite: {
     plugins: [mcpPlugin()],
   },
+  // Override the default Cloudflare preset so the app can be deployed to Vercel.
+  nitro: {
+    preset: process.env.NITRO_PRESET || "vercel",
+  },
 });
+
