@@ -73,6 +73,7 @@ function PageCard({ p }: { p: (typeof PAGES)[number] }) {
       <span
         className="mt-0.5 shrink-0 h-10 w-10 rounded-lg grid place-items-center text-lg font-bold"
         style={{ background: `${p.color}22`, color: p.color }}
+        aria-hidden="true"
       >
         {p.short.slice(0, 2).toUpperCase()}
       </span>
