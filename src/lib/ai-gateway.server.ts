@@ -1,10 +1,11 @@
 import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
+import { createGoogle } from "@ai-sdk/google";
 
 /**
  * BYO-keys AI gateway.
  *
  * Set one or both of these env vars on your server:
- *   GOOGLE_API_KEY   -> used for any "google/..." model (via Gemini OpenAI-compatible endpoint)
+ *   GOOGLE_API_KEY   -> used for any "google/..." model (via Google's official Gemini API)
  *   OPENAI_API_KEY   -> used for any "openai/..." model (via OpenAI directly)
  *
  * The old LOVABLE_API_KEY is no longer required. If you still have it set,
@@ -12,17 +13,15 @@ import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
  *
  * Usage stays the same everywhere in the app:
  *   const gateway = createLovableAiGatewayProvider();
- *   const model = gateway("google/gemini-3.6-flash");
+ *   const model = gateway("google/gemini-2.5-flash");
  */
 export function createLovableAiGatewayProvider(_ignoredApiKey?: string) {
-  const googleKey = process.env.GOOGLE_API_KEY;
+  const googleKey = process.env.GOOGLE_API_KEY ?? process.env.GOOGLE_GENERATIVE_AI_API_KEY;
   const openaiKey = process.env.OPENAI_API_KEY;
 
   const google = googleKey
-    ? createOpenAICompatible({
-        name: "google",
-        baseURL: "https://generativelanguage.googleapis.com/v1beta/openai",
-        headers: { Authorization: `Bearer ${googleKey}` },
+    ? createGoogle({
+        apiKey: googleKey,
       })
     : null;
 
