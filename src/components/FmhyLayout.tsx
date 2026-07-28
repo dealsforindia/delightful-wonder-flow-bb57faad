@@ -56,7 +56,7 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
           <Link to="/" className="flex items-center gap-2 font-bold tracking-tight shrink-0">
             <span className="inline-block h-6 w-6 rounded bg-gradient-to-br from-brand-pink via-brand-purple to-brand-blue" />
             <span className="hidden sm:inline">Unlocked</span>
-            <span className="sm:hidden" aria-hidden="true">Unlocked</span>
+            <span className="sm:hidden">U</span>
           </Link>
           <nav className="hidden lg:flex items-center gap-1 text-sm ml-4">
             <Link to="/ai" className="px-3 py-1.5 rounded hover:bg-accent font-medium bg-gradient-to-r from-brand-pink/10 to-brand-blue/10">✨ AI</Link>
