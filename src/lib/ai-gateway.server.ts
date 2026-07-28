@@ -1,5 +1,5 @@
 import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
-import { createGoogle } from "@ai-sdk/google";
+import { createGoogleGenerativeAI } from "@ai-sdk/google";
 
 /**
  * BYO-keys AI gateway.
@@ -20,7 +20,7 @@ export function createLovableAiGatewayProvider(_ignoredApiKey?: string) {
   const openaiKey = process.env.OPENAI_API_KEY;
 
   const google = googleKey
-    ? createGoogle({
+    ? createGoogleGenerativeAI({
         apiKey: googleKey,
       })
     : null;
