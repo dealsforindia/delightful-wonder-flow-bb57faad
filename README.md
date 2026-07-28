@@ -1,29 +1,60 @@
-# Welcome to your Lovable project
+# Deploy Unlocked
 
-This project was built with [Lovable](https://lovable.dev).
+This project can be hosted on **Lovable** (one-click publish), **Vercel**, or your own **Azure VM / Node server**.
 
-## Build with Lovable
+## Lovable (fastest)
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Click **Publish** in the Lovable editor. The app will be live on a `.lovable.app` URL. You can add a custom domain afterward in Project Settings → Domains.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+## Vercel
 
-## Development
+### 1. Prerequisites
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+- A [GitHub](https://github.com) repository containing this code.
+- A free [Vercel](https://vercel.com) account.
+- A Google API key for the AI features (get one at [Google AI Studio](https://aistudio.google.com/app/apikey)).
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+### 2. Vercel project settings
+
+Import the GitHub repo into Vercel. The included `vercel.json` already configures:
+
+- Build command: `bun run build:vercel`
+- Output directory: `.vercel/output`
+- Install command: `bun install`
+
+### 3. Environment variables
+
+In the Vercel dashboard, go to **Project Settings → Environment Variables** and add:
+
+| Name | Value | Environment |
+| --- | --- | --- |
+| `GOOGLE_API_KEY` | Your Google API key | Production, Preview, Development |
+
+### 4. Deploy
+
+Push to GitHub and Vercel will build and deploy automatically. The first deploy may take 2–3 minutes.
+
+### Local Vercel build test
+
+```bash
+bun run build:vercel
+npx srvx --static ./.vercel/output/static ./.vercel/output/functions/__server.func/index.mjs
 ```
 
-## Built with
+## Azure VM / Node server
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+See `scripts/azure-deploy.sh` for a step-by-step guide. The build command for a self-hosted Node server is:
+
+```bash
+bun run build:node
+```
+
+This outputs the server to `dist/server/index.mjs`, which PM2 serves.
+
+## Environment variables
+
+Copy `.env.example` to `.env` and fill in your values. For hosted deployments, set these in the hosting dashboard instead.
+
+- `GOOGLE_API_KEY` — required for AI search, chat, and roadmaps.
+- `NODE_ENV` — set to `production` by the deployment configs.
+- `PORT` — internal port (3000 for Azure/PM2, ignored by Vercel).
