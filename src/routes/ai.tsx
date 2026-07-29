@@ -4,7 +4,7 @@ import { DefaultChatTransport, type UIMessage } from "ai";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { FmhyLayout } from "@/components/FmhyLayout";
 import { MarkdownView } from "@/components/MarkdownView";
-import { Brain, MessageSquare, Pin, RefreshCw, Search, Map, Sparkles, Loader2 } from "lucide-react";
+import { Brain, MessageSquare, Pin, RefreshCw, Search, Map, Sparkles, Loader2, LayoutGrid, BookOpen } from "lucide-react";
 
 type AiSearchParams = { q?: string; mode?: "search" | "roadmap" };
 
