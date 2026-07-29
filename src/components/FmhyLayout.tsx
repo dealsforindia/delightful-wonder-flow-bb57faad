@@ -1,6 +1,7 @@
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { PAGES } from "@/lib/fmhy-pages";
+import { searchContent, type SectionResult } from "@/lib/content-search";
 
 export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: ReactNode }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
