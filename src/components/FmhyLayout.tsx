@@ -181,7 +181,7 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
               )}
 
               <button onClick={() => askAi("search")} className="w-full p-2 rounded hover:bg-accent text-sm text-left">
-                <span className="font-medium">✨ Ask AI instead</span>
+                <span className="font-medium inline-flex items-center gap-1.5"><Sparkles className="h-3.5 w-3.5" /> Ask AI instead</span>
                 <span className="block text-xs text-muted-foreground">Get recommendations & a plan for "{q}"</span>
               </button>
             </div>
