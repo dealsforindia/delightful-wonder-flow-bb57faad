@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import { ExternalLink } from "lucide-react";
 
 export function MarkdownView({ source }: { source: string }) {
   return (
@@ -19,22 +20,23 @@ export function MarkdownView({ source }: { source: string }) {
                 href={href}
                 target={external ? "_blank" : undefined}
                 rel={external ? "noopener noreferrer" : undefined}
-                className="text-brand-blue hover:underline"
+                className="text-primary hover:underline inline-flex items-center gap-0.5"
               >
                 {children}
+                {external && <ExternalLink className="h-3 w-3 opacity-60" />}
               </a>
             );
           },
-          h1: ({ children, ...rest }) => <h1 {...rest} className="text-3xl md:text-4xl font-bold tracking-tight mt-8 mb-4">{children}</h1>,
-          h2: ({ children, ...rest }) => <h2 {...rest} className="text-2xl font-semibold tracking-tight mt-10 mb-3 pt-4 border-t border-border">{children}</h2>,
-          h3: ({ children, ...rest }) => <h3 {...rest} className="text-lg font-semibold mt-6 mb-2">{children}</h3>,
+          h1: ({ children, ...rest }) => <h1 {...rest} className="text-3xl md:text-4xl font-bold tracking-tight mt-8 mb-4 text-foreground">{children}</h1>,
+          h2: ({ children, ...rest }) => <h2 {...rest} className="text-2xl font-semibold tracking-tight mt-10 mb-3 pt-4 border-t border-border text-primary">{children}</h2>,
+          h3: ({ children, ...rest }) => <h3 {...rest} className="text-lg font-semibold mt-6 mb-2 text-foreground">{children}</h3>,
           ul: ({ children, ...rest }) => <ul {...rest} className="list-disc pl-6 space-y-1 my-3">{children}</ul>,
           ol: ({ children, ...rest }) => <ol {...rest} className="list-decimal pl-6 space-y-1 my-3">{children}</ol>,
-          p: ({ children, ...rest }) => <p {...rest} className="my-3 leading-relaxed">{children}</p>,
+          p: ({ children, ...rest }) => <p {...rest} className="my-3 leading-relaxed text-muted-foreground">{children}</p>,
           blockquote: ({ children, ...rest }) => (
-            <blockquote {...rest} className="border-l-4 border-brand-pink/70 bg-muted/60 rounded-r px-4 py-2 my-4 text-sm">{children}</blockquote>
+            <blockquote {...rest} className="border-l-4 border-primary/70 bg-muted/60 rounded-r px-4 py-2 my-4 text-sm">{children}</blockquote>
           ),
-          code: ({ children, ...rest }) => <code {...rest} className="px-1.5 py-0.5 rounded bg-muted text-[0.85em] font-mono">{children}</code>,
+          code: ({ children, ...rest }) => <code {...rest} className="px-1.5 py-0.5 rounded bg-muted text-[0.85em] font-mono text-primary">{children}</code>,
           hr: () => <hr className="my-8 border-border" />,
           img: ({ src, alt }) => <img src={src} alt={alt} loading="lazy" className="rounded-lg my-4" />,
         }}
@@ -84,7 +86,7 @@ export function TableOfContents() {
           <li key={h.id} className={h.level === 3 ? "pl-3" : ""}>
             <a
               href={`#${h.id}`}
-              className={`block truncate py-0.5 hover:text-foreground transition-colors ${active === h.id ? "text-foreground font-medium" : "text-muted-foreground"}`}
+              className={`block truncate py-0.5 hover:text-primary transition-colors ${active === h.id ? "text-primary font-medium" : "text-muted-foreground"}`}
             >
               {h.text}
             </a>
