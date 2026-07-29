@@ -127,18 +127,20 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
         {q && (
           <div className="border-t border-border bg-popover hidden md:block">
             <div className="mx-auto max-w-[1400px] px-4 md:px-6 py-3 grid sm:grid-cols-2 md:grid-cols-3 gap-2">
-              {filtered.slice(0, 12).map((p) => (
+              <button onClick={doSearch} className="p-2 rounded hover:bg-accent text-sm text-left col-span-full border border-border bg-muted/40">
+                <span className="font-medium">🔍 Search all tools for "{q}"</span>
+                <span className="block text-xs text-muted-foreground">Press Enter — fuzzy search the full 26k index</span>
+              </button>
+              {filtered.slice(0, 9).map((p) => (
                 <Link key={p.slug} to="/$page" params={{ page: p.slug }} className="p-2 rounded hover:bg-accent text-sm">
                   <span className="font-medium" style={{ color: p.color }}>{p.title}</span>
                   <span className="block text-xs text-muted-foreground truncate">{p.details}</span>
                 </Link>
               ))}
-              {filtered.length === 0 && (
-                <button onClick={() => askAi("search")} className="p-2 rounded hover:bg-accent text-sm text-left col-span-full">
-                  <span className="font-medium">✨ Ask AI: "{q}"</span>
-                  <span className="block text-xs text-muted-foreground">No sections matched — let AI search all 26k tools</span>
-                </button>
-              )}
+              <button onClick={() => askAi("search")} className="p-2 rounded hover:bg-accent text-sm text-left col-span-full">
+                <span className="font-medium">✨ Ask AI instead</span>
+                <span className="block text-xs text-muted-foreground">Get recommendations & a plan for "{q}"</span>
+              </button>
             </div>
           </div>
         )}
