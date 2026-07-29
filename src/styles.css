@@ -93,4 +93,12 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  .liquid-title {
+    transition: filter 0.25s ease, transform 0.25s ease;
+  }
+  .liquid-title:hover {
+    filter: url(#liquid);
+    transform: scale(1.02);
+  }
 }
