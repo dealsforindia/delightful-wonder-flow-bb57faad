@@ -78,11 +78,6 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
             <input
               value={q}
               onChange={(e) => setQ(e.target.value)}
-              onKeyDown={(e) => { if (e.key === "Enter") askAi("search"); }}
-              placeholder="Search sections or ask AI…"
-              className="w-72 h-9 px-3 rounded-l-lg bg-muted border border-border text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-            />
-            <button
               onKeyDown={(e) => { if (e.key === "Enter") doSearch(); }}
               placeholder="Search tools…"
               className="w-72 h-9 px-3 rounded-l-lg bg-muted border border-border text-sm focus:outline-none focus:ring-2 focus:ring-ring"
