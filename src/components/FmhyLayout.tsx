@@ -1,5 +1,6 @@
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { Menu, X, Search, Sparkles, Map, Sun, Moon, BookOpen, FileText, LayoutGrid } from "lucide-react";
 import { PAGES } from "@/lib/fmhy-pages";
 import { searchContent, type SectionResult } from "@/lib/content-search";
 
@@ -65,17 +66,25 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
             onClick={() => setNavOpen(true)}
             aria-label="Open menu"
           >
-            ☰
+            <Menu className="h-4 w-4" />
           </button>
           <Link to="/" className="flex items-center gap-2.5 font-black tracking-tight shrink-0 text-lg">
             <img src="/logo.jpg" alt="Unlocked" className="h-8 w-8 rounded-full ring-2 ring-primary object-cover" />
             <span className="hidden sm:inline">Unlocked<span className="text-primary">.</span></span>
           </Link>
           <nav className="hidden lg:flex items-center gap-1 text-sm ml-4">
-            <Link to="/ai" className="px-3 py-1.5 rounded hover:bg-accent font-medium bg-gradient-to-r from-brand-pink/10 to-brand-blue/10">✨ AI</Link>
-            <Link to="/beginners-guide" className="px-3 py-1.5 rounded hover:bg-accent">Guide</Link>
-            <Link to="/posts" className="px-3 py-1.5 rounded hover:bg-accent">Posts</Link>
-            <Link to="/browse" className="px-3 py-1.5 rounded hover:bg-accent">Browse all</Link>
+            <Link to="/ai" className="px-3 py-1.5 rounded hover:bg-accent font-medium bg-gradient-to-r from-brand-pink/10 to-brand-blue/10 inline-flex items-center gap-1.5">
+              <Sparkles className="h-3.5 w-3.5" /> AI
+            </Link>
+            <Link to="/beginners-guide" className="px-3 py-1.5 rounded hover:bg-accent inline-flex items-center gap-1.5">
+              <BookOpen className="h-3.5 w-3.5" /> Guide
+            </Link>
+            <Link to="/posts" className="px-3 py-1.5 rounded hover:bg-accent inline-flex items-center gap-1.5">
+              <FileText className="h-3.5 w-3.5" /> Posts
+            </Link>
+            <Link to="/browse" className="px-3 py-1.5 rounded hover:bg-accent inline-flex items-center gap-1.5">
+              <LayoutGrid className="h-3.5 w-3.5" /> Browse all
+            </Link>
           </nav>
 
           <div className="flex-1" />
@@ -91,41 +100,41 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
               onClick={doSearch}
               disabled={!q.trim()}
               title="Search tools"
-              className="h-9 px-2.5 text-xs font-medium border-y border-border hover:bg-accent disabled:opacity-40"
+              className="h-9 px-2.5 grid place-items-center border-y border-border hover:bg-accent disabled:opacity-40"
             >
-              🔍
+              <Search className="h-4 w-4" />
             </button>
             <button
               onClick={() => askAi("search")}
               disabled={q.trim().length < 3}
               title="Ask AI to find tools"
-              className="h-9 px-2.5 text-xs font-medium border-y border-border bg-gradient-to-r from-brand-pink/15 to-brand-purple/15 hover:from-brand-pink/25 hover:to-brand-purple/25 disabled:opacity-40"
+              className="h-9 px-2.5 text-xs font-medium border-y border-border bg-gradient-to-r from-brand-pink/15 to-brand-purple/15 hover:from-brand-pink/25 hover:to-brand-purple/25 disabled:opacity-40 inline-flex items-center gap-1"
             >
-              ✨ Ask
+              <Sparkles className="h-3.5 w-3.5" /> Ask
             </button>
             <button
               onClick={() => askAi("roadmap")}
               disabled={q.trim().length < 3}
               title="Build a step-by-step plan"
-              className="h-9 px-2.5 text-xs font-medium border rounded-r-lg border-border bg-gradient-to-r from-brand-purple/15 to-brand-blue/15 hover:from-brand-purple/25 hover:to-brand-blue/25 disabled:opacity-40"
+              className="h-9 px-2.5 text-xs font-medium border rounded-r-lg border-border bg-gradient-to-r from-brand-purple/15 to-brand-blue/15 hover:from-brand-purple/25 hover:to-brand-blue/25 disabled:opacity-40 inline-flex items-center gap-1"
             >
-              🗺️ Plan
+              <Map className="h-3.5 w-3.5" /> Plan
             </button>
           </div>
           <button
             onClick={() => setSearchOpen(true)}
             aria-label="Search"
-            className="md:hidden h-9 w-9 grid place-items-center rounded-lg border border-border hover:bg-accent text-sm"
+            className="md:hidden h-9 w-9 grid place-items-center rounded-lg border border-border hover:bg-accent"
           >
-            🔍
+            <Search className="h-4 w-4" />
           </button>
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"
             title="Toggle theme"
-            className="h-9 w-9 grid place-items-center rounded-lg border border-border hover:bg-accent text-sm"
+            className="h-9 w-9 grid place-items-center rounded-lg border border-border hover:bg-accent"
           >
-            {dark ? "☀️" : "🌙"}
+            {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
         </div>
 
@@ -133,7 +142,7 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
           <div className="border-t border-border bg-popover hidden md:block">
             <div className="mx-auto max-w-[1400px] px-4 md:px-6 py-3 space-y-3">
               <button onClick={doSearch} className="w-full p-2 rounded hover:bg-accent text-sm text-left border border-border bg-muted/40">
-                <span className="font-medium">🔍 Search all tools for "{q}"</span>
+                <span className="font-medium inline-flex items-center gap-1.5"><Search className="h-3.5 w-3.5" /> Search all tools for "{q}"</span>
                 <span className="block text-xs text-muted-foreground">Press Enter — fuzzy search the full 26k index</span>
               </button>
 
@@ -172,7 +181,7 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
               )}
 
               <button onClick={() => askAi("search")} className="w-full p-2 rounded hover:bg-accent text-sm text-left">
-                <span className="font-medium">✨ Ask AI instead</span>
+                <span className="font-medium inline-flex items-center gap-1.5"><Sparkles className="h-3.5 w-3.5" /> Ask AI instead</span>
                 <span className="block text-xs text-muted-foreground">Get recommendations & a plan for "{q}"</span>
               </button>
             </div>
@@ -201,21 +210,21 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
                 <img src="/logo.jpg" alt="Unlocked" className="h-8 w-8 rounded-full ring-2 ring-primary object-cover" />
                 Unlocked<span className="text-primary">.</span>
               </Link>
-              <button onClick={() => setNavOpen(false)} className="h-8 w-8 grid place-items-center rounded-lg border border-border hover:bg-accent">✕</button>
+              <button onClick={() => setNavOpen(false)} className="h-8 w-8 grid place-items-center rounded-lg border border-border hover:bg-accent"><X className="h-4 w-4" /></button>
             </div>
             <div className="p-3 border-b border-border grid grid-cols-2 gap-2">
-              <Link to="/ai" className="px-3 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-brand-pink/15 to-brand-blue/15 border border-border text-center">✨ AI</Link>
-              <Link to="/browse" className="px-3 py-2 rounded-lg text-sm font-medium border border-border text-center hover:bg-accent">Browse all</Link>
-              <Link to="/beginners-guide" className="px-3 py-2 rounded-lg text-sm font-medium border border-border text-center hover:bg-accent">Guide</Link>
-              <Link to="/posts" className="px-3 py-2 rounded-lg text-sm font-medium border border-border text-center hover:bg-accent">Posts</Link>
+              <Link to="/ai" className="px-3 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-brand-pink/15 to-brand-blue/15 border border-border text-center inline-flex items-center justify-center gap-1.5"><Sparkles className="h-3.5 w-3.5" /> AI</Link>
+              <Link to="/browse" className="px-3 py-2 rounded-lg text-sm font-medium border border-border text-center hover:bg-accent inline-flex items-center justify-center gap-1.5"><LayoutGrid className="h-3.5 w-3.5" /> Browse all</Link>
+              <Link to="/beginners-guide" className="px-3 py-2 rounded-lg text-sm font-medium border border-border text-center hover:bg-accent inline-flex items-center justify-center gap-1.5"><BookOpen className="h-3.5 w-3.5" /> Guide</Link>
+              <Link to="/posts" className="px-3 py-2 rounded-lg text-sm font-medium border border-border text-center hover:bg-accent inline-flex items-center justify-center gap-1.5"><FileText className="h-3.5 w-3.5" /> Posts</Link>
             </div>
             <div className="flex-1 overflow-y-auto p-4">
               <SideNav pathname={pathname} />
             </div>
             <div className="p-3 border-t border-border flex items-center justify-between text-xs text-muted-foreground">
               <span>Theme</span>
-              <button onClick={toggleTheme} className="h-8 px-3 rounded-lg border border-border hover:bg-accent">
-                {dark ? "☀️ Light" : "🌙 Dark"}
+              <button onClick={toggleTheme} className="h-8 px-3 rounded-lg border border-border hover:bg-accent inline-flex items-center gap-1.5">
+                {dark ? <><Sun className="h-3.5 w-3.5" /> Light</> : <><Moon className="h-3.5 w-3.5" /> Dark</>}
               </button>
             </div>
           </div>
@@ -240,21 +249,21 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
             <button
               onClick={() => askAi("search")}
               disabled={q.trim().length < 3}
-              className="flex-1 h-10 rounded-lg text-sm font-medium border border-border bg-gradient-to-r from-brand-pink/15 to-brand-purple/15 disabled:opacity-40"
+              className="flex-1 h-10 rounded-lg text-sm font-medium border border-border bg-gradient-to-r from-brand-pink/15 to-brand-purple/15 disabled:opacity-40 inline-flex items-center justify-center gap-1.5"
             >
-              ✨ Ask AI
+              <Sparkles className="h-4 w-4" /> Ask AI
             </button>
             <button
               onClick={() => askAi("roadmap")}
               disabled={q.trim().length < 3}
-              className="flex-1 h-10 rounded-lg text-sm font-medium border border-border bg-gradient-to-r from-brand-purple/15 to-brand-blue/15 disabled:opacity-40"
+              className="flex-1 h-10 rounded-lg text-sm font-medium border border-border bg-gradient-to-r from-brand-purple/15 to-brand-blue/15 disabled:opacity-40 inline-flex items-center justify-center gap-1.5"
             >
-              🗺️ Plan
+              <Map className="h-4 w-4" /> Plan
             </button>
           </div>
           <div className="flex-1 min-h-0 p-3 grid gap-2 overflow-y-auto content-start">
             <Link to="/browse" search={{ q: q.trim() || undefined }} className="p-3 rounded-lg border border-border bg-muted/40 hover:bg-accent text-sm">
-              <span className="font-medium">🔍 Browse all 26k tools{q.trim() ? ` for "${q}"` : ""}</span>
+              <span className="font-medium inline-flex items-center gap-1.5"><Search className="h-3.5 w-3.5" /> Browse all 26k tools{q.trim() ? ` for "${q}"` : ""}</span>
               <span className="block text-xs text-muted-foreground">Fast fuzzy search across the full Unlocked index</span>
             </Link>
             {sectionHits.map((h, i) => (
@@ -277,7 +286,7 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
             ))}
             {q.trim() && filtered.length === 0 && (
               <button onClick={() => askAi("search")} className="p-3 rounded-lg border border-border hover:bg-accent text-sm text-left">
-                <span className="font-medium">✨ Ask AI: "{q}"</span>
+                <span className="font-medium inline-flex items-center gap-1.5"><Sparkles className="h-3.5 w-3.5" /> Ask AI: "{q}"</span>
                 <span className="block text-xs text-muted-foreground">No sections matched — let AI search all 26k tools</span>
               </button>
             )}

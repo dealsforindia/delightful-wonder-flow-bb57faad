@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
+import { ArrowRight, Sparkles, BookOpen } from "lucide-react";
 import { FmhyLayout } from "@/components/FmhyLayout";
 import { PAGES } from "@/lib/fmhy-pages";
 import { getToolsCount } from "@/lib/tools-data.functions";
@@ -43,9 +44,9 @@ function HomeRoute() {
           [ {count?.toLocaleString() ?? "26,000+"} entries · {PAGES.length} pages ]
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-2">
-          <Link to="/browse" className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-bold hover:brightness-110 shadow-[0_0_30px_-8px_var(--primary)]">Browse all tools →</Link>
-          <Link to="/ai" className="px-6 py-3 rounded-lg border border-border hover:bg-accent font-medium">✨ Ask AI</Link>
-          <Link to="/$page" params={{ page: "beginners-guide" }} className="px-6 py-3 rounded-lg border border-border hover:bg-accent font-medium">Beginners Guide</Link>
+          <Link to="/browse" className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-bold hover:brightness-110 shadow-[0_0_30px_-8px_var(--primary)] inline-flex items-center gap-2">Browse all tools <ArrowRight className="h-4 w-4" /></Link>
+          <Link to="/ai" className="px-6 py-3 rounded-lg border border-border hover:bg-accent font-medium inline-flex items-center gap-2"><Sparkles className="h-4 w-4" /> Ask AI</Link>
+          <Link to="/$page" params={{ page: "beginners-guide" }} className="px-6 py-3 rounded-lg border border-border hover:bg-accent font-medium inline-flex items-center gap-2"><BookOpen className="h-4 w-4" /> Beginners Guide</Link>
         </div>
       </section>
 
