@@ -26,22 +26,26 @@ function HomeRoute() {
   const tools = PAGES.filter((p) => p.group === "tools");
   return (
     <FmhyLayout>
-      <section className="text-center py-10 md:py-16">
-        <div className="inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-full border border-border bg-muted/50 mb-6">
-          🔒 Fight Chat Control
+      <section className="text-center py-12 md:py-20 relative">
+        <div className="mx-auto mb-6 h-24 w-24 rounded-full ring-4 ring-primary/60 overflow-hidden shadow-[0_0_60px_-10px_var(--primary)]">
+          <img src="/logo.jpg" alt="Unlocked" className="h-full w-full object-cover" />
         </div>
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter bg-gradient-to-r from-brand-pink via-brand-purple to-brand-blue bg-clip-text text-transparent break-words">
-          Unlocked
+        <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] px-3 py-1.5 rounded-full border border-primary/40 text-primary bg-primary/10 mb-6 font-mono">
+          <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" /> Live index · 26k tools
+        </div>
+        <h1 className="text-5xl md:text-8xl font-black tracking-tighter break-words">
+          Un<span className="text-primary">locked</span>
         </h1>
-        <p className="mt-4 text-lg text-muted-foreground">The largest collection of free stuff on the internet.</p>
-        <div className="mt-3 text-xs text-muted-foreground">
-          Mirroring {count?.toLocaleString() ?? "26,000+"} entries across {PAGES.length} pages.
+        <p className="mt-5 text-lg md:text-xl text-muted-foreground max-w-xl mx-auto">
+          Your cheat code to the free internet. Tools, guides & goldmines — one search bar.
+        </p>
+        <div className="mt-3 text-xs text-muted-foreground font-mono">
+          [ {count?.toLocaleString() ?? "26,000+"} entries · {PAGES.length} pages ]
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-2">
-          <Link to="/$page" params={{ page: "beginners-guide" }} className="px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90">See Beginners Guide</Link>
-          <Link to="/$page" params={{ page: "posts" }} className="px-5 py-2.5 rounded-lg border border-border hover:bg-accent">Posts</Link>
-          <Link to="/browse" className="px-5 py-2.5 rounded-lg border border-border hover:bg-accent">Browse all tools</Link>
-          <Link to="/$page" params={{ page: "contributing" }} className="px-5 py-2.5 rounded-lg border border-border hover:bg-accent">Contribute</Link>
+          <Link to="/browse" className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-bold hover:brightness-110 shadow-[0_0_30px_-8px_var(--primary)]">Browse all tools →</Link>
+          <Link to="/ai" className="px-6 py-3 rounded-lg border border-border hover:bg-accent font-medium">✨ Ask AI</Link>
+          <Link to="/$page" params={{ page: "beginners-guide" }} className="px-6 py-3 rounded-lg border border-border hover:bg-accent font-medium">Beginners Guide</Link>
         </div>
       </section>
 
