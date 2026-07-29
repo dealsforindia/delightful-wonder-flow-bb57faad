@@ -1,5 +1,6 @@
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { Menu, X, Search, Sparkles, Map, Sun, Moon, BookOpen, FileText, LayoutGrid } from "lucide-react";
 import { PAGES } from "@/lib/fmhy-pages";
 import { searchContent, type SectionResult } from "@/lib/content-search";
 
