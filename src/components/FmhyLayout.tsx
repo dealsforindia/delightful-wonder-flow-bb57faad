@@ -42,6 +42,14 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
     setSearchOpen(false);
   }
 
+  function doSearch() {
+    const query = q.trim();
+    if (!query) return;
+    navigate({ to: "/browse", search: { q: query } });
+    setQ("");
+    setSearchOpen(false);
+  }
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-40 backdrop-blur-xl bg-background/80 border-b border-border">
@@ -70,10 +78,18 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
             <input
               value={q}
               onChange={(e) => setQ(e.target.value)}
-              onKeyDown={(e) => { if (e.key === "Enter") askAi("search"); }}
-              placeholder="Search sections or ask AI…"
+              onKeyDown={(e) => { if (e.key === "Enter") doSearch(); }}
+              placeholder="Search tools…"
               className="w-72 h-9 px-3 rounded-l-lg bg-muted border border-border text-sm focus:outline-none focus:ring-2 focus:ring-ring"
             />
+            <button
+              onClick={doSearch}
+              disabled={!q.trim()}
+              title="Search tools"
+              className="h-9 px-2.5 text-xs font-medium border-y border-border hover:bg-accent disabled:opacity-40"
+            >
+              🔍
+            </button>
             <button
               onClick={() => askAi("search")}
               disabled={q.trim().length < 3}
@@ -111,18 +127,20 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
         {q && (
           <div className="border-t border-border bg-popover hidden md:block">
             <div className="mx-auto max-w-[1400px] px-4 md:px-6 py-3 grid sm:grid-cols-2 md:grid-cols-3 gap-2">
-              {filtered.slice(0, 12).map((p) => (
+              <button onClick={doSearch} className="p-2 rounded hover:bg-accent text-sm text-left col-span-full border border-border bg-muted/40">
+                <span className="font-medium">🔍 Search all tools for "{q}"</span>
+                <span className="block text-xs text-muted-foreground">Press Enter — fuzzy search the full 26k index</span>
+              </button>
+              {filtered.slice(0, 9).map((p) => (
                 <Link key={p.slug} to="/$page" params={{ page: p.slug }} className="p-2 rounded hover:bg-accent text-sm">
                   <span className="font-medium" style={{ color: p.color }}>{p.title}</span>
                   <span className="block text-xs text-muted-foreground truncate">{p.details}</span>
                 </Link>
               ))}
-              {filtered.length === 0 && (
-                <button onClick={() => askAi("search")} className="p-2 rounded hover:bg-accent text-sm text-left col-span-full">
-                  <span className="font-medium">✨ Ask AI: "{q}"</span>
-                  <span className="block text-xs text-muted-foreground">No sections matched — let AI search all 26k tools</span>
-                </button>
-              )}
+              <button onClick={() => askAi("search")} className="p-2 rounded hover:bg-accent text-sm text-left col-span-full">
+                <span className="font-medium">✨ Ask AI instead</span>
+                <span className="block text-xs text-muted-foreground">Get recommendations & a plan for "{q}"</span>
+              </button>
             </div>
           </div>
         )}
@@ -178,8 +196,8 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
             data-testid="mobile-search"
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            onKeyDown={(e) => { if (e.key === "Enter") askAi("search"); }}
-            placeholder="Search sections or ask AI…"
+            onKeyDown={(e) => { if (e.key === "Enter") doSearch(); }}
+            placeholder="Search tools…"
             className="flex-1 h-10 px-3 rounded-lg bg-muted border border-border text-sm focus:outline-none focus:ring-2 focus:ring-ring"
           />
             <button onClick={() => setSearchOpen(false)} className="h-10 px-3 rounded-lg border border-border hover:bg-accent text-sm">Cancel</button>
