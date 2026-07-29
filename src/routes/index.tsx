@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
+import { ArrowRight, Sparkles, BookOpen } from "lucide-react";
 import { FmhyLayout } from "@/components/FmhyLayout";
 import { PAGES } from "@/lib/fmhy-pages";
 import { getToolsCount } from "@/lib/tools-data.functions";
