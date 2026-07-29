@@ -29,10 +29,45 @@ function HomeRoute() {
   return (
     <FmhyLayout>
       <section className="text-center py-12 md:py-20 relative">
+        <svg className="absolute w-0 h-0" aria-hidden="true">
+          <defs>
+            <filter id="liquid" x="-50%" y="-50%" width="200%" height="200%">
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0.015 0.015"
+                numOctaves="2"
+                seed="1"
+                result="noise"
+              >
+                <animate
+                  attributeName="baseFrequency"
+                  values="0.015 0.015;0.025 0.005;0.015 0.015"
+                  dur="3.5s"
+                  repeatCount="indefinite"
+                />
+              </feTurbulence>
+              <feDisplacementMap
+                in="SourceGraphic"
+                in2="noise"
+                scale="0"
+                xChannelSelector="R"
+                yChannelSelector="G"
+              >
+                <animate
+                  attributeName="scale"
+                  values="0;22;0"
+                  dur="2.5s"
+                  repeatCount="indefinite"
+                />
+              </feDisplacementMap>
+            </filter>
+          </defs>
+        </svg>
+
         <div className="mx-auto mb-6 h-24 w-24 rounded-full ring-4 ring-primary/60 overflow-hidden shadow-[0_0_60px_-10px_var(--primary)]">
           <img src="/logo.jpg" alt="Unlocked" className="h-full w-full object-cover" />
         </div>
-        <h1 className="text-5xl md:text-8xl font-black tracking-tighter break-words">
+        <h1 className="text-5xl md:text-8xl font-black tracking-tighter break-words liquid-title cursor-default inline-block">
           Un<span className="text-primary">locked</span>
         </h1>
         <p className="mt-5 text-lg md:text-xl text-muted-foreground max-w-xl mx-auto">
