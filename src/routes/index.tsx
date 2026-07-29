@@ -31,9 +31,6 @@ function HomeRoute() {
         <div className="mx-auto mb-6 h-24 w-24 rounded-full ring-4 ring-primary/60 overflow-hidden shadow-[0_0_60px_-10px_var(--primary)]">
           <img src="/logo.jpg" alt="Unlocked" className="h-full w-full object-cover" />
         </div>
-        <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] px-3 py-1.5 rounded-full border border-primary/40 text-primary bg-primary/10 mb-6 font-mono">
-          <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" /> Live index · 26k tools
-        </div>
         <h1 className="text-5xl md:text-8xl font-black tracking-tighter break-words">
           Un<span className="text-primary">locked</span>
         </h1>
