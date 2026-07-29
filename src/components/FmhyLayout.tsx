@@ -42,6 +42,14 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
     setSearchOpen(false);
   }
 
+  function doSearch() {
+    const query = q.trim();
+    if (!query) return;
+    navigate({ to: "/browse", search: { q: query } });
+    setQ("");
+    setSearchOpen(false);
+  }
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-40 backdrop-blur-xl bg-background/80 border-b border-border">
