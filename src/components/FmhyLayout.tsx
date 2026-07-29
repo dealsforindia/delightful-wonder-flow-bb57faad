@@ -258,6 +258,18 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
               <span className="font-medium">🔍 Browse all 26k tools{q.trim() ? ` for "${q}"` : ""}</span>
               <span className="block text-xs text-muted-foreground">Fast fuzzy search across the full Unlocked index</span>
             </Link>
+            {sectionHits.map((h, i) => (
+              <a
+                key={`m-${h.pageSlug}-${h.anchor}-${i}`}
+                href={`/${h.pageSlug}#${h.anchor}`}
+                onClick={() => { setQ(""); setSearchOpen(false); }}
+                className="p-3 rounded-lg border border-border/60 hover:bg-accent text-sm"
+              >
+                <span className="text-[10px] uppercase tracking-wider" style={{ color: h.pageColor }}>{h.pageTitle}</span>
+                <span className="block font-medium">{h.heading}</span>
+                <span className="block text-xs text-muted-foreground line-clamp-2">{h.snippet}</span>
+              </a>
+            ))}
             {filtered.slice(0, 20).map((p) => (
               <Link key={p.slug} to="/$page" params={{ page: p.slug }} className="p-3 rounded-lg border border-border hover:bg-accent text-sm">
                 <span className="font-medium" style={{ color: p.color }}>{p.title}</span>
