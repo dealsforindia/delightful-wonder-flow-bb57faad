@@ -286,7 +286,7 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
             ))}
             {q.trim() && filtered.length === 0 && (
               <button onClick={() => askAi("search")} className="p-3 rounded-lg border border-border hover:bg-accent text-sm text-left">
-                <span className="font-medium">✨ Ask AI: "{q}"</span>
+                <span className="font-medium inline-flex items-center gap-1.5"><Sparkles className="h-3.5 w-3.5" /> Ask AI: "{q}"</span>
                 <span className="block text-xs text-muted-foreground">No sections matched — let AI search all 26k tools</span>
               </button>
             )}
