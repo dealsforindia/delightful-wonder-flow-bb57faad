@@ -249,21 +249,21 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
             <button
               onClick={() => askAi("search")}
               disabled={q.trim().length < 3}
-              className="flex-1 h-10 rounded-lg text-sm font-medium border border-border bg-gradient-to-r from-brand-pink/15 to-brand-purple/15 disabled:opacity-40"
+              className="flex-1 h-10 rounded-lg text-sm font-medium border border-border bg-gradient-to-r from-brand-pink/15 to-brand-purple/15 disabled:opacity-40 inline-flex items-center justify-center gap-1.5"
             >
-              ✨ Ask AI
+              <Sparkles className="h-4 w-4" /> Ask AI
             </button>
             <button
               onClick={() => askAi("roadmap")}
               disabled={q.trim().length < 3}
-              className="flex-1 h-10 rounded-lg text-sm font-medium border border-border bg-gradient-to-r from-brand-purple/15 to-brand-blue/15 disabled:opacity-40"
+              className="flex-1 h-10 rounded-lg text-sm font-medium border border-border bg-gradient-to-r from-brand-purple/15 to-brand-blue/15 disabled:opacity-40 inline-flex items-center justify-center gap-1.5"
             >
-              🗺️ Plan
+              <Map className="h-4 w-4" /> Plan
             </button>
           </div>
           <div className="flex-1 min-h-0 p-3 grid gap-2 overflow-y-auto content-start">
             <Link to="/browse" search={{ q: q.trim() || undefined }} className="p-3 rounded-lg border border-border bg-muted/40 hover:bg-accent text-sm">
-              <span className="font-medium">🔍 Browse all 26k tools{q.trim() ? ` for "${q}"` : ""}</span>
+              <span className="font-medium inline-flex items-center gap-1.5"><Search className="h-3.5 w-3.5" /> Browse all 26k tools{q.trim() ? ` for "${q}"` : ""}</span>
               <span className="block text-xs text-muted-foreground">Fast fuzzy search across the full Unlocked index</span>
             </Link>
             {sectionHits.map((h, i) => (
