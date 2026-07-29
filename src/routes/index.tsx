@@ -67,8 +67,9 @@ function HomeRoute() {
         <div className="mx-auto mb-6 h-24 w-24 rounded-full ring-4 ring-primary/60 overflow-hidden shadow-[0_0_60px_-10px_var(--primary)]">
           <img src="/logo.jpg" alt="Unlocked" className="h-full w-full object-cover" />
         </div>
-        <h1 className="text-6xl md:text-9xl font-black tracking-tight break-words liquid-title cursor-default select-none">
-          <span className="lt-fill">Un<span className="lt-neon">locked</span></span>
+        <h1 className="text-5xl md:text-8xl font-black tracking-tighter break-words liquid-title cursor-default">
+          <span className="lt-fill" aria-hidden="true">Un<span className="lt-neon">locked</span></span>
+          <span className="lt-outline">Un<span className="lt-neon">locked</span></span>
         </h1>
         <p className="mt-5 text-lg md:text-xl text-muted-foreground max-w-xl mx-auto">
           Your cheat code to the free internet. Tools, guides & goldmines — one search bar.
