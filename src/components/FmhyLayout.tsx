@@ -35,6 +35,11 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
     ? PAGES.filter((p) => (p.title + " " + p.short + " " + p.details).toLowerCase().includes(q.toLowerCase()))
     : PAGES;
 
+  const sectionHits: SectionResult[] = useMemo(
+    () => (q.trim().length >= 2 ? searchContent(q, 8) : []),
+    [q],
+  );
+
   function askAi(mode: "search" | "roadmap") {
     const query = q.trim();
     if (query.length < 3) return;
