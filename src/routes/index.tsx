@@ -127,7 +127,7 @@ function PageCard({ p }: { p: (typeof PAGES)[number] }) {
           <img
             src={iconUrl}
             alt=""
-            className="h-7 w-7 object-contain"
+            className="h-7 w-7 object-contain icon-invert"
             loading="lazy"
           />
         ) : (
