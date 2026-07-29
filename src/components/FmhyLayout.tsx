@@ -83,6 +83,19 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
               className="w-72 h-9 px-3 rounded-l-lg bg-muted border border-border text-sm focus:outline-none focus:ring-2 focus:ring-ring"
             />
             <button
+              onKeyDown={(e) => { if (e.key === "Enter") doSearch(); }}
+              placeholder="Search tools…"
+              className="w-72 h-9 px-3 rounded-l-lg bg-muted border border-border text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+            />
+            <button
+              onClick={doSearch}
+              disabled={!q.trim()}
+              title="Search tools"
+              className="h-9 px-2.5 text-xs font-medium border-y border-border hover:bg-accent disabled:opacity-40"
+            >
+              🔍
+            </button>
+            <button
               onClick={() => askAi("search")}
               disabled={q.trim().length < 3}
               title="Ask AI to find tools"
