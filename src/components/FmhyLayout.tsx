@@ -1,6 +1,7 @@
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { PAGES } from "@/lib/fmhy-pages";
+import { searchContent, type SectionResult } from "@/lib/content-search";
 
 export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: ReactNode }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
@@ -33,6 +34,11 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
   const filtered = q.trim()
     ? PAGES.filter((p) => (p.title + " " + p.short + " " + p.details).toLowerCase().includes(q.toLowerCase()))
     : PAGES;
+
+  const sectionHits: SectionResult[] = useMemo(
+    () => (q.trim().length >= 2 ? searchContent(q, 8) : []),
+    [q],
+  );
 
   function askAi(mode: "search" | "roadmap") {
     const query = q.trim();
@@ -126,18 +132,47 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
 
         {q && (
           <div className="border-t border-border bg-popover hidden md:block">
-            <div className="mx-auto max-w-[1400px] px-4 md:px-6 py-3 grid sm:grid-cols-2 md:grid-cols-3 gap-2">
-              <button onClick={doSearch} className="p-2 rounded hover:bg-accent text-sm text-left col-span-full border border-border bg-muted/40">
+            <div className="mx-auto max-w-[1400px] px-4 md:px-6 py-3 space-y-3">
+              <button onClick={doSearch} className="w-full p-2 rounded hover:bg-accent text-sm text-left border border-border bg-muted/40">
                 <span className="font-medium">🔍 Search all tools for "{q}"</span>
                 <span className="block text-xs text-muted-foreground">Press Enter — fuzzy search the full 26k index</span>
               </button>
-              {filtered.slice(0, 9).map((p) => (
-                <Link key={p.slug} to="/$page" params={{ page: p.slug }} className="p-2 rounded hover:bg-accent text-sm">
-                  <span className="font-medium" style={{ color: p.color }}>{p.title}</span>
-                  <span className="block text-xs text-muted-foreground truncate">{p.details}</span>
-                </Link>
-              ))}
-              <button onClick={() => askAi("search")} className="p-2 rounded hover:bg-accent text-sm text-left col-span-full">
+
+              {sectionHits.length > 0 && (
+                <div>
+                  <div className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1.5 px-1">In the wiki</div>
+                  <div className="grid sm:grid-cols-2 gap-2">
+                    {sectionHits.map((h, i) => (
+                      <a
+                        key={`${h.pageSlug}-${h.anchor}-${i}`}
+                        href={`/${h.pageSlug}#${h.anchor}`}
+                        onClick={() => { setQ(""); setSearchOpen(false); }}
+                        className="p-2 rounded hover:bg-accent text-sm border border-border/60"
+                      >
+                        <span className="text-[10px] uppercase tracking-wider" style={{ color: h.pageColor }}>{h.pageTitle}</span>
+                        <span className="block font-medium truncate">{h.heading}</span>
+                        <span className="block text-xs text-muted-foreground line-clamp-2">{h.snippet}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {filtered.length > 0 && (
+                <div>
+                  <div className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1.5 px-1">Pages</div>
+                  <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-2">
+                    {filtered.slice(0, 9).map((p) => (
+                      <Link key={p.slug} to="/$page" params={{ page: p.slug }} className="p-2 rounded hover:bg-accent text-sm">
+                        <span className="font-medium" style={{ color: p.color }}>{p.title}</span>
+                        <span className="block text-xs text-muted-foreground truncate">{p.details}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <button onClick={() => askAi("search")} className="w-full p-2 rounded hover:bg-accent text-sm text-left">
                 <span className="font-medium">✨ Ask AI instead</span>
                 <span className="block text-xs text-muted-foreground">Get recommendations & a plan for "{q}"</span>
               </button>
@@ -223,6 +258,18 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
               <span className="font-medium">🔍 Browse all 26k tools{q.trim() ? ` for "${q}"` : ""}</span>
               <span className="block text-xs text-muted-foreground">Fast fuzzy search across the full Unlocked index</span>
             </Link>
+            {sectionHits.map((h, i) => (
+              <a
+                key={`m-${h.pageSlug}-${h.anchor}-${i}`}
+                href={`/${h.pageSlug}#${h.anchor}`}
+                onClick={() => { setQ(""); setSearchOpen(false); }}
+                className="p-3 rounded-lg border border-border/60 hover:bg-accent text-sm"
+              >
+                <span className="text-[10px] uppercase tracking-wider" style={{ color: h.pageColor }}>{h.pageTitle}</span>
+                <span className="block font-medium">{h.heading}</span>
+                <span className="block text-xs text-muted-foreground line-clamp-2">{h.snippet}</span>
+              </a>
+            ))}
             {filtered.slice(0, 20).map((p) => (
               <Link key={p.slug} to="/$page" params={{ page: p.slug }} className="p-3 rounded-lg border border-border hover:bg-accent text-sm">
                 <span className="font-medium" style={{ color: p.color }}>{p.title}</span>
