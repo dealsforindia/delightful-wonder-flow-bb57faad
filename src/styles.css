@@ -94,6 +94,14 @@
     display: none;
   }
 
+  .neon-glow {
+    box-shadow: 0 0 30px -10px var(--primary);
+  }
+
+  .neon-text {
+    text-shadow: 0 0 20px -4px var(--primary);
+  }
+
   .liquid-title {
     position: relative;
     display: inline-block;

@@ -1,6 +1,6 @@
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
-import { Menu, X, Search, Sparkles, Map, Sun, Moon, BookOpen, FileText, LayoutGrid } from "lucide-react";
+import { Menu, X, Search, Sparkles, Map, Sun, Moon, BookOpen, FileText, LayoutGrid, Compass } from "lucide-react";
 import { PAGES } from "@/lib/fmhy-pages";
 import { searchContent, type SectionResult } from "@/lib/content-search";
 
@@ -18,7 +18,7 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
   }, [pathname]);
 
   useEffect(() => {
-    const saved = localStorage.getItem("fmhy-theme");
+    const saved = localStorage.getItem("unlocked-theme");
     const prefers = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const isDark = saved ? saved === "dark" : prefers;
     setDark(isDark);
@@ -29,7 +29,7 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
     const next = !dark;
     setDark(next);
     document.documentElement.classList.toggle("dark", next);
-    localStorage.setItem("fmhy-theme", next ? "dark" : "light");
+    localStorage.setItem("unlocked-theme", next ? "dark" : "light");
   }
 
   const filtered = q.trim()
@@ -73,7 +73,7 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
             <span className="hidden sm:inline">Unlocked<span className="text-primary">.</span></span>
           </Link>
           <nav className="hidden lg:flex items-center gap-1 text-sm ml-4">
-            <Link to="/ai" className="px-3 py-1.5 rounded hover:bg-accent font-medium bg-gradient-to-r from-brand-pink/10 to-brand-blue/10 inline-flex items-center gap-1.5">
+            <Link to="/ai" className="px-3 py-1.5 rounded hover:bg-accent font-medium bg-primary/10 text-primary inline-flex items-center gap-1.5">
               <Sparkles className="h-3.5 w-3.5" /> AI
             </Link>
             <Link to="/beginners-guide" className="px-3 py-1.5 rounded hover:bg-accent inline-flex items-center gap-1.5">
@@ -84,6 +84,9 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
             </Link>
             <Link to="/browse" className="px-3 py-1.5 rounded hover:bg-accent inline-flex items-center gap-1.5">
               <LayoutGrid className="h-3.5 w-3.5" /> Browse all
+            </Link>
+            <Link to="/startpage" className="px-3 py-1.5 rounded hover:bg-accent inline-flex items-center gap-1.5">
+              <Compass className="h-3.5 w-3.5" /> Startpage
             </Link>
           </nav>
 
@@ -108,7 +111,7 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
               onClick={() => askAi("search")}
               disabled={q.trim().length < 3}
               title="Ask AI to find tools"
-              className="h-9 px-2.5 text-xs font-medium border-y border-border bg-gradient-to-r from-brand-pink/15 to-brand-purple/15 hover:from-brand-pink/25 hover:to-brand-purple/25 disabled:opacity-40 inline-flex items-center gap-1"
+              className="h-9 px-2.5 text-xs font-medium border-y border-border bg-primary/10 hover:bg-primary/20 text-primary disabled:opacity-40 inline-flex items-center gap-1"
             >
               <Sparkles className="h-3.5 w-3.5" /> Ask
             </button>
@@ -116,7 +119,7 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
               onClick={() => askAi("roadmap")}
               disabled={q.trim().length < 3}
               title="Build a step-by-step plan"
-              className="h-9 px-2.5 text-xs font-medium border rounded-r-lg border-border bg-gradient-to-r from-brand-purple/15 to-brand-blue/15 hover:from-brand-purple/25 hover:to-brand-blue/25 disabled:opacity-40 inline-flex items-center gap-1"
+              className="h-9 px-2.5 text-xs font-medium border rounded-r-lg border-border bg-primary/10 hover:bg-primary/20 text-primary disabled:opacity-40 inline-flex items-center gap-1"
             >
               <Map className="h-3.5 w-3.5" /> Plan
             </button>
@@ -213,10 +216,11 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
               <button onClick={() => setNavOpen(false)} className="h-8 w-8 grid place-items-center rounded-lg border border-border hover:bg-accent"><X className="h-4 w-4" /></button>
             </div>
             <div className="p-3 border-b border-border grid grid-cols-2 gap-2">
-              <Link to="/ai" className="px-3 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-brand-pink/15 to-brand-blue/15 border border-border text-center inline-flex items-center justify-center gap-1.5"><Sparkles className="h-3.5 w-3.5" /> AI</Link>
+              <Link to="/ai" className="px-3 py-2 rounded-lg text-sm font-medium bg-primary/10 text-primary border border-border text-center inline-flex items-center justify-center gap-1.5"><Sparkles className="h-3.5 w-3.5" /> AI</Link>
               <Link to="/browse" className="px-3 py-2 rounded-lg text-sm font-medium border border-border text-center hover:bg-accent inline-flex items-center justify-center gap-1.5"><LayoutGrid className="h-3.5 w-3.5" /> Browse all</Link>
               <Link to="/beginners-guide" className="px-3 py-2 rounded-lg text-sm font-medium border border-border text-center hover:bg-accent inline-flex items-center justify-center gap-1.5"><BookOpen className="h-3.5 w-3.5" /> Guide</Link>
               <Link to="/posts" className="px-3 py-2 rounded-lg text-sm font-medium border border-border text-center hover:bg-accent inline-flex items-center justify-center gap-1.5"><FileText className="h-3.5 w-3.5" /> Posts</Link>
+              <Link to="/startpage" className="px-3 py-2 rounded-lg text-sm font-medium border border-border text-center hover:bg-accent inline-flex items-center justify-center gap-1.5"><Compass className="h-3.5 w-3.5" /> Startpage</Link>
             </div>
             <div className="flex-1 overflow-y-auto p-4">
               <SideNav pathname={pathname} />
@@ -249,14 +253,14 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
             <button
               onClick={() => askAi("search")}
               disabled={q.trim().length < 3}
-              className="flex-1 h-10 rounded-lg text-sm font-medium border border-border bg-gradient-to-r from-brand-pink/15 to-brand-purple/15 disabled:opacity-40 inline-flex items-center justify-center gap-1.5"
+              className="flex-1 h-10 rounded-lg text-sm font-medium border border-border bg-primary/10 text-primary disabled:opacity-40 inline-flex items-center justify-center gap-1.5"
             >
               <Sparkles className="h-4 w-4" /> Ask AI
             </button>
             <button
               onClick={() => askAi("roadmap")}
               disabled={q.trim().length < 3}
-              className="flex-1 h-10 rounded-lg text-sm font-medium border border-border bg-gradient-to-r from-brand-purple/15 to-brand-blue/15 disabled:opacity-40 inline-flex items-center justify-center gap-1.5"
+              className="flex-1 h-10 rounded-lg text-sm font-medium border border-border bg-primary/10 text-primary disabled:opacity-40 inline-flex items-center justify-center gap-1.5"
             >
               <Map className="h-4 w-4" /> Plan
             </button>
@@ -312,12 +316,12 @@ function SideNav({ pathname }: { pathname: string }) {
             {items.map((p) => {
               const to = `/${p.slug}`;
               const active = !p.href && pathname === to;
-              const cls = `flex items-center gap-2 px-2 py-1.5 rounded-md border-l-2 ${active ? "bg-accent border-current font-medium" : "border-transparent hover:bg-accent/60"}`;
+              const cls = `flex items-center gap-2 px-2 py-1.5 rounded-md border-l-2 transition-colors ${active ? "bg-accent border-current font-medium" : "border-transparent hover:bg-accent/60"}`;
               return (
                 <li key={p.slug}>
                   {p.href ? (
                     <a href={p.href} className={cls}>
-                      <span className="inline-block h-2 w-2 rounded-full shrink-0" style={{ background: p.color }} />
+                      <span className="inline-block h-2 w-2 rounded-full shrink-0 shadow-[0_0_8px_-2px_currentColor]" style={{ background: p.color }} />
                       {p.title}
                     </a>
                   ) : (
@@ -327,7 +331,7 @@ function SideNav({ pathname }: { pathname: string }) {
                       className={cls}
                       style={active ? { color: p.color } : undefined}
                     >
-                      <span className="inline-block h-2 w-2 rounded-full shrink-0" style={{ background: p.color }} />
+                      <span className="inline-block h-2 w-2 rounded-full shrink-0 shadow-[0_0_8px_-2px_currentColor]" style={{ background: p.color }} />
                       {p.title}
                     </Link>
                   )}

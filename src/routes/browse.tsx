@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { useMemo, useRef, useDeferredValue } from "react";
 import { useVirtualizer } from "@tanstack/react-virtual";
+import { ArrowLeft, Search } from "lucide-react";
 import { FmhyLayout } from "@/components/FmhyLayout";
 import { getTools } from "@/lib/tools-data.functions";
 import { CATEGORIES } from "@/lib/tools-data";
@@ -80,25 +81,30 @@ function BrowseRoute() {
   return (
     <FmhyLayout>
       <div>
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Browse all tools</h1>
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
+          Browse all <span className="text-primary">tools</span>
+        </h1>
         <p className="text-muted-foreground mt-2">
           {tools ? `Search across ${tools.length.toLocaleString()} entries.` : "Loading the index…"}
         </p>
 
-        <input
-          autoFocus
-          value={search.q ?? ""}
-          onChange={(e) => update({ q: e.target.value || undefined })}
-          placeholder="Search anything…"
-          className="mt-6 w-full max-w-2xl h-12 px-4 rounded-xl bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-ring"
-        />
+        <div className="relative mt-6 max-w-2xl">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <input
+            autoFocus
+            value={search.q ?? ""}
+            onChange={(e) => update({ q: e.target.value || undefined })}
+            placeholder="Search anything…"
+            className="w-full h-12 pl-10 pr-4 rounded-xl bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary"
+          />
+        </div>
 
         <div className="mt-4 flex flex-col sm:flex-row sm:items-center gap-3">
           <div className="flex-1 flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 no-scrollbar">
             <button
               onClick={() => update({ cat: undefined })}
               className={`shrink-0 px-3 py-1.5 text-xs rounded-full border transition-colors ${
-                !search.cat ? "bg-primary text-primary-foreground border-primary" : "border-border hover:bg-accent"
+                !search.cat ? "bg-primary text-primary-foreground border-primary shadow-[0_0_14px_-6px_var(--primary)]" : "border-border hover:bg-accent hover:border-primary/40"
               }`}
             >
               All
@@ -108,7 +114,7 @@ function BrowseRoute() {
                 key={c}
                 onClick={() => update({ cat: search.cat === c ? undefined : c })}
                 className={`shrink-0 px-3 py-1.5 text-xs rounded-full border transition-colors ${
-                  search.cat === c ? "bg-primary text-primary-foreground border-primary" : "border-border hover:bg-accent"
+                  search.cat === c ? "bg-primary text-primary-foreground border-primary shadow-[0_0_14px_-6px_var(--primary)]" : "border-border hover:bg-accent hover:border-primary/40"
                 }`}
               >
                 {c}
@@ -176,8 +182,8 @@ function BrowseRoute() {
       </div>
 
       <div className="mt-10">
-        <Link to="/" className="text-sm text-muted-foreground hover:text-foreground">
-          ← Back to home
+        <Link to="/" className="text-sm text-muted-foreground hover:text-primary inline-flex items-center gap-1.5 transition">
+          <ArrowLeft className="h-4 w-4" /> Back to home
         </Link>
       </div>
     </FmhyLayout>
@@ -195,11 +201,11 @@ function ToolRow({ tool, index }: { tool: Tool; index: number }) {
       <span className="text-xs text-muted-foreground w-6 sm:w-8 tabular-nums shrink-0">{index + 1}</span>
       <div className="min-w-0 flex-1">
         <div className="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-2">
-          <span className="font-medium group-hover:text-brand-blue truncate">{tool.name}</span>
+          <span className="font-medium group-hover:text-primary truncate transition-colors">{tool.name}</span>
           <span className="text-xs text-muted-foreground truncate">{tool.section}</span>
         </div>
       </div>
-      <span className="shrink-0 text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-muted text-muted-foreground">
+      <span className="shrink-0 text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-muted text-muted-foreground border border-border">
         {tool.category}
       </span>
     </a>

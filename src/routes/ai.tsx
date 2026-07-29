@@ -4,6 +4,7 @@ import { DefaultChatTransport, type UIMessage } from "ai";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { FmhyLayout } from "@/components/FmhyLayout";
 import { MarkdownView } from "@/components/MarkdownView";
+import { Brain, MessageSquare, Pin, RefreshCw, Search, Map, Sparkles, Loader2 } from "lucide-react";
 
 type AiSearchParams = { q?: string; mode?: "search" | "roadmap" };
 
@@ -202,12 +203,12 @@ function AiRoute() {
         <div className="flex items-start justify-between gap-3 pb-3 border-b border-border">
           <div className="min-w-0">
             <div className="flex items-center gap-2 text-xs text-muted-foreground">
-              <span className="inline-block h-2 w-2 rounded-full bg-brand-pink animate-pulse" />
+              <span className="inline-block h-2 w-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_-2px_var(--primary)]" />
               AI Concierge · Gemini 3.1 Pro · 26k tools · thinking
             </div>
             <h1 className="mt-1 text-xl sm:text-2xl font-extrabold tracking-tight">
               Ask.{" "}
-              <span className="bg-gradient-to-r from-brand-pink via-brand-purple to-brand-blue bg-clip-text text-transparent">
+              <span className="text-primary">
                 Get the right free tool.
               </span>
             </h1>
@@ -227,8 +228,8 @@ function AiRoute() {
         {memory.length > 0 && (
           <div className="mt-3 rounded-lg border border-border bg-muted/40 p-2.5 text-xs">
             <div className="flex items-center justify-between mb-1.5">
-              <span className="uppercase tracking-widest text-[10px] text-muted-foreground">
-                🧠 Remembering about you
+              <span className="uppercase tracking-widest text-[10px] text-muted-foreground inline-flex items-center gap-1">
+                <Brain className="h-3 w-3" /> Remembering about you
               </span>
               <button
                 onClick={() => forgetMemory()}
@@ -255,10 +256,10 @@ function AiRoute() {
 
         <div className="flex items-center gap-1.5 pt-3 pb-1 overflow-x-auto scrollbar-hide">
           {([
-            ["auto", "✨ Auto", "Let AI decide"],
-            ["search", "🔍 Ask", "Find tools"],
-            ["roadmap", "🗺️ Plan", "Step-by-step"],
-          ] as const).map(([value, label, hint]) => {
+            ["auto", "Auto", "Let AI decide", Sparkles],
+            ["search", "Ask", "Find tools", Search],
+            ["roadmap", "Plan", "Step-by-step", Map],
+          ] as const).map(([value, label, hint, Icon]) => {
             const active = mode === value;
             return (
               <button
@@ -266,13 +267,13 @@ function AiRoute() {
                 type="button"
                 onClick={() => setMode(value)}
                 title={hint}
-                className={`px-3 py-1.5 rounded-full text-xs font-medium border whitespace-nowrap transition ${
+                className={`px-3 py-1.5 rounded-full text-xs font-medium border whitespace-nowrap transition inline-flex items-center gap-1.5 ${
                   active
-                    ? "bg-gradient-to-r from-brand-pink/25 to-brand-blue/25 border-brand-purple/50 text-foreground"
+                    ? "bg-primary/15 border-primary/50 text-primary shadow-[0_0_14px_-6px_var(--primary)]"
                     : "border-border text-muted-foreground hover:bg-accent"
                 }`}
               >
-                {label}
+                <Icon className="h-3.5 w-3.5" /> {label}
               </button>
             );
           })}
@@ -290,7 +291,7 @@ function AiRoute() {
                   <button
                     key={ex}
                     onClick={() => sendMessage({ text: ex })}
-                    className="px-2.5 py-1 text-xs rounded-full border border-border hover:bg-accent text-muted-foreground text-left"
+                    className="px-2.5 py-1 text-xs rounded-full border border-border hover:bg-accent hover:border-primary/40 text-muted-foreground text-left transition"
                   >
                     {ex}
                   </button>
@@ -305,7 +306,7 @@ function AiRoute() {
 
           {status === "submitted" && (
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span className="inline-block h-2 w-2 rounded-full bg-brand-purple animate-pulse" />
+              <Loader2 className="h-4 w-4 animate-spin text-primary" />
               Thinking…
             </div>
           )}
@@ -331,7 +332,7 @@ function AiRoute() {
               }}
               rows={Math.min(6, Math.max(1, input.split("\n").length))}
               placeholder="Ask anything — e.g. how do I earn from affiliate marketing?"
-              className="flex-1 min-h-[44px] max-h-40 px-4 py-2.5 rounded-xl bg-muted border border-border resize-none focus:outline-none focus:ring-2 focus:ring-ring text-sm"
+              className="flex-1 min-h-[44px] max-h-40 px-4 py-2.5 rounded-xl bg-muted border border-border resize-none focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary text-sm"
               autoFocus
             />
             {busy ? (
@@ -346,7 +347,7 @@ function AiRoute() {
               <button
                 type="submit"
                 disabled={busy || input.trim().length < 2}
-                className="px-4 h-11 rounded-xl bg-primary text-primary-foreground font-medium disabled:opacity-50 shrink-0"
+                className="px-4 h-11 rounded-xl bg-primary text-primary-foreground font-medium disabled:opacity-50 shrink-0 shadow-[0_0_18px_-8px_var(--primary)] hover:brightness-110"
               >
                 Send
               </button>
@@ -355,10 +356,10 @@ function AiRoute() {
               <button
                 type="button"
                 onClick={() => regenerate()}
-                className="px-4 h-11 rounded-xl border border-border hover:bg-accent font-medium text-muted-foreground shrink-0"
+                className="px-4 h-11 rounded-xl border border-border hover:bg-accent hover:border-primary/40 font-medium text-muted-foreground shrink-0"
                 title="Regenerate the last assistant response"
               >
-                ↻
+                <RefreshCw className="h-4 w-4" />
               </button>
             )}
           </div>
@@ -374,7 +375,7 @@ function MessageView({ message, onAskAbout }: { message: UIMessage; onAskAbout: 
   if (isUser) {
     return (
       <div className="flex justify-end">
-        <div className="max-w-[85%] rounded-2xl rounded-br-md px-4 py-2.5 bg-primary text-primary-foreground text-sm whitespace-pre-wrap break-words">
+        <div className="max-w-[85%] rounded-2xl rounded-br-md px-4 py-2.5 bg-primary text-primary-foreground text-sm whitespace-pre-wrap break-words shadow-[0_0_20px_-10px_var(--primary)]">
           {textOf(message)}
         </div>
       </div>
@@ -416,7 +417,7 @@ function MessageView({ message, onAskAbout }: { message: UIMessage; onAskAbout: 
               "Searching the directory…";
             return (
               <div key={idx} className="text-xs text-muted-foreground flex items-center gap-2">
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-brand-purple animate-pulse" />
+                <Loader2 className="h-3.5 w-3.5 animate-spin text-primary" />
                 {label}
               </div>
             );
@@ -439,10 +440,10 @@ function MessageView({ message, onAskAbout }: { message: UIMessage; onAskAbout: 
         <div className="opacity-0 group-hover:opacity-100 transition-opacity">
           <button
             onClick={() => onAskAbout(text)}
-            className="text-[11px] px-2 py-0.5 rounded-md border border-border hover:bg-accent text-muted-foreground"
+            className="text-[11px] px-2 py-0.5 rounded-md border border-border hover:bg-accent hover:border-primary/40 text-muted-foreground inline-flex items-center gap-1"
             title="Quote this reply into your next question"
           >
-            📌 Ask about this
+            <Pin className="h-3 w-3" /> Ask about this
           </button>
         </div>
       )}
@@ -458,8 +459,8 @@ function ReasoningBlock({ text }: { text: string }) {
       onToggle={(e) => setOpen((e.target as HTMLDetailsElement).open)}
       className="rounded-lg border border-dashed border-border bg-muted/30 text-xs"
     >
-      <summary className="cursor-pointer select-none px-2.5 py-1.5 text-muted-foreground">
-        💭 {open ? "Hide" : "Show"} thinking
+      <summary className="cursor-pointer select-none px-2.5 py-1.5 text-muted-foreground inline-flex items-center gap-1.5">
+        <MessageSquare className="h-3 w-3" /> {open ? "Hide" : "Show"} thinking
       </summary>
       <div className="px-3 py-2 whitespace-pre-wrap text-muted-foreground/90 leading-relaxed">
         {text}
@@ -477,8 +478,8 @@ function ToolResultCard({ name, output }: { name: string; output: any }) {
   if (name === "compare_tools") return <CompareCard output={output} />;
   if (name === "remember_user") {
     return (
-      <div className="text-xs text-brand-purple flex items-center gap-1.5">
-        🧠 Remembered: <span className="italic">{output?.fact}</span>
+      <div className="text-xs text-primary flex items-center gap-1.5">
+        <Brain className="h-3.5 w-3.5" /> Remembered: <span className="italic">{output?.fact}</span>
       </div>
     );
   }
@@ -492,8 +493,8 @@ function SearchCard({ output }: { output: { query: string; results: ToolRow[] } 
   if (!results?.length) return <div className="text-xs text-muted-foreground italic">No matches for "{query}".</div>;
   return (
     <div className="rounded-xl border border-border overflow-hidden">
-      <div className="px-3 py-2 text-[11px] uppercase tracking-widest text-muted-foreground bg-muted/60">
-        🔎 Found {results.length} for "{query}"
+      <div className="px-3 py-2 text-[11px] uppercase tracking-widest text-muted-foreground bg-muted/60 inline-flex items-center gap-1.5">
+        <Search className="h-3.5 w-3.5" /> Found {results.length} for "{query}"
       </div>
       <ul className="divide-y divide-border">
         {results.map((r) => <ToolRowLi key={r.i} r={r} />)}
@@ -505,13 +506,13 @@ function SearchCard({ output }: { output: { query: string; results: ToolRow[] } 
 function ToolRowLi({ r }: { r: ToolRow }) {
   return (
     <li>
-      <a href={r.url} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 p-3 hover:bg-accent/40">
+      <a href={r.url} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 p-3 hover:bg-accent/40 transition-colors">
         <span className="min-w-0 flex-1">
           <span className="flex items-baseline gap-2 flex-wrap">
             <span className="font-medium text-sm">{r.name}</span>
             <span className="text-[11px] text-muted-foreground">{r.section}</span>
           </span>
-          <span className="block text-[11px] text-brand-blue truncate mt-0.5">{r.url}</span>
+          <span className="block text-[11px] text-primary/80 truncate mt-0.5">{r.url}</span>
           {r.why && <span className="block text-[11px] text-muted-foreground italic mt-0.5">{r.why}</span>}
         </span>
         <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-muted text-muted-foreground shrink-0">
@@ -533,7 +534,9 @@ function RoadmapCardView({ output }: {
     <div className="rounded-xl border border-border overflow-hidden">
       <div className="px-3 py-2 bg-muted/60 flex items-baseline justify-between gap-2 flex-wrap">
         <div>
-          <div className="text-[11px] uppercase tracking-widest text-muted-foreground">🗺️ Roadmap · {goal}</div>
+          <div className="text-[11px] uppercase tracking-widest text-muted-foreground inline-flex items-center gap-1.5">
+            <Map className="h-3.5 w-3.5" /> Roadmap · {goal}
+          </div>
           <div className="font-semibold text-sm mt-0.5">{title}</div>
         </div>
         <div className="text-[11px] text-muted-foreground">{steps.length} steps · ~{totalMinutes} min</div>
@@ -541,13 +544,13 @@ function RoadmapCardView({ output }: {
       <ol className="divide-y divide-border">
         {steps.map((s, i) => (
           <li key={`${s.i}-${i}`} className="p-3 flex gap-3">
-            <span className="h-6 w-6 shrink-0 rounded-full bg-gradient-to-br from-brand-pink via-brand-purple to-brand-blue text-white text-xs grid place-items-center font-semibold">
+            <span className="h-6 w-6 shrink-0 rounded-full bg-primary text-primary-foreground text-xs grid place-items-center font-semibold shadow-[0_0_10px_-3px_var(--primary)]">
               {i + 1}
             </span>
             <div className="min-w-0 flex-1">
               <div className="text-sm">{s.action}</div>
               <div className="mt-1 flex items-baseline gap-2 flex-wrap text-xs">
-                <a href={s.url} target="_blank" rel="noopener noreferrer" className="font-medium text-brand-purple hover:underline">{s.name}</a>
+                <a href={s.url} target="_blank" rel="noopener noreferrer" className="font-medium text-primary hover:underline">{s.name}</a>
                 <span className="text-muted-foreground">{s.category}</span>
                 <span className="ml-auto text-muted-foreground">~{s.estMinutes} min</span>
               </div>
@@ -566,8 +569,8 @@ function CategoriesCard({ output }: {
 }) {
   return (
     <div className="rounded-xl border border-border overflow-hidden">
-      <div className="px-3 py-2 text-[11px] uppercase tracking-widest text-muted-foreground bg-muted/60">
-        🗂️ {output.categories.length} categories · {output.total.toLocaleString()} tools
+      <div className="px-3 py-2 text-[11px] uppercase tracking-widest text-muted-foreground bg-muted/60 inline-flex items-center gap-1.5">
+        <LayoutGrid className="h-3.5 w-3.5" /> {output.categories.length} categories · {output.total.toLocaleString()} tools
       </div>
       <ul className="divide-y divide-border">
         {output.categories.map((c) => (
@@ -593,8 +596,8 @@ function BrowseCard({ output }: {
 }) {
   return (
     <div className="rounded-xl border border-border overflow-hidden">
-      <div className="px-3 py-2 text-[11px] uppercase tracking-widest text-muted-foreground bg-muted/60">
-        📚 {output.category}{output.section ? ` · ${output.section}` : ""} · showing {output.results.length} of {output.totalInCategory}
+      <div className="px-3 py-2 text-[11px] uppercase tracking-widest text-muted-foreground bg-muted/60 inline-flex items-center gap-1.5">
+        <BookOpen className="h-3.5 w-3.5" /> {output.category}{output.section ? ` · ${output.section}` : ""} · showing {output.results.length} of {output.totalInCategory}
       </div>
       <ul className="divide-y divide-border">
         {output.results.map((r) => <ToolRowLi key={r.i} r={r} />)}
@@ -608,20 +611,20 @@ function CompareCard({ output }: {
 }) {
   return (
     <div className="rounded-xl border border-border overflow-hidden">
-      <div className="px-3 py-2 text-[11px] uppercase tracking-widest text-muted-foreground bg-muted/60">
-        ⚖️ Compare · {output.results.length} tools
+      <div className="px-3 py-2 text-[11px] uppercase tracking-widest text-muted-foreground bg-muted/60 inline-flex items-center gap-1.5">
+        <Sparkles className="h-3.5 w-3.5" /> Compare · {output.results.length} tools
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border">
         {output.results.map((r, i) => (
           <div key={i} className="p-3 text-xs">
             {r.found ? (
               <>
-                <a href={r.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-sm text-brand-purple hover:underline">
+                <a href={r.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-sm text-primary hover:underline">
                   {r.name}
                 </a>
                 <div className="text-muted-foreground mt-0.5">{r.section}</div>
                 <div className="text-[10px] uppercase tracking-wider mt-1 text-muted-foreground">{r.category}</div>
-                <div className="text-[11px] text-brand-blue truncate mt-1">{r.url}</div>
+                <div className="text-[11px] text-primary/80 truncate mt-1">{r.url}</div>
               </>
             ) : (
               <div className="text-muted-foreground italic">"{r.query}" not in the directory.</div>
