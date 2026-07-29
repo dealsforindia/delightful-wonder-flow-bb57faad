@@ -105,15 +105,15 @@
   .liquid-title {
     position: relative;
     display: inline-block;
-    line-height: 0.9;
+    line-height: 0.88;
+    letter-spacing: -0.04em;
   }
   .liquid-title .lt-fill {
-    position: relative;
-    z-index: 2;
     color: #ffffff;
     text-shadow:
-      0 0 1px rgba(255,255,255,0.9),
-      0 0 18px rgba(255,255,255,0.35);
+      0 0 1px rgba(255,255,255,0.95),
+      0 0 14px rgba(255,255,255,0.55),
+      0 0 32px rgba(255,255,255,0.28);
     transition: filter 0.4s ease, transform 0.4s ease;
     will-change: filter, transform;
   }
@@ -121,21 +121,9 @@
     color: var(--primary);
     text-shadow:
       0 0 2px var(--primary),
-      0 0 12px color-mix(in oklab, var(--primary) 80%, transparent),
-      0 0 28px color-mix(in oklab, var(--primary) 55%, transparent),
-      0 0 60px color-mix(in oklab, var(--primary) 35%, transparent);
-  }
-  .liquid-title .lt-outline {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    color: transparent;
-    -webkit-text-stroke: 2px rgba(255,255,255,0.22);
-    pointer-events: none;
-    transform: translate(3px, 3px);
-  }
-  .liquid-title .lt-outline .lt-neon {
-    -webkit-text-stroke: 2px color-mix(in oklab, var(--primary) 55%, transparent);
+      0 0 14px color-mix(in oklab, var(--primary) 85%, transparent),
+      0 0 34px color-mix(in oklab, var(--primary) 60%, transparent),
+      0 0 70px color-mix(in oklab, var(--primary) 40%, transparent);
   }
   .liquid-title:hover .lt-fill {
     filter: url(#liquid);
