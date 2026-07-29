@@ -5,6 +5,7 @@ import { ArrowRight, Sparkles, BookOpen } from "lucide-react";
 import { FmhyLayout } from "@/components/FmhyLayout";
 import { PAGES } from "@/lib/fmhy-pages";
 import { getToolsCount } from "@/lib/tools-data.functions";
+import { getIconscoutIcon } from "@/lib/iconscout.functions";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -65,6 +66,15 @@ function HomeRoute() {
 }
 
 function PageCard({ p }: { p: (typeof PAGES)[number] }) {
+  const fetchIcon = useServerFn(getIconscoutIcon);
+  const { data } = useQuery({
+    queryKey: ["iconscout", p.short],
+    queryFn: () => fetchIcon({ data: { query: p.short } }),
+    staleTime: Infinity,
+    gcTime: Infinity,
+    retry: false,
+  });
+  const iconUrl = data?.url;
   return (
     <Link
       to="/$page"
@@ -73,11 +83,20 @@ function PageCard({ p }: { p: (typeof PAGES)[number] }) {
       style={{ ["--tw-border-opacity" as string]: 1 }}
     >
       <span
-        className="mt-0.5 shrink-0 h-10 w-10 rounded-lg grid place-items-center text-lg font-bold"
+        className="mt-0.5 shrink-0 h-10 w-10 rounded-lg grid place-items-center text-lg font-bold overflow-hidden"
         style={{ background: `${p.color}22`, color: p.color }}
         aria-hidden="true"
       >
-        {p.short.slice(0, 2).toUpperCase()}
+        {iconUrl ? (
+          <img
+            src={iconUrl}
+            alt=""
+            className="h-7 w-7 object-contain"
+            loading="lazy"
+          />
+        ) : (
+          p.short.slice(0, 2).toUpperCase()
+        )}
       </span>
       <div className="min-w-0">
         <div className="font-semibold group-hover:text-current" style={{ ["--hover-color" as string]: p.color }}>
