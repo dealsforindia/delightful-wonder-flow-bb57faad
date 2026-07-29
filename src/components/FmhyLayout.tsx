@@ -142,7 +142,7 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
           <div className="border-t border-border bg-popover hidden md:block">
             <div className="mx-auto max-w-[1400px] px-4 md:px-6 py-3 space-y-3">
               <button onClick={doSearch} className="w-full p-2 rounded hover:bg-accent text-sm text-left border border-border bg-muted/40">
-                <span className="font-medium">🔍 Search all tools for "{q}"</span>
+                <span className="font-medium inline-flex items-center gap-1.5"><Search className="h-3.5 w-3.5" /> Search all tools for "{q}"</span>
                 <span className="block text-xs text-muted-foreground">Press Enter — fuzzy search the full 26k index</span>
               </button>
 
