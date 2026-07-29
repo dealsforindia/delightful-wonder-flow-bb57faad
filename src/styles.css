@@ -38,28 +38,28 @@
 
 :root {
   --radius: 0.5rem;
-  --background: oklch(0.14 0.01 130);
-  --foreground: oklch(0.96 0.02 120);
-  --card: oklch(0.18 0.012 130);
-  --card-foreground: oklch(0.96 0.02 120);
-  --popover: oklch(0.16 0.012 130);
-  --popover-foreground: oklch(0.96 0.02 120);
-  --primary: oklch(0.92 0.22 125);
-  --primary-foreground: oklch(0.14 0.01 130);
-  --secondary: oklch(0.22 0.012 130);
-  --secondary-foreground: oklch(0.96 0.02 120);
-  --muted: oklch(0.2 0.012 130);
-  --muted-foreground: oklch(0.7 0.02 120);
-  --accent: oklch(0.24 0.03 125);
-  --accent-foreground: oklch(0.96 0.02 120);
+  --background: oklch(0.08 0.005 130);
+  --foreground: oklch(0.97 0.015 120);
+  --card: oklch(0.12 0.008 130);
+  --card-foreground: oklch(0.97 0.015 120);
+  --popover: oklch(0.11 0.008 130);
+  --popover-foreground: oklch(0.97 0.015 120);
+  --primary: oklch(0.9 0.24 128);
+  --primary-foreground: oklch(0.1 0.01 130);
+  --secondary: oklch(0.16 0.01 130);
+  --secondary-foreground: oklch(0.97 0.015 120);
+  --muted: oklch(0.15 0.01 130);
+  --muted-foreground: oklch(0.68 0.02 120);
+  --accent: oklch(0.2 0.04 128);
+  --accent-foreground: oklch(0.97 0.015 120);
   --destructive: oklch(0.62 0.22 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.26 0.015 130);
-  --input: oklch(0.24 0.015 130);
-  --ring: oklch(0.92 0.22 125);
-  --brand-pink: oklch(0.92 0.22 125);
-  --brand-blue: oklch(0.85 0.18 120);
-  --brand-cyan: oklch(0.88 0.2 130);
+  --border: oklch(0.22 0.012 130);
+  --input: oklch(0.2 0.012 130);
+  --ring: oklch(0.9 0.24 128);
+  --brand-pink: oklch(0.9 0.24 128);
+  --brand-blue: oklch(0.85 0.2 125);
+  --brand-cyan: oklch(0.88 0.22 130);
   --brand-purple: oklch(0.75 0.22 130);
 }
 
@@ -105,15 +105,15 @@
   .liquid-title {
     position: relative;
     display: inline-block;
-    line-height: 0.9;
+    line-height: 0.88;
+    letter-spacing: -0.04em;
   }
   .liquid-title .lt-fill {
-    position: relative;
-    z-index: 2;
     color: #ffffff;
     text-shadow:
-      0 0 1px rgba(255,255,255,0.9),
-      0 0 18px rgba(255,255,255,0.35);
+      0 0 1px rgba(255,255,255,0.95),
+      0 0 14px rgba(255,255,255,0.55),
+      0 0 32px rgba(255,255,255,0.28);
     transition: filter 0.4s ease, transform 0.4s ease;
     will-change: filter, transform;
   }
@@ -121,21 +121,9 @@
     color: var(--primary);
     text-shadow:
       0 0 2px var(--primary),
-      0 0 12px color-mix(in oklab, var(--primary) 80%, transparent),
-      0 0 28px color-mix(in oklab, var(--primary) 55%, transparent),
-      0 0 60px color-mix(in oklab, var(--primary) 35%, transparent);
-  }
-  .liquid-title .lt-outline {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    color: transparent;
-    -webkit-text-stroke: 2px rgba(255,255,255,0.22);
-    pointer-events: none;
-    transform: translate(3px, 3px);
-  }
-  .liquid-title .lt-outline .lt-neon {
-    -webkit-text-stroke: 2px color-mix(in oklab, var(--primary) 55%, transparent);
+      0 0 14px color-mix(in oklab, var(--primary) 85%, transparent),
+      0 0 34px color-mix(in oklab, var(--primary) 60%, transparent),
+      0 0 70px color-mix(in oklab, var(--primary) 40%, transparent);
   }
   .liquid-title:hover .lt-fill {
     filter: url(#liquid);
