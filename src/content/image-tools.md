@@ -178,7 +178,7 @@
 
 ***
 
-## ▷ Pixel Art
+## ▷ Pixel Art / Sprite Sheets
 
 * 🌐 **[Awesome Pixel Art](https://github.com/Siilwyn/awesome-pixel-art)** - Pixel Art Resource Index
 * ↪️ **[Pixel Art Animation](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/video-tools#wiki_.25B7_animation_tools)**
@@ -203,9 +203,10 @@
 * [GB Dot Converter](https://deepblizzard.itch.io/gb-dot-converter) - Image to Game Boy Style Art Converter / Web
 * [⁠GLORP](https://zack-gphom.itch.io/glorp-pixel-to-svg) - Convert Pixel Art to Optimized SVGs / Windows / [GitHub](https://github.com/ZackGphom/GLORP/)
 * [Pixelorama](https://pixelorama.org/) - 2D Sprite Editor / Windows, macOS, Linux, Web / [Discord](https://discord.com/invite/GTMtr8s) / [GitHub](https://github.com/Orama-Interactive/Pixelorama)
+* [⁠The Spriters Toolkit](https://tools.spriters-resource.com/) - Sprite Sheet Toolkit / Web
 * [pixeldudesmaker](https://0x72.itch.io/pixeldudesmaker) or [Creature Mixer](https://kenney.itch.io/creature-mixer) - Sprite Generator / Web
-* [Nasu](https://hundredrabbits.itch.io/nasu) - Spritesheet Editor / Windows, macOS, Linux, Android
-* [GIF to Frames](https://giftoframes.com/) - GIF to Spritesheet / Web
+* [Nasu](https://hundredrabbits.itch.io/nasu) - Sprite Sheet Editor / Windows, macOS, Linux, Android
+* [GIF to Frames](https://giftoframes.com/) - GIF to Sprite Sheet / Web
 * [Pixel Snapper](https://www.spritefusion.com/pixel-snapper) - Auto-Fix Pixel Art into Grids / Web / [Discord](https://discord.com/invite/8sCEAspmBV) / [GitHub](https://github.com/Hugo-Dz/spritefusion-pixel-snapper)
 * [Pixel Reconstructor](https://i-win.neocities.org/pixel/), [Pixel Art Upscaler](https://imaginarycatlab.com/free-pixel-art-upscaler.html), [⁠Pixel Art Fixer](https://www.retrodiffusion.ai/tools/pixel-art-fixer/) / [GitHub](https://github.com/Retro-Diffusion/pixel-art-fixer) or [Pixel Art Scaler](https://lospec.com/pixel-art-scaler/) - ⁠Pixel Art Upscalers / Web
 
@@ -227,7 +228,7 @@
 * [ugiffer](https://iobureau.com/ugiffer/) - Create GIFs via Screencasts / Windows
 * [Ultimate 88x31 Generator](https://pixelwolf.net/PWapps/88x31/), [blinkies.cafe](https://blinkies.cafe/) / [GitHub](https://github.com/piconaut/blinkies.cafe) or [⁠88x31px Button Generator](https://88x31.datakra.sh/) - Create Retro Blinkie GIFs / 88x31 Badges
 * [Babamos 88x31](https://cyber.dabamos.de/88x31/index.html), [matdoes](https://matdoes.dev/buttons), [88x31 Buttons](https://anlucas.neocities.org/88x31Buttons, [88x31 Collection](https://88x31.nl/) or [Web Badges World](https://web.badges.world/) - Download Retro 88x31 Web Badges / Blinkies
-* [⁠DotChibiko](https://dot-chibiko.chabo.tokyo/) - Generate Chibi Style GIFs from Minecraft Skins
+* [⁠DotChibiko](https://dot-chibiko.chabo.tokyo/) or [⁠Minecraft Chibi Skin Maker](https://nogard.dev/tools/minecraft-chibi-skin-maker) - Generate Chibi Style GIFs from Minecraft Skins
 
 ***
 
@@ -277,6 +278,7 @@
 ## ▷ Design Apps
 
 * ⭐ **[Figma](https://www.figma.com/)** - Design Collab App / Web
+* [Plasmic](https://www.plasmic.app/) - Design Collab App / Web
 * [Canva](https://www.canva.com/) - Design App / Windows, macOS, Web / [Invites](https://rentry.co/FMHYB64#canva)
 * [lunacy](https://icons8.com/lunacy) - Design App / Windows, macOS, Linux
 * [VistaCreate](https://create.vista.com/) - Design App / Web
@@ -285,6 +287,7 @@
 * [Pattern Ninja](https://patterninja.com/) - Background / Pattern Design / Web
 * [Pixelied](https://pixelied.com/) - Online Design Tool / Web
 * [⁠Antlii](https://antlii.work/) - Online Design Generators
+* [⁠Pomelli](https://labs.google.com/pomelli/) - Brand Content Generator
 * [⁠Dirty Little Zine](https://dirtylittlezine.com/) - Printable Zine Creator
 
 ***
@@ -303,7 +306,7 @@
 * [⁠CHARAT](https://charat.me/en/) - Anime Style Avatar Creator
 * [⁠SkinSprite Studio](https://sss.1m3.jp/) - Generate Chibi Style Avatars from Minecraft Skins
 * [⁠FreeLogoMaker](https://myfreelogomaker.com/), [⁠BrandCrowd](https://www.brandcrowd.com/), [⁠Logo Surf](https://www.logo.surf/) or [OnlineLogoMaker](https://www.onlinelogomaker.com/) - Logo Creators
-* [Worldvectorlogo](https://worldvectorlogo.com/), [Brands of the World](https://www.brandsoftheworld.com/), [seeklogo](https://seeklogo.com/) or [SuperTinyIcons](https://edent.github.io/SuperTinyIcons/) - Logo Search / Designs
+* [Worldvectorlogo](https://worldvectorlogo.com/), [⁠Brandfetch](https://brandfetch.com/), [Brands of the World](https://www.brandsoftheworld.com/), [seeklogo](https://seeklogo.com/) or [SuperTinyIcons](https://edent.github.io/SuperTinyIcons/) - Search Brand / Company Logos
 * [Logo Fast](https://logofa.st/) or [LogoFreeway](https://logofreeway.com/logos.php) - Simple Logo Creators Based on Premade Icons
 * [LogoMaker](https://www.namecheap.com/logo-maker/app/new/) - Generate Logos Based on Project Name & Style
 * [PFP Finder](https://pfpfinder.com) - PFPs / Avatars
@@ -416,6 +419,7 @@
 * [Multicolr](https://labs.tineye.com/multicolr/) - Color-Based Image Search
 * [trace.moe](https://trace.moe/) or [Saucekudasai](https://saucekudasai.com/) - Anime Reverse Image Search
 * [Pose Search](https://x6ud.github.io/pose-search/) - Pose Reference Image Search / [GitHub](https://github.com/x6ud/pose-search)
+* [⁠Angle Ref Search](https://angleref.com/) - Head Pose Reference Image Search
 
 ***
 

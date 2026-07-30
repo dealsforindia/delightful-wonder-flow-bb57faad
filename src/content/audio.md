@@ -66,7 +66,6 @@
 * [Vapor Archive](https://vaporarchive.neocities.org/) - Vaporwave
 * [Jamendo](https://www.jamendo.com/) or [Free Music Archive](https://freemusicarchive.org/) - Independent Music
 * [Keygen Music](https://keygenmusic.tk/) - Keygen Music
-* [OperaOnVideo](https://www.operaonvideo.com/) - Opera Recordings
 * [Classical Music Only](https://classicalmusiconly.com/) or [Musopen](https://musopen.org/music/) - Classical Music
 * [New Age Music](https://newage.one/) - New Age Music
 
@@ -106,7 +105,7 @@
 * ⭐ **[BBC Radio 1 Essential Mix](https://rentry.co/musicdiscovery/#bbc-radio-1-essential-mix)** - BBC Radio 1 Essential Mix Archive + Guide / [Downloader](https://rentry.co/bbcemdl)
 * ⭐ **[MiroPPB](https://miroppb.com/)** - A State of Trance Archive / DJ Mixes / [Downloader](https://rentry.co/asotdl)
 * ⭐ **[setlist.fm](https://www.setlist.fm/)** - Setlist Database
-* [r/MusicalBootlegs](https://www.reddit.com/r/MusicalBootlegs), [OperaVision](https://operavision.eu/) or ["Slime Tutorials"](https://youtube.com/playlist?list=PLsIt5G4GJ27lxWP9Qi5N70zRSkJAT0ntc) - Broadway Show Recordings / Opera
+* [r/MusicalBootlegs](https://www.reddit.com/r/MusicalBootlegs), [OperaVision](https://operavision.eu/), [OperaOnVideo](https://www.operaonvideo.com/) or ["Slime Tutorials"](https://youtube.com/playlist?list=PLsIt5G4GJ27lxWP9Qi5N70zRSkJAT0ntc) - Broadway Show Recordings / Opera
 * [JamBase](https://www.jambase.com/videos) - Concert Recordings
 * [Relisten](https://relisten.net/) - Concert Recordings / [GitHub](https://github.com/relistennet)
 * [DimeADozen](http://www.dimeadozen.org/) - Concert Recordings / Torrents
@@ -428,7 +427,6 @@
 * [deezload2bot](https://t.me/deezload2bot) - Deezer / 320kb MP3 / [Updates](https://t.me/DEDSEClulz)
 * [BeatSpotBot](https://t.me/BeatSpotBot) - Spotify / Apple / YouTube / FLAC / 25 Daily
 * [scdlbot](https://t.me/scdlbot) - YouTube / SoundCloud / Bandcamp / Mixcloud / 128kb MP3
-* [⁠Antra Lossless](https://t.me/antralossless_bot) - Apple Music / Amazon Music / [Telegram](https://t.me/antraaverse) / [Discord](https://discord.gg/J4yMnnMjqt)
 * [⁠alac_collab_bot](https://t.me/alac_collab_bot) - Apple Music / ALAC / Atmos / AAC / 20 Daily / [Telegram](https://t.me/apple_music_bot_alac)
 * [vkmusbot](https://t.me/vkmusbot) or [Meph Bot](https://t.me/mephbot) - VK / 320kb MP3
 * [GlomaticoPinkMusicBot](https://t.me/GlomaticoPinkMusicBot) - Apple Music Downloader / [Telegram](https://t.me/GlomaticoBotSupport) / [Discord](https://discord.gg/aBjMEZ9tnq)
@@ -561,7 +559,7 @@
 * ⭐ **[Audio Torrent CSE](https://cse.google.com/cse?cx=006516753008110874046:v75cyb4ci55)** - Multi-Site Search
 * [TPB Music](https://thepiratebay.org/search.php?q=top100:100) - MP3 / FLAC / **Avoid Software / Games**
 * [TheMixingBowl](https://themixingbowl.org/) - Forum / Mixes / MP3 / Requires Sign-Up
-* [Metal Tracker](https://en.metal-tracker.com/) or [RockBox](https://rawkbawx.rocks/) - Metal / MP3 320kb / FLAC
+* [Metal Tracker](https://en.metal-tracker.com/) - Metal / MP3 320kb / FLAC
 * [BlackTorrent](https://blacktorrent.ru/) or [iPlayMetal](https://metal.iplay.ro/) - Metal / MP3 / FLAC
 * [MixtapeTorrent](http://www.mixtapetorrent.com/) - Mixtapes / MP3 / Various Bitrates
 * [TribalMixes](https://www.tribalmixes.com/) - Forum / DJ Mixes / MP3
@@ -695,7 +693,7 @@
 * [Talk Classical List](https://talkclassical-list.github.io/) - Classical Music Recommendations / [Spotify Playlist](https://open.spotify.com/playlist/2ssmoEdwODoE2tPOAcvRge)
 * [45Cat](https://www.45cat.com/) - Vinyl Ratings / Reviews
 * [MusicTo](https://www.musicto.com/) - Musician Curated Playlists
-* [DigitalDreamDoor](https://digitaldreamdoor.com/) - Greatest 100 Lists
+* [DigitalDreamDoor](https://digitaldreamdoor.com/pages/music0.html) - Greatest 100 Lists
 * [CET](https://rentry.org/CET) / [2](https://rentry.co/CET) - Music Comps & Edits / [Discord](https://discord.gg/DfAfVPPvq4)
 
 ***
@@ -853,7 +851,8 @@
 * ⭐ **[WatZatSong](https://www.watzatsong.com/en)** or [r/NameThatSong](https://reddit.com/r/NameThatSong) - Song ID Communities
 * [FlairMax](https://apps.microsoft.com/detail/9pdzvj34ztxg) / Windows
 * [AudioTag](https://audiotag.info/) / Web
-* [⁠SongFinder](https://songfinder.gg/) / Web
+* [SongFinder](https://songfinder.dev/) / Web
+* [⁠SongFinder.gg](https://songfinder.gg/) / Web
 * [SoundHound](https://www.soundhound.com/soundhound) / Android, iOS
 * [Audile](https://github.com/aleksey-saenko/MusicRecognizer) / Android
 * [Audire](https://github.com/alexmercerind/audire) / Android

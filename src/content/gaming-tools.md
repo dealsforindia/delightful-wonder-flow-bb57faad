@@ -146,7 +146,7 @@
 * ⭐ **[Thunderstore](https://thunderstore.io/)** - Unity Game Mods / Mod Manager / [Discord](https://discord.thunderstore.io/)
 * ⭐ **[GameBanana](https://gamebanana.com/)** - Game Mods / [Discord](https://discord.com/invite/h5xJv9M)
 * ⭐ **[ModdingLinked](https://moddinglinked.com/)** / [Discord](https://discord.com/invite/S99Ary5eba) or [⁠Step Modifications](https://stepmodifications.org/) - Bethesda Game Modding Guides
-* [Wand](https://wand.com/) - Mods / Trainer Manager / Single Player Only / [Features](https://rentry.co/FMHYB64#wemod), [2](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/games#wiki_.25BA_download_games)
+* [Wand](https://wand.com/) - Mods / Trainer Manager / Single Player Only / [Features](https://rentry.co/FMHYB64#wemod), [2](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/games#wiki_.25BA_download_games) (search)
 * [ModOrganizer](https://github.com/ModOrganizer2/modorganizer) - Mod Manager
 * [Vortex](https://www.nexusmods.com/vortex) - Mod Manager
 * [Mod.io](https://www.mod.io/) - Cross-Platform Game Mods Support / [Discord](https://discord.com/invite/modio)
@@ -333,7 +333,7 @@
 * ⭐ **[Heroic Games Launcher](https://heroicgameslauncher.com/)** - Epic / GOG / Prime Games Launcher / [Discord](https://discord.com/invite/rHJ2uqdquK) / [GitHub](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher)
 * ⭐ **[TCNO](https://github.com/TCNOco/TcNo-Acc-Switcher)** - Platform Account Switcher / [Tutorial](https://youtu.be/0h-xjiW9M7Y)
 * [LEGENDARY](https://github.com/derrod/legendary) / [Discord](https://legendary.gl/discord) or [Rare](https://raredevs.github.io/Rare/) / [GitHub](https://github.com/RareDevs/Rare) - Epic Games Launchers
-* [Depressurizer](https://github.com/Depressurizer/Depressurizer) or [Backlog.rip](https://backlog.rip/) - Steam Library Organizers
+* [Backlog.rip](https://backlog.rip/) - Steam Library Organizers
 * [Steam Extensions](https://redd.it/1sp8quf) - How-To Add Chrome Extensions to Steam
 * [⁠Steam Overlay Customization](https://gist.github.com/JMcrafter26/bad71e96d9bee2900008cbca10075968) - Steam Overlay Customization / Extension Guide
 * [Steam Art Manager](https://github.com/Tormak9970/Steam-Art-Manager) - Find / Manage Game Art
@@ -357,8 +357,8 @@
 * ⭐ **[Steamless](https://github.com/atom0s/Steamless)** - Steam DRM Remover
 * ⭐ **[Goldberg Fork](https://github.com/Detanup01/gbe_fork)** / [Guide](https://rentry.co/goldberg_emulator) or [SmartSteamEmu](https://cs.rin.ru/forum/viewtopic.php?f=29&t=62935&sid=c6b5dadd40d56ac20a8789121bb743c5) - Offline Steam / Multiplayer Emulators
 * ⭐ **[Nemirtingas Epic Emulator](https://cs.rin.ru/forum/viewtopic.php?f=29&t=105551)** - Epic Online Service Emulator
-* ⭐ **[Steam-Auto-Crack](https://gitlab.com/steamautocracks/Steam-auto-crack)** or [SteamAutoCracker](https://github.com/BigBoiCJ/SteamAutoCracker) / [GUI](https://github.com/harryeffinpotter/Steam-Autocracker-GUI/) - Auto Apply Cracks
-* [⁠OpenSteamTool](https://github.com/OpenSteam001/OpenSteamTool) - Steam Game + DLC Unlocker
+* ⭐ **[Steam-Auto-Crack](https://github.com/SteamAutoCracks/Steam-auto-crack/)** or [SteamAutoCracker](https://github.com/BigBoiCJ/SteamAutoCracker) / [GUI](https://github.com/harryeffinpotter/Steam-Autocracker-GUI/) - Auto Apply Cracks
+* [⁠OpenSteamTool](https://github.com/OpenSteam001/OpenSteamTool) - Steam Game + DLC Unlocker / [Guide](https://rentry.org/opensteamtoolguidefmhy)
 * [CreamInstaller Revival](https://cs.rin.ru/forum/viewtopic.php?f=20&t=154539) - Steam DLC Unlocker / [GitHub](https://github.com/FroggMaster/CreamInstaller)
 * [Koalageddon](https://gitlab.com/DumbCodeGenerator/koalageddon) - Steam DLC / Family Unlocker
 * [DreamAPI](https://cs.rin.ru/forum/viewtopic.php?f=10&t=111520) - DLC Unlocker for Origin and EA
@@ -689,6 +689,7 @@
 * [CraftyControl](https://craftycontrol.com/) - Server Manager / [GitLab](https://gitlab.com/crafty-controller/crafty-4)
 * [MCSManager](https://mcsmanager.com/) - Server Manager / [GitHub](https://github.com/MCSManager/MCSManager)
 * [Fork](https://www.fork.gg/) - Server Manager / [GitHub](https://github.com/ForkGG)
+* [⁠Steam Bridge](https://github.com/Ragalikx/steam-bridge-mc) - Host Minecraft Servers via Steam
 * [SquidServers](https://squidservers.com/) - Server Manager / Easy Setup / [Discord](https://discord.gg/Y8QtmK2exk) / [GitHub](https://github.com/squidservers)
 * [⁠MCJars](https://mcjars.app/) - Server Jar Archive
 * [⁠GrimAC](https://modrinth.com/plugin/grimac) - Free Server Anti-Cheat / [GitHub](https://github.com/GrimAnticheat/Grim)
@@ -697,7 +698,7 @@
 * [mclo.gs](https://mclo.gs/) - Minecraft Log Sharing / Analyzing / [GitHub](https://github.com/aternosorg/mclogs-integration)
 * [Minestom](https://minestom.net/) - Lightweight Minecraft Server / [Discord](https://discord.gg/pkFRvqB) / [GitHub](https://github.com/Minestom/Minestom)
 * [DriveBackupV2](https://modrinth.com/plugin/drivebackupv2) - Server Plugin to Create Cloud Backups of Worlds / [Discord](https://discord.com/invite/VdCAUtm) / [GitHub](https://github.com/MaxMaeder/DriveBackupV2)
-* [Paper](https://papermc.io/software/paper) / [Discord](https://discord.com/invite/papermc) / [GitHub](https://github.com/PaperMC/Paper) / [Plugins](https://hangar.papermc.io/), [Pufferfish](https://github.com/pufferfish-gg/Pufferfish) or [Purpur](https://purpurmc.org/) / [Discord](https://purpurmc.org/discord) / [GitHub](https://github.com/PurpurMC/)- Performance Enhancement / Forks of Paper
+* [Purpur](https://purpurmc.org/) / [Discord](https://purpurmc.org/discord) / [GitHub](https://github.com/PurpurMC/), [Paper](https://papermc.io/software/paper) / [Discord](https://discord.com/invite/papermc) / [GitHub](https://github.com/PaperMC/Paper) / [Plugins](https://hangar.papermc.io/) or [Pufferfish](https://github.com/pufferfish-gg/Pufferfish) - Performance Enhancement / Forks of Paper
 * [GeyserMC](https://geysermc.org/) - Join Minecraft Java Servers with Bedrock Client / [Discord](https://discord.com/invite/geysermc) / [GitHub](https://github.com/GeyserMC/Geyser) / [Consoles](https://wiki.geysermc.org/geyser/using-geyser-with-consoles/)
 * [ExploitPreventer](https://modrinth.com/mod/exploitpreventer) - Prevent Client-Side Exploits
 * [ServerPackCreator](https://serverpackcreator.de/) - Create Minecraft Server Packs from Modpacks / [Discord](https://discord.com/invite/JfsXK8qB95) / [GitHub](https://github.com/Griefed/ServerPackCreator)
@@ -802,7 +803,7 @@
 
 * 🌐 **[ChunkBase](https://www.chunkbase.com/apps/)** - Map Tools
 * [Minecraft Datapack Map](https://map.jacobsjo.eu/) / [GitHub](https://github.com/jacobsjo/mc-datapack-map), [MCA Selector](https://github.com/Querz/mcaselector), [uNmINeD](https://unmined.net/) / [Discord](https://discord.com/invite/TCmvrPyA9x) or [WorldPainter](https://www.worldpainter.net/) - Map Editors / Viewers
-* [MCSeedMap](https://mcseedmap.net/), [MineAtlas](http://mineatlas.com/), [Seeds.gg](https://www.seeds.gg/) or [Cubiomes Viewer](https://github.com/cubitect/cubiomes-viewer) - Seed Map Viewers
+* [MCSeedMap](https://mcseedmap.net/), [MineAtlas](http://mineatlas.com/), [Seeds.gg](https://www.seeds.gg/), [MinecraftSearch](https://minecraftsearch.com/tools/seed-map) or [Cubiomes Viewer](https://github.com/cubitect/cubiomes-viewer) - Seed Map Viewers
 * [MapVerse](https://mapverse.net/) - Download / Play Minecraft Map Servers / [Discord](https://discord.gg/xFgTJtebgp)
 * [MinecraftMaps](https://www.minecraftmaps.com/), [Minecraft Forum](https://www.minecraftforum.net/) / [Discord](https://discord.com/invite/wGrQNKX) or [Mapcraft](https://mapcraft.me/) - Minecraft Maps
 * [Minecraft Earth Map](https://earth.motfe.net/) - Earth Maps
@@ -825,8 +826,10 @@
 * ⭐ **[MCPropertyEncyclopedia](https://joakimthorsen.github.io/MCPropertyEncyclopedia/)** - Block Property Encyclopedia / [Discord](https://discord.com/invite/RUEVmTahYg)
 * ⭐ **[spark](https://spark.lucko.me/)** - Minecraft Performance Profiler / [Discord](https://discord.com/invite/PAGT2fu) / [GitHub](https://github.com/lucko/spark)
 * ⭐ **[Minecraft Java Flags](https://unascribed.com/garden/jvm-args/)** - Java Edition Performance Tweaks
+* [⁠Bedrock Wiki](https://wiki.bedrock.dev/) - Bedrock Technical Feature Wiki 
 * [Report Inspector](https://misode.github.io/report/) - Crash Report / Profiling Inspector
 * [⁠Minecraft TAS](https://minecrafttas.com/) - Minecraft TAS Community / Tools / Tutorials / [Discord](https://discord.gg/jGhNxpd)
+* [⁠MCTools](https://mctools.dev/) - Minecraft Creator Tools
 * [Mineflayer](https://prismarinejs.github.io/mineflayer/) - Minecraft Bot Creator / [Discord](https://discord.com/invite/GsEFRM8) / [GitHub](https://github.com/PrismarineJS/mineflayer)
 * [Minecraft Armor Stand](https://haselkern.com/Minecraft-ArmorStand/) - Design Poses for Armorstands
 * [Enchant Order](https://iamcal.github.io/enchant-order/) - Minecraft Enchantment Ordering Tool
@@ -984,6 +987,7 @@
 * ⭐ **[Maxroll](https://maxroll.gg/)** - ARPG Build Guides / [Discord](https://discord.com/invite/WBBwg5X)
 * [D4Builds](https://d4builds.gg/) - Diablo IV Build Guides
 * [Helltides](https://helltides.com/) - Diablo IV Pit Leaderboards / Helltide Tracker
+* [⁠FilterBlade](https://www.filterblade.xyz/) - Path of Exile Custom Loot Filters
 * [Path of Building](https://pathofbuilding.community/) - Path of Exile Build Planner
 * [⁠ChromieCraft](https://chromiecraft.com/en/) - F2P WoW Private Server / No Pay-to-Win / [Discord](https://discord.gg/3YaAywYDN7)
 * [Murlok](https://murlok.io/) - WoW PvP / PvE Guides / [Discord](https://discord.gg/daFKqeZxfD)
@@ -1081,7 +1085,7 @@
 * 🌐 **[GTA5-Mods](https://www.gta5-mods.com/)** - GTAV Mods
 * 🌐 **[MixMods](https://www.mixmods.com.br/)** - GTASA Mods
 * 🌐 **[cheeseburger's GTA Mods](https://cheeseburgersmod.blogspot.com/)** - GTA Mobile Mods
-* ⭐ **[⁠GTA Wiki](https://gta.wiki/)** / [Discord](https://discord.gg/wG7MdySY8X) or [GTA Boss(https://www.gtaboss.gg/) - GTA Databases / Info Wikis
+* ⭐ **[⁠GTA Wiki](https://gta.wiki/)** / [Discord](https://discord.gg/wG7MdySY8X) or [GTA Boss](https://www.gtaboss.gg/) - GTA Databases / Info Wikis
 * ⭐ **[San Andreas: Multiplayer](https://www.sa-mp.mp/)** / [Discord](https://discord.com/invite/samp) or [Multi Theft Auto](https://multitheftauto.com/) / [GitHub](https://github.com/multitheftauto/mtasa-blue) - Multiplayer GTA:SA
 * ⭐ **[Gillian's GTA](https://gillian-guide.github.io/)** - GTA IV Modding Guide
 * ⭐ **[CLEO](https://cleo.li/)** - Extensible Library Plugin for GTA III, VC & SA / [Discord](https://discord.com/invite/d5dZSfgBZr)

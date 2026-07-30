@@ -353,7 +353,7 @@
 
 ## ▷ Streaming
 
-* ⭐ **[NEPU Audiobooks](https://nepu.to/ebooks)**
+* ⭐ **[NEPU Audiobooks](https://nepu.io/ebooks)**, [2](https://nepu.to/ebooks), [3](https://nepu.is/ebooks), [4](https://nepu.net/ebooks), [5](https://nepu.app/ebooks)
 * [FullLengthAudiobooks](https://fulllengthaudiobooks.com/)
 * [HDAudiobooks](https://hdaudiobooks.net/)
 * [BigAudiobooks](https://bigaudiobooks.net/)
@@ -610,6 +610,7 @@
 * [textfiles.com](http://textfiles.com/) - 1980s Text File Index
 * [Smithsonian Institution Archives](https://siarchives.si.edu/) - Historical Text / Documents
 * [IntraText Digital Library](https://www.intratext.com/) - Historical Text / Documents
+* [⁠The Internet Classics Archive](https://classics.mit.edu/) - Classic Philosophy / Literature
 * [MSU Digital Repository](https://d.lib.msu.edu/) - Historical Documents, Books, Recording & more
 * [Archives.gov](https://archives.gov/) - US Historical Documents
 * [Europeana](https://www.europeana.eu/) - European Historical Documents
@@ -618,12 +619,12 @@
 * [Panjab Digital Library](http://www.panjabdigilib.org/) - Panjab Historical Documents
 * [Jewish Virtual Library](https://www.jewishvirtuallibrary.org/) - Encyclopedia of Jewish / Israeli History
 * [The Library](https://philological.cal.bham.ac.uk/library.html), [⁠SCTA](https://scta.lombardpress.org/), [⁠CAMENA](https://mateo.uni-mannheim.de/camenahtdocs/camena_e.html) or [⁠Corpus Corporum](https://mlat.uzh.ch/) - Historical Latin Texts
-* [WorldRadioHistory](https://worldradiohistory.com/) - Radio History Archive
+* [World Radio History](https://worldradiohistory.com/) - Radio History Archive
 * [The Morgan Library Museum](https://www.themorgan.org/music) or [DIAMM](https://www.diamm.ac.uk/) - Musical Manuscripts
 * [Tank Archives](https://www.tankarchives.com/) - World War II Armoured Warfare Documents / [X](https://x.com/Tank_Archives)
 * [Nuremberg Trials Project](https://nuremberg.law.harvard.edu/) - Nuremberg Trials Document / Transcript Archive
 * [De Re Militari](https://deremilitari.org/articles/) - Medieval Military History
-* [ByzantineMilitary](https://byzantinemilitary.blogspot.com/) - Byzantine Military History
+* [Byzantine Military](https://byzantinemilitary.blogspot.com/) - Byzantine Military History
 * [WarshipsResearch](https://warshipsresearch.blogspot.com/) - Maritime History
 * [Wiktenauer](https://wiktenauer.com/) - Historical European Martial Arts Wiki
 * [Radical Scatters](http://radicalscatters.unl.edu/indices.html) - Emily Dickinson Fragments / Texts
@@ -962,6 +963,7 @@
 * 🌐 **[Book Awards](https://rentry.co/bookawards/)** - Index of Book Awards
 * ⭐ **[StoryGraph](https://www.thestorygraph.com/)** - Discovery and Recommendations
 * ⭐ **[The Greatest Books](https://www.thegreatestbooks.org/)** - Algorithmic Books List
+* ⭐ **[⁠The Book Prize Index](https://book-prize-index.vercel.app/)** - Book Awards + Winning Book Index
 * ⭐ **[Five Books](https://fivebooks.com/)** - Expert Recommended Books
 * [TasteDive](https://tastedive.com/books) - Discovery and Recommendations
 * [Charts and Culture](https://pastebin.com/uRDJVGkL) - Books / Comics / Manga Recommendation Directory

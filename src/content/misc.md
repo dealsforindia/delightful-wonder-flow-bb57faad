@@ -304,6 +304,7 @@
 * [The Number Wall](https://thenumberwall.com/) - Jersey Number Database
 * [⁠PROGRID](https://www.progrid.org/) - NFL Calendar / Schedule Chart
 * [Tapology](https://www.tapology.com/) - Combat Sports Predictions
+* [dropkickd](https://dropkickd.com/) - Rate / Track Wrestling Events
 * [CageMatch](https://www.cagematch.net/) - Wrestling Promotion Database
 * [⁠FotMob](https://www.fotmob.com/) - Football Stats Platform
 * [⁠MatchSimulator](https://matchsimulator.com/) - Football League Simulator
@@ -419,7 +420,7 @@
 * [rasp.yandex](https://rasp.yandex.ru/map/trains/) - Russia Public Transport Map
 * [kakaomap](https://map.kakao.com/) - Map of South Korea
 * [Skimap.org](https://skimap.org/) - Detailed Ski Maps
-* [ALPR Watch](https://alprwatch.org/), [⁠FlockHopper](https://dontgetflocked.com/) or [DeFlock](https://deflock.org/) / [Discord](https://discord.gg/aV7v4R3sKT) / [GitHub](https://github.com/FoggedLens/deflock) - AI Automated License Plate Reader Cameras / ALPR Maps
+* [ALPR Watch](https://alprwatch.org/), [⁠FlockHopper](https://dontgetflocked.com/), [⁠Flock Surveillance Map](https://uncensored.ai/flocksurveillance) or [DeFlock](https://deflock.org/) / [Discord](https://discord.gg/aV7v4R3sKT) / [GitHub](https://github.com/FoggedLens/deflock) - AI Automated License Plate Reader Cameras / ALPR Maps
 * [People Over Papers](https://iceout.org/en/) or [ICE Map](https://www.icemap.dev/) - ICE Activity Information / Maps
 * [⁠Geo Share](https://github.com/jakubvalenta/geoshare) - Open Map Links in Alt Map Apps / Copy Coordinates
 
@@ -729,7 +730,7 @@
 * [Weight Loss Side Effects](https://weight-loss-side-effects.netlify.app/) - Weight Loss Side Effect Mitigation
 * [r/GainIt](https://www.reddit.com/r/gainit/) - Healthy Weight Gain Subreddit
 * [r/Flexibility](https://www.reddit.com/r/flexibility/) - Flexibility Subreddit
-* [HealthDirect](https://www.healthdirect.gov.au/), [epocrates](https://www.epocrates.com/), [medlineplus](https://medlineplus.gov/), [merckmanuals](https://www.merckmanuals.com/), [mayoclinic](https://www.mayoclinic.org/), [rxlist](https://www.rxlist.com/), [nejm](https://www.nejm.org/), [ncbi](https://www.ncbi.nlm.nih.gov/pmc/), [hhs](https://www.hhs.gov/), [nih](https://www.nih.gov/), [cdc](https://www.cdc.gov/) - Government Health Resources
+* [Healthdirect](https://www.healthdirect.gov.au/), [epocrates](https://www.epocrates.com/), [MedlinePlus](https://medlineplus.gov/), [Merck Manuals](https://www.merckmanuals.com/), [Mayo Clinic](https://www.mayoclinic.org/), [RxList](https://www.rxlist.com/), [NEJM](https://www.nejm.org/), [ubMed Central](https://www.ncbi.nlm.nih.gov/pmc/), [HHS](https://www.hhs.gov/), [NIH](https://www.nih.gov/) or [CDC](https://www.cdc.gov/) - Government Health Resources
 * [oshaction](https://www.oshaction.org/resources/) - Occupational Health and Safety Resources
 * [⁠OpenPrescribing](https://openprescribing.net/) - Track NHS Prescription Trends & Spending
 * [CancerFactFinder](https://cancerfactfinder.org/) - Cancer Fact Search
@@ -746,7 +747,7 @@
 * ⭐ **[/u/KNightNox Diagram](https://i.ibb.co/b5TpBHqm/g-Efyf0q.jpg)**, [2](https://i.ibb.co/b5TpBHqm/g-Efyf0q.jpg), [3](https://i.imgur.com/gEfyf0q.jpeg) - Zoomable Exercise Diagram
 * ⭐ **[Boostcamp](https://www.boostcamp.app/)**, [Hevy](https://www.hevyapp.com/), [⁠Tracked](https://www.tracked.gg/), [⁠Hybrid Calisthenics](https://www.hybridcalisthenics.com/app), [FitNotes](https://www.fitnotesapp.com/), [⁠Strong App](https://www.strong.app/) or [FitHero](https://fithero.app/) - Workout Trackers
 * [Fitness Blender](https://www.fitnessblender.com/videos?exclusive%5B%5D=0) or [⁠Muscle & Strength](https://www.muscleandstrength.com/exercises) - Workout Videos
-* [Calistree](https://calistree.app/) - Exercise Search
+* [Calistree](https://calistree.app/) - Exercise Search / Workout Tracker
 * [FitnessProgramer](https://fitnessprogramer.com/) - Workout Plans
 * [Workout.cool](https://workout.cool/) or [Workout.lol](https://workout.lol/) - Custom Workout Plans
 * [MuscleWiki](https://musclewiki.com/) or [The Casual Gym](https://gym.naya.com.np/) - Muscle / Exercise Information Tool
@@ -1294,7 +1295,9 @@
 * [⁠Ou0.cc](https://ou0.cc/) - Text / Social Media / Code / Multimedia
 * [GoOnlineTools](https://goonlinetools.com/) - Text / Encode-Decode / Code / Random / Image
 * [⁠99Tools](https://99tools.net/) - Text / Encode-Decode / Code / Random / Image
+* [⁠Edge Tools](https://edgetools.io/) - Image / Text / PDF / Code
 * [Framasoft](https://degooglisons-internet.org/en/) - Text / Collaboration
+* [⁠HeyTools](https://heytools.app/) - Text / PDF / Image / Code
 * [10015.io](https://10015.io/) - Text / Image / Code / Colors
 * [ToolBox](https://footrue.com/) - Image / Text / Code / PDF
 * [Private.coffee](https://private.coffee/services.html) - Text / Code
