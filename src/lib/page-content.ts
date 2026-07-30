@@ -1,6 +1,12 @@
 // Eager-import every mirrored markdown page as a raw string.
-// Vite resolves this at build time; no runtime fetch.
-const raw = import.meta.glob("../content/*.md", { query: "?raw", import: "default", eager: true }) as Record<string, string>;
+// Vite resolves the literal import.meta.glob call at build time; no runtime fetch.
+// The typeof guard keeps this module importable from plain Node/Bun scripts.
+const hasGlob = typeof (import.meta as { glob?: unknown }).glob === "function";
+const raw: Record<string, string> = hasGlob
+  ? (import.meta.glob("../content/*.md", { query: "?raw", import: "default", eager: true }) as Record<string, string>)
+  : {};
+
+
 
 const RAW_MAP: Record<string, string> = {};
 for (const [path, content] of Object.entries(raw)) {
@@ -11,9 +17,11 @@ for (const [path, content] of Object.entries(raw)) {
 }
 
 // ── source-identifying links get flattened to plain text ─────────────
-const SOURCE_HOST = /^https?:\/\/(?:[^)\s]*\.)?(?:fmhy\.(?:net|pages\.dev|xyz|lol|si|vercel\.app)|rentry\.co\/FMHY|rentry\.org\/(?:FMHY|ircfmhy)|reddit\.com\/r\/FREEMEDIAHECKYEAH|github\.com\/fmhy|cdn\.jsdelivr\.net\/gh\/fmhy)/i;
+// Broad on purpose: any fmhy.<tld>, any subdomain, any future mirror.
+const SOURCE_HOST = /^https?:\/\/(?:[^/\s]*\.)?(?:fmhy\.[a-z]{2,}(?:\.[a-z]{2,})?|rentry\.(?:co|org)\/(?:FMHY|ircfmhy)|reddit\.com\/r\/FREEMEDIAHECKYEAH|github\.com\/fmhy|cdn\.jsdelivr\.net\/gh\/fmhy)/i;
 // broad URL matcher for bare/autolinked URLs anywhere in text
 const SOURCE_URL_ANY = /https?:\/\/[^\s)>\]"']*(?:fmhy|freemediaheckyeah|rentry\.(?:co|org)\/(?:FMHY|ircfmhy))[^\s)>\]"']*/gi;
+
 
 
 // ── section-index across all pages so we can inline "link-only" headings
@@ -127,6 +135,11 @@ function clean(md: string): string {
   out = out.replace(/^.*git\s+clone\s+https?:\/\/[^\s]*fmhy[^\s]*.*$/gim, "");
   out = out.replace(/^\s*link:\s*https?:\/\/[^\s]*(?:fmhy|freemediaheckyeah)[^\s]*\s*$/gim, "");
 
+  // Any leftover link whose *href* still fingerprints the source → plain text
+  out = out.replace(/\[([^\]]*)\]\(([^)\s]+)\)/g, (m, text, url) =>
+    /fmhy|freemediaheckyeah|rentry\.(?:co|org)\/(?:FMHY|ircfmhy)/i.test(url) ? text : m,
+  );
+
   // Words: don't out the source
   out = out.replace(/\bFreeMediaHeckYeah\b/gi, "Unlocked");
   out = out.replace(/\br\/FREEMEDIAHECKYEAH\b/gi, "Unlocked");
@@ -136,12 +149,15 @@ function clean(md: string): string {
   return out;
 }
 
+/** Exported so scripts/check-debranding.ts can assert on the real pipeline. */
+export const cleanMarkdown = clean;
 
 export function getPageMarkdown(slug: string): string | null {
   const raw = RAW_MAP[slug];
   if (!raw) return null;
   return clean(raw);
 }
+
 
 export function hasPage(slug: string): boolean {
   return slug in RAW_MAP;

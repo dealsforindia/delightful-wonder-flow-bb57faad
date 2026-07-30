@@ -1,47 +1,32 @@
-## Goal
+## Where things stand
 
-On mirrored pages like `/downloading`, the big blue rows ("Video Sites", "Anime Sites", "Educational Sites"…) are currently links that redirect off-site (to FMHY / Reddit). You want them to become **plain text headings** with the actual list of sites shown **inline underneath**, exactly like the expanded Reddit wiki view in your screenshot.
+Verified this turn: all 34 upstream pages exist locally, `backups` is intentionally removed, the de-branding pipeline in `src/lib/page-content.ts` strips source links/names, and every route already has its own `head()` metadata. The gap is content drift (~110 newer upstream lines) and a few product-level rough edges.
 
-At the same time, strip anything that outs the source as FMHY so nothing redirects back there.
+## Proposed improvements, highest value first
 
-## What I'll build
+### 1. One-command content refresh (fixes the drift)
+Add `scripts/refresh-content.ts`:
+- Pulls all 34 upstream markdown files, maps `ai` to `artificial-intelligence`, skips `backups`.
+- Writes into `src/content/*.md` untouched — the de-branding stays a render-time transform, so refreshing never re-leaks the source.
+- Regenerates `src/lib/tools-data.server.ts` from the same fetch so page content and the 26k directory can't fall out of sync.
+- Prints a per-page added/removed summary so you can see what changed.
 
-### 1. Scrape the Reddit wiki once, at build time
+Run it now to close the current gap.
 
-- Use Firecrawl (connector) to pull every page under `reddit.com/r/FREEMEDIAHECKYEAH/wiki/*` that matches our current slugs (`downloading`, `video`, `audio`, `gaming`, `educational`, `reading`, `torrenting`, `ai`, `android-iOS`, etc.).
-- Save the cleaned markdown to `src/content/reddit/<slug>.md`.
-- Reddit's wiki shows all sub-sections already expanded, which is exactly the layout in your second screenshot.
+### 2. De-branding safety net
+Right now nothing catches a leak if upstream adds a new mirror domain. Add a small check that scans the rendered output for source-identifying strings and fails loudly, plus widen the domain pattern to cover any `fmhy.*` TLD rather than the current fixed list.
 
-### 2. Replace category "links" with plain headings + inline list
+### 3. Dead link health
+26k links, no idea how many still resolve. Add an offline checker that batches HEAD requests, records the last-good status per tool, and marks dead entries so `/browse` can hide or flag them. Runs as a script, not at request time.
 
-In `src/lib/page-content.ts`, add a transform pass that runs on every mirrored markdown file:
+### 4. Discovery polish on /browse
+- Deep-linkable filters (category + query in the URL) so results are shareable.
+- Result count and an empty state that suggests the AI search instead of a blank list.
+- Copy-link and "open all in tabs" on a section.
 
-- Detect the "collapsible category link" pattern (a bold/linked line like `[Video Sites](…)` that acts as a section header) and rewrite it to a plain markdown heading `### Video Sites` — no link, no redirect.
-- Inline the sub-list that belongs to that heading from the Reddit-scraped file (matched by slug + heading text). If a Reddit version exists, use its list; otherwise keep the current list but strip the outer link.
-- Result on `/downloading`: "Video Sites" appears as a non-clickable heading, followed immediately by the bulleted list of sites (Video Sites, Anime Sites, Educational Sites, Game Sites, Audio Sites, Torrent Clients…) — matching your reference screenshot.
+### 5. Per-tool detail pages
+Currently every result leaves the site immediately. Static routes like `/tool/$slug` with the tool's category, sibling alternatives, and the outbound link would keep visitors on-site and add ~26k indexable pages — the single biggest organic-traffic lever here.
 
-### 3. Scrub FMHY fingerprints so nothing points home
+## Scope note
 
-Add a link-rewrite step in `src/components/MarkdownView.tsx` + the markdown cleaner:
-
-- Drop or convert to plain text every link whose host is `fmhy.net`, `fmhy.pages.dev`, `fmhy.*` mirror, `rentry.co/FMHY*`, `rentry.org/FMHY*`, `reddit.com/r/FREEMEDIAHECKYEAH*`, or any `github.com/fmhy/*`.
-- Remove the entire `backups.md` page (the "Official Website / Source", "Backup Instances", "Official Mirrors" content) — that's the biggest tell — and remove its sidebar entry in `src/lib/fmhy-pages.ts`.
-- Rewrite any inline mentions of "FMHY", "FreeMediaHeckYeah", `r/FREEMEDIAHECKYEAH` in the markdown to nothing / "Unlocked".
-- External tool links (real destinations like `youtube.com`, `libgen.rs`, etc.) stay intact — only source-identifying links get stripped.
-
-### 4. Sidebar / meta cleanup
-
-- Remove "Backups" from `src/lib/fmhy-pages.ts`.
-- Update any remaining "community mirror of fmhy.net · content by the FMHY community" footer/subtitle text in `src/components/FmhyLayout.tsx` and `src/routes/__root.tsx` to a neutral Unlocked line.
-
-## Technical notes
-
-- Firecrawl scrape is a one-shot script committed as `scripts/scrape-reddit.ts`; output lands in `src/content/reddit/*.md` and is imported the same way as `src/content/*.md` via `import.meta.glob`.
-- Matching Reddit sections to our headings uses normalized heading text (`lowercase`, strip punctuation) so "Video Sites" / "Video-Sites" both align.
-- Nothing changes for the `/browse` 26k directory or the AI chat — this only affects the mirrored wiki pages.
-- No new routes; no schema changes; no runtime scraping.
-
-## Out of scope
-
-- Rewriting individual tool destination URLs (they already go to the real sites).
-- Building per-tool internal detail pages (can be a separate follow-up).
+Items 1 and 2 are maintenance and should go first. Items 3-5 are additive; pick any subset. Nothing here changes the theme, the AI routes, or the MCP server.

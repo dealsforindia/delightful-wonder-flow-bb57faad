@@ -1,9 +1,9 @@
 import { createFileRoute, Link, useNavigate, useSearch } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { useMemo, useRef, useDeferredValue } from "react";
+import { useMemo, useRef, useState, useDeferredValue } from "react";
 import { useVirtualizer } from "@tanstack/react-virtual";
-import { ArrowLeft, Search } from "lucide-react";
+import { ArrowLeft, Check, Link2, Search, Sparkles } from "lucide-react";
 import { FmhyLayout } from "@/components/FmhyLayout";
 import { getTools } from "@/lib/tools-data.functions";
 import { CATEGORIES } from "@/lib/tools-data";
@@ -74,9 +74,22 @@ function BrowseRoute() {
     overscan: 10,
   });
 
+  const [copied, setCopied] = useState(false);
+
   function update(params: Partial<BrowseSearch>) {
     navigate({ search: (prev: BrowseSearch) => ({ ...prev, ...params }) });
   }
+
+  async function copyLink() {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1600);
+    } catch {
+      /* clipboard blocked — no-op */
+    }
+  }
+
 
   return (
     <FmhyLayout>
@@ -134,8 +147,18 @@ function BrowseRoute() {
                 </option>
               ))}
             </select>
+            <button
+              type="button"
+              onClick={copyLink}
+              title="Copy a link to this exact search"
+              className="h-8 shrink-0 inline-flex items-center gap-1.5 rounded-md border border-border px-2.5 text-xs text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+            >
+              {copied ? <Check className="h-3.5 w-3.5 text-primary" /> : <Link2 className="h-3.5 w-3.5" />}
+              {copied ? "Copied" : "Share"}
+            </button>
           </div>
         </div>
+
 
         <div className="mt-3 text-xs text-muted-foreground">
           {toolsLoading ? "Loading…" : `Showing ${results.length.toLocaleString()} result${results.length === 1 ? "" : "s"}`}
@@ -153,10 +176,21 @@ function BrowseRoute() {
         className="mt-6 h-[60vh] sm:h-[65vh] overflow-y-auto rounded-xl border border-border"
       >
         {results.length === 0 && !toolsLoading ? (
-          <div className="flex h-40 items-center justify-center text-sm text-muted-foreground">
-            No results. Try a different query or category.
+          <div className="flex h-40 flex-col items-center justify-center gap-3 px-6 text-center text-sm text-muted-foreground">
+            <span>
+              Nothing matched{search.q ? ` “${search.q}”` : ""}
+              {search.cat ? ` in ${search.cat}` : ""}.
+            </span>
+            <Link
+              to="/ai"
+              search={search.q ? { q: search.q } : undefined}
+              className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 px-3 py-1.5 text-xs text-primary transition-colors hover:bg-primary/10"
+            >
+              <Sparkles className="h-3.5 w-3.5" /> Ask the AI instead
+            </Link>
           </div>
         ) : (
+
           <div
             className="relative w-full"
             style={{ height: `${virtualizer.getTotalSize()}px` }}
