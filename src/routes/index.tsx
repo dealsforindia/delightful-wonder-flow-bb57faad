@@ -29,47 +29,17 @@ function HomeRoute() {
   return (
     <FmhyLayout>
       <section className="text-center py-12 md:py-20 relative">
-        <svg className="absolute w-0 h-0" aria-hidden="true">
-          <defs>
-            <filter id="liquid" x="-50%" y="-50%" width="200%" height="200%">
-              <feTurbulence
-                type="fractalNoise"
-                baseFrequency="0.015 0.015"
-                numOctaves="2"
-                seed="1"
-                result="noise"
-              >
-                <animate
-                  attributeName="baseFrequency"
-                  values="0.015 0.015;0.025 0.005;0.015 0.015"
-                  dur="3.5s"
-                  repeatCount="indefinite"
-                />
-              </feTurbulence>
-              <feDisplacementMap
-                in="SourceGraphic"
-                in2="noise"
-                scale="0"
-                xChannelSelector="R"
-                yChannelSelector="G"
-              >
-                <animate
-                  attributeName="scale"
-                  values="0;22;0"
-                  dur="2.5s"
-                  repeatCount="indefinite"
-                />
-              </feDisplacementMap>
-            </filter>
-          </defs>
-        </svg>
-
         <div className="mx-auto mb-6 h-24 w-24 rounded-full ring-4 ring-primary/60 overflow-hidden shadow-[0_0_60px_-10px_var(--primary)]">
           <img src="/logo.jpg" alt="Unlocked" className="h-full w-full object-cover" />
         </div>
-        <h1 className="text-5xl md:text-8xl font-black tracking-tighter break-words liquid-title cursor-default">
-          <span className="lt-fill" aria-hidden="true">Un<span className="lt-neon">locked</span></span>
-          <span className="lt-outline">Un<span className="lt-neon">locked</span></span>
+        <h1 className="text-5xl md:text-8xl font-black tracking-tighter break-words fracture-title">
+          <span className="ft-un">Un</span>
+          <span className="relative inline-block">
+            <span className="ft-locked">locked</span>
+            <span className="ft-slice ft-slice-top" aria-hidden="true">locked</span>
+            <span className="ft-slice ft-slice-bottom" aria-hidden="true">locked</span>
+            <span className="ft-scanline" aria-hidden="true"></span>
+          </span>
         </h1>
         <p className="mt-5 text-lg md:text-xl text-muted-foreground max-w-xl mx-auto">
           Your cheat code to the free internet. Tools, guides & goldmines — one search bar.
@@ -83,6 +53,7 @@ function HomeRoute() {
           <Link to="/$page" params={{ page: "beginners-guide" }} className="px-6 py-3 rounded-lg border border-border hover:bg-accent font-medium inline-flex items-center gap-2"><BookOpen className="h-4 w-4" /> Beginners Guide</Link>
         </div>
       </section>
+
 
       <section>
         <h2 className="text-sm uppercase tracking-widest text-muted-foreground mb-4">Or browse these pages</h2>
