@@ -7,7 +7,6 @@
     "dev": "vite dev",
     "refresh-content": "bun scripts/refresh-content.ts && bun scripts/check-debranding.ts",
     "check-debranding": "bun scripts/check-debranding.ts",
-
     "build": "vite build",
     "build:vercel": "NITRO_PRESET=vercel vite build",
     "build:node": "NITRO_PRESET=node vite build",
@@ -83,7 +82,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
-    "@lovable.dev/vite-tanstack-config": "2.7.7",
+    "@lovable.dev/vite-tanstack-config": "2.8.3",
     "@types/node": "^22.16.5",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
