@@ -102,52 +102,95 @@
     text-shadow: 0 0 20px -4px var(--primary);
   }
 
-  .liquid-title {
-    position: relative;
-    display: inline-block;
-    line-height: 0.9;
-  }
-  .liquid-title .lt-fill {
-    position: relative;
-    z-index: 2;
-    color: #ffffff;
-    text-shadow:
-      0 0 1px rgba(255,255,255,0.9),
-      0 0 18px rgba(255,255,255,0.35);
-    transition: filter 0.4s ease, transform 0.4s ease;
-    will-change: filter, transform;
-  }
-  .liquid-title .lt-fill .lt-neon {
-    color: var(--primary);
-    text-shadow:
-      0 0 2px var(--primary),
-      0 0 12px color-mix(in oklab, var(--primary) 80%, transparent),
-      0 0 28px color-mix(in oklab, var(--primary) 55%, transparent),
-      0 0 60px color-mix(in oklab, var(--primary) 35%, transparent);
-  }
-  .liquid-title .lt-outline {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    color: transparent;
-    -webkit-text-stroke: 2px rgba(255,255,255,0.22);
-    pointer-events: none;
-    transform: translate(3px, 3px);
-  }
-  .liquid-title .lt-outline .lt-neon {
-    -webkit-text-stroke: 2px color-mix(in oklab, var(--primary) 55%, transparent);
-  }
-  .liquid-title:hover .lt-fill {
-    filter: url(#liquid);
-    animation: levitate 2.4s ease-in-out infinite;
-  }
-  @keyframes levitate {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-6px) scale(1.02); }
-  }
-
   .icon-invert {
     filter: brightness(0) invert(1);
     opacity: 0.9;
   }
+
+  .fracture-title {
+    position: relative;
+    display: inline-block;
+    line-height: 0.9;
+    cursor: default;
+    user-select: none;
+  }
+
+  .fracture-title .ft-un {
+    position: relative;
+    z-index: 10;
+    color: #ffffff;
+    transition: letter-spacing 0.5s ease;
+  }
+
+  .fracture-title:hover .ft-un,
+  .fracture-title:focus-visible .ft-un {
+    letter-spacing: 0.05em;
+  }
+
+  .fracture-title .ft-locked {
+    position: relative;
+    z-index: 10;
+    color: var(--primary);
+    transition: all 0.5s ease-out;
+    display: inline-block;
+  }
+
+  .fracture-title:hover .ft-locked,
+  .fracture-title:focus-visible .ft-locked {
+    transform: scale(1.05);
+    text-shadow:
+      0 0 20px color-mix(in oklab, var(--primary) 60%, transparent),
+      0 0 40px color-mix(in oklab, var(--primary) 30%, transparent);
+    filter: brightness(1.2);
+  }
+
+  .fracture-title .ft-slice {
+    position: absolute;
+    inset: 0;
+    z-index: 15;
+    color: var(--primary);
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .fracture-title .ft-slice-top {
+    clip-path: inset(0 0 50% 0);
+  }
+
+  .fracture-title .ft-slice-bottom {
+    clip-path: inset(50% 0 0 0);
+  }
+
+  .fracture-title:hover .ft-slice-top,
+  .fracture-title:focus-visible .ft-slice-top {
+    transform: translate(8px, -4px) skewX(-10deg);
+    opacity: 0.7;
+  }
+
+  .fracture-title:hover .ft-slice-bottom,
+  .fracture-title:focus-visible .ft-slice-bottom {
+    transform: translate(-8px, 4px) skewX(10deg);
+    opacity: 0.7;
+  }
+
+  .fracture-title .ft-scanline {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    z-index: 20;
+    box-shadow: 0 0 15px color-mix(in oklab, var(--primary) 80%, transparent);
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .fracture-title:hover .ft-scanline,
+  .fracture-title:focus-visible .ft-scanline {
+    transform: scaleX(1.1);
+  }
+
 }
