@@ -248,6 +248,45 @@
     }
   }
 
+  /* Mirrored reflection beneath the title */
+  .fracture-title .ft-reflection {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    display: block;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    transform: scaleY(-1) translateY(0.06em);
+    transform-origin: top;
+    opacity: 0.22;
+    filter: blur(1px);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), transparent 62%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), transparent 62%);
+    transition:
+      opacity 0.5s ease-out,
+      filter 0.5s ease-out;
+  }
+
+  .fracture-title .ft-reflection .ft-un,
+  .fracture-title .ft-reflection .ft-locked {
+    animation: none;
+    text-shadow: none;
+    transform: none;
+  }
+
+  .fracture-title .ft-reflection .ft-locked {
+    color: var(--primary);
+  }
+
+  .fracture-title:hover .ft-reflection,
+  .fracture-title:focus-visible .ft-reflection {
+    opacity: 0.4;
+    filter: blur(0.5px);
+  }
+
+
   @media (prefers-reduced-motion: reduce) {
     .fracture-title .ft-locked {
       animation: none;
