@@ -40,7 +40,12 @@ function HomeRoute() {
             <span className="ft-slice ft-slice-bottom" aria-hidden="true">locked</span>
             <span className="ft-scanline" aria-hidden="true"></span>
           </span>
+          <span className="ft-reflection" aria-hidden="true">
+            <span className="ft-un">Un</span>
+            <span className="ft-locked">locked</span>
+          </span>
         </h1>
+
         <p className="mt-5 text-lg md:text-xl text-muted-foreground max-w-xl mx-auto">
           Your cheat code to the free internet. Tools, guides & goldmines — one search bar.
         </p>
