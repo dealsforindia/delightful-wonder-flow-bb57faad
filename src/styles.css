@@ -258,8 +258,10 @@
     white-space: nowrap;
     pointer-events: none;
     user-select: none;
-    transform: scaleY(-1) translateY(0.06em);
-    transform-origin: top;
+    transform: scaleY(-1);
+    transform-origin: center center;
+    margin-top: 0.04em;
+
     opacity: 0.22;
     filter: blur(1px);
     -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), transparent 62%);
