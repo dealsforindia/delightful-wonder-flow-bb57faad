@@ -259,7 +259,8 @@
     pointer-events: none;
     user-select: none;
     transform: scaleY(-0.6);
-    transform-origin: center top;
+    transform-origin: center center;
+
     margin-top: 0.03em;
 
     opacity: 0.3;
