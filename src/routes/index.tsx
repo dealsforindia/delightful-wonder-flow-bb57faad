@@ -46,7 +46,7 @@ function HomeRoute() {
           </span>
         </h1>
 
-        <p className="mt-5 text-lg md:text-xl text-muted-foreground max-w-xl mx-auto">
+        <p className="mt-16 text-lg md:text-xl text-muted-foreground max-w-xl mx-auto">
           Your cheat code to the free internet. Tools, guides & goldmines — one search bar.
         </p>
         <div className="mt-3 text-xs text-muted-foreground font-mono">
