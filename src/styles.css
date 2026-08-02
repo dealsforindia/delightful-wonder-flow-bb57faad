@@ -113,84 +113,154 @@
     line-height: 0.9;
     cursor: default;
     user-select: none;
+    perspective: 800px;
   }
 
   .fracture-title .ft-un {
     position: relative;
     z-index: 10;
     color: #ffffff;
-    transition: letter-spacing 0.5s ease;
+    display: inline-block;
+    text-shadow: 0 0 24px color-mix(in oklab, #ffffff 22%, transparent);
+    transition:
+      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      letter-spacing 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .fracture-title:hover .ft-un,
   .fracture-title:focus-visible .ft-un {
-    letter-spacing: 0.05em;
+    transform: translateX(-0.06em);
+    letter-spacing: 0.01em;
   }
 
   .fracture-title .ft-locked {
     position: relative;
     z-index: 10;
     color: var(--primary);
-    transition: all 0.5s ease-out;
     display: inline-block;
+    animation: ft-breathe 4.5s ease-in-out infinite;
+    transition:
+      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      text-shadow 0.4s ease-out,
+      filter 0.4s ease-out;
+  }
+
+  @keyframes ft-breathe {
+    0%,
+    100% {
+      text-shadow:
+        0 0 14px color-mix(in oklab, var(--primary) 35%, transparent),
+        0 0 40px color-mix(in oklab, var(--primary) 14%, transparent);
+    }
+    50% {
+      text-shadow:
+        0 0 22px color-mix(in oklab, var(--primary) 55%, transparent),
+        0 0 60px color-mix(in oklab, var(--primary) 24%, transparent);
+    }
   }
 
   .fracture-title:hover .ft-locked,
   .fracture-title:focus-visible .ft-locked {
-    transform: scale(1.05);
+    animation: none;
+    transform: translateX(0.06em);
+    filter: brightness(1.15);
     text-shadow:
-      0 0 20px color-mix(in oklab, var(--primary) 60%, transparent),
-      0 0 40px color-mix(in oklab, var(--primary) 30%, transparent);
-    filter: brightness(1.2);
+      0 0 18px color-mix(in oklab, var(--primary) 70%, transparent),
+      0 0 55px color-mix(in oklab, var(--primary) 35%, transparent);
   }
 
+  /* Two clean halves that shear apart, then settle back together */
   .fracture-title .ft-slice {
     position: absolute;
     inset: 0;
-    z-index: 15;
+    z-index: 9;
     color: var(--primary);
     pointer-events: none;
     user-select: none;
     opacity: 0;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: transform, opacity;
+    transition:
+      transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.35s ease-out;
   }
 
   .fracture-title .ft-slice-top {
-    clip-path: inset(0 0 50% 0);
+    clip-path: inset(0 0 52% 0);
   }
 
   .fracture-title .ft-slice-bottom {
-    clip-path: inset(50% 0 0 0);
+    clip-path: inset(48% 0 0 0);
   }
 
   .fracture-title:hover .ft-slice-top,
   .fracture-title:focus-visible .ft-slice-top {
-    transform: translate(8px, -4px) skewX(-10deg);
-    opacity: 0.7;
+    transform: translate3d(0.1em, -0.055em, 0);
+    opacity: 0.32;
   }
 
   .fracture-title:hover .ft-slice-bottom,
   .fracture-title:focus-visible .ft-slice-bottom {
-    transform: translate(-8px, 4px) skewX(10deg);
-    opacity: 0.7;
+    transform: translate3d(-0.1em, 0.055em, 0);
+    opacity: 0.32;
   }
 
+  /* Scanline sweeps left → right once on hover */
   .fracture-title .ft-scanline {
     position: absolute;
     top: 50%;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--primary);
+    left: -10%;
+    width: 120%;
+    height: 1px;
     z-index: 20;
-    box-shadow: 0 0 15px color-mix(in oklab, var(--primary) 80%, transparent);
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
+    pointer-events: none;
+    opacity: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, var(--primary) 90%, transparent) 45%,
+      #ffffff 50%,
+      color-mix(in oklab, var(--primary) 90%, transparent) 55%,
+      transparent
+    );
+    box-shadow: 0 0 18px color-mix(in oklab, var(--primary) 70%, transparent);
+    transform: translateX(-100%);
   }
 
   .fracture-title:hover .ft-scanline,
   .fracture-title:focus-visible .ft-scanline {
-    transform: scaleX(1.1);
+    animation: ft-sweep 0.85s cubic-bezier(0.5, 0, 0.2, 1) forwards;
   }
+
+  @keyframes ft-sweep {
+    0% {
+      transform: translateX(-110%);
+      opacity: 0;
+    }
+    15% {
+      opacity: 1;
+    }
+    85% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(110%);
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fracture-title .ft-locked {
+      animation: none;
+    }
+    .fracture-title .ft-slice,
+    .fracture-title .ft-scanline {
+      display: none;
+    }
+    .fracture-title:hover .ft-un,
+    .fracture-title:hover .ft-locked {
+      transform: none;
+    }
+  }
+
 
 }
