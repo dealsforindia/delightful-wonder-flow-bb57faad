@@ -350,6 +350,7 @@
 * [⁠The Biology Project](https://biology.arizona.edu/) - Biology Problem Sets & Tutorials
 * [Biodiversity Heritage Library](https://www.biodiversitylibrary.org/) - Biodiversity Research
 * [Alien](https://alien-project.org/) - Artificial Life Simulator / [Video](https://youtu.be/w9R6zrdl6jM) / [GitHub](https://github.com/chrxh/alien)
+* [⁠Map of Life](https://mol.org/) - Interactive Map of Species Distributions
 * [Metazooa](https://metazooa.com/) - Species Connection Game
 * [⁠Phenome10K](https://www.phenome10k.org/) - Biological / Palaeontological 3D Scans
 * [RecentlyExtinctSpecies](https://recentlyextinctspecies.com/) - Recently Extinct Species Database
@@ -981,6 +982,7 @@
 * [YottaChess](https://www.yottachess.com/) - Professional Player Database
 * [⁠Chessigma](https://www.chessigma.com/) - Engine Analysis / [Discord](https://discord.gg/dy9VXd5n3v)
 * [En Croissant](https://encroissant.org/) - Chess Analysis Tool
+* [⁠ChessBlunders](https://chessblunders.org/) - Analyze Chess Mistakes
 * [Chess Vision](https://chessvision.ai/) - Import Images Into Chess Engine
 * [⁠Tactic or Not](https://tacticornot.com/) - Evaluate Tactics / [Discord](https://discord.gg/2WWgsuZmag)
 * [OpeningTree](https://www.openingtree.com/) - Import Lichess and Chess.com Analysis
@@ -1354,7 +1356,7 @@
 * [⁠MOOC.fi](https://www.mooc.fi/en/) - Programming Courses 
 * [EggHead](https://egghead.io/) - Programming Courses
 * [TechSchool](https://techschool.dev/en) - Programming Courses / [Discord](https://discord.com/invite/C4abRX5skH)
-* [⁠Josh Comeau](https://www.joshwcomeau.com/) - Programming Tutorials 
+* [⁠Josh Comeau](https://www.joshwcomeau.com/) - Programming Tutorials
 * [Scratch](https://scratch.mit.edu/) / [Firefox Extension](https://scratchaddons.com/) / [Chrome Extension](https://www.scratchtools.app/) / [Package Projects](https://packager.turbowarp.org/) / [Increase Speed](https://turbowarp.org/), [2](https://github.com/TurboWarp/) / [Wiki / Guides](https://scratch-wiki.info/) / [GitHub](http://github.com/ScratchAddons/ScratchAddons) or [⁠MIT App Inventor](https://appinventor.mit.edu/) - Beginner Programming Learning
 * [USACO Guide](https://usaco.guide/) - Competitive Programming Lessons
 * [Beej's Guides](https://www.beej.us/guide/) or [LearnByExample](https://learnbyexample.github.io/) - Programming Guides
@@ -1370,8 +1372,8 @@
 * [rTorr](https://vim.rtorr.com/) - Vim Editor Cheat Sheets
 * [Vim University](https://github.com/wincent/vim-university) - Vim Tips
 * [VimTip](https://vim.fandom.com/wiki/Category:VimTip) - Vim Editor Tips
-* [Vim Adventures](https://vim-adventures.com/) - Vim Learning Game
 * [⁠Learn Shell](https://www.learnshell.org/) - Interactive Shell Programming Tutorial
+* [⁠Assembly Tutorial](https://github.com/mschwartz/assembly-tutorial) - AMD64 / Intel 64 bit Programming Tutorial
 * [High Assurance Rust](https://highassurance.rs/) - Software Development Guide
 * [LearningSEO.io](https://learningseo.io/) or [SEO Cheat Sheet](https://seo-cheat-sheet.9elements.com/) - SEO Learning
 * [SQL PD](https://sqlpd.com/), [SQL Noir](https://www.sqlnoir.com/), [Lost at SQL](https://lost-at-sql.therobinlord.com/) or [SQL Easy](https://www.sql-easy.com/) - SQL Learning Games
@@ -1420,7 +1422,7 @@
 * [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines) / [GitHub](https://github.com/isocpp/CppCoreGuidelines) or [modern-cpp-tricks](https://github.com/rachitiitr/modern-cpp-tricks) - C++ Tips 
 * [Learn C++](https://www.learncpp.com/) or [StudyPlan](https://www.studyplan.dev/) - C++ Lessons / Tutorials
 * [Makefile Tutorial](https://makefiletutorial.com/) - Makefile Tutorial
-* [AmigosCode](https://www.youtube.com/@amigoscode), [Java Design Patterns](https://java-design-patterns.com/) or [learncs.online](https://www.learncs.online/) - Java / Kotlin Guides
+* [AmigosCode](https://www.youtube.com/@amigoscode), [Java Design Patterns](https://java-design-patterns.com/), [Modern Java](https://javabook.mccue.dev/) or [learncs.online](https://www.learncs.online/) - Java / Kotlin Guides
 * [Learn Next.js](https://nextjs.org/learn) - Next.js Learning Resources
 * [LearnGo](https://github.com/inancgumus/learngo), [Tour Go](https://tour.go.dev/) or [play-with-go](https://play-with-go.dev/) - Learn Go Programming
 * [Rust Learning](https://github.com/ctjhoa/rust-learning) - Rust Learning Resources
@@ -1616,7 +1618,7 @@
 
 * 🌐 **[Awesome-Gamedev](https://github.com/FronkonGames/Awesome-Gamedev)**, [Learn Gamedev](https://github.com/notpresident35/awesome-learn-gamedev), [MagicTools](https://github.com/ellisonleao/magictools), [Newgrounds Wiki: Game Dev Resources](https://www.newgrounds.com/wiki/creator-resources/game-dev-resources) or [The VG Resource](https://www.vg-resource.com/) - Learning Resources
 * ↪️ **[Game Dev Tools](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/dev-tools/#wiki_.25BA_game_dev_tools)**
-* ⭐ **[Brackeys](https://www.youtube.com/channel/UCYbK_tjZ2OrIZFBvU6CCMiA)** - Game Dev Tutorials
+* ⭐ **[Brackeys](https://brackeys.com/)** - Game Dev Tutorials
 * ⭐ **[r/gamedev](https://www.reddit.com/r/gamedev/)** - Reddit Community
 * [⁠20 Games Challenge](https://20_games_challenge.gitlab.io/) - Beginner Game Dev Challenges
 * [CodeWisp](https://codewisp.net/) - Interactive Beginner Game Dev Learning
@@ -1665,6 +1667,7 @@
 * [CatchaScience](https://catchascience.wordpress.com/), [IGCSEResources](https://sites.google.com/view/igcseresources/home), [r/IGCSE](https://www.reddit.com/r/igcse/) or [ZNotes](https://znotes.org/) - IGCSE Study Notes / Resources
 * [IGCSE Papers](https://igcse.net/igcse-past-papers-download/), [⁠exam-mate](https://www.exam-mate.com/pastpapers), [⁠Study Hatch](https://studyhatch.com/), [RevisionScience](https://revisionscience.com/) or [Physics & Maths Tutor](https://www.physicsandmathstutor.com/) - Download Past GCSE / IGCSE Papers
 * [⁠ISC.exe](https://class-12-isc.vercel.app/) - Indian School Certificate Examinations (ISC) Resources / Study Material
+* [Holy Grail](https://grail.moe/) - Singaporean Exam Study Notes / Papers
 * [anthropology](https://t.me/anthropology) - UPSC Telegram Channel
 * [GaryChamberlainLectureNotes](https://github.com/paulgp/GaryChamberlainLectureNotes) - Econometrics Lecture Notes
 
