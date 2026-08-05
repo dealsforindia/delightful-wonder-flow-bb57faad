@@ -1,32 +1,50 @@
-## Where things stand
+# Making the AI actually smarter
 
-Verified this turn: all 34 upstream pages exist locally, `backups` is intentionally removed, the de-branding pipeline in `src/lib/page-content.ts` strips source links/names, and every route already has its own `head()` metadata. The gap is content drift (~110 newer upstream lines) and a few product-level rough edges.
+The AI already works, but it is guessing more than it should. Four concrete weaknesses exist in the current code, and each has a fix that measurably improves answer quality.
 
-## Proposed improvements, highest value first
+## What is wrong today
 
-### 1. One-command content refresh (fixes the drift)
-Add `scripts/refresh-content.ts`:
-- Pulls all 34 upstream markdown files, maps `ai` to `artificial-intelligence`, skips `backups`.
-- Writes into `src/content/*.md` untouched — the de-branding stays a render-time transform, so refreshing never re-leaks the source.
-- Regenerates `src/lib/tools-data.server.ts` from the same fetch so page content and the 26k directory can't fall out of sync.
-- Prints a per-page added/removed summary so you can see what changed.
+**1. The AI never sees what a tool does.**
+Every candidate handed to the model is just `name | section | category`. Nothing describes the tool. So when ranking "I want to edit a podcast", the model is pattern-matching on names alone. The wiki pages already contain a one-line description next to almost every link — that text is being thrown away during the directory build.
 
-Run it now to close the current gap.
+**2. Search fails on intent, not keywords.**
+The candidate prefilter is a literal substring match. A query like "make money online" or "remove background from a photo" matches zero tool names, so the model receives an empty or near-empty candidate list and the answer degrades to a generic fuzzy fallback. Keyword expansion already exists in the codebase but is only wired into roadmaps, not search.
 
-### 2. De-branding safety net
-Right now nothing catches a leak if upstream adds a new mirror domain. Add a small check that scans the rendered output for source-identifying strings and fails loudly, plus widen the domain pattern to cover any `fmhy.*` TLD rather than the current fixed list.
+**3. Old model, and no reasoning where it helps.**
+Everything runs on `gemini-2.5-flash` (previous generation). Ranking and planning are exactly the tasks where a newer model changes the output quality.
 
-### 3. Dead link health
-26k links, no idea how many still resolve. Add an offline checker that batches HEAD requests, records the last-good status per tool, and marks dead entries so `/browse` can hide or flag them. Runs as a script, not at request time.
+**4. Every question costs a full round trip.**
+Identical or near-identical queries re-run keyword expansion plus ranking each time. Repeat questions feel slow for no reason.
 
-### 4. Discovery polish on /browse
-- Deep-linkable filters (category + query in the URL) so results are shareable.
-- Result count and an empty state that suggests the AI search instead of a blank list.
-- Copy-link and "open all in tabs" on a section.
+## The plan
 
-### 5. Per-tool detail pages
-Currently every result leaves the site immediately. Static routes like `/tool/$slug` with the tool's category, sibling alternatives, and the outbound link would keep visitors on-site and add ~26k indexable pages — the single biggest organic-traffic lever here.
+### Phase 1 — Give the AI real knowledge (biggest win)
+- Extend the content refresh script to capture the description text that follows each link in the wiki markdown, plus badge markers (open source, self-hostable, etc.).
+- Add `description` and `tags` to each directory row.
+- Feed that description into ranking, roadmap and comparison candidate lists, and show it in the tool cards in the UI too.
 
-## Scope note
+### Phase 2 — Intent-aware retrieval
+- Run keyword expansion before search ranking, not just roadmaps, and union the results so paraphrases find the right tools.
+- Add synonym and category-intent mapping ("passive income" -> Misc/Money sections, "edit podcast" -> Audio) so intent queries always land on a real slice of the directory.
+- When the prefilter still comes back thin, widen to the whole category instead of returning "Top fuzzy match".
 
-Items 1 and 2 are maintenance and should go first. Items 3-5 are additive; pick any subset. Nothing here changes the theme, the AI routes, or the MCP server.
+### Phase 3 — Better models and lower latency
+- Move ranking, planning and chat to the current-generation Gemini Flash model; use the cheap lite model for keyword expansion only.
+- Cache ranking and roadmap results by normalised query for the session so repeats are instant.
+- Cap candidate lists smartly (dedupe near-identical entries) so more of the budget goes to good candidates rather than noise.
+
+### Phase 4 — Answer quality guardrails
+- Reject roadmap steps whose chosen tool's category is unrelated to the step action, and retry once rather than shipping a forced match.
+- Show the AI's confidence: when the directory genuinely has no good fit, say so instead of recommending the least-bad option.
+
+## Technical notes
+
+- `scripts/refresh-content.ts`: extend `parseTools` to capture trailing description text and badges; widen the `Entry` type and the generated `tools-data.server.ts` shape.
+- `src/lib/tools-data.ts`: add optional `description` and `tags` to the `Tool` type so existing rows stay valid during rollout.
+- `src/lib/ai-tools.server.ts`: call `expandKeywords` inside `rankTools`; add a synonym map; include descriptions in the candidate index lines; add an in-memory LRU cache keyed by normalised query.
+- `src/routes/api/ai-chat.ts`: bump the model id, pass descriptions through the tool results so the chat reply can cite them.
+- De-branding still applies: descriptions run through the same cleaner, and `scripts/check-debranding.ts` must pass after the refresh.
+
+## Suggested order
+
+Phase 1 alone changes answer quality the most, because it is the only fix that adds information the model currently does not have. Phases 2 and 3 can ship together right after.
