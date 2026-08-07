@@ -20,6 +20,8 @@ export const aiSearch = createServerFn({ method: "POST" })
       url: tool.url,
       category: tool.category,
       section: tool.section,
+      description: tool.description ?? "",
+      tags: tool.tags ?? [],
       why,
     }));
   });
