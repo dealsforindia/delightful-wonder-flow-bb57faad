@@ -108,6 +108,55 @@ interface Entry {
   u: string;
   c: string;
   s: string;
+  d: string;
+  t: string[];
+}
+
+/** Everything after the tool link(s) on a wiki line, cleaned into plain prose. */
+function lineDescription(line: string): string {
+  const flat = line
+    .replace(/^[\s*\-+]+/, "")
+    .replace(/\[([^\]\n]*)\]\((https?:\/\/[^)\s]+)\)/g, "$1")
+    .replace(/[*_`]/g, "")
+    .replace(/[\u2b50\u21aa\ufe0f\u{1f300}-\u{1faff}]/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  const dash = flat.indexOf(" - ");
+  let rest = dash >= 0 ? flat.slice(dash + 3) : flat.replace(/^[^/]*\//, "");
+  if (rest === flat) rest = "";
+
+  const parts = rest
+    .split("/")
+    .map((p) => p.trim())
+    .filter(
+      (p) =>
+        p.length > 1 &&
+        !SOURCE_PATTERN.test(p) &&
+        !/^(github|gitlab|discord|subreddit|r\/|telegram|source code|mirror)/i.test(p),
+    );
+
+  return parts.join(" / ").slice(0, 180).trim();
+}
+
+function lineTags(line: string, description: string): string[] {
+  const tags: string[] = [];
+  const hay = `${line} ${description}`.toLowerCase();
+  if (line.includes("\u2b50")) tags.push("recommended");
+  if (/github\.com|gitlab\.|codeberg\.org|open.?source/i.test(line)) tags.push("open source");
+  if (/self.?host/i.test(hay)) tags.push("self-hostable");
+  if (/sign.?up|login required|account required|phone #|register/i.test(hay)) tags.push("signup");
+  if (/paid|premium|subscription|free trial|freemium/i.test(hay)) tags.push("paid");
+  for (const [re, tag] of [
+    [/windows/i, "windows"],
+    [/macos/i, "macos"],
+    [/linux/i, "linux"],
+    [/android/i, "android"],
+    [/\bios\b/i, "ios"],
+  ] as Array<[RegExp, string]>) {
+    if (re.test(hay)) tags.push(tag);
+  }
+  return Array.from(new Set(tags)).slice(0, 8);
 }
 
 function parseTools(md: string, category: string): Entry[] {
@@ -122,13 +171,15 @@ function parseTools(md: string, category: string): Entry[] {
         .trim();
       continue;
     }
+    const description = lineDescription(line);
+    const tags = lineTags(line, description);
     const re = /\[([^\]\n]+)\]\((https?:\/\/[^)\s]+)\)/g;
     let m: RegExpExecArray | null;
     while ((m = re.exec(line))) {
       const name = m[1].replace(/[*_`]/g, "").trim();
       const url = m[2];
       if (!name || isSourceName(name) || isSourceLink(url)) continue;
-      out.push({ n: name, u: url, c: category, s: section });
+      out.push({ n: name, u: url, c: category, s: section, d: description, t: tags });
     }
   }
   return out;
