@@ -1,53 +1,27 @@
-# Making the AI give practical, usable answers
+# Step one: give the AI real facts about each tool
 
-Right now the AI recommends tools. What it does not do is tell you how to actually get the thing done — the steps, the catch, the realistic cost of your time. That is the gap to close.
+Scoped down to fit the credits you have left. This is the single change that makes every AI answer more practical, and everything else in the bigger plan depends on it.
 
-## The real problem
+## Why this one
 
-**It recommends blind.** Every candidate the model sees is just `name | section | category`. It has no idea what a tool does, whether it needs a signup, whether it runs on Windows, or whether it is abandoned. So the advice it writes around those names is generic by necessity.
+Today the AI sees only `name | section | category` for each candidate. It cannot tell you what a tool actually does, whether it needs a signup, or whether it's paid — so it writes generic advice around bare names. The wiki text already contains a short description next to nearly every link, plus markers for open source, self-hostable, and paid tiers. That data is thrown away during the directory build.
 
-**It answers the keyword, not the intent.** "I want to make money editing videos" matches no tool name literally, so the search returns a weak fuzzy fallback and the AI writes filler on top of it.
+Capture it, and the same AI calls suddenly have something concrete to reason with.
 
-**Roadmaps are tool lists in disguise.** Steps get a tool and a one-line action, but no "you'll hit this wall here", no prerequisite check, no honest time estimate. That is what makes a plan usable versus decorative.
+## What changes
 
-**It never says "no".** When the directory genuinely has nothing good, it still recommends the least-bad option, which is worse than admitting the gap.
+1. The directory build keeps each tool's short description and its badge markers (open source / self-hostable / paid) instead of discarding them.
+2. Those descriptions are included in the candidate list sent to the AI for search, roadmaps, and swaps — so recommendations can name what the tool does and flag a signup or paid tier.
+3. Tool cards in the browse UI show the description line, which also makes the directory more useful on its own.
 
-## The plan
+## Not in this step
 
-### 1. Give the AI facts to reason with
-The wiki text already carries a description next to nearly every link, plus markers for open source, self-hostable, and paid tiers. That data is discarded during the directory build. Capture it, attach it to each tool, and feed it into every ranking, roadmap, and comparison call — and show it on the tool cards in the UI while we're at it.
-
-### 2. Make answers actionable by default
-Rework the assistant's instructions so every recommendation must carry:
-- what you do first, concretely
-- the one thing that usually goes wrong with this tool
-- signup / account / install requirement, stated plainly
-- when to pick something else instead
-
-No recommendation ships without those four. If the AI cannot supply them, it should say the tool is untested rather than invent detail.
-
-### 3. Roadmaps that survive contact with reality
-- A prerequisites line up front: what you need before step 1 (account, hardware, a file, money).
-- Per step: the actual action, what "done" looks like, and the common failure point.
-- An honest total time, and a "skip this step if…" note where a step is optional.
-- Reject a step whose tool doesn't match what the step is asking for, and retry once instead of forcing a bad fit.
-
-### 4. Intent-aware retrieval
-Expand the query into workflow keywords before searching (this already exists for roadmaps, just not search), map common intents to real categories, and when the candidate pool is still thin, widen to the whole category instead of returning "top fuzzy match".
-
-### 5. Honest gaps and repeat speed
-- When nothing in the directory fits, say so and suggest the closest adjacent approach.
-- Cache ranking and roadmap results per query so asking the same thing twice is instant.
+Intent-to-category mapping, caching, model upgrades, and the expanded roadmap schema (prereqs / gotchas / optional steps) stay on the shelf until you have more credits.
 
 ## Technical notes
 
 - `scripts/refresh-content.ts`: extend `parseTools` to capture trailing description text and badge markers; widen the generated `tools-data.server.ts` rows.
-- `src/lib/tools-data.ts`: add optional `description` and `tags` to `Tool` so existing rows stay valid during rollout.
-- `src/lib/ai-tools.server.ts`: call `expandKeywords` inside `rankTools`; add an intent-to-category map; include descriptions in candidate index lines; add a category-widening fallback; add an in-memory cache keyed by normalised query. Extend the roadmap schema with `prereqs`, `gotcha`, and `optional`.
-- `src/routes/api/ai-chat.ts`: rewrite the system prompt around the four required facts per recommendation and the "say no" rule; pass descriptions through tool results.
-- `src/routes/ai.tsx`: render prerequisites and per-step gotchas in the roadmap cards.
-- De-branding still applies: descriptions run through the same cleaner, and `scripts/check-debranding.ts` must pass after the refresh.
-
-## Order
-
-Step 1 first — it is the only change that adds information the model currently does not have, and steps 2 and 3 depend on it to say anything specific. Then 2 and 3 together, then 4 and 5.
+- `src/lib/tools-data.ts`: add optional `description` and `tags` to `Tool` so existing rows stay valid.
+- `src/lib/ai-tools.server.ts`: include the description in the candidate index lines for `rankTools`, `buildRoadmap`, and `swapStep`.
+- `src/routes/browse.tsx`: render the description on tool cards.
+- Descriptions run through the existing de-branding cleaner; `scripts/check-debranding.ts` must pass after the refresh.
