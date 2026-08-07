@@ -229,12 +229,15 @@ async function main() {
   });
 
   const body = tools
-    .map((t) => `  { n:"${esc(t.n)}", u:"${esc(t.u)}", c:"${esc(t.c)}", s:"${esc(t.s)}" },`)
+    .map(
+      (t) =>
+        `  { n:"${esc(t.n)}", u:"${esc(t.u)}", c:"${esc(t.c)}", s:"${esc(t.s)}", d:"${esc(t.d)}", t:[${t.t.map((x) => `"${esc(x)}"`).join(",")}] },`,
+    )
     .join("\n");
 
   await writeFile(
     DATA_FILE,
-    `import type { Tool, Category } from "./tools-data";\nexport const TOOLS: Tool[] = ([\n${body}\n] as const).map((t) => ({ name: t.n, url: t.u, category: t.c as Category, section: t.s }));\n`,
+    `import type { Tool, Category } from "./tools-data";\nexport const TOOLS: Tool[] = ([\n${body}\n] as const).map((t) => ({ name: t.n, url: t.u, category: t.c as Category, section: t.s, description: t.d, tags: [...t.t] }));\n`,
   );
 
   console.log(rows.length ? "Changed pages:" : "All pages already current.");
