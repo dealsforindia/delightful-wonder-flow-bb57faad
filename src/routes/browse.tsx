@@ -238,6 +238,21 @@ function ToolRow({ tool, index }: { tool: Tool; index: number }) {
           <span className="font-medium group-hover:text-primary truncate transition-colors">{tool.name}</span>
           <span className="text-xs text-muted-foreground truncate">{tool.section}</span>
         </div>
+        {tool.description ? (
+          <p className="text-xs text-muted-foreground/80 truncate mt-0.5">{tool.description}</p>
+        ) : null}
+        {tool.tags?.length ? (
+          <div className="hidden sm:flex flex-wrap gap-1 mt-1">
+            {tool.tags.slice(0, 4).map((t) => (
+              <span
+                key={t}
+                className="text-[10px] px-1.5 py-0.5 rounded border border-border text-muted-foreground"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        ) : null}
       </div>
       <span className="shrink-0 text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-muted text-muted-foreground border border-border">
         {tool.category}

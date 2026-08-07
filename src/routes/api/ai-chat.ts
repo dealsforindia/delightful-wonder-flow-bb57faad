@@ -53,6 +53,7 @@ How you help:
 
 Reply format — be GENUINELY USEFUL, not terse:
 - Aim for a substantive answer (typically 150–400 words). Use markdown: short intro, then **## Top picks** with a bullet per recommended tool.
+- Tool results include a 'description' (what it does) and 'tags' (recommended / open source / self-hostable / signup / paid / platforms). Ground your answer in them: never invent capabilities the description doesn't support, and always state plainly when a tool needs a signup or has a paid tier. If nothing in the directory genuinely fits, say so instead of recommending the least-bad option.
 - For each recommended tool, write 2–4 sentences covering: what it actually does, why it fits THIS user's ask, one concrete tip / gotcha / how to start, and when to pick it over an alternative. Reference tools by name (the UI renders link cards separately — don't re-paste URLs).
 - If you built a roadmap, add a **## How to run it** section: what to do first, what "done" looks like at each step, realistic time expectations, and where people usually get stuck.
 - If you compared tools, add a **## Which to pick** verdict tailored to the user's context (OS, budget, skill, memory facts).
@@ -74,7 +75,7 @@ ${modeHint}${memoryBlock}`;
               return {
                 query,
                 results: ranked.map(({ i, tool: t, why }) => ({
-                  i, name: t.name, url: t.url, category: t.category, section: t.section, why,
+                  i, name: t.name, url: t.url, category: t.category, section: t.section, description: t.description ?? "", tags: t.tags ?? [], why,
                 })),
               };
             },
@@ -89,7 +90,7 @@ ${modeHint}${memoryBlock}`;
                 title: roadmap.title,
                 totalMinutes: roadmap.totalMinutes,
                 steps: roadmap.steps.map((s) => ({
-                  i: s.i, name: s.name, url: s.url, category: s.category, section: s.section,
+                  i: s.i, name: s.name, url: s.url, category: s.category, section: s.section, description: TOOLS[s.i]?.description ?? "", tags: TOOLS[s.i]?.tags ?? [],
                   action: s.action, output: s.output, why: s.why, estMinutes: s.estMinutes,
                 })),
               };
@@ -135,7 +136,7 @@ ${modeHint}${memoryBlock}`;
               return {
                 category, section: section ?? null, totalInCategory: results.length,
                 results: slice.map((t, i) => ({
-                  i: TOOLS.indexOf(t), name: t.name, url: t.url, category: t.category, section: t.section,
+                  i: TOOLS.indexOf(t), name: t.name, url: t.url, category: t.category, section: t.section, description: t.description ?? "", tags: t.tags ?? [],
                   _rank: i,
                 })),
               };
@@ -152,7 +153,7 @@ ${modeHint}${memoryBlock}`;
                 const exact = TOOLS.find((t) => t.name.toLowerCase() === needle);
                 const partial = exact ?? TOOLS.find((t) => t.name.toLowerCase().includes(needle));
                 return partial
-                  ? { query: n, found: true as const, i: TOOLS.indexOf(partial), name: partial.name, url: partial.url, category: partial.category, section: partial.section }
+                  ? { query: n, found: true as const, i: TOOLS.indexOf(partial), name: partial.name, url: partial.url, category: partial.category, section: partial.section, description: partial.description ?? "", tags: partial.tags ?? [] }
                   : { query: n, found: false as const };
               });
               return { results };

@@ -18,6 +18,14 @@ function safeJsonParse<T>(text: string, fallback: T): T {
   }
 }
 
+/** One candidate line for the LLM: index, name, taxonomy, blurb and markers. */
+function indexLine(i: number): string {
+  const t = TOOLS[i];
+  const desc = (t.description ?? "").slice(0, 140);
+  const tags = (t.tags ?? []).join(",");
+  return [i, t.name, t.section, t.category, desc, tags].join("|");
+}
+
 // Lightweight fuzzy prefilter — with 26k tools we can't ship the whole index
 // to the LLM every call. Score & keep top candidates, then let AI rank.
 export function prefilter(query: string, refine: string | undefined, k = 500): number[] {
@@ -26,7 +34,7 @@ export function prefilter(query: string, refine: string | undefined, k = 500): n
   const scored: Array<{ i: number; s: number }> = [];
   for (let i = 0; i < TOOLS.length; i++) {
     const t = TOOLS[i];
-    const hay = (t.name + " " + t.section + " " + t.category).toLowerCase();
+    const hay = (t.name + " " + t.section + " " + t.category + " " + (t.description ?? "")).toLowerCase();
     let s = 0;
     for (const term of terms) {
       const idx = hay.indexOf(term);
@@ -45,7 +53,7 @@ export function scoreTools(query: string, k: number): number[] {
   const scored: Array<{ i: number; s: number }> = [];
   for (let i = 0; i < TOOLS.length; i++) {
     const t = TOOLS[i];
-    const hay = (t.name + " " + t.section + " " + t.category).toLowerCase();
+    const hay = (t.name + " " + t.section + " " + t.category + " " + (t.description ?? "")).toLowerCase();
     let s = 0;
     for (const term of terms) {
       const idx = hay.indexOf(term);
@@ -100,16 +108,14 @@ export async function rankTools(
   apiKey: string,
 ): Promise<Array<{ i: number; tool: Tool; why: string }>> {
   const ids = prefilter(query, refine, 500);
-  const index = ids
-    .map((i) => `${i}|${TOOLS[i].name}|${TOOLS[i].section}|${TOOLS[i].category}`)
-    .join("\n");
+  const index = ids.map(indexLine).join("\n");
   const prior = previousIds?.length
     ? `\nPREVIOUS RESULTS (already shown, prefer different picks unless still best): ${previousIds.join(",")}`
     : "";
   const refineBlock = refine ? `\nUSER REFINEMENT: ${refine}` : "";
 
   const system = `You are a search engine over a curated directory of ${TOOLS.length} free tools from FMHY.
-Each line: INDEX|NAME|SECTION|CATEGORY.
+Each line: INDEX|NAME|SECTION|CATEGORY|DESCRIPTION|TAGS (tags may include recommended, open source, self-hostable, signup, paid, and platforms).\nUse the description and tags — prefer tools whose description actually matches the intent, and mention a signup or paid requirement in the reason when the tags say so.
 Given a user intent, return the ${limit} MOST RELEVANT tools ranked best-first as a JSON object: {"results":[{"i":INDEX,"why":"short reason"}]}. No prose, no markdown.`;
 
   const user = `INTENT: ${query}${refineBlock}${prior}\n\nCANDIDATES:\n${index}`;
@@ -210,9 +216,7 @@ export async function buildRoadmap(
     finalIds = Array.from(merged);
   }
 
-  const index = finalIds
-    .map((i) => `${i}|${TOOLS[i].name}|${TOOLS[i].category}|${TOOLS[i].section}`)
-    .join("\n");
+  const index = finalIds.map(indexLine).join("\n");
 
   const system = `You are a pragmatic expert who builds real, working roadmaps. Given a GOAL, design a 3-6 step plan using ONLY tools from CANDIDATES (referenced by INDEX).
 
@@ -221,6 +225,7 @@ Rules:
 - Pick the tool that best fits each step. If no candidate truly fits a step, skip that step rather than force an unrelated tool.
 - Steps must be sequential and actionable — each output feeds the next.
 - Do not repeat the same tool. Do not pad the plan.
+- Use each candidate's DESCRIPTION and TAGS to judge fit. If a tool is tagged signup or paid, say so in 'why'.
 - 'action' is a concrete instruction the user can follow. 'output' is what they'll have after. 'why' explains the tool choice in one line.
 
 Reply ONLY with JSON matching the schema. No prose, no markdown fences.`;
@@ -335,7 +340,7 @@ export async function swapStep(
   const pool = Array.from(new Set([...sameBucket, ...scored])).slice(0, 150);
   if (pool.length === 0) return { tool: null };
 
-  const index = pool.map((i) => `${i}|${TOOLS[i].name}|${TOOLS[i].category}|${TOOLS[i].section}`).join("\n");
+  const index = pool.map(indexLine).join("\n");
   const system = `Pick ONE alternative tool for the given step. Reply ONLY as JSON matching the schema. No prose.`;
   const user = `GOAL: ${data.goal}\nSTEP ACTION: ${data.stepAction}\nCURRENT: ${TOOLS[data.currentToolId]?.name}\nEXCLUDE INDEXES: ${Array.from(excluded).join(",")}\n\nCANDIDATES:\n${index}`;
 
