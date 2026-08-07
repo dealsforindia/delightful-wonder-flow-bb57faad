@@ -76,16 +76,16 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
             <Link to="/ai" className="px-3 py-1.5 rounded hover:bg-accent font-medium bg-primary/10 text-primary inline-flex items-center gap-1.5">
               <Sparkles className="h-3.5 w-3.5" /> AI
             </Link>
-            <Link to="/beginners-guide" className="px-3 py-1.5 rounded hover:bg-accent inline-flex items-center gap-1.5">
+            <Link to="/$page" params={{ page: "beginners-guide" }} className="px-3 py-1.5 rounded hover:bg-accent inline-flex items-center gap-1.5">
               <BookOpen className="h-3.5 w-3.5" /> Guide
             </Link>
-            <Link to="/posts" className="px-3 py-1.5 rounded hover:bg-accent inline-flex items-center gap-1.5">
+            <Link to="/$page" params={{ page: "posts" }} className="px-3 py-1.5 rounded hover:bg-accent inline-flex items-center gap-1.5">
               <FileText className="h-3.5 w-3.5" /> Posts
             </Link>
             <Link to="/browse" className="px-3 py-1.5 rounded hover:bg-accent inline-flex items-center gap-1.5">
               <LayoutGrid className="h-3.5 w-3.5" /> Browse all
             </Link>
-            <Link to="/startpage" className="px-3 py-1.5 rounded hover:bg-accent inline-flex items-center gap-1.5">
+            <Link to="/$page" params={{ page: "startpage" }} className="px-3 py-1.5 rounded hover:bg-accent inline-flex items-center gap-1.5">
               <Compass className="h-3.5 w-3.5" /> Startpage
             </Link>
           </nav>
@@ -218,9 +218,9 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
             <div className="p-3 border-b border-border grid grid-cols-2 gap-2">
               <Link to="/ai" className="px-3 py-2 rounded-lg text-sm font-medium bg-primary/10 text-primary border border-border text-center inline-flex items-center justify-center gap-1.5"><Sparkles className="h-3.5 w-3.5" /> AI</Link>
               <Link to="/browse" className="px-3 py-2 rounded-lg text-sm font-medium border border-border text-center hover:bg-accent inline-flex items-center justify-center gap-1.5"><LayoutGrid className="h-3.5 w-3.5" /> Browse all</Link>
-              <Link to="/beginners-guide" className="px-3 py-2 rounded-lg text-sm font-medium border border-border text-center hover:bg-accent inline-flex items-center justify-center gap-1.5"><BookOpen className="h-3.5 w-3.5" /> Guide</Link>
-              <Link to="/posts" className="px-3 py-2 rounded-lg text-sm font-medium border border-border text-center hover:bg-accent inline-flex items-center justify-center gap-1.5"><FileText className="h-3.5 w-3.5" /> Posts</Link>
-              <Link to="/startpage" className="px-3 py-2 rounded-lg text-sm font-medium border border-border text-center hover:bg-accent inline-flex items-center justify-center gap-1.5"><Compass className="h-3.5 w-3.5" /> Startpage</Link>
+              <Link to="/$page" params={{ page: "beginners-guide" }} className="px-3 py-2 rounded-lg text-sm font-medium border border-border text-center hover:bg-accent inline-flex items-center justify-center gap-1.5"><BookOpen className="h-3.5 w-3.5" /> Guide</Link>
+              <Link to="/$page" params={{ page: "posts" }} className="px-3 py-2 rounded-lg text-sm font-medium border border-border text-center hover:bg-accent inline-flex items-center justify-center gap-1.5"><FileText className="h-3.5 w-3.5" /> Posts</Link>
+              <Link to="/$page" params={{ page: "startpage" }} className="px-3 py-2 rounded-lg text-sm font-medium border border-border text-center hover:bg-accent inline-flex items-center justify-center gap-1.5"><Compass className="h-3.5 w-3.5" /> Startpage</Link>
             </div>
             <div className="flex-1 overflow-y-auto p-4">
               <SideNav pathname={pathname} />
