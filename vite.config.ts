@@ -16,12 +16,12 @@ export default defineConfig({
   vite: {
     plugins: [mcpPlugin()],
   },
-  // Override the default Cloudflare preset for external hosting.
-  // Use NITRO_PRESET=node for Azure VM, NITRO_PRESET=vercel for Vercel.
-  // Lovable's sandbox overrides this back to Cloudflare for preview/publish.
+  // Default to Cloudflare (Lovable hosting). Set NITRO_PRESET=vercel for Vercel
+  // deploys (build:vercel does this) or NITRO_PRESET=node for a plain Node server.
   nitro: {
-    preset: process.env.NITRO_PRESET || "vercel",
+    preset: process.env.NITRO_PRESET || "cloudflare_module",
   },
+
 
 
 });
