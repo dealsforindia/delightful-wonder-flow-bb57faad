@@ -171,8 +171,11 @@ function BrowseRoute() {
 
 
         <div className="mt-3 text-xs text-muted-foreground">
-          {toolsLoading ? "Loading…" : `Showing ${results.length.toLocaleString()} result${results.length === 1 ? "" : "s"}`}
+          {toolsLoading
+            ? "Loading…"
+            : `Showing ${results.length.toLocaleString()} of ${total.toLocaleString()} result${total === 1 ? "" : "s"}`}
         </div>
+
       </div>
 
       {error && (
