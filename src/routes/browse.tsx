@@ -108,7 +108,7 @@ function BrowseRoute() {
           Browse all <span className="text-primary">tools</span>
         </h1>
         <p className="text-muted-foreground mt-2">
-          {tools ? `Search across ${tools.length.toLocaleString()} entries.` : "Loading the index…"}
+          {totalTools ? `Search across ${totalTools.toLocaleString()} entries.` : "Loading the index…"}
         </p>
 
         <div className="relative mt-6 max-w-2xl">
