@@ -1,14 +1,14 @@
 import { createFileRoute, Link, useNavigate, useSearch } from "@tanstack/react-router";
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { useMemo, useRef, useState, useDeferredValue } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import { ArrowLeft, Check, Link2, Search, Sparkles } from "lucide-react";
 import { FmhyLayout } from "@/components/FmhyLayout";
-import { getTools } from "@/lib/tools-data.functions";
+import { searchToolsFn } from "@/lib/tools-data.functions";
 import { CATEGORIES } from "@/lib/tools-data";
-import { createSearchIndex, searchTools } from "@/lib/search-tools";
 import type { Tool } from "@/lib/tools-data";
+
 
 const SORTS = [
   { value: "relevance", label: "Relevance" },
@@ -46,25 +46,35 @@ export const Route = createFileRoute("/browse")({
 function BrowseRoute() {
   const search = useSearch({ from: "/browse" });
   const navigate = useNavigate({ from: "/browse" });
-  const fetchTools = useServerFn(getTools);
+  const runSearch = useServerFn(searchToolsFn);
 
-  const { data: tools, isLoading: toolsLoading, error } = useQuery({
-    queryKey: ["tools"],
-    queryFn: () => fetchTools(),
+  // debounce the query so keystrokes don't fire a request each
+  const [debouncedQ, setDebouncedQ] = useState(search.q ?? "");
+  useEffect(() => {
+    const id = setTimeout(() => setDebouncedQ(search.q ?? ""), 200);
+    return () => clearTimeout(id);
+  }, [search.q]);
+
+  const { data, isLoading: toolsLoading, error } = useQuery({
+    queryKey: ["tools-search", debouncedQ, search.cat ?? "", search.sort ?? "relevance"],
+    queryFn: () =>
+      runSearch({
+        data: {
+          q: debouncedQ,
+          category: search.cat,
+          sort: search.sort ?? "relevance",
+          limit: 300,
+          offset: 0,
+        },
+      }),
+    placeholderData: keepPreviousData,
     staleTime: 5 * 60 * 1000,
   });
 
-  const index = useMemo(() => (tools ? createSearchIndex(tools) : null), [tools]);
-  const deferredQ = useDeferredValue(search.q ?? "");
+  const results = useMemo(() => (data?.items ?? []) as Tool[], [data]);
+  const total = data?.total ?? 0;
+  const totalTools = data?.totalTools ?? 0;
 
-  const results = useMemo(() => {
-    if (!tools || !index) return [];
-    return searchTools(index, tools, {
-      q: deferredQ,
-      category: search.cat,
-      sort: search.sort ?? "relevance",
-    });
-  }, [tools, index, deferredQ, search.cat, search.sort]);
 
   const parentRef = useRef<HTMLDivElement>(null);
   const virtualizer = useVirtualizer({
@@ -98,7 +108,7 @@ function BrowseRoute() {
           Browse all <span className="text-primary">tools</span>
         </h1>
         <p className="text-muted-foreground mt-2">
-          {tools ? `Search across ${tools.length.toLocaleString()} entries.` : "Loading the index…"}
+          {totalTools ? `Search across ${totalTools.toLocaleString()} entries.` : "Loading the index…"}
         </p>
 
         <div className="relative mt-6 max-w-2xl">
@@ -161,8 +171,11 @@ function BrowseRoute() {
 
 
         <div className="mt-3 text-xs text-muted-foreground">
-          {toolsLoading ? "Loading…" : `Showing ${results.length.toLocaleString()} result${results.length === 1 ? "" : "s"}`}
+          {toolsLoading
+            ? "Loading…"
+            : `Showing ${results.length.toLocaleString()} of ${total.toLocaleString()} result${total === 1 ? "" : "s"}`}
         </div>
+
       </div>
 
       {error && (
