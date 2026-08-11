@@ -46,25 +46,35 @@ export const Route = createFileRoute("/browse")({
 function BrowseRoute() {
   const search = useSearch({ from: "/browse" });
   const navigate = useNavigate({ from: "/browse" });
-  const fetchTools = useServerFn(getTools);
+  const runSearch = useServerFn(searchToolsFn);
 
-  const { data: tools, isLoading: toolsLoading, error } = useQuery({
-    queryKey: ["tools"],
-    queryFn: () => fetchTools(),
+  // debounce the query so keystrokes don't fire a request each
+  const [debouncedQ, setDebouncedQ] = useState(search.q ?? "");
+  useEffect(() => {
+    const id = setTimeout(() => setDebouncedQ(search.q ?? ""), 200);
+    return () => clearTimeout(id);
+  }, [search.q]);
+
+  const { data, isLoading: toolsLoading, error } = useQuery({
+    queryKey: ["tools-search", debouncedQ, search.cat ?? "", search.sort ?? "relevance"],
+    queryFn: () =>
+      runSearch({
+        data: {
+          q: debouncedQ,
+          category: search.cat,
+          sort: search.sort ?? "relevance",
+          limit: 300,
+          offset: 0,
+        },
+      }),
+    placeholderData: keepPreviousData,
     staleTime: 5 * 60 * 1000,
   });
 
-  const index = useMemo(() => (tools ? createSearchIndex(tools) : null), [tools]);
-  const deferredQ = useDeferredValue(search.q ?? "");
+  const results = useMemo(() => (data?.items ?? []) as Tool[], [data]);
+  const total = data?.total ?? 0;
+  const totalTools = data?.totalTools ?? 0;
 
-  const results = useMemo(() => {
-    if (!tools || !index) return [];
-    return searchTools(index, tools, {
-      q: deferredQ,
-      category: search.cat,
-      sort: search.sort ?? "relevance",
-    });
-  }, [tools, index, deferredQ, search.cat, search.sort]);
 
   const parentRef = useRef<HTMLDivElement>(null);
   const virtualizer = useVirtualizer({
