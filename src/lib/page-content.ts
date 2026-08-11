@@ -1,10 +1,15 @@
 // Eager-import every mirrored markdown page as a raw string.
 // Vite resolves the literal import.meta.glob call at build time; no runtime fetch.
-// The typeof guard keeps this module importable from plain Node/Bun scripts.
-const hasGlob = typeof (import.meta as { glob?: unknown }).glob === "function";
-const raw: Record<string, string> = hasGlob
-  ? (import.meta.glob("../content/*.md", { query: "?raw", import: "default", eager: true }) as Record<string, string>)
-  : {};
+// NOTE: never gate this behind `typeof import.meta.glob === "function"` — Vite only
+// transforms the *call*, so that check is false in production builds and the map ends
+// up empty (every wiki page 404s). The try/catch keeps it importable from Bun/Node scripts.
+let raw: Record<string, string> = {};
+try {
+  raw = import.meta.glob("../content/*.md", { query: "?raw", import: "default", eager: true }) as Record<string, string>;
+} catch {
+  raw = {};
+}
+
 
 
 
