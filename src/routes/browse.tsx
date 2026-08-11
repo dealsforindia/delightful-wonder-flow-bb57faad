@@ -1,14 +1,14 @@
 import { createFileRoute, Link, useNavigate, useSearch } from "@tanstack/react-router";
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { useMemo, useRef, useState, useDeferredValue } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import { ArrowLeft, Check, Link2, Search, Sparkles } from "lucide-react";
 import { FmhyLayout } from "@/components/FmhyLayout";
-import { getTools } from "@/lib/tools-data.functions";
+import { searchToolsFn } from "@/lib/tools-data.functions";
 import { CATEGORIES } from "@/lib/tools-data";
-import { createSearchIndex, searchTools } from "@/lib/search-tools";
 import type { Tool } from "@/lib/tools-data";
+
 
 const SORTS = [
   { value: "relevance", label: "Relevance" },
