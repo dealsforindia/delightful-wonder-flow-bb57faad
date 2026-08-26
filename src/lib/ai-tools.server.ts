@@ -2,7 +2,7 @@ import { generateText, NoObjectGeneratedError, Output } from "ai";
 import { z } from "zod";
 import { createLovableAiGatewayProvider } from "./ai-gateway.server";
 import { TOOLS } from "./tools-data.server";
-import type { Tool } from "./tools-data";
+import type { Category, Tool } from "./tools-data";
 
 const KEYWORD_MODEL = "google/gemini-2.5-flash";
 const RANKING_MODEL = "google/gemini-2.5-flash";
@@ -26,44 +26,136 @@ function indexLine(i: number): string {
   return [i, t.name, t.section, t.category, desc, tags].join("|");
 }
 
+/**
+ * Intent map — broad, vague goals ("make money", "start a podcast") share almost
+ * no literal words with directory entries, so plain keyword matching returns junk.
+ * Each rule adds concrete search terms and boosts the categories that actually
+ * hold the relevant tools.
+ */
+interface IntentRule {
+  match: RegExp;
+  terms: string[];
+  categories: Category[];
+}
+
+const INTENT_MAP: IntentRule[] = [
+  {
+    match: /\b(make|earn|passive)\s+(money|income|cash)\b|\bmonetiz|\bside hustle\b|\bfreelanc/i,
+    terms: ["freelance", "invoice", "portfolio", "store", "payment", "marketing", "seo", "stock"],
+    categories: ["AI", "Writing", "Image", "Internet", "Learning"],
+  },
+  {
+    match: /\b(job|resume|cv|cover letter|interview|career|hire)\b/i,
+    terms: ["resume", "cv", "portfolio", "interview", "course", "certificate", "writing"],
+    categories: ["Writing", "Learning", "AI"],
+  },
+  {
+    match: /\b(study|learn|course|exam|school|college|homework|research)\b/i,
+    terms: ["course", "textbook", "notes", "flashcard", "lecture", "paper", "language"],
+    categories: ["Learning", "Reading", "AI"],
+  },
+  {
+    match: /\b(youtube|video|film|edit(ing)?|vlog|short(s)?|reel)\b/i,
+    terms: ["video editor", "screen record", "subtitle", "thumbnail", "stock footage", "converter"],
+    categories: ["Video", "Image", "Audio", "Downloads"],
+  },
+  {
+    match: /\b(podcast|music|song|beat|audio|voice|record)\b/i,
+    terms: ["audio editor", "daw", "text to speech", "noise removal", "sound effects", "hosting"],
+    categories: ["Audio", "AI", "Downloads"],
+  },
+  {
+    match: /\b(privacy|anonym|track(ing|er)?|secure|vpn|encrypt)\b/i,
+    terms: ["vpn", "encryption", "password manager", "adblock", "browser", "email alias"],
+    categories: ["Privacy", "Internet", "System"],
+  },
+  {
+    match: /\b(code|coding|develop|programming|app|website|api|deploy)\b/i,
+    terms: ["ide", "hosting", "api", "database", "editor", "framework", "learn programming"],
+    categories: ["Code", "Learning", "AI"],
+  },
+  {
+    match: /\b(design|logo|brand|poster|thumbnail|graphic|photo|image)\b/i,
+    terms: ["design", "logo maker", "photo editor", "icons", "fonts", "mockup", "stock photos"],
+    categories: ["Image", "AI", "Files"],
+  },
+  {
+    match: /\b(social|instagram|tiktok|twitter|content creat|audience|followers)\b/i,
+    terms: ["scheduler", "analytics", "downloader", "caption", "thumbnail", "video editor"],
+    categories: ["Social", "Video", "Image", "AI"],
+  },
+  {
+    match: /\b(write|writing|blog|book|novel|newsletter|essay|note)\b/i,
+    terms: ["writing", "grammar", "notes", "markdown", "publishing", "proofread"],
+    categories: ["Writing", "Reading", "AI"],
+  },
+  {
+    match: /\b(game|gaming|emulat|mod)\b/i,
+    terms: ["emulator", "game", "mods", "launcher", "controller"],
+    categories: ["Gaming", "Downloads"],
+  },
+  {
+    match: /\b(backup|storage|file|sync|share|transfer|cloud)\b/i,
+    terms: ["cloud storage", "file transfer", "backup", "sync", "compression"],
+    categories: ["Storage", "Files", "System"],
+  },
+];
+
+/** Terms + boosted categories derived from a vague intent. */
+export function expandIntent(query: string): { terms: string[]; categories: Set<string> } {
+  const terms = new Set<string>();
+  const categories = new Set<string>();
+  for (const rule of INTENT_MAP) {
+    if (rule.match.test(query)) {
+      for (const t of rule.terms) terms.add(t.toLowerCase());
+      for (const c of rule.categories) categories.add(c.toLowerCase());
+    }
+  }
+  return { terms: Array.from(terms), categories };
+}
+
+function rankByTerms(
+  terms: string[],
+  boostCategories: Set<string>,
+  nameBoost: number,
+  k: number,
+): number[] {
+  const scored: Array<{ i: number; s: number }> = [];
+  for (let i = 0; i < TOOLS.length; i++) {
+    const t = TOOLS[i];
+    const hay = (t.name + " " + t.section + " " + t.category + " " + (t.description ?? "")).toLowerCase();
+    let s = 0;
+    for (const term of terms) {
+      const idx = hay.indexOf(term);
+      if (idx >= 0) s += 100 - Math.min(idx, 80) + (t.name.toLowerCase().includes(term) ? nameBoost : 0);
+    }
+    if (s > 0 && boostCategories.has(t.category.toLowerCase())) s = Math.round(s * 1.6);
+    if (s > 0) scored.push({ i, s });
+  }
+  scored.sort((a, b) => b.s - a.s);
+  return scored.slice(0, k).map((p) => p.i);
+}
+
 // Lightweight fuzzy prefilter — with 26k tools we can't ship the whole index
 // to the LLM every call. Score & keep top candidates, then let AI rank.
 export function prefilter(query: string, refine: string | undefined, k = 500): number[] {
   const q = (query + " " + (refine ?? "")).toLowerCase();
-  const terms = q.split(/[\s,./;]+/).filter((t) => t.length > 2);
-  const scored: Array<{ i: number; s: number }> = [];
-  for (let i = 0; i < TOOLS.length; i++) {
-    const t = TOOLS[i];
-    const hay = (t.name + " " + t.section + " " + t.category + " " + (t.description ?? "")).toLowerCase();
-    let s = 0;
-    for (const term of terms) {
-      const idx = hay.indexOf(term);
-      if (idx >= 0) s += 100 - Math.min(idx, 80) + (t.name.toLowerCase().includes(term) ? 50 : 0);
-    }
-    if (s > 0) scored.push({ i, s });
-  }
-  scored.sort((a, b) => b.s - a.s);
-  return scored.slice(0, k).map((p) => p.i);
+  const literal = q.split(/[\s,./;]+/).filter((t) => t.length > 2);
+  const intent = expandIntent(q);
+  const terms = Array.from(new Set([...literal, ...intent.terms]));
+  return rankByTerms(terms, intent.categories, 50, k);
 }
 
 
 export function scoreTools(query: string, k: number): number[] {
-  const terms = query.toLowerCase().split(/[\s,./;]+/).filter((t) => t.length > 2);
+  const q = query.toLowerCase();
+  const literal = q.split(/[\s,./;]+/).filter((t) => t.length > 2);
+  const intent = expandIntent(q);
+  const terms = Array.from(new Set([...literal, ...intent.terms]));
   if (terms.length === 0) return [];
-  const scored: Array<{ i: number; s: number }> = [];
-  for (let i = 0; i < TOOLS.length; i++) {
-    const t = TOOLS[i];
-    const hay = (t.name + " " + t.section + " " + t.category + " " + (t.description ?? "")).toLowerCase();
-    let s = 0;
-    for (const term of terms) {
-      const idx = hay.indexOf(term);
-      if (idx >= 0) s += 100 - Math.min(idx, 80) + (t.name.toLowerCase().includes(term) ? 40 : 0);
-    }
-    if (s > 0) scored.push({ i, s });
-  }
-  scored.sort((a, b) => b.s - a.s);
-  return scored.slice(0, k).map((p) => p.i);
+  return rankByTerms(terms, intent.categories, 40, k);
 }
+
 
 export async function expandKeywords(apiKey: string, goal: string): Promise<string[]> {
   const gateway = createLovableAiGatewayProvider(apiKey);
