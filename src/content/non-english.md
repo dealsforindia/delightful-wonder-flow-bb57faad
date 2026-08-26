@@ -13,7 +13,6 @@
 * 🌐 **[⁠Faharys](https://t.me/faharys)** - Telegram Channel Index 
 * [AdslGate](https://www.adslgate.com/) - Arabic Tech Forum
 * [ZeroTaxJobs](https://zerotaxjobs.com/) - Software Engineer Jobs
-* [arabic-reddit-extension](https://github.com/andronasef/arabic-reddit-extension) - Fix Arabic Language on Reddit
 
 ## ▷ Downloading / تحميل
 
@@ -512,7 +511,7 @@
 
 ## ▷ Reading / Lecture
 
-* [Bookys](https://www6.bookys-ebooks.com/) - Books / Comics / Magazines / Newspapers / Some NSFW
+* [Bookys](https://www.bookys-ebooks.com/) - Books / Comics / Magazines / Newspapers / Some NSFW
 * [zone-ebook.com](https://zone-ebook.com/) - Books / Comics / Magazines / Newspapers / Audiobooks
 * [Nos Livres](https://noslivres.net/) - Public Domain Books
 * [⁠Gallica](https://gallica.bnf.fr/) - Books / Documents 
@@ -734,6 +733,7 @@
 * ⭐ **[ToonStream](https://toonstream.vip/)** - Cartoons / Anime / 1080p / [Telegram](https://telegram.me/toonstream)
 * ⭐ **[⁠Animelok](https://animelok.online/)** - Anime / Cartoons / 1080p / Auto-Next / [Mirrors](https://animelok.to/) / [Telegram](https://t.me/animerulz_xyz) / [Discord](https://discord.gg/32taxtj5BC)
 * ⭐ **[MultiMovies](https://multimovies.wtf/)** - Movies / TV / .guru Always Redirects to Main / [Telegram](https://telegram.me/+8Is7Ezz56fNkZDZl)
+* ⭐ **[Anime World India](https://watchanimeworld.one/)**, [2](https://animesalt.cx/) - Anime
 * [TamilMV](https://www.1tamilmv.observer/) - Movies / TV / Anime / Sub / Dub / 4K / 1080p / Indian Languages
 * [Einthusan](https://einthusan.tv/) - Movies / 1080p / VPN Required
 * [saicord](https://saicord.com/hi/) - Movies / TV 
@@ -902,7 +902,6 @@
 
 * ↪️ **[Anime Streaming](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/video#wiki_.25B7_anime_streaming)** - Anime Streaming Sites
 * [NicoVideo](https://www.nicovideo.jp/) - Japanese YouTube Alternative / [Desktop](https://github.com/tor4kichi/Hohoema)
-* [JP-Films](https://jp-films.com/) - Classic Japanese Movies / TV / 1080p
 * [Japanese Animated Film Classics](https://animation.filmarchives.jp/index.html) - Japanese Animation Archive
 * [Abema](https://abema.tv/) - Live TV
 * [⁠JapanTV](https://japantv.app/) - YouTube TV Style Browser
@@ -980,6 +979,7 @@
 * [OnDemandKorean](https://www.ondemandkorea.com/) - Korean Movies / TV / 720p
 * [AQ Stream](https://aqstream.com/) - Live TV / [Discord](https://discord.com/invite/dVhgAgwxHE)
 * [Chzzk](https://chzzk.naver.com/) - Live Streams
+* [Naver](https://tv.naver.com/)
 * [eHistory](https://www.ehistory.go.kr/) - Video Archive / Cultural Films
 
 ## ▷ Reading
