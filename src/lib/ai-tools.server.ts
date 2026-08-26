@@ -2,7 +2,7 @@ import { generateText, NoObjectGeneratedError, Output } from "ai";
 import { z } from "zod";
 import { createLovableAiGatewayProvider } from "./ai-gateway.server";
 import { TOOLS } from "./tools-data.server";
-import type { Tool } from "./tools-data";
+import type { Category, Tool } from "./tools-data";
 
 const KEYWORD_MODEL = "google/gemini-2.5-flash";
 const RANKING_MODEL = "google/gemini-2.5-flash";
