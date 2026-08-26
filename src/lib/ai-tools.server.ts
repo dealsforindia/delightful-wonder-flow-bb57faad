@@ -99,7 +99,68 @@ const INTENT_MAP: IntentRule[] = [
     terms: ["cloud storage", "file transfer", "backup", "sync", "compression"],
     categories: ["Storage", "Files", "System"],
   },
+  {
+    match: /\b(movie|tv|show|anime|stream|watch|series)\b/i,
+    terms: ["streaming", "anime", "movies", "tv", "subtitles", "player"],
+    categories: ["Video", "Downloads", "Non-English"],
+  },
+  {
+    match: /\b(download|torrent|seed|magnet|usenet|piracy|free copy)\b/i,
+    terms: ["torrent", "download manager", "usenet", "tracker", "direct download", "debrid"],
+    categories: ["Torrenting", "Downloads", "Files"],
+  },
+  {
+    match: /\b(read|book|ebook|manga|comic|news|magazine|pdf)\b/i,
+    terms: ["ebook", "manga", "comics", "pdf reader", "audiobook", "news"],
+    categories: ["Reading", "Files", "Learning"],
+  },
+  {
+    match: /\b(android|ios|iphone|phone|mobile|apk|tablet)\b/i,
+    terms: ["android", "ios", "apk", "mobile app", "sideload", "emulator"],
+    categories: ["Mobile", "Downloads", "System"],
+  },
+  {
+    match: /\b(linux|ubuntu|mac|macos|distro|terminal|shell)\b/i,
+    terms: ["linux", "macos", "terminal", "package manager", "distro", "shell"],
+    categories: ["Linux/Mac", "System", "Code"],
+  },
+  {
+    match: /\b(windows|pc|driver|clean|speed up|debloat|optimi[sz]e|malware|antivirus|iso)\b/i,
+    terms: ["windows", "drivers", "debloat", "antivirus", "iso", "cleanup", "benchmark"],
+    categories: ["System", "Privacy", "Downloads"],
+  },
+  {
+    match: /\b(ai|chatbot|llm|gpt|prompt|generate|automat)\b/i,
+    terms: ["chatbot", "llm", "image generation", "transcription", "prompt", "api"],
+    categories: ["AI", "Code", "Writing"],
+  },
+  {
+    match: /\b(pdf|convert|compress|ocr|scan|spreadsheet|document)\b/i,
+    terms: ["pdf tools", "converter", "compress", "ocr", "office", "document"],
+    categories: ["Files", "Internet", "Writing"],
+  },
+  {
+    match: /\b(search|browser|extension|rss|bookmark|email|internet)\b/i,
+    terms: ["search engine", "browser extension", "rss reader", "bookmarks", "email", "startpage"],
+    categories: ["Internet", "Privacy", "Social"],
+  },
+  {
+    match: /\b(spanish|hindi|chinese|japanese|korean|arabic|russian|non-?english|translat)\b/i,
+    terms: ["translation", "language", "subtitles", "regional", "dictionary"],
+    categories: ["Non-English", "Learning", "Reading"],
+  },
+  {
+    match: /\b(host|self-?host|server|vps|docker|domain|deploy)\b/i,
+    terms: ["self-hosted", "hosting", "server", "docker", "domain", "vps"],
+    categories: ["Code", "Storage", "Internet"],
+  },
+  {
+    match: /\b(wallpaper|theme|customi[sz]e|rice|icon pack|font)\b/i,
+    terms: ["wallpapers", "themes", "icons", "fonts", "customization"],
+    categories: ["Image", "System", "Misc"],
+  },
 ];
+
 
 /** Terms + boosted categories derived from a vague intent. */
 export function expandIntent(query: string): { terms: string[]; categories: Set<string> } {
