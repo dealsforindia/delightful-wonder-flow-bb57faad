@@ -171,7 +171,7 @@
 * ⭐ **[Kettu](https://www.raincord.dev/kettu)** or [⁠raincord](https://www.raincord.dev/) - Modded Discord Client / [Discord](https://discord.gg/qkdPGunwjW) / [Source Code](https://codeberg.org/cocobo1/Kettu) / [GitHub](https://github.com/C0C0B01/Kettu)
 * ⭐ **[Continuum](https://github.com/cygnusx-1-org/continuum)**, [⁠Patcheddit](https://github.com/wchill/patcheddit) or [RedReader](https://github.com/QuantumBadger/RedReader) - Reddit Clients / Make Sure to Follow the [Guide](https://rentry.co/FMHYB64#rguide)
 * ⭐ **[Xtra](https://github.com/crackededed/Xtra)**, [BTTV](https://github.com/bttv-android/bttv), [Twire](https://github.com/twireapp/Twire) or [Frosty](https://www.frostyapp.io/) / [GitHub](https://github.com/tommyxchow/frosty) - Twitch Clients
-* ⭐ **[piko (Twitter)](https://github.com/crimera/piko)** / [Telegram](https://t.me/pikopatches), [⁠Nitterium](https://github.com/kaleedtc/Nitterium), [⁠QuaX](https://github.com/Teskann/QuaX) or [Squawker](https://github.com/j-fbriere/squawker) - Twitter / X Apps
+* ⭐ **[piko (Twitter)](https://github.com/crimera/piko)** / [Telegram](https://t.me/pikopatches) (Prebuilts on Telegram), [⁠Nitterium](https://github.com/kaleedtc/Nitterium), [⁠QuaX](https://github.com/Teskann/QuaX) or [Squawker](https://github.com/j-fbriere/squawker) - Twitter / X Apps
 * ⭐ **[piko (Instagram)](https://github.com/crimera/piko)** / [Telegram](https://t.me/pikopatches) / [Note](https://github.com/fmhy/edit/blob/main/docs/.vitepress/notes/piko.md) or [⁠Instafel](https://instafel.mamii.dev/) / [GitHub](https://github.com/mamiiblt/instafel/) - Modded Instagram Clients
 * ⭐ **[Voyager](https://vger.app) / [GitHub](https://github.com/aeharding/voyager)**, [Jerboa](https://github.com/LemmyNet/jerboa), [Eternity](https://codeberg.org/Bazsalanszky/Eternity), [summit](https://play.google.com/store/apps/details?id=com.idunnololz.summit), [Raccoon](https://github.com/LiveFastEatTrashRaccoon/RaccoonForLemmy) or [Thunder](https://github.com/thunder-app/thunder) - Lemmy Clients / [Index](https://join-lemmy.org/apps)
 * ⭐ **[Tusky](https://tusky.app/)**, [Dhaaga](https://github.com/suvam0451/dhaaga), [Pachli](https://pachli.app/) / [GitHub](https://github.com/pachli/pachli-android), [SubwayTooter](https://github.com/tateisu/SubwayTooter) or [Dimett](https://github.com/MateriiApps/Dimett) - Mastodon Clients
@@ -214,7 +214,10 @@
 * 🌐 **[Manufacturer Specific](https://rentry.org/ekrw4)** - Manufacturer-Specific Mobile Tools
 * ↪️ **[Phone Comparisons](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/misc#wiki_.25B7_mobile_.2F_phones)**
 * ⭐ **[XDA](https://xdaforums.com/)** / [Discord](https://discord.com/invite/e4v8qtkcBw) - Android Discussion Forums
+
 * ⭐ **[ADB AppControl](https://adbappcontrol.com/en/)** / [WebUI](https://80bee.com/) / [GUI](https://aya.liriliri.io/), [2](https://github.com/Alex4SSB/ADB-Explorer) / [Telegram](https://t.me/AdbAppControl_En), **[scrcpy](https://github.com/Genymobile/scrcpy)** / [Mobile App](https://github.com/zwc456baby/ScrcpyForAndroid) / [Subreddit](https://www.reddit.com/r/scrcpy), **[PlainApp](https://github.com/plainhub/plain-app)**, [WebADB](https://app.webadb.com/), [QtScrcpy](https://github.com/barry-ran/QtScrcpy) or [Octi](https://github.com/d4rken-org/octi) - Android Device Managers / Controllers
+
+
 * ⭐ **[Shizuku Fork](https://github.com/thedjchi/Shizuku)**, **[Shizuku](https://shizuku.rikka.app/)** / [Tools](https://github.com/legendsayantan/ShizuTools) / [GitHub](https://github.com/RikkaApps/Shizuku) or [Dhizuku](https://github.com/iamr0s/Dhizuku) - Let Apps Use System API
 * [Plexus](https://plexus.techlore.tech/) - De-Googled Device Compatibility / [GitHub](https://github.com/techlore/Plexus-app)
 * [GSMHosting](https://forum.gsmhosting.com/vbb/) - GSM Discussion Forum
@@ -615,7 +618,7 @@
 * [ZipXtract](https://github.com/WirelessAlien/ZipXtract) - File Archivers
 * [ConnectBot](https://connectbot.org/) - SSH Client
 * [Disky](https://felixnuesse.de/disky/) - Disk Usage Analyzer / [GitHub](https://github.com/newhinton/disky)
-* [Adebar](https://codeberg.org/izzy/Adebar), [OpenAndroidBackup](https://mrrfv.github.io/open-android-backup/) / [GitHub](https://github.com/mrrfv/open-android-backup), [DataBackup](https://github.com/XayahSuSuSu/Android-DataBackup) (root), [Swift Backup](https://swiftapps.org/), [Neo Backup](https://github.com/NeoApplications/Neo-Backup) (root) - Device Backup Tools
+* [Adebar](https://codeberg.org/izzy/Adebar), [OpenAndroidBackup](https://mrrfv.github.io/open-android-backup/) / [GitHub](https://github.com/mrrfv/open-android-backup), [DataBackup](https://github.com/XayahSuSuSu/Android-DataBackup) (root) or [Neo Backup](https://github.com/NeoApplications/Neo-Backup) (root) - Device Backup Tools
 * [Folder in Folder](https://play.google.com/store/apps/details?id=com.ss.folderinfolder) - Create Subfolders
 * [Marc Files](https://play.google.com/store/apps/details?id=com.marc.files) - File Manager Shortcut
 * [⁠PDF Toolkit](https://github.com/Karna14314/Pdf_Tools) - PDF Editor / Toolkit
@@ -826,6 +829,7 @@
 * [⁠LibriSync](https://github.com/Promises/LibriSync) - Audible DRM Remover / Manager 
 * [Prestigio](https://play.google.com/store/apps/details?id=com.prestigio.ereader) - Ebook Reader
 * [Legado MD3](https://github.com/HapeLee/legado-with-MD3/releases) - Ebook Reader
+* [⁠Book Story](https://github.com/Acclorite/book-story) - Ebook Reader
 * [⁠Episteme Reader](https://github.com/Aryan-Raj3112/episteme) - Ebook Reader
 * [JellyBook](https://github.com/JellyBookOrg/JellyBook) - Ebook Reader
 * [Chaka](https://github.com/elementdavv/chaka) - Ebook Reader
@@ -1035,7 +1039,7 @@
 * [Next Player](https://github.com/anilbeesetti/nextplayer)
 * [⁠Arc Video Player](https://www.arctechstudio.com/)
 * [Audiofy](https://play.google.com/store/apps/details?id=com.prime.player)
-* [ScreenStream](https://github.com/dkrivoruchko/ScreenStream) - Cast Device to Screen
+* [⁠PlayBridge](https://playbridge.app/) / [GitHub](https://github.com/playbridgeapp/PlayBridge) or [ScreenStream](https://github.com/dkrivoruchko/ScreenStream) - Cast Videos / Media from Phone to TVs + Monitors
 * [M3UAndroid](https://github.com/oxyroid/M3UAndroid) - Media Player / [Telegram](https://t.me/m3u_android)
 
 ***

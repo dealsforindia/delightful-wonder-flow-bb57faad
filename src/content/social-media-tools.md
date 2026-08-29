@@ -193,7 +193,6 @@
 
 ***
 
-* [⁠DownloaderForReddit](https://github.com/MalloyDelacroix/DownloaderForReddit) - Download / Archive Subreddits
 * [gallery-dl](https://codeberg.org/mikf/gallery-dl) - Reddit Bulk Image Downloader / [Discord](https://discord.gg/rSzQwRvGnE)
 * [⁠Redvid](https://redvid.io/) - Reddit Media Downloader 
 * [RapidSave](https://rapidsave.com/) - Reddit Video / GIF Downloader
@@ -218,6 +217,7 @@
 * [Arctic Shift](https://arctic-shift.photon-reddit.com/) - Reddit Archive Dump Search / [GitHub](https://github.com/ArthurHeitmann/arctic_shift)
 * [Reddit Dump Files](https://academictorrents.com/browse.php?search=stuck_in_the_matrix%2C+Watchful1%2C+RaiderBDev&sort_field=added&sort_dir=DESC) - Reddit Comment Archives
 * [redarcs](https://the-eye.eu/redarcs/) - Reddit Pushshift Archives
+* [⁠Reddit Answers](https://www.reddit.com/answers/) - Reddit Search Engine
 * [rComments](https://github.com/iampueroo/rComments) - Explore Comments / Replies without Clicking a Post
 * [ScrollDrop](https://scrolldrop.com/) - Reddit Media Crawler
 * [Wiki Downloader](https://github.com/michealespinola/reddit.wikidownloader) - Reddit Wiki Page Scraper
@@ -414,7 +414,7 @@
 * ⭐ **[yt-dlp](https://github.com/yt-dlp/yt-dlp)** / [Commands](https://github.com/TheFrenchGhosty/TheFrenchGhostys-Ultimate-YouTube-DL-Scripts-Collection) / [Discord](https://discord.gg/H5MNcFW63r) or [YTDL-PATCHED](https://github.com/ytdl-patched/ytdl-patched) - YouTube CLIs
 * ⭐ **[YoutubeDownloader](https://github.com/Tyrrrz/YoutubeDownloader)** - YouTube Downloader App
 * [Stacher](https://stacher.io/), [Cube YouTube Downloader](https://github.com/database64128/youtube-dl-wpf) or [Open Video Downloader](https://github.com/jely2002/youtube-dl-gui) - YT-DL GUIs
-* [yoink.tools](https://yoink.tools/) / [GitHub](https://github.com/coah80/yoink), [⁠YT1s](https://yt1s.com.co/) or [CNVMP3](https://cnvmp3.com/) / [Subreddit](https://www.reddit.com/r/cnvmp3) - Online YT-DL Downloaders
+* [⁠YT1s](https://yt1s.com.co/) or [CNVMP3](https://cnvmp3.com/) / [Subreddit](https://www.reddit.com/r/cnvmp3) - Online YT-DL Downloaders
 * [⁠Wayback YouTube](https://www.waybackyt.download/) - Download Deleted YouTube Videos via Wayback Machine
 * [Pinchflat](https://github.com/kieraneglin/pinchflat), [MeTube](https://github.com/alexta69/metube), [YoutubeDL-Material](https://github.com/Tzahi12345/YoutubeDL-Material) or [yt-dlp Web UI](https://github.com/marcopiovanello/yt-dlp-web-ui) - Self-Hosted YT-DLP
 * [ytarchive](https://github.com/Kethsar/ytarchive) - YouTube Livestream Downloader
@@ -686,6 +686,7 @@
 * 🌐 **[Fediverse.Party](https://fediverse.party/)** - Fediverse Software Index
 * 🌐 **[⁠FediDB](https://fedidb.com/)** - Fediverse Server List / Statistics
 * ⭐ **[Fediverse Observer](https://fediverse.observer/)** - Fediverse Instances
+* [pixelfed](https://pixelfed.org/) - Decentralized Image Sharing Social Network / Requires Sign-Up / [Tools](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/social-media#wiki_.25B7_pixelfed_tools) / [Android](https://gitlab.shinice.net/pixeldroid/PixelDroid) / [GitHub](https://github.com/pixelfed/pixelfed)
 * [Nostr](https://nstart.me/), [2](https://nostr.com/) - Twitter Alternative / [Apps](https://nostrapps.com/) / [Resources](https://nostr.net/)
 * [FediDB](https://fedidb.org/) or [The Federation](https://the-federation.info/) - Network Statistics
 * [Fedi.Tips](https://fedi.tips/) - Fediverse Guide
