@@ -17,7 +17,7 @@
 * ⭐ **[AnkerGames](https://ankergames.net/)** - Download / Torrent (Sign-Up) / Pre-Installed / [Fluxer](https://fluxer.gg/1Tt9Lw5B) / [Subreddit](https://www.reddit.com/r/Anker_Games_/) / [Discord](https://discord.gg/nnMnGzDbwg)
 * ⭐ **[SteamRIP](https://steamrip.com/)** - Download / Pre-Installed / PW: `steamrip.com` / [Subreddit](https://www.reddit.com/r/SteamRip/) / [Discord](https://discord.gg/NBVFJsmy9y)
 * ⭐ **[AstralGames](https://astralgames.net/)** - Download / Achievements / Pre-Installed / [Subreddit](https://www.reddit.com/r/AstralGames/) / [Discord](https://discord.gg/snnf8RH8Fn)
-* ⭐ **[⁠GOG Revived](https://gog-rev.com/)** or [GOG Games](https://gog-games.to/) / [.onion](http://goggamespyi7b6ybpnpnlwhb4md6owgbijfsuj6z5hesqt3yfyz42rad.onion/) - Download / Torrent / GOG Games Only
+* ⭐ **[⁠GOG Revived](https://gog-rev.com/)** / [Discord](https://discord.gg/pH6avrdHHC) or [GOG Games](https://gog-games.to/) / [.onion](http://goggamespyi7b6ybpnpnlwhb4md6owgbijfsuj6z5hesqt3yfyz42rad.onion/) - Download / Torrent / GOG Games Only
 * ⭐ **[GameBounty](https://gamebounty.world/)** - Download / Pre-installed / Achievements / [Discord](https://discord.gg/dmjUJ4xCEV)
 * ⭐ **[UnionCrax](https://union-crax.xyz/)** - Download / Torrent / Pre-Installed / [Launcher](https://union-crax.xyz/direct) / [Mirrors](https://rentry.co/ucxyz)
 * ⭐ **[Online Fix](https://online-fix.me/)** - Download / Torrent / Multiplayer / PW: `online-fix.me` / Use [Translator](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/text-tools/#wiki_.25B7_translators) / [Telegram](https://t.me/onlinefix) / [Discord](https://discord.gg/yExgFYncMD)
@@ -25,7 +25,7 @@
 * ⭐ **[SteamUnderground](https://steamunderground.net/)** - Download / Pre-Installed / Use Adblock / [Discord](https://discord.gg/hxdv7eJ5Yt)
 * ⭐ **[Ova Games](https://www.ovagames.com/)** - Download / PW: `www.ovagames.com` / [Requires Redirect Bypass](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/internet-tools#wiki_.25B7_redirect_bypass)
 * ⭐ **[Torrminatorr](https://forum.torrminatorr.com/)** - Download / Forum / Requires Sign-Up
-* ⭐ **[⁠HizSearch](https://hizsearch.pages.dev/)** / [Steam Button](https://github.com/hiz0147/HizSteamButton), **[Virgil Game Search](https://virgil.samidy.com/?engine=games)**, [2](https://virgil-search.pages.dev/Games/) / [GitHub](https://github.com/SamidyFR/Virgil), [Game Download CSE](https://cse.google.com/cse?cx=006516753008110874046:cbjowp5sdqg), [Game Torrent CSE](https://cse.google.com/cse?cx=006516753008110874046:pobnsujblyx) or [r/PiratedGames CSE](https://cse.google.com/cse?cx=20c2a3e5f702049aa) - Multi-Site Search Engines
+* ⭐ **[⁠HizSearch](https://hizsearch.pages.dev/)** / [Steam Button](https://github.com/hiz0147/HizSteamButton), **[Virgil Game Search](https://virgil.samidy.com/?engine=games)**, [2](https://virgil-search.pages.dev/?engine=games) / [GitHub](https://github.com/SamidyFR/Virgil), [Game Download CSE](https://cse.google.com/cse?cx=006516753008110874046:cbjowp5sdqg), [Game Torrent CSE](https://cse.google.com/cse?cx=006516753008110874046:pobnsujblyx) or [r/PiratedGames CSE](https://cse.google.com/cse?cx=20c2a3e5f702049aa) - Multi-Site Search Engines
 * [g4u](https://g4u.to/) - Download / PW: `404`
 * [scene cat](https://rentry.co/FMHYB64#scene-cat) - Download / [Discord](https://discord.gg/wXdNEhf73x)
 * [GLoad](https://gload.to/) - Download / Use [Translator](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/text-tools/#wiki_.25B7_translators)
@@ -61,7 +61,7 @@
 * [DODI Repacks](https://rentry.co/FMHYB64#dodi) - Torrent / [Redirect Bypass](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/internet-tools/#wiki_.25B7_redirect_bypass) / [Discord](https://discord.gg/D9WU7C9FSE) / **[Site Warning](https://github.com/fmhy/edit/blob/main/docs/.vitepress/notes/dodi-warning.md)** 
 * [Elamigos](https://elamigos.site/) - Download
 * [Xatab Repacks](https://byxatab.com/) - Torrent / Use [Translator](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/text-tools/#wiki_.25B7_translators)
-* [Glitchify Archives](https://glitchify.org/) - Download / ROM Repacks
+* [Glitchify Archives](https://glitchify.org/) - Download / ROM Repacks / [Discord](https://discord.gg/pH6avrdHHC)
 * [Gnarly Repacks](https://rentry.co/FMHYB64#gnarly) - Download / PW: `gnarly`
 * [M4CKD0GE Repacks](https://m4ckd0ge-repacks.site/) - Download / [Discord](https://discord.gg/693hNBdymb)
 * [VHSTaPE](https://vhstaperepacks.com/) or [⁠Stevv Game](https://www.stevvgame.com/) - Download / [Discord](https://discord.gg/snbpB6pCK9)
@@ -84,8 +84,10 @@
 
 # ► Special Interest
 
+* 🌐 **[TheGamingEmporium](https://thegamingemporium.com/categories/open-source/)** - Open-Source, Decomps, Ports, Translations & more
+* 🌐 **[OSGL](https://trilarion.github.io/opensourcegames/)**, [Open Source Games](https://github.com/bobeff/open-source-games), [Awesome Open Source Games](https://github.com/michelpereira/awesome-open-source-games) or [LibreGameWiki](https://libregamewiki.org/List_of_games) - Open-Source Games
+
 * 🌐 **[Awesome Terminal Games](https://ligurio.github.io/awesome-ttygames/)** - ASCII Terminal Games
-* 🌐 **[OSGL](https://trilarion.github.io/opensourcegames/)**, [Open Source Games](https://github.com/bobeff/open-source-games), [TheGamingEmporium](https://thegamingemporium.com/categories/open-source/), [Awesome Open Source Games](https://github.com/michelpereira/awesome-open-source-games) or [LibreGameWiki](https://libregamewiki.org/List_of_games) - Open-Source Games
 * [Playtester](https://playtester.io/) / [Discord](https://discord.gg/A5yzKNP7FE) or [Alpha Beta Gamer](https://alphabetagamer.com/) / [Discord](https://discord.gg/3Gtqp9BDeY) - Play Games in Alpha / Beta Testing
 * [Necromanthus](https://necromanthus.com/) - 3D Shockwave Games
 * [LemmaSoft](https://lemmasoft.renai.us/) - Visual Novel Games / [Discord](https://discord.gg/6ckxWYm)
@@ -107,7 +109,7 @@
 
 * 🌐 **[r/QuestPiracy Mega](https://qpmegathread.top/)** - Quest VR Resources
 * ↪️ **[PCVR Games](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/games#wiki_.25BA_download_games)**
-* ⭐ **[ARMGDDN Browser](https://cs.rin.ru/forum/viewtopic.php?f=14&t=140593)** - VR Games / Avoid Software / [Telegram](https://t.me/ARMGDDNGames) / [Discord](https://discord.gg/abeChzCy8X)
+* ⭐ **[ARMGDDN Browser](https://cs.rin.ru/forum/viewtopic.php?f=14&t=140593)** - PCVR Games / Avoid Software / [Telegram](https://t.me/ARMGDDNGames) / [Discord](https://discord.gg/abeChzCy8X)
 * [Phoenix Place](https://phoenixplace.xyz/) - VR Games / Requires Sign-Up / [Discord](https://discord.gg/wfJs3eJvHa)
 * [⁠The Gear VR Vault](https://vault.gearvr.net/) - VR Abandonware Games / Apps
 * [⁠heyVR.io](https://heyvr.io/) - Browser VR Games / [Discord](https://discord.gg/tjbmKKH)
@@ -302,7 +304,7 @@
 * [MouseInjector](https://github.com/garungorp/MouseInjectorDolphinDuck) - Add Mouse Support to Emulators
 * [SaveFileConverter](https://savefileconverter.com/) - Convert Console Saves to Emulator Saves
 * [⁠AndroidDSU](https://github.com/PlayXboxtion963/AndroidDSU#english-version) - Use Android as Motion Controls for Emulators
-* [Motion Support Bypass](https://redd.it/gobcne) - Fix Cemu BOTW Motion Shrines / [DL](https://mega.nz/file/1Uo3BI6L#X5m-bPK27-X-IijzJH1o4MloivkUqP33zsUJE_kpOdc)
+* [Motion Support Bypass](https://redd.it/gobcne) - Fix Cemu BOTW Motion Shrines
 * [ns-emu-mod-downloader](https://github.com/exefer/ns-emu-mod-downloader) - Download Switch Emulator Mods
 * [UniversalDynamicInput](https://github.com/Venomalia/UniversalDynamicInput) - Custom Dolphin Button Pack
 * [TOTK Optimization](https://rentry.co/FMHYB64#totk-optimization) - TOTK Optimization / Fixes
@@ -327,7 +329,7 @@
 * [⁠ROM Duplicate Manager](https://github.com/Anach/ROM_Duplicate_Manager) - Remove Duplicate ROM Files
 * [Hash Tool](https://www.romhacking.net/hash/) - ROM Patch Compatibility Checker
 * [⁠ROM Converto](https://github.com/DevYukine/rom-converto) - ROM Converter 
-* [RomPatcher](https://www.marcrobledo.com/RomPatcher.js/) / [GitHub](https://github.com/marcrobledo/RomPatcher.js/), [Rom Patcher JS](https://www.romhacking.net/patch/), [Hack64 Patcher](https://hack64.net/tools/patcher.php) or [FFF6Hacking Patcher](https://www.ff6hacking.com/patcher/) - Online ROM Patchers
+* [RomPatcher](https://www.marcrobledo.com/RomPatcher.js/) / [GitHub](https://github.com/marcrobledo/RomPatcher.js/), [2](https://www.romhacking.net/patch/), [Hack64 Patcher](https://hack64.net/tools/patcher.php) or [FFF6Hacking Patcher](https://www.ff6hacking.com/patcher/) - Online ROM Patchers
 * [No-Intro](https://no-intro.org/) - Cartridge (etc) Hash Database / [Discord](https://discord.gg/dvk6W6vZmp)
 * [Redump](https://redump.info/) - Disc Hash Database
 * [Dats.site](https://dats.site/) - Scene Release Hash Database

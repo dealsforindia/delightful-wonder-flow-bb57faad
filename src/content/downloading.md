@@ -14,7 +14,7 @@
 
 * 🌐 **[Adobe Alternatives](https://github.com/KenneyNL/Adobe-Alternatives)** - Adobe Software Alternative Index
 * ↪️ **[Editing Software](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/torrent/#wiki_.25BA_torrent_sites)** or [Keyflame](https://rentry.co/FMHYB64#keyflame) - Editing Software
-* ⭐ **[Virgil Software Search](https://virgil.samidy.com/?engine=software)**, [2](https://virgil-search.pages.dev/Software/) / [GitHub](https://github.com/SamidyFR/Virgil) or [Software CSE](https://cse.google.com/cse?cx=ae17d0c72fa6cbcd4) - Multi-Site Software Search
+* ⭐ **[Virgil Software Search](https://virgil.samidy.com/?engine=software)**, [2](https://virgil-search.pages.dev/?engine=software) / [GitHub](https://github.com/SamidyFR/Virgil) or [Software CSE](https://cse.google.com/cse?cx=ae17d0c72fa6cbcd4) - Multi-Site Software Search
 * ⭐ **[CracksURL](https://cracksurl.com/)** / [Download Guide](https://cracksurl.com/how-to-download/) / [Telegram](https://t.me/+Fu_l5ukw7wNkMDll), [2](https://t.me/+8zQaYybFs_wyMzhl)
 * ⭐ **[LRepacks](https://lrepacks.net/)** - Use [Translator](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/text-tools/#wiki_.25B7_translators)
 * ⭐ **[Soft98](https://soft98.ir/)** - Use [Translator](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/text-tools/#wiki_.25B7_translators)
@@ -214,7 +214,6 @@
 * ⭐ **[sabnzbd](https://sabnzbd.org/)** / Windows, macOS, Linux / [Grabber](https://github.com/lem6ns/sabgrab)
 * ⭐ **[NZBUnity](https://github.com/tumblfeed/nzbunity)** - Send NZBs to Client / [Firefox](https://addons.mozilla.org/en-US/firefox/addon/nzb-unity/) / [Chrome](https://chromewebstore.google.com/detail/nzb-unity/mpejfoghnejnbfkpbiafklkmlhebkapb)
 * [NZBGet](https://nzbget.com/) / [GitHub](https://github.com/nzbgetcom/nzbget)
-* [⁠magicNZB](https://magicnzb.com/) - 30 Day Trial (reset w/ temp mail) 
 * [Usenet File Hashes](https://gist.github.com/4chenz/de3a3490aff19fd72e4fdd9b7dafc8f4) - Link File Hashes
 
 ***

@@ -16,7 +16,7 @@
 * ⭐ **[DeepSeek](https://chat.deepseek.com/)** - DeepSeek V4 Pro 0813 / DeepSeek V4 Flash / Sign-Up / Unlimited / [Add Features](https://github.com/EdgeTypE/better-deepseek/) / [Subreddit](https://www.reddit.com/r/DeepSeek/) / [Discord](https://discord.com/invite/Tc7c45Zzu5) / [GitHub](https://github.com/deepseek-ai)
 * ⭐ **[⁠Z.ai](https://chat.z.ai/)** - GLM 5.3 / Agent / Slides / Sign-Up / [Discord](https://discord.gg/QR7SARHRxK) / [GitHub](https://github.com/zai-org)
 * ⭐ **[Google AI Studio](https://aistudio.google.com/app/prompts/new_chat)** - Gemini 3.7 Flash / Gemini 3.1 Pro Preview / Gemini 3.5 Flash-Lite / Google Sign-Up / [Add Features](https://github.com/Nagi-ovo/voyager) / [Subreddit](https://www.reddit.com/r/Bard/) / [Discord](https://discord.com/invite/gemini)
-* ⭐ **[Gemini](https://gemini.google.com/)** - Gemini 3.6 Flash / Gemini 3.1 Pro Preview  / Gemini 3.5 Flash-Lite / [Add Features](https://github.com/Nagi-ovo/voyager) / [Limits](https://support.google.com/gemini/answer/16275805) / [Subreddit](https://www.reddit.com/r/Bard/) / [Discord](https://discord.com/invite/gemini)
+* ⭐ **[Gemini](https://gemini.google.com/)** - Gemini 3.6 Flash / Gemini 3.1 Pro Preview / Gemini 3.5 Flash-Lite / [Add Features](https://github.com/Nagi-ovo/voyager) / [Limits](https://support.google.com/gemini/answer/16275805) / [Subreddit](https://www.reddit.com/r/Bard/) / [Discord](https://discord.com/invite/gemini)
 * [Meta AI](https://www.meta.ai/) - Muse Spark 1.2 / Muse Glimmer 30B / Meta Sign-Up / Unlimited
 * [Kimi](https://www.kimi.ai/), [2](https://www.kimi.com/) - Kimi K3 / Slides / Google Login or Phone # Required / [Subreddit](https://www.reddit.com/r/kimi/) / [Discord](https://discord.gg/TYU2fdJykW) / [GitHub](https://github.com/MoonshotAI)
 * [ChatGPT](https://chatgpt.com/) - GPT-5.6 Luna / Unlimited / [Add Features](https://github.com/Nagi-ovo/voyager) / [r/OpenAI](https://www.reddit.com/r/OpenAI/) / [r/ChatGPT](https://www.reddit.com/r/ChatGPT/) / [Discord](https://discord.com/invite/openai) / [Limits](https://help.openai.com/en/articles/9275245-chatgpt-free-tier-faq#how-do-rate-limits-work-on-the-free-tier)
@@ -41,7 +41,7 @@
 ## ▷ Multiple Model Sites
 
 * ⭐ **[⁠Together.ai](https://chat.together.ai/)** - Kimi K3 / Qwen3.8 2.4T A95B / DeepSeek V4 Pro 0813 / GLM-5.3-Flash / Up To 110 Daily / [Discord](https://discord.gg/9Rk6sSeWEG)
-* [⁠Tryingopen](https://www.tryingopen.com/) - Kimi K3 / GLM 5.3 / Qwen3.8 2.4T A95B / GLM-5.3-Flash / Unlimited / [OpenAI Bridge](https://github.com/khrotu/radio-house-api)
+* [⁠Tryingopen](https://www.tryingopen.com/) - Kimi K3 / Qwen3.8 27B / GLM-5.3-Flash / Unlimited (12 per chat) / [OpenAI Bridge](https://github.com/khrotu/radio-house-api)
 * [⁠ISH](https://beta.ish.chat/) - Claude Opus 5 / GPT-5.6 Sol / Kimi K3 / 50K Tokens Daily / [Subreddit](https://www.reddit.com/r/Ishchat/) / [Discord](https://discord.gg/cwDTVKyKJz)
 * [Arena](https://arena.ai/text/direct), [2](https://canaryarena.ai/text/direct) - Multiple Models / Agent / Sign-Up / [OpenAI Bridge](https://github.com/CloudWaddie/LMArenaBridge) / [X](https://x.com/arena) / [Discord](https://discord.com/invite/lmarena)
 * [⁠ChatWave](https://chatwave.crunchflix.site/) - Claude Opus 5 / Claude Fable 5 / GPT-5.6 Sol / [Discord](https://discord.gg/RNxFvbP2D)
