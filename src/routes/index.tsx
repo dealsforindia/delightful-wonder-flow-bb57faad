@@ -80,13 +80,14 @@ function HomeRoute() {
 function PageCard({ p }: { p: (typeof PAGES)[number] }) {
   const fetchIcon = useServerFn(getIconscoutIcon);
   const { data } = useQuery({
-    queryKey: ["iconscout", p.short],
-    queryFn: () => fetchIcon({ data: { query: p.short } }),
+    queryKey: ["iconscout-3d", p.short],
+    queryFn: () => fetchIcon({ data: { query: p.short, prefer3d: true } }),
     staleTime: Infinity,
     gcTime: Infinity,
     retry: false,
   });
   const iconUrl = data?.url;
+  const is3d = data?.asset === "3d" || data?.asset === "illustration";
   return (
     <Link
       to="/$page"
@@ -95,15 +96,19 @@ function PageCard({ p }: { p: (typeof PAGES)[number] }) {
       style={{ ["--tw-border-opacity" as string]: 1 }}
     >
       <span
-        className="mt-0.5 shrink-0 h-10 w-10 rounded-lg grid place-items-center text-lg font-bold overflow-hidden"
-        style={{ background: `${p.color}22`, color: p.color }}
+        className="mt-0.5 shrink-0 h-12 w-12 rounded-lg grid place-items-center text-lg font-bold overflow-hidden"
+        style={is3d ? undefined : { background: `${p.color}22`, color: p.color }}
         aria-hidden="true"
       >
         {iconUrl ? (
           <img
             src={iconUrl}
             alt=""
-            className="h-7 w-7 object-contain icon-invert"
+            className={
+              is3d
+                ? "h-12 w-12 object-contain drop-shadow-[0_6px_14px_rgba(0,0,0,0.45)] transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3"
+                : "h-7 w-7 object-contain icon-invert"
+            }
             loading="lazy"
           />
         ) : (

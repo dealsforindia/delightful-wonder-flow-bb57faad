@@ -172,7 +172,7 @@
 
 * 🌐 **[Kindle Jailbreak Guide](https://kindlemodding.org/jailbreaking/index.html)** - Jailbreak Guides / Index
 * ⭐ **[KindleForge](https://github.com/KindleTweaks/KindleForge)** – App Installer
-* ⭐ **[KOReader](https://koreader.rocks/)** - Ebook Reader / [Minimal UI](https://github.com/AnthonyGress/zen_ui.koplugin) / [Z-Library Plugin](https://github.com/OctoNezd/zlibrary.koplugin) / [Plugins](https://kindlemodshelf.me/plugins), [2](https://github.com/koreader/contrib)  / [Settings Guide](https://rentry.co/koreadersettings) / [Patches](https://kindlemodshelf.me/patches) / [App Store](https://github.com/omer-faruq/appstore.koplugin) / [GitHub](https://github.com/koreader/koreader)
+* ⭐ **[KOReader](https://koreader.rocks/)** - Ebook Reader / [Minimal UI](https://github.com/AnthonyGress/zen_ui.koplugin) / [Z-Library Plugin](https://github.com/OctoNezd/zlibrary.koplugin) / [Plugins](https://kindlemodshelf.me/plugins), [2](https://github.com/koreader/contrib) / [Settings Guide](https://rentry.co/koreadersettings) / [Patches](https://kindlemodshelf.me/patches) / [App Store](https://github.com/omer-faruq/appstore.koplugin) / [GitHub](https://github.com/koreader/koreader)
 * ⭐ **[KindleFetch](https://github.com/justrals/KindleFetch)** - Kindle Book Download CLI
 * [Kindle Modding Community](https://discord.com/invite/wDbbZTF5QF) - Kindle Modding / Jailbreak Discord
 * [FreeReadFeed](https://www.freereadfeed.com/) or [eReaderIQ](https://www.ereaderiq.com/freebies) - Free Kindle Releases
@@ -856,7 +856,7 @@
 * [Rosicrucian Esotericism Lecture](https://rsarchive.org/) - Rosicrucian Esotericism
 * [Dao](https://t.me/Dao_Qigong_Taiji_TCM_ebooks) - Spiritual Eastern Literature
 * [IAPSOP](http://iapsop.com/) - Spiritualist / Occult Periodicals
-* [Dhushara Research](https://www.dhushara.com/index.htm) - Metaphysics / Conspiracies / Psychedelics
+* [Dhushara Research](https://www.dhushara.com/index.htm) - Metaphysics / Conspiracy / Psychedelics
 * [The Theosophical Society](https://www.theosociety.org/) or [Theosophy World](https://www.theosophy.world/portfolio/term/ebooks) - Theosophy
 * [Great Library of Eris](https://libraryoferis.org/) - Discordianism
 
@@ -961,7 +961,7 @@
 * ⭐ **[StoryGraph](https://www.thestorygraph.com/)** - Discovery and Recommendations
 * ⭐ **[The Greatest Books](https://www.thegreatestbooks.org/)** - Algorithmic Books Lists
 * ⭐ **[⁠NPR's Books We Love](https://apps.npr.org/best-books/)** - Book Discovery / Recommendations
-* ⭐ **[⁠The Book Prize Index](https://book-prize-index.vercel.app/)** - Book Awards + Winning Book Index
+* ⭐ **[⁠The Book Prize Index](https://book-prize-index.vercel.app/)** or **[LibraryThing Awards](https://www.librarything.com/award)** - Book Awards + Winning Book Index
 * ⭐ **[Five Books](https://fivebooks.com/)** - Expert Recommended Books
 * [GoodBooks](https://www.goodbooks.io/) or [Read This Twice](https://readthistwice.com/) - Book Recommendations by Influential People
 * [Charts and Culture](https://pastebin.com/uRDJVGkL) - Books / Comics / Manga Recommendation Directory

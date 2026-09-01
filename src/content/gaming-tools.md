@@ -63,7 +63,7 @@
 * [OpenGamepadUI](https://github.com/ShadowBlip/OpenGamepadUI) - Gamepad Native Launcher / Linux
 * [⁠TwintailLauncher](https://twintaillauncher.app/) - Game Launcher / Mod Engine for F2P Anime Games / Windows, Linux / [GitHub](https://github.com/TwintailTeam/TwintailLauncher)
 * [UnderTaker141](https://github.com/AbdelrhmanNile/UnderTaker141) - Johncena141 Game Launcher / Linux
-* [JackboxUtility](https://jackboxutility.com/) - Jackbox Games Launcher / Windows, macOS, Linux / [Discord](https://discord.gg/ffKMZeb88m) / [GitHub](https://github.com/JackboxUtility/JackboxUtility)
+* [JackboxUtility](https://github.com/JackboxUtility/JackboxUtility) - Jackbox Games Launcher / Windows, macOS, Linux / [Discord](https://discord.gg/ffKMZeb88m)
 * [⁠Starward](https://github.com/Scighost/Starward) - HoYoverse Game Launcher / Windows
 * [GameVault](https://gamevau.lt) - Self-Hosted Gaming Platform / [Discord](https://discord.gg/NEdNen2dSu) / Windows, macOS, Linux / [GitHub](https://github.com/Phalcode/gamevault-app)
 
@@ -319,7 +319,7 @@
 * 🌐 **[Lua Providers](https://rentry.co/lua-providers)** - Steam Lua Provider Index
 * ⭐ **[SDD GUI](https://github.com/mmvanheusden/SteamDepotDownloaderGUI)** or [DepotDownloader](https://github.com/SteamRE/DepotDownloader) - Steam Depot / Manifest Downloaders
 * ⭐ **[RedAlt SteamUp](https://cs.rin.ru/forum/viewtopic.php?f=14&t=138413&p=3000090)** - Steam Depot Update Creator
-* ⭐ **[⁠SteaMidra](https://github.com/Midrags/SFF)** or [LuaTools](https://lua.tools/) / [GitHub](https://github.com/madoiscool/LuaTools) - Steam Multi-Tools / Manifest Tools
+* ⭐ **[⁠SteaMidra](https://github.com/Midrags/SFF)** or **[LuaTools](https://lua.tools/)** / [GitHub](https://github.com/madoiscool/LuaTools) - Steam Multi-Tools / Manifest Tools
 * [Steam Link](https://store.steampowered.com/remoteplay#anywhere) - Stream Steam Library to TV / Devices
 * [Steam Rom Manager](https://github.com/SteamGridDB/steam-rom-manager) - Add ROMs to Steam
 * [BoilR](https://github.com/PhilipK/BoilR) - Sync Game Platforms with Steam
@@ -478,7 +478,7 @@
 
 * 🌐 **[FreeHosts](https://freehosts.eu/hosts?target=Gaming)** - Free Game Hosting Provider Index
 * ⭐ **[TrackyServer](https://www.trackyserver.com/)** - Find Private Multiplayer Servers
-* ⭐ **[Pelican](https://pelican.dev/)** / [GitHub](https://github.com/pelican/panel), [Calagopus](https://calagopus.com/) / [Discord](https://discord.gg/uSM8tvTxBV) / [GitHub](https://calagopus.com/) or [Pterodactyl](https://github.com/pterodactyl/panel) / [Discord](https://discord.gg/pterodactyl) - Game Server Management Panels
+* ⭐ **[Pelican](https://pelican.dev/)** / [GitHub](https://github.com/pelican/panel), [Calagopus](https://calagopus.com/) / [Discord](https://discord.gg/uSM8tvTxBV) / [GitHub](https://github.com/calagopus/panel) or [Pterodactyl](https://github.com/pterodactyl/panel) / [Discord](https://discord.gg/pterodactyl) - Game Server Management Panels
 * ⭐ **[Playit.gg](https://playit.gg/)** - Global Proxy / Signup Required / [Discord](https://discord.gg/AXAbujx)
 * [Server.pro](https://server.pro/) - Game Server Hosting
 * [Impostor](https://impostor.github.io/Impostor/) - Among Us Private Server / [Discord](https://discord.com/invite/Mk3w6Tb)
@@ -667,7 +667,7 @@
 * ⭐ **[Minecraft Wiki](https://minecraft.wiki/)** / [Discord](https://discord.com/invite/fGdE5ZE), [Villager Trading Cheatsheet](https://minecraft.wiki/images/Trading_and_Bartering_Guide_for_Minecraft_Java_Edition_1.17%2B.png) or [Minecraft Brewing Cheatsheet](https://minecraft.wiki/images/Minecraft_brewing_en.png) - Minecraft Wiki & Cheatsheets
 * [MC Utils](https://mcutils.com/) / [Discord](https://discord.com/invite/HvPARrr55x) - Web-Based Minecraft Toolkits
 * [DigMinecraft](https://www.digminecraft.com/) or [Birdflop](https://www.birdflop.com/resources/) / [GitHub](https://github.com/birdflop/web) - Minecraft Guides & Support
-* [The Minecraft Archive Project](https://map.crummy.com/) or [Omniarchive](https://omniarchive.uk/) / [Discord](https://discord.com/invite/udX5PRKayw) - Minecraft History & Version Archives
+* [The Minecraft Archive Project](https://map.crummy.com/) or [Omniarchive](https://omniarchive.net/) / [Discord](https://discord.com/invite/udX5PRKayw) - Minecraft History & Version Archives
 * [Minemev](https://minemev.com/) or [MCBuild](https://mcbuild.org/) - Minecraft Farm / Build Schematics
 * [Block Palettes](https://www.blockpalettes.com/), [Block Colors](https://blockcolors.app/) / [Discord](https://discord.com/invite/hJDxqWnXnZ) or [HueBlocks](https://1280px.github.io/hueblocks/) / [GitHub](https://github.com/1280px/hueblocks) - Block Color Palettes & Gradients
 * [Blockmatic](https://blockmatic.trafficlunar.net/) / [GitHub](https://github.com/trafficlunar/blockmatic), [MinecraftArt](https://minecraftart.org/) or [Minecraft Pixel Art](https://minecraft-pixel-art.com/) - Pixel Art Editors & Image Importers
@@ -684,7 +684,7 @@
 
 * 🌐 **[FMHL](https://www.myuui.com/)** - Free Minecraft Hosts List / [GitHub](https://github.com/Myuui/Free-Minecraft-Hosts)
 * ⭐ **[auto-mcs](https://www.auto-mcs.com/)** - Server Manager / Easy Setup / [GitHub](https://github.com/macarooni-man/auto-mcs)
-* ⭐ **[CraftyControl](https://craftycontrol.com/)** / [GitLab](https://gitlab.com/crafty-controller/crafty-4), [MCSManager](https://mcsmanager.com/) / [GitHub](https://github.com/MCSManager/MCSManager), [Fork](https://www.fork.gg/) / [GitHub](https://github.com/ForkGG) or [SquidServers](https://squidservers.com/) / [Discord](https://discord.gg/Y8QtmK2exk) / [GitHub](https://github.com/squidservers) - Server Managers
+* ⭐ **[Crafty Controller](https://craftycontrol.com/)** / [GitLab](https://gitlab.com/crafty-controller/crafty-4), [MCSManager](https://mcsmanager.com/) / [GitHub](https://github.com/MCSManager/MCSManager), [Fork](https://www.fork.gg/) / [GitHub](https://github.com/ForkGG) or [SquidServers](https://squidservers.com/) / [Discord](https://discord.gg/Y8QtmK2exk) / [GitHub](https://github.com/squidservers) - Server Managers
 * ⭐ **[Playit.gg](https://playit.gg/)** - Global Proxy / [Discord](https://discord.com/invite/AXAbujx)
 * ⭐ **[paper-optimization](https://paper-chan.moe/paper-optimization/)** or [minecraft-optimization](https://github.com/YouHaveTrouble/minecraft-optimization) - Server Optimization & Admin Guides
 * [Paper](https://papermc.io/software/paper) / [Discord](https://discord.com/invite/papermc) / [GitHub](https://github.com/PaperMC/Paper), [Purpur](https://purpurmc.org/) / [Discord](https://purpurmc.org/discord) / [GitHub](https://github.com/PurpurMC/) or [Pufferfish](https://github.com/pufferfish-gg/Pufferfish) - Performance Server Software / [Plugins](https://hangar.papermc.io/)
@@ -772,7 +772,7 @@
 * [Arnis](https://arnismc.com/) / [Discord](https://discord.com/invite/mA2g69Fhxq) / [GitHub](https://github.com/louis-e/arnis) - Real-World Location Generators
 * [MapartCraft](https://rebane2001.com/mapartcraft/) or [Cartographer](https://cartographer-mc.com/) - Mapart Schematic / map.dat Generator
 * [MinecraftMaps](https://www.minecraftmaps.com/), [Minecraft Forum](https://www.minecraftforum.net/) / [Discord](https://discord.com/invite/wGrQNKX), [Mapcraft](https://mapcraft.me/), [MapVerse](https://mapverse.net/) / [Discord](https://discord.gg/xFgTJtebgp), [CTMRepository](https://ctmrepository.com/) / [Discord](https://discord.com/invite/G2WVCB3) or [Minecraft Earth Map](https://earth.motfe.net/) - Custom Maps & World Downloads
-* [Chunker](https://oss.chunker.app/), [je2be-web](https://je2be.app/) / [GitHub](https://github.com/kbinani/je2be-web) or [Minecraft Map Converter](https://archive.org/details/Minecraft-map-converter) - Java, Bedrock & Legacy Format Converters
+* [Chunker](https://oss.chunker.app/) / [2](https://www.chunker.app/), [je2be-web](https://je2be.app/) / [GitHub](https://github.com/kbinani/je2be-web) or [Minecraft Map Converter](https://archive.org/details/Minecraft-map-converter) - Java, Bedrock & Legacy Format Converters
 * [Custom Worlds](https://superflat.crackedmagnet.com/) - Bedrock Custom Superflat / Single Biome World Generator
 
 ***
