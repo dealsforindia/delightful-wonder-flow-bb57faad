@@ -5,7 +5,7 @@ type Asset = "3d" | "illustration" | "icon";
 const cache = new Map<string, { url: string; asset: Asset } | null>();
 
 async function search(query: string, asset: Asset, clientId: string, clientSecret: string) {
-  const url = `https://api.iconscout.com/v3/search?query=${encodeURIComponent(query)}&product_type=item&asset=${asset}&per_page=1&price=free&formats=png`;
+  const url = `https://api.iconscout.com/v3/search?query=${encodeURIComponent(query)}&product_type=item&asset=${asset}&per_page=1&price=free`;
   const res = await fetch(url, { headers: { "Client-ID": clientId, "Client-Secret": clientSecret } });
   if (!res.ok) return null;
   const json = (await res.json()) as any;
