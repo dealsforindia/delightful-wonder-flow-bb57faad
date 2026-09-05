@@ -58,7 +58,7 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-40 backdrop-blur-xl bg-background/80 border-b border-border">
+      <header className="sticky top-0 z-40 backdrop-blur-xl bg-card/70 border-b border-border/60 shadow-[inset_0_1px_0_0_color-mix(in_oklab,var(--primary)_50%,transparent)]">
         <div className="mx-auto max-w-[1400px] px-4 md:px-6 h-14 flex items-center gap-3">
           <button
             className="md:hidden h-9 w-9 grid place-items-center rounded-lg border border-border hover:bg-accent"
