@@ -19,8 +19,7 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
 
   useEffect(() => {
     const saved = localStorage.getItem("unlocked-theme");
-    const prefers = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const isDark = saved ? saved === "dark" : prefers;
+    const isDark = saved ? saved === "dark" : true;
     setDark(isDark);
     document.documentElement.classList.toggle("dark", isDark);
   }, []);
