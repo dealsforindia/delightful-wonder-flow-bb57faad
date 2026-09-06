@@ -4,7 +4,7 @@ import { DefaultChatTransport, type UIMessage } from "ai";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { FmhyLayout } from "@/components/FmhyLayout";
 import { MarkdownView } from "@/components/MarkdownView";
-import { Brain, MessageSquare, Pin, RefreshCw, Search, Map, Sparkles, Loader2, LayoutGrid, BookOpen } from "lucide-react";
+import { Brain, MessageSquare, Pin, RefreshCw, Search, Map, Sparkles, Loader2, LayoutGrid, BookOpen, Send, Square } from "lucide-react";
 
 type AiSearchParams = { q?: string; mode?: "search" | "roadmap" };
 
@@ -444,10 +444,10 @@ function MessageView({ message, onAskAbout }: { message: UIMessage; onAskAbout: 
       })}
 
       {text && (
-        <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity flex gap-1.5">
           <button
             onClick={() => onAskAbout(text)}
-            className="text-[11px] px-2 py-0.5 rounded-md border border-border hover:bg-accent hover:border-primary/40 text-muted-foreground inline-flex items-center gap-1"
+            className="text-[11px] px-2 py-1 rounded-md border border-border hover:bg-accent hover:border-primary/40 text-muted-foreground inline-flex items-center gap-1"
             title="Quote this reply into your next question"
           >
             <Pin className="h-3 w-3" /> Ask about this
