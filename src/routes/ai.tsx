@@ -329,7 +329,7 @@ function AiRoute() {
           )}
         </div>
 
-        <form onSubmit={submit} className="pt-3 border-t border-border">
+        <form onSubmit={submit} className="pt-3 border-t border-border pb-[env(safe-area-inset-bottom)]">
           <div className="flex gap-2 items-end">
             <textarea
               ref={composerRef}
@@ -342,38 +342,34 @@ function AiRoute() {
                 }
               }}
               rows={Math.min(6, Math.max(1, input.split("\n").length))}
-              placeholder="Ask anything — e.g. how do I earn from affiliate marketing?"
-              className="flex-1 min-h-[44px] max-h-40 px-4 py-2.5 rounded-xl bg-muted border border-border resize-none focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary text-sm"
-              autoFocus
+              placeholder="What do you want to do?"
+              className="flex-1 min-w-0 min-h-[44px] max-h-40 px-4 py-2.5 rounded-xl bg-muted border border-border resize-none focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary text-sm"
             />
             {busy ? (
               <button
                 type="button"
                 onClick={() => stop()}
-                className="px-4 h-11 rounded-xl border border-destructive text-destructive font-medium hover:bg-destructive/10 shrink-0"
+                className="h-11 w-11 grid place-items-center rounded-xl border border-destructive text-destructive hover:bg-destructive/10 shrink-0"
+                title="Stop"
+                aria-label="Stop generating"
               >
-                Stop
+                <Square className="h-4 w-4" />
               </button>
             ) : (
               <button
                 type="submit"
                 disabled={busy || input.trim().length < 2}
-                className="px-4 h-11 rounded-xl bg-primary text-primary-foreground font-medium disabled:opacity-50 shrink-0 shadow-[0_0_18px_-8px_var(--primary)] hover:brightness-110"
+                className="h-11 w-11 grid place-items-center rounded-xl bg-primary text-primary-foreground disabled:opacity-50 shrink-0 shadow-[0_0_18px_-8px_var(--primary)] hover:brightness-110"
+                title="Send"
+                aria-label="Send message"
               >
-                Send
-              </button>
-            )}
-            {messages.length > 0 && !busy && (
-              <button
-                type="button"
-                onClick={() => regenerate()}
-                className="px-4 h-11 rounded-xl border border-border hover:bg-accent hover:border-primary/40 font-medium text-muted-foreground shrink-0"
-                title="Regenerate the last assistant response"
-              >
-                <RefreshCw className="h-4 w-4" />
+                <Send className="h-4 w-4" />
               </button>
             )}
           </div>
+          <p className="mt-1.5 text-[10px] text-muted-foreground/70 text-center">
+            Enter to send · Shift+Enter for a new line · your chat is saved on this device
+          </p>
         </form>
       </div>
     </FmhyLayout>
