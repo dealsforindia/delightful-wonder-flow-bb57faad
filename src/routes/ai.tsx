@@ -199,14 +199,14 @@ function AiRoute() {
 
   return (
     <FmhyLayout>
-      <div className="max-w-3xl mx-auto flex flex-col h-[calc(100vh-8rem)]">
+      <div className="max-w-3xl mx-auto flex flex-col h-[calc(100dvh-8rem)]">
         <div className="flex items-start justify-between gap-3 pb-3 border-b border-border">
           <div className="min-w-0">
-            <div className="flex items-center gap-2 text-xs text-muted-foreground">
-              <span className="inline-block h-2 w-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_-2px_var(--primary)]" />
-              AI Concierge · Gemini 3.1 Pro · 26k tools · thinking
+            <div className="flex items-center gap-2 text-[11px] sm:text-xs text-muted-foreground truncate">
+              <span className="inline-block h-2 w-2 shrink-0 rounded-full bg-primary animate-pulse shadow-[0_0_10px_-2px_var(--primary)]" />
+              <span className="truncate">AI Concierge · 26k tools</span>
             </div>
-            <h1 className="mt-1 text-xl sm:text-2xl font-extrabold tracking-tight">
+            <h1 className="mt-1 text-lg sm:text-2xl font-extrabold tracking-tight">
               Ask.{" "}
               <span className="text-primary">
                 Get the right free tool.
@@ -214,16 +214,27 @@ function AiRoute() {
             </h1>
           </div>
           <div className="flex items-center gap-2 shrink-0">
+            {messages.length > 0 && !busy && (
+              <button
+                onClick={() => regenerate()}
+                title="Regenerate last answer"
+                aria-label="Regenerate last answer"
+                className="h-9 w-9 grid place-items-center rounded-lg border border-border text-muted-foreground hover:bg-accent"
+              >
+                <RefreshCw className="h-4 w-4" />
+              </button>
+            )}
             {messages.length > 0 && (
               <button
                 onClick={reset}
-                className="text-xs px-2.5 py-1.5 rounded-md border border-border hover:bg-accent shrink-0"
+                className="text-xs px-2.5 h-9 rounded-lg border border-border hover:bg-accent shrink-0"
               >
-                + New chat
+                + New
               </button>
             )}
           </div>
         </div>
+
 
         {memory.length > 0 && (
           <div className="mt-3 rounded-lg border border-border bg-muted/40 p-2.5 text-xs">
