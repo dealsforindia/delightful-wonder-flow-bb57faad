@@ -46,12 +46,12 @@
 * [lesma](https://lesma.eu/) - Multi-Syntax / [GitLab](https://gitlab.com/ogarcia/lesma)
 * [Pastee](https://pastee.dev/) - Multi-Syntax / [Discord](https://discord.com/invite/WQJ8z5G)
 * [pst.moe](https://pst.moe/) - Multi-Syntax
-* [dpaste.com](https://dpaste.com/) - Multi-Syntax
 * [pastes.dev](https://pastes.dev/) - Multi-Syntax / [GitHub](https://github.com/lucko/paste)
 * [NoPaste](https://nopaste.boris.sh/) - Multi-Syntax / [GitHub](https://github.com/bokub/nopaste)
 * [⁠Pastefy](https://pastefy.app/) - Multi-Syntax / [Discord](https://go.intera.dev/discord) / [GitHub](https://github.com/interaapps/pastefy)
 * [pastemyst](https://paste.myst.rs/) - Multi-Syntax / [GitHub](https://github.com/codemyst/pastemyst)
 * [CentOS Pastebin](https://paste.centos.org/) - Multi-Syntax
+* [dpaste.com](https://dpaste.com/) - Multi-Syntax
 * [snippet.host](https://snippet.host/) - Multi-Syntax / [.onion](http://snippetwtaasz6cid2he6vxcuwu3phck5uumidsbamkgmq3cuuydxiyd.onion/) / [Status](https://bit.ly/snippethoststatus) 
 * [ProtectedText](https://www.protectedtext.com/) - Multi-Tab
 * [⁠Memochō](https://bin.kv2.dev/) / [GitHub](https://github.com/SitiSchu/memocho) or [bin](https://basedbin.fly.dev/) - Minimal Pastebins
@@ -220,7 +220,7 @@
 
 * ⭐ **[Obsidian](https://obsidian.md/)** - Markdown Note-Taking / All Platforms / [Discord](https://discord.gg/obsidianmd)
 * ⭐ **Obsidian Tools** - [Publish Notes](https://dg-docs.ole.dev/) / [Note Sync](https://synch.run/) / [Web Clipper](https://github.com/obsidianmd/obsidian-clipper) / [Google Drive Sync](https://github.com/stravo1/obsidian-gdrive-sync) / [Guides](https://help.obsidian.md/Home) / [Forum](https://forum.obsidian.md/)
-* ⭐ **[AnyType](https://anytype.io/)** - Note-Taking / E2EE / All Platforms / [Telegram](https://t.me/anytype) / [GitHub](https://github.com/anyproto/anytype-ts)
+* ⭐ **[Anytype](https://anytype.io/)** - Note-Taking / E2EE / All Platforms / [Telegram](https://t.me/anytype) / [GitHub](https://github.com/anyproto/anytype-ts)
 * ⭐ **[AppFlowy](https://appflowy.com/)** - Note-Taking / All Platforms + Web / [Discord](https://discord.com/invite/appflowy-903549834160635914) / [GitHub](https://github.com/AppFlowy-IO)
 * ⭐ **[Logseq](https://logseq.com/)** - Outlining / All Platforms / [Discord](https://discord.com/invite/VNfUaTtdFb) / [GitHub](https://github.com/logseq/logseq)
 * ⭐ **[Notesnook](https://notesnook.com/)** - Note-Taking / E2EE / All Platforms + Web / [Discord](https://discord.com/invite/zQBK97EE22) / [GitHub](https://github.com/streetwriters/notesnook)
@@ -563,6 +563,7 @@
 * [DFonts](https://www.dfonts.org/)
 * [⁠FontYukle](https://www.fontyukle.net/)
 * [⁠Font.Download](https://font.download/)
+* [Free Font Download](https://www.freefontdownload.org/)
 * [Font Spring](https://www.fontspring.com/free)
 * [⁠FontBolt](https://www.fontbolt.com/)
 * [Best Font](https://best-font.com/)

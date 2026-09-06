@@ -8,7 +8,7 @@
 
 * 🌐 **[Open Slum](https://open-slum.org/)**, [2](https://open-slum.pages.dev/) - Book Site Index / Uptime Tracking
 * ⭐ **[Anna's Archive](https://annas-archive.gl/)**, [2](https://annas-archive.pk), [3](https://annas-archive.gd) - Books / Comics / [Mirrors](https://en.wikipedia.org/wiki/Anna's_Archive) / [Deploy Locally](https://software.annas-archive.gl/AnnaArchivist/annas-archive) / [Matrix](https://matrix.to/#/#annas:archivecommunication.org) / [Subreddit](https://www.reddit.com/r/Annas_Archive/)
-* ⭐ **[Z-Library](https://z-lib.gd/)**, [2](https://z-library.sk/), [3](https://1lib.sk/), [4](https://z-lib.fm/), [5](https://articles.sk/) - Books / Comics / [Apps / Extensions](https://go-to-library.sk/), [2](https://playtorrio.xyz/) / [.onion](http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion/), [2](http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion/) / [Subreddit](https://www.reddit.com/r/zlibrary/)
+* ⭐ **[Z-Library](https://z-lib.gd/)**, [2](https://z-library.sk/), [3](https://1lib.sk/), [4](https://z-lib.fm/), [5](https://articles.sk/), [6](https://z-library.im/), [7](https://z-lib.sk/) - Books / Comics / [Apps / Extensions](https://go-to-library.sk/), [2](https://playtorrio.xyz/) / [.onion](http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion/), [2](http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion/) / [Subreddit](https://www.reddit.com/r/zlibrary/)
 * ⭐ **[Mobilism](https://forum.mobilism.org)**, [2](https://forum.mobilism.me/) - Books / Audiobooks / Magazines / Newspapers / Comics / [Ranks](https://github.com/fmhy/edit/blob/main/docs/.vitepress/notes/mobilism-ranks.md)
 * ⭐ **[MyAnonaMouse](https://www.myanonamouse.net/)** - Books / Audiobooks / Comics / Sheet Music / Torrents / [Requires Invite](https://www.myanonamouse.net/inviteapp.php)
 * ⭐ **[Library Genesis](https://libgen.li/)**, [2](https://libgen.gl/), [3](https://libgen.bz/), [4](https://libgen.vg/) - Books / Comics / Manga / [Tools](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/storage#wiki_libgen_tools) / [Mirrors](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/storage/#wiki_libgen_mirrors) / [Subreddit](https://reddit.com/r/libgen)
@@ -104,7 +104,7 @@
 * ⭐ **[KOReader](https://koreader.rocks/)** - Ebook Reader / Linux, Android / [Plugins](https://kindlemodshelf.me/plugins), [2](https://github.com/koreader/contrib) / [Settings Guide](https://rentry.co/koreadersettings) / [GitHub](https://github.com/koreader/koreader)
 * ⭐ **[Koodo](https://www.koodoreader.com/)** - Ebook Reader / All Platforms / [GitHub](https://github.com/koodo-reader/koodo-reader)
 * ⭐ **[SumatraPDFReader](https://www.sumatrapdfreader.org/free-pdf-reader)** - Ebook & PDF Reader / Windows / [GitHub](https://github.com/sumatrapdfreader/sumatrapdf)
-* [Sioyek](https://sioyek.info/) - PDF / Windows, macOS, Linux
+* [Sioyek](https://sioyek.info/) - PDF Reader / Windows, macOS, Linux
 * [Foxit](https://www.foxit.com/pdf-reader/) - PDF Reader / All Platforms / [Features](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/download#wiki_.25BA_software_sites)(search) / [Warning](https://github.com/fmhy/edit/blob/main/docs/.vitepress/notes/foxit-warning.md)
 * [⁠BookOrbit](https://bookorbit.app/) or [⁠Grimmory](https://grimmory.org/) - Ebook Managers / Readers / Self-Hosted
 * [PlayTorrio](https://playtorrio.xyz/), [2](https://playtorrio.pages.dev/) - Ebook Reader / Windows, macOS, Linux, Android / [Subreddit](https://www.reddit.com/r/PlayTorrio/) / [Discord](https://discord.gg/bbkVHRHnRk) / [GitHub](https://github.com/ayman708-UX/PlayTorrioV2)
@@ -115,12 +115,13 @@
 * [Alexandria](https://github.com/btpf/Alexandria) - Ebook Reader / Windows, macOS, Linux
 * [Librum](https://librumreader.com) - Ebook Reader / Windows, macOS, Linux / [GitHub](https://github.com/Librum-Reader/Librum)
 * [Thorium](https://thorium.edrlab.org/) - Ebook Reader / Windows, macOS, Linux
-* [Okular](https://okular.kde.org/) - PDF / Windows, macOS, Linux
+* [Okular](https://okular.kde.org/) - PDF Reader / Windows, macOS, Linux
 * [Aquile Reader](https://apps.microsoft.com/detail/9p08t4jltqnk) - Ebook Reader / Windows
 * [Icecream Reader](https://icecreamapps.com/Ebook-Reader/) - Ebook Reader / Windows
 * [Foliate](https://johnfactotum.github.io/foliate/) - Ebook Reader / Linux
-* [qPDFview](https://launchpad.net/qpdfview) - PDF / Windows
-* [MuPDF](https://mupdf.com/) - PDF / Windows, Linux, Android
+* [qPDFview](https://launchpad.net/qpdfview) - PDF Reader / Windows
+* [MuPDF](https://mupdf.com/) - PDF Reader / Windows, Linux, Android
+* [⁠Zathura](https://pwmt.org/projects/zathura/) - PDF Reader / Linux
 * [Evince](https://apps.gnome.org/Evince/) - PDF / DjVu Reader / Linux / [GitLab](https://gitlab.gnome.org/GNOME/evince)
 * [Yomu](https://www.yomu-reader.com/) - Ebook Reader / macOS, iOS
 * [FF PDF](https://github.com/sdushantha/ff-pdf/) - PDF / Linux
@@ -225,7 +226,6 @@
 * ⭐ **[⁠NovelFire](https://novelfire.net/)** or [NovelPhoenix](https://novelphoenix.com/) - Online Reading
 * [LNORI](https://lnori.com/) - Online Reading
 * [Wuxiabox](https://www.wuxiabox.com/) - Online Reading
-* [NovelNext](https://novelnext.com/) - Online Reading
 * [⁠Cyrisia](https://cyrisia.com/) - Online Reading
 * [WuxiaSpot](https://www.wuxiaspot.com/) - Online Reading
 * [⁠ReChapters](https://www.rechapters.com/) - Online Reading
@@ -243,7 +243,7 @@
 * [NovelGo](https://novelgo.id) - Online Reading
 * [Armaell's Library](https://armaell-library.net/) - Downloads
 * [Baka-Tsuki](https://www.baka-tsuki.org) - Online Reading
-* [NovelArchive](https://novelarchive.cc/) - Online Reading
+* [NovelArchive](https://novelarchive.cc/) - Online Reading / Downloads
 * [WuxiaWorld.com](https://www.wuxiaworld.com/) - Online Reading
 * [⁠WuxiaDreams](https://wuxiadreams.com/) - Online Reading
 * [AsianHobbyist](https://www.asianhobbyist.com/) - Online Reading
@@ -352,10 +352,8 @@
 
 ## ▷ Streaming
 
-* ⭐ **[NEPU Audiobooks](https://nepu.to/ebooks)**, [2](https://nepu.is/ebooks), [3](https://nepu.net/ebooks), [4](https://nepu.app/ebooks), [5](https://nepu.is/ebooks)
+* ⭐ **[NEPU Audiobooks](https://nepu.io/ebooks)**, [2](https://nepu.net/ebooks), [3](https://nepu.app/ebooks), [4](https://nepu.is/ebooks) / [Status](https://rar.to/) / [Discord](https://discord.gg/nepu)
 * [FullLengthAudiobooks](https://fulllengthaudiobooks.com/)
-* [HDAudiobooks](https://hdaudiobooks.net/)
-* [BigAudiobooks](https://bigaudiobooks.net/)
 * [Mapple](https://mapplee.com/audiobooks)
 * [HotAudioBooks](https://hotaudiobooks.com/)
 * [BookAudiobook](https://bookaudiobook.net/)
@@ -936,6 +934,7 @@
 ## ▷ Comic Tracking / Databases
 
 * ⭐ **[LeagueOfComicGeeks](https://leagueofcomicgeeks.com/)** - Comic Tracking / Database / Releases
+* [⁠Comic Vine](https://comicvine.gamespot.com/) - Comic Database / Forum
 * [⁠Grand Comics Database](https://www.comics.org/) - Comic Database
 * [The Webcomic List](https://www.thewebcomiclist.com/) - Webcomic Database / Release Tracker
 * [piperka](https://piperka.net/) - Webcomic Database / Release Tracker
@@ -974,6 +973,7 @@
 * [TasteDive](https://tastedive.com/books) - Discovery and Recommendations
 * [⁠r/TrueLit Top 100 Lists](https://www.reddit.com/r/TrueLit/wiki/top100lists) - Book Recommendations
 * [Readow](https://readow.ai/) - Book Recommendations
+* [⁠The Greatest Literature](https://editoreric.com/) - Book Recommendations / Top Lists
 * [Book DNA](https://bookdna.com/) - Book Recommendations
 * [Greater Books](http://www.greaterbooks.com/) - Book Recommendations
 * [⁠Uncovered](https://uncovered.ink/) - Book Sample / Recommendation Tool
@@ -1027,6 +1027,7 @@
 * [eBook Converter Bot](https://t.me/ebook_converter_bot) - Telegram Ebook Converter / [GitHub](https://github.com/yshalsager/ebook-converter-bot)
 * [CrowBook](https://github.com/crowdagger/crowbook) - Markdown to EPUB Converter
 * [WorldCat](https://www.worldcat.org/), [Libby](https://libbyapp.com/) / [Downloader](https://github.com/PsychedelicPalimpsest/LibbyRip), [LibrarySearch](https://librarysearch.gre.ac.uk/) or [TRL](https://www.trl.org/) - Search Local Libraries / [Extension](https://www.libraryextension.com/)
+* [⁠Library Technology](https://librarytechnology.org/libraries/) - Global Library Database
 * [How to Get Library Card Online](https://rentry.co/9b3vdo)
 * [⁠⁠ReciproCard](https://reciprocard.com/) - Find Library Cards for Reciprocal Borrowing
 * [⁠Books Unbanned](https://booksunbanned.com/) - Free Digital US Library Cards / Ages 13-26 Only

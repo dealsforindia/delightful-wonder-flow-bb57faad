@@ -133,10 +133,10 @@
 * [Kasm](https://kasm.com/) - Container Streaming Platform / Resource Intensive / Windows, Linux / [GitHub](https://github.com/kasmtech/KasmVNC)
 * [HopToDesk](https://www.hoptodesk.com/) / Windows, macOS, Linux, Android, iOS / [GitLab](https://gitlab.com/hoptodesk/hoptodesk)
 * [CoScreen](https://www.coscreen.co/) / Windows, macOS
+* [p2p.kiwi](https://p2p.kiwi/) / Windows, macOS, Linux / [GitHub](https://github.com/dont-be-evil-company/p2p.kiwi)
 * [⁠DWS](https://www.dwservice.net/) / Windows, macOS, Linux
 * [Remote Desktop Connection](https://support.microsoft.com/en-us/windows/how-to-use-remote-desktop-5fe128d5-8fb1-7a23-3b8a-41e636865e8c) - Built Into Windows / Windows / [Note](https://github.com/fmhy/edit/blob/main/docs/.vitepress/notes/rdc.md)
 * [Remotly](https://remotly.com/) / Windows, Linux
-* [Bananas](https://getbananas.net/) / Windows, macOS, Linux / [Discord](https://discord.gg/BeN43eJVWS) / [GitHub](https://github.com/mistweaverco/bananas)
 * [ChromeRemoteDesktop](https://remotedesktop.google.com/) - Browser
 * [InputDirector](https://www.inputdirector.com/) - Multi-Computer Client / Windows
 * [Mouse Without Borders](https://www.microsoft.com/en-us/garage/wall-of-fame/mouse-without-borders/) - Multi-Computer Client / Windows
@@ -320,7 +320,9 @@
 * [Ergogen](https://ergogen.xyz/) - Design / Make Ergonomic Keyboards
 * [⁠Keyboard Tester](https://keyboardtest.io/) or [Key Test](https://en.key-test.ru/) - Keyboard Testers
 * [HotkeyP](https://sourceforge.net/projects/hotkeyp/) or [CheatKeys](https://cheatkeys.com/cheatsheet) - Hotkey Remapping
-* [⁠Mouse Tester](https://mousetester.io/) - Mouse Testing Tools 
+* [OpenMouse](https://openmouse.app/) / [Discord](https://discord.com/invite/yxC9jzMdw6) / [GitHub](https://github.com/OpenMouse-Project) or [Piper](https://github.com/libratbag/piper) - Mouse Config Tools
+* [⁠Onboard Memory Manager](https://support.logi.com/hc/en-gb/articles/360059641133-Onboard-Memory-Manager) - Modify Logitech G Mouse Memory
+* [⁠Mouse Tester](https://mousetester.io/) - Mouse Testing Tools
 * [X-Mouse Button Control](https://www.highrez.co.uk/downloads/XMouseButtonControl.htm) - Re-Map Mouse Buttons / Scroll Wheel
 * [MoveMouse](https://github.com/sw3103/movemouse/) or [MouseJiggler](https://github.com/arkane-systems/mousejiggler) - Simulate User Activity
 * [Raw Accel](https://github.com/RawAccelOfficial/rawaccel) - Mouse Acceleration Tool
@@ -413,7 +415,8 @@
 
 * [MagNumDB](https://www.magnumdb.com/), [ErrorLookup](https://github.com/henrypp/errorlookup) or [Microsoft Error Lookup](https://learn.microsoft.com/en-us/windows/win32/debug/system-error-code-lookup-tool) - Windows Debugging Tools
 * [Troubleshooting Flowcharts](https://www.fonerbooks.com/pcrepair.htm) - PC Troubleshooting Flowcharts
-* [Medicat](https://medicatusb.com/) / [GitHub](https://github.com/mon5termatt/medicat_installer), [⁠SergeiStrelec](https://sergeistrelec.name/), [PhoenixPE](https://github.com/PhoenixPE/PhoenixPE) or [Hiren's BootCD PE](https://www.hirensbootcd.org/) - WinPE / Recovery Toolkits
+* [Medicat](https://medicatusb.com/) / [GitHub](https://github.com/mon5termatt/medicat_installer), [⁠SergeiStrelec](https://sergeistrelec.name/) or [Hiren's BootCD PE](https://www.hirensbootcd.org/) - WinPE / Recovery Toolkits
+* [PhoenixPE](https://github.com/PhoenixPE/PhoenixPE) - WinPE Builder Tool 
 * [r/TechSupport](https://www.reddit.com/r/techsupport/) / [Wiki](https://rtech.support/) - Tech Support Subreddit / [Discord](https://discord.gg/2EDwzWa)
 * [Hardforum](https://hardforum.com/), [TechGuy](https://www.techguy.org/), [Eleven Forums](https://www.elevenforum.com/) or [Ten Forums](https://www.tenforums.com/) - Tech Support Forums
 
