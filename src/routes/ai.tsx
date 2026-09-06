@@ -4,7 +4,7 @@ import { DefaultChatTransport, type UIMessage } from "ai";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { FmhyLayout } from "@/components/FmhyLayout";
 import { MarkdownView } from "@/components/MarkdownView";
-import { Brain, MessageSquare, Pin, RefreshCw, Search, Map, Sparkles, Loader2, LayoutGrid, BookOpen } from "lucide-react";
+import { Brain, MessageSquare, Pin, RefreshCw, Search, Map, Sparkles, Loader2, LayoutGrid, BookOpen, Send, Square } from "lucide-react";
 
 type AiSearchParams = { q?: string; mode?: "search" | "roadmap" };
 
@@ -199,14 +199,14 @@ function AiRoute() {
 
   return (
     <FmhyLayout>
-      <div className="max-w-3xl mx-auto flex flex-col h-[calc(100vh-8rem)]">
+      <div className="max-w-3xl mx-auto flex flex-col h-[calc(100dvh-8rem)]">
         <div className="flex items-start justify-between gap-3 pb-3 border-b border-border">
           <div className="min-w-0">
-            <div className="flex items-center gap-2 text-xs text-muted-foreground">
-              <span className="inline-block h-2 w-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_-2px_var(--primary)]" />
-              AI Concierge · Gemini 3.1 Pro · 26k tools · thinking
+            <div className="flex items-center gap-2 text-[11px] sm:text-xs text-muted-foreground truncate">
+              <span className="inline-block h-2 w-2 shrink-0 rounded-full bg-primary animate-pulse shadow-[0_0_10px_-2px_var(--primary)]" />
+              <span className="truncate">AI Concierge · 26k tools</span>
             </div>
-            <h1 className="mt-1 text-xl sm:text-2xl font-extrabold tracking-tight">
+            <h1 className="mt-1 text-lg sm:text-2xl font-extrabold tracking-tight">
               Ask.{" "}
               <span className="text-primary">
                 Get the right free tool.
@@ -214,16 +214,27 @@ function AiRoute() {
             </h1>
           </div>
           <div className="flex items-center gap-2 shrink-0">
+            {messages.length > 0 && !busy && (
+              <button
+                onClick={() => regenerate()}
+                title="Regenerate last answer"
+                aria-label="Regenerate last answer"
+                className="h-9 w-9 grid place-items-center rounded-lg border border-border text-muted-foreground hover:bg-accent"
+              >
+                <RefreshCw className="h-4 w-4" />
+              </button>
+            )}
             {messages.length > 0 && (
               <button
                 onClick={reset}
-                className="text-xs px-2.5 py-1.5 rounded-md border border-border hover:bg-accent shrink-0"
+                className="text-xs px-2.5 h-9 rounded-lg border border-border hover:bg-accent shrink-0"
               >
-                + New chat
+                + New
               </button>
             )}
           </div>
         </div>
+
 
         {memory.length > 0 && (
           <div className="mt-3 rounded-lg border border-border bg-muted/40 p-2.5 text-xs">
@@ -318,7 +329,7 @@ function AiRoute() {
           )}
         </div>
 
-        <form onSubmit={submit} className="pt-3 border-t border-border">
+        <form onSubmit={submit} className="pt-3 border-t border-border pb-[env(safe-area-inset-bottom)]">
           <div className="flex gap-2 items-end">
             <textarea
               ref={composerRef}
@@ -331,38 +342,34 @@ function AiRoute() {
                 }
               }}
               rows={Math.min(6, Math.max(1, input.split("\n").length))}
-              placeholder="Ask anything — e.g. how do I earn from affiliate marketing?"
-              className="flex-1 min-h-[44px] max-h-40 px-4 py-2.5 rounded-xl bg-muted border border-border resize-none focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary text-sm"
-              autoFocus
+              placeholder="What do you want to do?"
+              className="flex-1 min-w-0 min-h-[44px] max-h-40 px-4 py-2.5 rounded-xl bg-muted border border-border resize-none focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary text-sm"
             />
             {busy ? (
               <button
                 type="button"
                 onClick={() => stop()}
-                className="px-4 h-11 rounded-xl border border-destructive text-destructive font-medium hover:bg-destructive/10 shrink-0"
+                className="h-11 w-11 grid place-items-center rounded-xl border border-destructive text-destructive hover:bg-destructive/10 shrink-0"
+                title="Stop"
+                aria-label="Stop generating"
               >
-                Stop
+                <Square className="h-4 w-4" />
               </button>
             ) : (
               <button
                 type="submit"
                 disabled={busy || input.trim().length < 2}
-                className="px-4 h-11 rounded-xl bg-primary text-primary-foreground font-medium disabled:opacity-50 shrink-0 shadow-[0_0_18px_-8px_var(--primary)] hover:brightness-110"
+                className="h-11 w-11 grid place-items-center rounded-xl bg-primary text-primary-foreground disabled:opacity-50 shrink-0 shadow-[0_0_18px_-8px_var(--primary)] hover:brightness-110"
+                title="Send"
+                aria-label="Send message"
               >
-                Send
-              </button>
-            )}
-            {messages.length > 0 && !busy && (
-              <button
-                type="button"
-                onClick={() => regenerate()}
-                className="px-4 h-11 rounded-xl border border-border hover:bg-accent hover:border-primary/40 font-medium text-muted-foreground shrink-0"
-                title="Regenerate the last assistant response"
-              >
-                <RefreshCw className="h-4 w-4" />
+                <Send className="h-4 w-4" />
               </button>
             )}
           </div>
+          <p className="mt-1.5 text-[10px] text-muted-foreground/70 text-center">
+            Enter to send · Shift+Enter for a new line · your chat is saved on this device
+          </p>
         </form>
       </div>
     </FmhyLayout>
@@ -437,10 +444,10 @@ function MessageView({ message, onAskAbout }: { message: UIMessage; onAskAbout: 
       })}
 
       {text && (
-        <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity flex gap-1.5">
           <button
             onClick={() => onAskAbout(text)}
-            className="text-[11px] px-2 py-0.5 rounded-md border border-border hover:bg-accent hover:border-primary/40 text-muted-foreground inline-flex items-center gap-1"
+            className="text-[11px] px-2 py-1 rounded-md border border-border hover:bg-accent hover:border-primary/40 text-muted-foreground inline-flex items-center gap-1"
             title="Quote this reply into your next question"
           >
             <Pin className="h-3 w-3" /> Ask about this
