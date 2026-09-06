@@ -58,8 +58,9 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-40 backdrop-blur-xl bg-card/70 border-b border-border/60 shadow-[inset_0_1px_0_0_color-mix(in_oklab,var(--primary)_50%,transparent)]">
+      <header className="sticky top-0 z-40 backdrop-blur-xl bg-[linear-gradient(to_bottom,color-mix(in_oklab,var(--card)_92%,var(--primary)_8%),color-mix(in_oklab,var(--card)_96%,transparent))] border-b border-border/70 shadow-[0_1px_0_0_color-mix(in_oklab,var(--primary)_28%,transparent),0_8px_24px_-18px_color-mix(in_oklab,var(--primary)_60%,transparent)]">
         <div className="mx-auto max-w-[1400px] px-4 md:px-6 h-14 flex items-center gap-3">
+
           <button
             className="md:hidden h-9 w-9 grid place-items-center rounded-lg border border-border hover:bg-accent"
             onClick={() => setNavOpen(true)}
@@ -71,38 +72,39 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
             <img src="/logo.jpg" alt="Unlocked" className="h-8 w-8 rounded-full ring-2 ring-primary object-cover" />
             <span className="hidden sm:inline">Unlocked<span className="text-primary">.</span></span>
           </Link>
-          <nav className="hidden lg:flex items-center gap-1 text-sm ml-4">
-            <Link to="/ai" className="px-3 py-1.5 rounded hover:bg-accent font-medium bg-primary/10 text-primary inline-flex items-center gap-1.5">
+          <nav className="hidden lg:flex items-center gap-0.5 text-sm ml-4 rounded-full border border-border/70 bg-muted/40 p-1">
+            <Link to="/ai" className="px-3 py-1.5 rounded-full font-medium bg-primary/15 text-primary hover:bg-primary/25 inline-flex items-center gap-1.5 transition-colors">
               <Sparkles className="h-3.5 w-3.5" /> AI
             </Link>
-            <Link to="/$page" params={{ page: "beginners-guide" }} className="px-3 py-1.5 rounded hover:bg-accent inline-flex items-center gap-1.5">
+            <Link to="/$page" params={{ page: "beginners-guide" }} className="px-3 py-1.5 rounded-full hover:bg-accent inline-flex items-center gap-1.5 transition-colors">
               <BookOpen className="h-3.5 w-3.5" /> Guide
             </Link>
-            <Link to="/$page" params={{ page: "posts" }} className="px-3 py-1.5 rounded hover:bg-accent inline-flex items-center gap-1.5">
+            <Link to="/$page" params={{ page: "posts" }} className="px-3 py-1.5 rounded-full hover:bg-accent inline-flex items-center gap-1.5 transition-colors">
               <FileText className="h-3.5 w-3.5" /> Posts
             </Link>
-            <Link to="/browse" className="px-3 py-1.5 rounded hover:bg-accent inline-flex items-center gap-1.5">
+            <Link to="/browse" className="px-3 py-1.5 rounded-full hover:bg-accent inline-flex items-center gap-1.5 transition-colors">
               <LayoutGrid className="h-3.5 w-3.5" /> Browse all
             </Link>
-            <Link to="/$page" params={{ page: "startpage" }} className="px-3 py-1.5 rounded hover:bg-accent inline-flex items-center gap-1.5">
+            <Link to="/$page" params={{ page: "startpage" }} className="px-3 py-1.5 rounded-full hover:bg-accent inline-flex items-center gap-1.5 transition-colors">
               <Compass className="h-3.5 w-3.5" /> Startpage
             </Link>
           </nav>
 
+
           <div className="flex-1" />
-          <div className="hidden md:flex items-stretch">
+          <div className="hidden md:flex items-stretch rounded-full border border-border/70 bg-muted/50 overflow-hidden focus-within:border-primary/60 focus-within:shadow-[0_0_0_3px_color-mix(in_oklab,var(--primary)_18%,transparent)] transition-shadow">
             <input
               value={q}
               onChange={(e) => setQ(e.target.value)}
               onKeyDown={(e) => { if (e.key === "Enter") doSearch(); }}
               placeholder="Search tools…"
-              className="w-72 h-9 px-3 rounded-l-lg bg-muted border border-border text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+              className="w-72 h-9 pl-4 pr-3 bg-transparent text-sm focus:outline-none"
             />
             <button
               onClick={doSearch}
               disabled={!q.trim()}
               title="Search tools"
-              className="h-9 px-2.5 grid place-items-center border-y border-border hover:bg-accent disabled:opacity-40"
+              className="h-9 px-2.5 grid place-items-center hover:bg-accent disabled:opacity-40 transition-colors"
             >
               <Search className="h-4 w-4" />
             </button>
@@ -110,7 +112,7 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
               onClick={() => askAi("search")}
               disabled={q.trim().length < 3}
               title="Ask AI to find tools"
-              className="h-9 px-2.5 text-xs font-medium border-y border-border bg-primary/10 hover:bg-primary/20 text-primary disabled:opacity-40 inline-flex items-center gap-1"
+              className="h-9 px-3 text-xs font-medium border-l border-border/70 bg-primary/10 hover:bg-primary/25 text-primary disabled:opacity-40 inline-flex items-center gap-1 transition-colors"
             >
               <Sparkles className="h-3.5 w-3.5" /> Ask
             </button>
@@ -118,11 +120,12 @@ export function FmhyLayout({ children, aside }: { children: ReactNode; aside?: R
               onClick={() => askAi("roadmap")}
               disabled={q.trim().length < 3}
               title="Build a step-by-step plan"
-              className="h-9 px-2.5 text-xs font-medium border rounded-r-lg border-border bg-primary/10 hover:bg-primary/20 text-primary disabled:opacity-40 inline-flex items-center gap-1"
+              className="h-9 px-3 text-xs font-medium border-l border-border/70 bg-primary/10 hover:bg-primary/25 text-primary disabled:opacity-40 inline-flex items-center gap-1 transition-colors"
             >
               <Map className="h-3.5 w-3.5" /> Plan
             </button>
           </div>
+
           <button
             onClick={() => setSearchOpen(true)}
             aria-label="Search"
