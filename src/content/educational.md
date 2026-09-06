@@ -104,7 +104,7 @@
 * [AnimaGraffs](https://animagraffs.com/) - Animated Infographs
 * [Memory Toys](https://memory.toys/), [⁠Memory League](https://memoryleague.com/), [Dual N-Back](https://nbacking.com/) or [BrainScale](https://brainscale.net/) - Memory Tests / Training
 * [⁠Art of Memory](https://artofmemory.com/) - Memory Improvement Book, Games, and Forums
-* [Information Is Beautiful](https://informationisbeautiful.net/),  [The Pudding](https://pudding.cool/), [⁠sheets.works](https://sheets.works/data-viz/) or [HalcyonMaps](https://www.halcyonmaps.com/infographics) - Data / Information / Infographics / Visualizations
+* [Information Is Beautiful](https://informationisbeautiful.net/), [The Pudding](https://pudding.cool/), [⁠sheets.works](https://sheets.works/data-viz/) or [HalcyonMaps](https://www.halcyonmaps.com/infographics) - Data / Information / Infographics / Visualizations
 * [r/coolguides](https://www.reddit.com/r/coolguides/top/?screen_view_count=2&t=all) or [coolguid.es](https://coolguid.es/) - Guides & Tutorials
 * [⁠Academy Network](https://academynetwork.net/) - Decentralized Guide Sharing App
 * [HowStuffWorks](https://www.howstuffworks.com/) - Learn How Things Work
@@ -132,7 +132,7 @@
 * [Persepolis Reimagined](https://persepolis.getty.edu/) - Explore Persepolis Recreation
 * [BelowTheSurface](https://belowthesurface.amsterdam/en) - Archeological Object DB of Amsterdam
 * [WW2 in 100 Objects](https://www.tweedewereldoorlog.nl/100voorwerpen/en/virtual-tour/) - WW2 Museum Virtual Tour
-* [Spitfire Panorama](https://www.haraldjoergens.com/panoramas/spitfire-td314/files/) - Spitfire Mark IX Cockpit Interactive Panorama
+* [Harald Joergens Panoramas](https://www.haraldjoergens.com/panoramas.php) - Aircraft Virtual Tours 
 * [Virtual Vist Tours](https://www.virtualvisittours.com/) - Ireland Virtual Tours
 * [Virtual Yosemite](https://www.virtualyosemite.org/) - Virtual Yosemite Tour
 * [Matterport](https://matterport.com/discover) - Explore Real Places Digitally
@@ -518,6 +518,7 @@
 * [Transit Finder](https://transit-finder.com/), [ISS Tracker](https://isstracker.pl/en), [Spot The Station](https://spotthestation.nasa.gov/) or [Where The ISS At?](https://wheretheiss.at/) - ISS Transit Tracking
 * [Satellite Map](https://satellitemap.space/), [KeepTrack](https://keeptrack.space/) / [GitHub](https://github.com/thkruz/keeptrack.space/), [SGP4](https://sgp4gl-demo.vercel.app/) / [GitHub](https://github.com/Kayhan-Space/sgp4gl-demo), [KeepTrackSpace](https://www.keeptrack.space/), [⁠Track The Sky](https://trackthesky.com/), [Find Starlink](https://findstarlink.com/), [Space Atlas](https://www.spaceatlas.tech/) / [X](https://x.com/ApoStructura), [⁠azmth](https://azmth.space/) or [Look4Sat](https://github.com/rt-bishop/Look4Sat) - Satellite Orbit Maps / Trackers
 * [See A Satellite Tonight](https://james.darpinian.com/satellites/) - Satellite Viewing Schedule / Locations
+* [⁠Visual Satellite Observer](https://www.satobs.org/) - Satellite Viewing Guides / Information
 * [Spacebook](https://www.spacebook.com/) - Evaluates / Tracks Satellite Collision Risks & Maneuvers
 * [Leolabs Space](https://platform.leolabs.space/visualization) - Low Earth Orbit Simulator / [X](https://x.com/leolabs_space)
 
@@ -675,7 +676,7 @@
 * [Tank Archives](https://www.tankarchives.com/) - WW2 Armoured Warfare Documents / [X](https://x.com/Tank_Archives)
 * [NHHC](https://www.history.navy.mil/), [⁠RNRA](https://www.royalnavyresearcharchive.org.uk/), [⁠NavSource](https://www.navsource.net/), [WarshipsResearch](https://warshipsresearch.blogspot.com/) or [⁠The Dreadnought Project](https://www.dreadnoughtproject.org/) / [X](https://x.com/NavyHistorian) - Naval & Maritime History Sites
 * [⁠Warbirds Resource Group](https://www.warbirdsresourcegroup.org/) - Military Aviation History Encyclopedia
-* [Spitfire Panorama](https://www.haraldjoergens.com/panoramas/spitfire-td314/files/) - Spitfire Mark IX Cockpit Interactive Panorama
+* [Harald Joergens Panoramas](https://www.haraldjoergens.com/panoramas.php) - Aircraft Virtual Tours 
 * [⁠Warbird Alley](http://www.warbirdalley.com/) or [⁠Forgotten Aviation](https://forgottenaviation.com/) - Historical Archives of Military Aircraft
 * [The History of Maritime Piracy](http://www.cindyvallar.com/pirates.html) - Piracy History Blog
 * [Byzantine Military](https://byzantinemilitary.blogspot.com/) - Byzantine Military History
@@ -980,29 +981,31 @@
 * 🌐 **[r/Chess Books](https://reddit.com/r/chess/wiki/books)** - Community Recommended Books
 * ↪️ **[Play Chess Online](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/games#wiki_.25B7_chess)**
 * ⭐ **[Lucas Chess](https://lucaschess.pythonanywhere.com/)** - Chess Training Software
+* ⭐ **[Pawn Appétit](https://github.com/Pawn-Appetit/pawn-appetit)** or [En Croissant](https://encroissant.org/) - Chess Analysis Tool / [Game Databases](https://encroissant.org/docs/assets/databases)
 * ⭐ **[Chess Tempo](https://chesstempo.com/)** - Tactics Training / Endgame Solver
 * ⭐ **[Scid vs. PC](https://scidvspc.sourceforge.net/)** - Chess Database Software
-* [ChessGames](https://www.chessgames.com/) - Chess Database / Community
+* [⁠Maia Chess](https://www.maiachess.com/) - Human-Like AI Chess Opponent
+* [ChessGames](https://www.chessgames.com/) or [⁠Lumbra's Gigabase](https://lumbrasgigabase.com/) - Chess Game Databases
 * [ChessLab](https://chesslab.me/) - Learning Community / [Discord](https://discord.com/invite/AA5G5f9wKC)
 * [⁠Chess Results](https://chess-results.com/) - Chess Tournament Results Database
-* [Listudy](https://listudy.org/en) - Blindfolded Tactics / Openings
+* [Listudy](https://listudy.org/en) - Spaced Repetition Tactics / Blind Tactics / Pieceless Tactics
 * [Chessable](https://www.chessable.com/) - Openings / Endgames
+* [⁠Syzygy Tables](https://syzygy-tables.info/) - Practice Endgames Using Tablebase Data
 * [TheChessWebsite](https://www.thechesswebsite.com/) - Learn / Practice Chess
+* [⁠Blitz Tactics](https://blitztactics.com/) - Fast-Paced Chess Puzzle Training
+* [⁠ChessMD](https://chessmd.org/) - Chess Training / Match Analysis / [GitHub](https://github.com/ChessMD/ChessMD)
+* [Chess Monitor](https://www.chessmonitor.com/) - Aggregate Lichess and Chess.com Match History
 * [Chess Coach](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android#wiki_.25B7_modded_apks) - Chess Coaching App
 * [⁠Chess OCR](https://helpman.komtera.lt/chessocr/) - Multi-Site Digital Chessboard Analysis
 * [⁠Shâh Kur](https://shahkur.specr.net/) - Blindfolded Chess Practice
-* [WintrChess](https://wintrchess.com/), [2](https://chess.wintrcat.uk/) - Engine Analysis
-* [⁠Chess Analysis](https://chess-analysis.org/) - Engine Analysis / [Discord](https://discord.gg/hvrEXhX8qA)
 * [Pawn Appétit](https://github.com/ChessKitchen/pawn-appetit) - Engine Analysis
-* [Chesskit](https://chesskit.org/) - Engine Analysis / [Discord](https://discord.com/invite/Yr99abAcUr) / [GitHub](https://github.com/GuillaumeSD/Chesskit)
+* [WintrChess](https://wintrchess.com/), [2](https://chess.wintrcat.uk/), [⁠Chess Analysis](https://chess-analysis.org/) / [Discord](https://discord.gg/hvrEXhX8qA) or [Chesskit](https://chesskit.org/) / [Discord](https://discord.com/invite/Yr99abAcUr) / [GitHub](https://github.com/GuillaumeSD/Chesskit) - Lightweight Web Engine Analysis
 * [YottaChess](https://www.yottachess.com/) - Professional Player Database
-* [⁠Chessigma](https://www.chessigma.com/) - Engine Analysis / [Discord](https://discord.gg/dy9VXd5n3v)
-* [En Croissant](https://encroissant.org/) - Chess Analysis Tool
+* [OpeningTree](https://www.openingtree.com/) - Import Lichess and Chess.com Analysis
 * [⁠ChessBlunders](https://chessblunders.org/) - Analyze Chess Mistakes
 * [Chess Vision](https://chessvision.ai/) - Import Images Into Chess Engine
 * [⁠Tactic or Not](https://tacticornot.com/) - Evaluate Tactics / [Discord](https://discord.gg/2WWgsuZmag)
-* [OpeningTree](https://www.openingtree.com/) - Import Lichess and Chess.com Analysis
-* [Chess Monitor](https://www.chessmonitor.com/) - Aggregate Lichess and Chess.com Match History
+* [⁠The Week In Chess](https://theweekinchess.com/) - Weekly PGN Chess Game Archives
 * [2700chess](https://2700chess.com/) - Live Ratings for Super Grandmasters
 * [365Chess](https://www.365chess.com/) - Chess History / Lessons
 * [ChessVariants](https://www.chessvariants.com/index/favorites.php) - Chess Variant Encyclopedia
@@ -1053,7 +1056,7 @@
 
 * 🌐 **[Awesome Lego](https://github.com/ad-si/awesome-lego)** - LEGO Resources
 * [⁠Rebrickable](https://rebrickable.com/) - LEGO Collection Manager / Build Ideas
-* [⁠Mecabricks Workshop](https://www.mecabricks.com/en/workshop) or [BrickLink Studio](https://www.bricklink.com/v3/studio/download.page) - Virtual LEGO Building
+* [⁠Mecabricks Workshop](https://www.mecabricks.com/en/workshop), [LeoCAD](https://www.leocad.org/) / [GitHub](https://github.com/leozide/leocad) or [BrickLink Studio](https://www.bricklink.com/v3/studio/download.page) - Virtual LEGO Building / 3D Editors
 * [Brickset](https://brickset.com/), [⁠BrickEconomy](https://www.brickeconomy.com/) or [Bricklink](https://www.bricklink.com/) - LEGO Set Database / Reviews / Marketplaces
 * [⁠Brick Hound](https://brickhound.com/) - LEGO Deal Alerts 
 * [Brickognize](https://brickognize.com/) - LEGO Brick / Minifigure Identification Tool
@@ -1226,6 +1229,7 @@
 
 * 🌐 **[Cantonese Sheik](https://www.cantonese.sheik.co.uk/)** - Cantonese Learning Resources
 * [Live Lingua Cantonese](https://www.livelingua.com/courses/Cantonese) - Free Cantonese Courses
+* [⁠A Brief Cantonese Manual](https://schmitztimo.wordpress.com/2026/04/07/a-brief-cantonese-manual/) - Cantonese Beginners Manual 
 * [EdUHK](https://corpus.eduhk.hk/cantonese/e_index.html), [OpenCantonese](https://opencantonese.org/), [polyu](https://www.polyu.edu.hk/clc/cantonese/home/?lang=en) or [eMini_MOOC2k](https://www.eduhk.hk/cle/resources/Mini_MOOC2/index.htm) - Cantonese Learning / Practice
 * [Cantonese.ca](https://cantonese.ca/) or [CantoScrolls](https://cantoscrolls.com/) - Cantonese Vocabulary
 * [Beginner's Cantonese](https://ywjt2.user.srcf.net/cantonese/) - Cantonese Grammar Lesson 
@@ -1546,7 +1550,6 @@
 * [Advanced R](https://adv-r.hadley.nz/) - R Guide / [Solutions](https://advanced-r-solutions.rbind.io/)
 * [R Packages](https://r-pkgs.org/) - R Packages Guide
 * [R for Data Science](https://r4ds.had.co.nz/) - R Data Science Guide
-* [Zero to Nix](https://zero-to-nix.com/) - Nix Learning Guide
 * [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/index.html) - ggplot2 Guide
 * [Data Science Ipython Notebooks](https://github.com/donnemartin/data-science-ipython-notebooks), [Scipy Lectures](https://lectures.scientific-python.org/) or [Virgilio](https://virgili0.github.io/Virgilio/) / [GitHub](https://github.com/virgili0/Virgilio) - Learn DataScience
 * [Data Engineering Zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp) - Data Engineering Course
@@ -1721,7 +1724,6 @@
 * [⁠Bluebooky](https://bluebooky.com/) - SAT Practice Exams / Questions / Signup Required 
 * [SATArchive](https://www.satarchive.com/) - Previous SAT Test Archive
 * [SAT Reading](https://rentry.co/satreading) - Suggested SAT Reading
-* [SAT_Files_discussion](https://t.me/SAT_Files_discussion) - SAT Exam Discussion
 
 ***
 
@@ -1855,6 +1857,7 @@
 * [arTIfiCE](https://yvantt.github.io/arTIfiCE/) - TI CE Calculator Jailbreak
 * [⁠Numla](https://numla.app/) / [GitHub](https://github.com/davidesantangelo/numla) or [Math Notepad](https://mathnotepad.com/) - Live Calculative Notepads
 * [PhotoMath](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android#wiki_.25B7_modded_apks) (search), [Mathway](https://www.mathway.com/), [MathDF](https://mathdf.com/), [Tiger Algebra](https://www.tiger-algebra.com/), [⁠Maxima](https://maxima.sourceforge.io/) or [Symbolab](https://www.symbolab.com/) - Math / Algebra Problem Solvers
+* [⁠CalcPlex](https://calcplex.com/) - Graphing Calculator Guides 
 
 ***
 

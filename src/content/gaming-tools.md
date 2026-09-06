@@ -6,16 +6,15 @@
 
 # ► Gaming Tools
 
+* ↪️ **[Gaming Equipment Comparisons](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/misc#wiki_.25B7_gaming_equipment)**
 * ↪️ **[Download Managers](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/file-tools/#wiki_.25B7_download_managers)**
 * ↪️ **[Game Recording / Clipping](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/video-tools#wiki_.25B7_screen_recording)**
 * ↪️ **[Media Posters / Covers](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/image-tools#wiki_.25B7_media_covers_.2F_posters)**
 * ↪️ **[Game Soundtracks](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/audio#wiki_.25B7_game_soundtracks)**
-* ⭐ **[PCGamingWiki](https://www.pcgamingwiki.com/)** / [Discord](https://discord.gg/KDfrTZ8) or [⁠Mulderland](https://www.mulderland.com/) / [GitHub](https://github.com/MulderLand/MulderLoad) - Game Fixes & Enhancements
 * ⭐ **[Library of Codexes](https://libraryofcodexes.com/)** - Game Codex Library
 * ⭐ **[r/CrackWatch](https://www.reddit.com/r/CrackWatch/)**, [r/RepackWorld](https://reddit.com/r/RepackWorld), [⁠IsItCracked](https://isitcracked.com/), [GameStatus](https://gamestatus.info/) or [GitGud](https://discord.gg/APfesEBjjn) - Scene Release Trackers
 * ⭐ **[HowLongToBeat](https://howlongtobeat.com/)**, [2](https://hl2b.com/) - Find Average Game Lengths / [Discord](https://discord.gg/v5F26Dk)
 * ⭐ **[r/tipofmyjoystick](https://www.reddit.com/r/tipofmyjoystick/)** - Find Games via Screenshot or Description
-* ⭐ **[Game Pauser](https://madebyjase.com/game-pauser/)** - Pause Unpausable Cutscenes / [Source Code](https://madebyjase.com/game-pauser/source/)
 * ⭐ **[Valve Archive](https://valvearchive.com/)** - Rare Valve Data Archive
 * ⭐ **[Sunshine](https://app.lizardbyte.dev/Sunshine/)** or [Apollo](https://github.com/ClassicOldSong/Apollo) - Remote Server for Moonlight / [Mobile](https://github.com/ClassicOldSong/moonlight-android) / [Discord](https://discord.com/invite/d6MpcrbYQs) / [GitHub](https://github.com/LizardByte/Sunshine)
 * ⭐ **[Moonlight](https://moonlight-stream.org/)** - Gaming Remote Desktop Client / [Discord](https://discord.com/invite/CGg5JxN) / [GitHub](https://github.com/moonlight-stream)
@@ -52,12 +51,16 @@
 
 ## ▷ Game Launchers
 
+* **Note** - Many of these launchers also allow you to download or torrent games directly within them.
+
+***
+
 * ⭐ **[Playnite](https://playnite.link/)** - Game Library / Launcher / [Extensions](https://playnite.link/addons.html), [2](https://github.com/darklinkpower/PlayniteExtensionsCollection) / Windows / [Subreddit](https://www.reddit.com/r/playnite/) / [Discord](https://discord.com/invite/BrtABqe) / [GitHub](https://github.com/JosefNemec/Playnite/)
-* ⭐ **[Hydra](https://hydralauncher.gg/)** - Game Launcher / Torrent Client / Achievement Support / [Plugins](https://library.hydra.wiki/) / [Themes](https://hydrathemes.shop/) / Windows, Linux / [Telegram](https://t.me/hydralauncher) / [GitHub](https://github.com/hydralauncher/hydra)
+* ⭐ **[Hydra](https://hydralauncher.gg/)** - Game Launcher / Downloader / Torrent Client / Achievement Support / [Plugins](https://library.hydra.wiki/) / [Themes](https://hydrathemes.shop/) / Windows, Linux / [Telegram](https://t.me/hydralauncher) / [GitHub](https://github.com/hydralauncher/hydra)
 * ⭐ **[Ascendara](https://ascendara.app/)** - Game Library / Launcher / Downloader / Windows, Linux / [Discord](https://ascendara.app/discord) / [GitHub](https://github.com/Ascendara/ascendara)
 * ⭐ **[Project GLD](https://y0urd34th.github.io/Project-GLD/)** / Windows / [GitHub](https://github.com/Y0URD34TH/Project-GLD/) or **[GOG Galaxy](https://www.gog.com/galaxy)** (closed source) - Game Libraries / Launchers
 * [UC.DIRECT](https://union-crax.xyz/direct) - Game Launcher / Downloader / Windows, Linux / [GitHub](https://github.com/Union-Crax/UnionCrax.Direct)
-* [Fit Launcher](https://github.com/CarrotRub/Fit-Launcher/) - Unofficial Game Launcher / Torrent Client / Windows, Linux / [Discord](https://discord.gg/cXaBWdcUSF)
+* [Fit Launcher](https://github.com/CarrotRub/Fit-Launcher/) - Unofficial Game Launcher / Torrent Client / Downloader / Windows, Linux / [Discord](https://discord.gg/cXaBWdcUSF)
 * [Launchbox](https://www.launchbox-app.com/) - Retro / Console Game Library / Launcher / Windows, Android
 * [GameHUB Launcher](https://www.deviantart.com/not-finch/art/GameHUB-launcher-2-for-Rainmeter-785369648) - Rainmeter Game Launcher / Windows / [GitHub](https://github.com/callmeEthan/GameHUB2)
 * [OpenGamepadUI](https://github.com/ShadowBlip/OpenGamepadUI) - Gamepad Native Launcher / Linux
@@ -72,35 +75,44 @@
 ## ▷ Optimization Tools
 
 * 🌐 **[Nvidia Overclocking](https://github.com/LunarPSD/NvidiaOverclocking/blob/main/Nvidia%20Overclocking.md)** or [Nvidia Overclocking Guide](https://docs.google.com/document/d/14ma-_Os3rNzio85yBemD-YSpF_1z75mZJz1UdzmW8GE/) - Nvidia Overclocking Resources / Guides
-* 🌐 **[Creepy's HDR Guides](https://www.hdrmods.com/)** - HDR Gaming Resources / Guides ⁠
+* 🌐 **[Creepy's HDR Guides](https://www.hdrmods.com/)** - HDR Gaming Resources / Guides
 * ⭐ **[Special K](https://www.special-k.info/)** - Game Optimization Tool / Avoid Using in Multiplayer Games / [Discord](https://discord.gg/specialk) / [GitHub](https://github.com/SpecialKO/SpecialK) / Windows, Linux
 * ⭐ **[MSI Afterburner](https://www.msi.com/Landing/afterburner)** - Overclocking Tool / Hardware Monitor / Avoid Norton 360 in Installer / Windows
 * ⭐ **[MSI Kombustor](https://www.geeks3d.com/furmark/kombustor/)** - GPU Benchmark Test / Windows
 * ⭐ **[DisplayMagician](https://displaymagician.littlebitbig.com/)** or [AutoActions](https://github.com/Codectory/AutoActions) - Per-Game Display Profiles / Windows
 * ⭐ **[Lossless Scaling](https://fmhy.net/gaming#download-games)** (search), **[OptiScaler](https://github.com/optiscaler/OptiScaler)** / [Manager](https://github.com/Agustinm28/Optiscaler-Client) or **[Magpie](https://github.com/Blinue/Magpie)** - Game Upscaling
 * [SystemRequirementsLab](https://www.systemrequirementslab.com/cyri/) or [PCGameBenchmark](https://www.pcgamebenchmark.com/) - Game Requirements Tests
-* [SweetFX](https://sfx.thelazy.net/) or [ENBSeries](http://enbdev.com) - Game Setting Guides
-* [TroubleChute](https://www.youtube.com/c/TroubleChute/featured) - Gaming Optimization Guide
 * [cancerogenoslab](https://sites.google.com/view/cancerogenoslab/) - FPS / Latency Guides
 * [Fraps](https://fraps.com/), [OCAT](https://gpuopen.com/ocat/) / [GitHub](https://github.com/GPUOpen-Tools/ocat), [RTSS](https://www.guru3d.com/files-details/rtss-rivatuner-statistics-server-download.html), [CapFrameX](https://www.capframex.com/) or [Game Bar](https://rentry.co/WindowsFPS) - FPS Monitors / Windows
 * [SSTap](https://github.com/FQrabbit/SSTap-Rule) - Decrease Ping
-* [r/OptimizedGaming](https://www.reddit.com/r/OptimizedGaming/) - Game Optimization Community
 * [GPU Tweak III](https://www.asus.com/campaign/GPU-Tweak-III/index.php) or [EVGA Precision X1](https://www.evga.com/precisionx1/) - Overclocking Tools / [Guide](https://docs.google.com/document/d/14ma-_Os3rNzio85yBemD-YSpF_1z75mZJz1UdzmW8GE/) / Windows
 * [Overclock](https://www.overclock.net/) - Overclocking Forum
 * [Ryzen Master Utility](https://www.amd.com/en/products/software/ryzen-master.html) - Overclocking Control for Ryzen Desktop CPU / Windows
 * [AMD-APU-Tuning-Utility](https://github.com/JamesCJ60/Universal-x86-Tuning-Utility) - AMD APU Tuning / Windows
 * [DLSS Swapper](https://github.com/beeradmoore/dlss-swapper) - Download, Manage & Swap DLSS / Windows
 * [⁠RTX Features Update](https://forums.guru3d.com/threads/rtx-features-total-update-package-v4-and-dlss-4-5-discussion.459016/) - Latest DLSS Without NVIDIA App 
-* [dgVoodoo2](http://dege.freeweb.hu/dgVoodoo2/) - Glide & DirectX Graphics Wrapper / Windows
 * [⁠dxvk-gplasync](https://gitlab.com/Ph42oN/dxvk-gplasync/) - DXVK Fork w/ Async / Vulkan-Based Direct3D / Stutter Reduction / Windows, Linux
-* [VibranceGUI](https://vibrancegui.com/) - Automate Digital Vibrance Control / Windows
 * [ReShade](https://reshade.me/) - Generic Post-Processing Injector / [Easy Installer](https://github.com/OopyDoopy/ReShade-Centralized) / [Shaders](https://github.com/BlueSkyDefender/Depth3D) / [HDR](https://github.com/clshortfuse/renodx) / [DX11 Improvement](https://github.com/Filoppi/Luma-Framework) / [Discord](https://discord.com/invite/PrwndfH) / [GitHub](https://github.com/crosire/reshade) / Windows, Linux
 * [Scanlines for Windows](https://s4windows.itch.io/scanlines-for-windows) - Add Scanlines to Games / Windows / [Discord](https://discord.gg/MqxMj8MT55)
 * [DLSSG to FSR3](https://github.com/Nukem9/dlssg-to-fsr3) - AMD FSR3 Frame Generation for NVIDIA / Windows
+
+***
+
+## ▷ Settings / Fixes
+
+* ⭐ **[PCGamingWiki](https://www.pcgamingwiki.com/)** / [Discord](https://discord.gg/KDfrTZ8) or [⁠Mulderland](https://www.mulderland.com/) / [GitHub](https://github.com/MulderLand/MulderLoad) - Game Fixes & Enhancements
+* ⭐ **[GamingSmart](https://gamingsmart.com/)**, [Sens Converter](https://kovaaks.com/kovaaks/sens-converter) or [Mouse Sensitivity](https://www.mouse-sensitivity.com/) - Game Sensitivity Converters / Tools
+* ⭐ **[Game Pauser](https://madebyjase.com/game-pauser/)** - Pause Unpausable Cutscenes / [Source Code](https://madebyjase.com/game-pauser/source/)
+* [SweetFX](https://sfx.thelazy.net/), [TroubleChute](https://www.youtube.com/c/TroubleChute/featured) or [ENBSeries](http://enbdev.com) - Game Setting Guides
+* [r/OptimizedGaming](https://www.reddit.com/r/OptimizedGaming/) - Game Settings Optimization Community
+* [OpenMouse](https://openmouse.app/) / [Discord](https://discord.com/invite/yxC9jzMdw6) / [GitHub](https://github.com/OpenMouse-Project) or [Piper](https://github.com/libratbag/piper) - Mouse Config Tools
+* [⁠Onboard Memory Manager](https://support.logi.com/hc/en-gb/articles/360059641133-Onboard-Memory-Manager) - Modify Logitech G Mouse Memory
 * [WindowedBorderlessGaming](https://westechsolutions.net/sites/WindowedBorderlessGaming/), [Borderless Gaming](https://legacy.borderlessgam.ing/) / [Discord](https://discord.gg/8UvpR5UgX3) / [GitHub](https://github.com/andrewmd5/Borderless-Gaming) or [FullScreenizer](http://runtimeterror.com/tools/fullscreenizer/) - Borderless Windows for All Games / Windows
 * [DxWnd](https://sourceforge.net/projects/dxwnd/) - Play Fullscreen Only Games in Window / Windows
 * [WSGF](https://www.wsgf.org/) - Widescreen Gaming Community / Solutions
 * [Widescreen Fixes Pack](https://thirteenag.github.io/wfp) / [GitHub](https://github.com/ThirteenAG/WidescreenFixesPack), [Widescreen Fixer v3.4](https://community.pcgamingwiki.com/files/file/1754-widescreen-fixer-v34-r737/) or [Flawless Widescreen](https://www.flawlesswidescreen.org/) - Widescreen Fixes / Windows
+* [VibranceGUI](https://vibrancegui.com/) - Automate Digital Vibrance Control / Windows
+* [dgVoodoo2](http://dege.freeweb.hu/dgVoodoo2/) - Glide & DirectX Graphics Wrapper / Windows
 * [4GB Patch](https://ntcore.com/?page_id=371) - Patch x86 executables to use 4GB / Windows
 
 ***
@@ -111,6 +123,7 @@
 
 ***
 
+* 🌐 **[Gamepadla](https://gamepadla.com/)** - Gamepad / Controller Latency Tests
 * ⭐ **[DS4Windows](https://github.com/schmaldeo/DS4Windows)**, [⁠DS4Windows (Fork)](https://github.com/hbashton/DS4Windows), [AntiMicroX](https://github.com/AntiMicroX/antimicroX), [DualSenseX](https://github.com/Paliverse/DualSenseX), [DualSenseY](https://github.com/WujekFoliarz/DualSenseY-v2), [PCXSense](https://github.com/Denellyne/PCXSense) or [Input Remapper](https://github.com/sezanzeb/input-remapper) - Gamepad Input Tools / [Steam Note](https://github.com/fmhy/edit/blob/main/docs/.vitepress/notes/steam-controller-support.md)
 * [x360ce](https://www.x360ce.com/) - DS4 / 360 Controller Emulator / [GitHub](https://github.com/x360ce/x360ce)
 * [DsHidMini](https://docs.nefarius.at/projects/DsHidMini/) - Use PS3 Controllers on Windows
@@ -197,6 +210,7 @@
 * [NES Maps](https://www.nesmaps.com/) - NES Game Maps
 * [SNES Maps](https://www.snesmaps.com/) - SNES Game Maps
 * [⁠PokéMaps](https://pokemaps.net/) - Interactive Pokémon Maps & Catch Locations
+* [Roundtable Guides Map](https://roundtablehold.net/map.html) - Interactive Elden Ring Map
 * [⁠TWHL](https://twhl.info/vault) - Half-Life Maps, Mods & Mapping Tutorials
 * [RDR2 Map](https://rdr2map.com/) - Interactive Red Dead Redemption Maps
 * [Forgehub](https://www.forgehub.com/) - Halo Maps / [Discord](https://discord.com/invite/ybGX7sv)
@@ -215,20 +229,16 @@
 
 ***
 
-* ↪️ **[Gaming Equipment Comparisons](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/misc#wiki_.25B7_gaming_equipment)**
-* 🌐 **[Gamepadla](https://gamepadla.com/)** - Gamepad / Controller Latency Tests
 * ⭐ **[Before I Play](https://beforeiplay.com/)** - Tips for any Game
-* ⭐ **[GamingSmart](https://gamingsmart.com/)**, [Sens Converter](https://kovaaks.com/kovaaks/sens-converter) or [Mouse Sensitivity](https://www.mouse-sensitivity.com/) - Game Sensitivity Converters / Tools
 * ⭐ **[Aim400kg](https://aim400kg.com/)**, [3D Aim Trainer](https://www.3daimtrainer.com/), [Aimlabs](https://aimlabs.com/), [Aiming.Pro](https://aiming.pro/) or [AimTrainer](https://aimtrainer.io/) - Aim Training
 * ⭐ **[Speedrun](https://www.speedrun.com/)** - Speedrunning Streams, Leaderboards, Resources, etc.
 * [Steam Guides](https://steamcommunity.com/guides), [GameGuides](https://www.gamerguides.com/), [DotGG](https://dotgg.gg/), [Game8](https://game8.co/), [StrategyWiki](https://strategywiki.org/), [Samurai Gamers](https://samurai-gamers.com/), [UHS Hints](https://www.uhs-hints.com/) or [Kirklands](https://archive.org/details/kirklands-manual-labor-sony-playstation-2-usa-4k-version) - Game Guides
 * [Voltaic](https://voltaic.gg/) - Aim Benchmark & Guides
 * [⁠x76 Strafe Aim Guide](https://x76.gg/wiki/strafe-aim-guide/) - Strafe Aim Guide
-* [Piper](https://github.com/libratbag/piper) - Gaming Mouse Config Tool
-* [⁠Onboard Memory Manager](https://support.logi.com/hc/en-gb/articles/360059641133-Onboard-Memory-Manager) - Modify Logitech G Mouse Memory
 * [LiveSplit](https://livesplit.org/) - Customizable Speedrun Timer
 * [The Manual Project](https://vimm.net/manual), [ReplacementDocs](http://replacementdocs.com/) or [GamesDatabase](https://www.gamesdatabase.org/) - Game Manuals
 * [Sym.gg](https://sym.gg/) - FPS Game Info & Weapon Stats / [Discord](https://discord.com/invite/RVRZ3RgYNP)
+* [Roundtable Guides](https://roundtablehold.net/) - Elden Ring Guide / Checklist 
 * [⁠Balatro Wiki](https://balatrowiki.org/) - Community-Maintained Balatro Wiki / Card Database
 * [Bazaar DB](https://bazaardb.gg/) - The Bazaar Wiki / Guides / [Discord](https://discord.gg/Thcdk2epGx)
 * [/codmeta/](https://rentry.co/codmeta) - Call of Duty Loadouts / Meta
@@ -281,14 +291,14 @@
 * [Co-Optimus](https://www.co-optimus.com/) or [PlayCo-opGame](https://playco-opgame.com/) - Co-Op Game Databases
 * [SvenEvils Playground](https://store.steampowered.com/curator/8485829/) or [Local Multiplayer List](https://docs.google.com/spreadsheets/d/14f6qS2GJy8C-b40Df3dNH_aZq7WfZ4jMggzEajUrX0w/) - Local Multiplayer Game Database
 * [DoesItPlay?](https://www.doesitplay.org/) - Offline Game Compatibility Database
+* [CloudBase](https://cloudbase.gg/) or [⁠Cloudplay](https://cloudplay.now/) - Databases of Games with Cloud Support
 * [⁠Backwards Compatible](https://www.backwards-compatible.com/) - PS4 / PS5 Backwards Compatibility Database 
 * [⁠Works on WOA](https://www.worksonwoa.com/en/games/) - Windows on ARM Game Compatibility Database
-* [CloudBase](https://cloudbase.gg/) - Cloud Game Database
+* [⁠Dark Pattern Games](https://www.darkpattern.games/) - Addictive Mobile Game Mechanic Avoidance Database
 * [DC Media List](https://docs.google.com/spreadsheets/d/1znGm7MswCG0yuRHSvyHDUuIdeNSS7DP-yWOEqKYTAIY/) - Full DC Media List (1935-2024)
 * [VNDB](https://vndb.org/) - Visual Novel Database
 * [HOTU](https://www.homeoftheunderdogs.net/) - Rare Game Database
 * [Delisted Games](https://delistedgames.com/) - Delisted Games Database
-* [Are We Anti-Cheat Yet?](https://areweanticheatyet.com/) - Anti-Cheat Game Database / GNU/Linux or Wine/Proton Compatibility
 * [Internet Game Cars Database](https://igcd.net/) - Game Vehicle Database
 * [Yamtrack](https://github.com/FuzzyGrim/Yamtrack) - Self-Hosted Media Tracker
 
@@ -323,7 +333,8 @@
 * [Steam Link](https://store.steampowered.com/remoteplay#anywhere) - Stream Steam Library to TV / Devices
 * [Steam Rom Manager](https://github.com/SteamGridDB/steam-rom-manager) - Add ROMs to Steam
 * [BoilR](https://github.com/PhilipK/BoilR) - Sync Game Platforms with Steam
-* [⁠SyncNon-SteamGames](https://github.com/IGnGr/SyncNon-SteamGames) - Automatically Add Non-Steam Games + Fetch Images 
+* [⁠SyncNon-SteamGames](https://github.com/IGnGr/SyncNon-SteamGames) - Automatically Add Non-Steam Games + Fetch Images
+* [⁠CloudRedirect](https://github.com/Selectively11/CloudRedirect) - Steam Cloud Save Redirection Tool
 * [⁠Achievement Watcher](https://github.com/darktakayanagi/Achievement-Watcher) / [Setup Guide](https://breadcloud.net/blog/achievements-guide/) or [⁠Achievements](https://github.com/PSerban93/Achievements) - Multi-Platform Achievement Parsers
 * [SamRewritten](https://github.com/PaulCombal/SamRewritten) or [SteamAchievementManager](https://github.com/gibbed/SteamAchievementManager) - Steam Achievement Managers
 * [SteamHunters](https://steamhunters.com/) / [Discord](https://discord.com/invite/SeJ25Xv) or [TrueSteamAchievements](https://truesteamachievements.com/) - Steam Achievement Tracking / Leaderboards / Profiles
@@ -428,7 +439,6 @@
 * [Radmin](https://www.radmin-vpn.com/) - Dedicated Servers / LAN Multiplayer Fix / [Discord](https://discord.com/invite/8MapDM7m96)
 * [Hamachi](https://vpn.net/) - Dedicated Servers / LAN Multiplayer Fix
 * [⁠Porthole](https://store.steampowered.com/app/4963920/Porthole__Local_Port_Sharing/) - LAN Multiplayer Fix 
-* [NetMaker](https://www.netmaker.io/) - LAN Multiplayer Fix
 * [⁠Lanemu](https://gitlab.com/Monsterovich/lanemu/) - LAN Multiplayer Fix
 * [OpenSpy](https://openspy.net/) - LAN Multiplayer Fix / [Discord](https://discord.com/invite/sMaWdbt) / [GitHub](https://github.com/openspy/openspy-core)
 * [Team XLink](https://www.teamxlink.co.uk/) - LAN Multiplayer Fix / [Discord](https://discord.com/invite/XUS9n73KSP)
@@ -478,7 +488,7 @@
 
 * 🌐 **[FreeHosts](https://freehosts.eu/hosts?target=Gaming)** - Free Game Hosting Provider Index
 * ⭐ **[TrackyServer](https://www.trackyserver.com/)** - Find Private Multiplayer Servers
-* ⭐ **[Pelican](https://pelican.dev/)** / [GitHub](https://github.com/pelican/panel), [Calagopus](https://calagopus.com/) / [Discord](https://discord.gg/uSM8tvTxBV) / [GitHub](https://github.com/calagopus/panel) or [Pterodactyl](https://github.com/pterodactyl/panel) / [Discord](https://discord.gg/pterodactyl) - Game Server Management Panels
+* ⭐ **[Pelican](https://pelican.dev/)** / [GitHub](https://github.com/pelican/panel), [Calagopus](https://calagopus.com/) / [Discord](https://discord.gg/uSM8tvTxBV) / [GitHub](https://github.com/calagopus/panel) or [Pterodactyl](https://pterodactyl.io/) / [Discord](https://discord.gg/pterodactyl) / [GitHub](https://github.com/pterodactyl/panel) - Game Server Management Panels
 * ⭐ **[Playit.gg](https://playit.gg/)** - Global Proxy / Signup Required / [Discord](https://discord.gg/AXAbujx)
 * [Server.pro](https://server.pro/) - Game Server Hosting
 * [Impostor](https://impostor.github.io/Impostor/) - Among Us Private Server / [Discord](https://discord.com/invite/Mk3w6Tb)
@@ -741,7 +751,7 @@
 * 🌐 **[Modrinth](https://modrinth.com/)** - Minecraft Mods / [Redirector](https://github.com/devBoi76/modrinthify) / [Discord](https://discord.com/invite/EUHuJHt) / [GitHub](https://github.com/modrinth/code)
 * 🌐 **[CurseForge](https://www.curseforge.com/minecraft)** - Minecraft Mods / [QOL Fixes](https://greasyfork.org/en/scripts/389255-curseforge-qol-fixes) / [Discord](https://discord.com/invite/curseforge)
 * [Modded Minecraft Wiki](https://moddedmc.wiki/) - Modded Minecraft Wiki / [GitHub](https://github.com/Sinytra/Wiki)
-* [Fabric](https://fabricmc.net/) / [Discord](https://discord.com/invite/VDGnGsFeuy) / [GitHub](https://github.com/FabricMC), [NeoForged](https://neoforged.net/) / [Discord](https://discord.com/invite/UuM6bmAjXh) / [GitHub](https://github.com/neoforged), [Forge](https://files.minecraftforge.net/) / [Discord](https://discord.com/invite/UuM6bmAjXh) / [GitHub](https://github.com/MinecraftForge/MinecraftForge), [Quilt](https://quiltmc.org/) / [Discord](https://discord.com/invite/M7GpuyTBvy) / [GitHub](https://github.com/QuiltMC) - Mod Loaders
+* [Fabric](https://fabricmc.net/) / [Discord](https://discord.com/invite/VDGnGsFeuy) / [GitHub](https://github.com/FabricMC), [NeoForged](https://neoforged.net/) / [Discord](https://discord.com/invite/UuM6bmAjXh) / [GitHub](https://github.com/neoforged), [Forge](https://files.minecraftforge.net/) / [Discord](https://discord.com/invite/UuM6bmAjXh) / [GitHub](https://github.com/MinecraftForge/MinecraftForge), [Quilt](https://quiltmc.org/) / [Discord](https://discord.com/invite/M7GpuyTBvy) / [GitHub](https://github.com/QuiltMC) or [Cleanroom](https://cleanroommc.com/) - Mod Loaders
 * [⁠Configured](https://www.curseforge.com/minecraft/mc-mods/configured) - Configure Mods Directly In-Game
 * [Sodium](https://modrinth.com/mod/sodium) / [GitHub](https://github.com/CaffeineMC/sodium) / [Forge Version](https://modrinth.com/mod/embeddium), [Nvidium](https://modrinth.com/mod/nvidium) / [GitHub](https://github.com/MCRcortex/nvidium) or [VulkanMod](https://modrinth.com/mod/vulkanmod) / [Discord](https://discord.gg/FVXg7AYR2Q) / [GitHub](https://github.com/xCollateral/VulkanMod) - Rendering Engine Mods
 * [Voxy](https://modrinth.com/mod/voxy) / [GitHub](https://github.com/MCRcortex/voxy), [DistantHorizons](https://modrinth.com/mod/distanthorizons) / [GitLab](https://gitlab.com/distant-horizons-team/distant-horizons) or [Bobby](https://modrinth.com/mod/bobby), [2](https://www.curseforge.com/minecraft/mc-mods/bobby) / [GitHub](https://github.com/Johni0702/bobby) - Distance Rendering Mods
@@ -766,9 +776,10 @@
 ## ▷ Maps / World Tools
 
 * 🌐 **[ChunkBase](https://www.chunkbase.com/apps/)** - Map Tools
-* [MinecraftSearch Seedmap](https://minecraftsearch.com/tools/seed-map), [ChunkBase Seed Map](https://www.chunkbase.com/apps/seed-map), [MCSeedMap](https://mcseedmap.net/), [Seeds.gg](https://www.seeds.gg/), [Cubiomes Viewer](https://github.com/cubitect/cubiomes-viewer), [Amidst](https://github.com/toolbox4minecraft/amidst) or [MineAtlas](http://mineatlas.com/) - Seed Map Viewers
+* [MinecraftSearch Seedmap](https://minecraftsearch.com/tools/seed-map), [SeedMap](https://www.seedmap.app/), [ChunkBase Seed Map](https://www.chunkbase.com/apps/seed-map), [MCSeedMap](https://mcseedmap.net/), [Seeds.gg](https://www.seeds.gg/), [Cubiomes Viewer](https://github.com/cubitect/cubiomes-viewer), [Amidst](https://github.com/toolbox4minecraft/amidst), [⁠Seeder](https://www.mcseeder.com/) / [GitHub](https://github.com/TrinTragula/seeder) or [MineAtlas](http://mineatlas.com/) - Seed Map Viewers
 * [MCA Selector](https://github.com/Querz/mcaselector), [uNmINeD](https://unmined.net/) / [Discord](https://discord.com/invite/TCmvrPyA9x), [WorldPainter](https://www.worldpainter.net/) or [Minecraft Datapack Map](https://map.jacobsjo.eu/) / [GitHub](https://github.com/jacobsjo/mc-datapack-map) - Map Editors & Viewers
 * [BlueMap](https://bluemap.bluecolored.de/) / [GitHub](https://github.com/BlueMap-Minecraft/BlueMap) or [MineAssets Editor](https://editor.mineassets.com/) - 3D Map Models & Web Model Editor
+* [⁠Nodecraft](https://nodecraft.com/tools/minecraft/world-editor) - Region File Editor and Chunk Viewer
 * [Arnis](https://arnismc.com/) / [Discord](https://discord.com/invite/mA2g69Fhxq) / [GitHub](https://github.com/louis-e/arnis) - Real-World Location Generators
 * [MapartCraft](https://rebane2001.com/mapartcraft/) or [Cartographer](https://cartographer-mc.com/) - Mapart Schematic / map.dat Generator
 * [MinecraftMaps](https://www.minecraftmaps.com/), [Minecraft Forum](https://www.minecraftforum.net/) / [Discord](https://discord.com/invite/wGrQNKX), [Mapcraft](https://mapcraft.me/), [MapVerse](https://mapverse.net/) / [Discord](https://discord.gg/xFgTJtebgp), [CTMRepository](https://ctmrepository.com/) / [Discord](https://discord.com/invite/G2WVCB3) or [Minecraft Earth Map](https://earth.motfe.net/) - Custom Maps & World Downloads
@@ -789,6 +800,7 @@
 * [Minecraft Tools](https://minecraft.tools/en/) or [GamerGeeks](https://www.gamergeeks.net/) - Minecraft Tools & Calculators
 * [Enchant Order](https://iamcal.github.io/enchant-order/) - Minecraft Enchantment Ordering Tool
 * [MCStacker](https://mcstacker.net/) / [Discord](https://discord.com/invite/WCb6GNf) or [MinecraftJSON](https://www.minecraftjson.com/) - Command & JSON Tellraw Generators
+* [⁠mcsrc](https://mcsrc.dev/) / [GitHub](https://github.com/FabricMC/mcsrc) or [MC Assets](https://mcasset.cloud/) / [GitHub](https://github.com/InventivetalentDev/minecraft-assets) - Source Code & Asset Explorers
 * [NBT Studio](https://github.com/tryashtar/nbt-studio/) or [webNBT](https://irath96.github.io/webNBT/) - Minecraft NBT File Editors
 * [Mineflayer](https://prismarinejs.github.io/mineflayer/) / [Discord](https://discord.com/invite/GsEFRM8) / [GitHub](https://github.com/PrismarineJS/mineflayer) or [Minecraft TAS](https://minecrafttas.com/) / [Discord](https://discord.com/jGhNxpd) - Minecraft Bot & TAS Automation Tools
 
@@ -803,9 +815,10 @@
 * [MinecraftSkins](https://www.minecraftskins.com/), [SkinMC](https://skinmc.net/), [MC-Skins](https://mc-skins.com/), [MC Profiles](https://mcprofiles.net/), [MCSkins](https://mcskins.top/) or [BedrockExplorer](https://www.bedrockexplorer.com/queries/free-content/everyone/all/) - Minecraft Skins
 * [NeedCoolerShoes](https://needcoolershoes.com/) / [Discord](https://discord.gg/FEfbZYvQUa) / [GitHub](https://github.com/NeedCoolerShoes/needcoolershoes), [Nova Skin](https://minecraft.novaskin.me/), [MSkins](https://mskins.net/en), [Skin Closet](https://skin-closet.chabo.tokyo/), [SkinsRestorer](https://skinsrestorer.net/) / [GitHub](https://github.com/SkinsRestorer/SkinsRestorer) or [Ely.by](https://ely.by/) - Skin Editors, Grabbers & Server Systems
 * [MinecraftCapes](https://minecraftcapes.net/) / [Discord](https://discord.com/engage/jqRU9SN) / [Capes](https://modrinth.com/mod/capes) - Minecraft Capes
-* [Minecraft Heads](https://minecraft-heads.com/) / [Discord](https://discord.com/engage/K7yxDD2HP3) or [Minetrim](https://minetrim.com/) - Heads & Armor Trim Generators
+* [Minecraft Heads](https://minecraft-heads.com/) / [Discord](https://discord.com/engage/K7yxDD2HP3), [ArmorTrims](https://www.armortrims.com/) or [Minetrim](https://minetrim.com/) - Heads & Armor Trim Generators
 * [ConvertMCPack](https://convertmcpack.net/) - Pack Converters
 * [PackCrafter](https://packcrafter.net/) - Resource Pack Creator
+* [⁠ResourcePack](https://resourcepack.net/) - Resource & Texture Packs
 * [⁠CreateTextures](https://createtextures.com/) - Texture Pack Editor / Creator
 * [Vanilla Tweaks](https://www.vanillatweaks.net/) / [Bedrock](https://bedrocktweaks.net/) / [X](https://x.com/vanillatweaks) / [Discord](https://discord.com/invite/qG53qwF) - Customizable Vanilla-Like Resource and Data Packs
 * [PVPRP](https://pvprp.com/) / [Bypass YT Requirement](https://greasyfork.org/en/scripts/467663) / [X](https://twitter.com/PVPRPacks) / [Discord](https://discord.com/engage/pvprp) or [PacksMC](https://packsmc.com/) - PVP Texture Packs
@@ -816,10 +829,10 @@
 
 * ⭐ **[Blockbench](https://www.blockbench.net/)** - Low Poly 3D Editor / [Discord](https://discord.com/invite/blockbench)
 * [Mineways](https://www.realtimerendering.com/erich/minecraft/public/mineways/) / [Discord](https://discord.com/invite/wfayQA6Dyc), [MiEX](https://bramstout.nl/en/miex/), [Minutor](https://seancode.com/minutor/) - Minecraft World Exporters
+* [BDStudio](https://eszesbalint.github.io/bdstudio/editor), [⁠BDEngine](https://bdengine.app/) or [⁠Bedrock Editor](https://github.com/Mojang/minecraft-editor) - 3D Editors
 * [Mine-imator](https://www.mineimator.com/) - Animation Tool / [2.0 Version](https://www.mineimatorforums.com/index.php?/topic/90789-mine-imator-202/) / [Forum](https://www.mineimatorforums.com/) / [Discord](https://discord.com/invite/GxFp6xv) / [GitHub](https://github.com/stuffbydavid/Mine-imator)
 * [Chunky](https://chunky-dev.github.io/docs/) - Photorealistic Renderer / [Discord](https://discord.com/invite/VqcHpsF) / [GitHub](https://github.com/chunky-dev/chunky)
 * [⁠Minecraft Generator](https://minecraftgenerator.com/) - Minecraft Model Generators
-* [BDStudio](https://eszesbalint.github.io/bdstudio/editor) or [⁠Bedrock Editor](https://github.com/Mojang/minecraft-editor) - 3D Editors
 * [⁠MineAssets Editor](https://editor.mineassets.com/) - Model Editor / Web
 * [Block Display](https://block-display.com/) - Design / Share Block Display Models / [Discord](https://discord.gg/VCeHfSd6Xa)
 * [Cubical](https://www.cubical.xyz/) - Minecraft 3D Schematic Tool / [Beta](https://beta.cubical.xyz/)
@@ -837,7 +850,7 @@
 * ⭐ **[OP.GG](https://www.op.gg/)** - LoL Player Background Check
 * ⭐ **[DPM.LOL](https://dpm.lol/)**, **[U.GG](https://u.gg/)**, [KoreanBuilds](https://en.koreanbuilds.net/), [EuropeanBuilds](https://en.europeanbuilds.net/), [LoLTheory](https://loltheory.gg/), [MurderBridge](https://www.murderbridge.com/) or [LoLAlytics](https://lolalytics.com/) / [Discord](https://discord.com/invite/zKyaZ6w) - LoL Builds / Tiers
 * ⭐ **[Gol.gg](https://gol.gg/esports/home/)** or [⁠LoL Tracker](https://lol-tracker.com/) - LoL Competitive Stats / Team Trackers
-* ⭐ **[⁠Rose](https://github.com/Alban1911/Rose)** - LoL Skin Manager / Unlocker
+* ⭐ **[⁠Rose](https://github.com/Alban1911/Rose)** - LoL Skin Manager / Unlocker / [Discord](https://discord.com/invite/roseskins)
 * [MobaFire](https://www.mobafire.com/) - LoL Champion Guides
 * [LoL Wiki](https://wiki.leagueoflegends.com/) - Official LoL Wiki
 * [LoL Math](https://lolmath.net/) - LoL Item Optimizer / [Discord](https://discord.com/invite/BpGpdzw)
@@ -968,6 +981,7 @@
 * 🌐 **[osu! Game Resources](https://resources.osucord.moe/)** / [GitHub](https://github.com/osucord/resources) or **[Useful Osu](https://github.com/CarbonUwU/Useful-osu)** - Osu! Resources
 * 🌐 **[FM Scout](https://www.fmscout.com/)** - Football Manager Resources / Community
 * ⭐ **[Tactics.tools](https://tactics.tools/)** / [Discord](https://discord.com/invite/K4Z6shucH8) or [MetaTFT](https://www.metatft.com/) / [Discord](https://discord.com/invite/RqN3qPy) - Team Fight Tactic Guides, Stats, Tools, etc.
+* [⁠Elden Ring Wiki](https://eldenring.wiki.gg/) - Elden Ring Wiki / Encyclopedia
 * [Factorio Wiki](https://wiki.factorio.com/) - Factorio Info Database / Wiki
 * [Rust Clash](https://wiki.rustclash.com/) - Rust Info Database / Wiki
 * [⁠UltraRumble](https://ultrarumble.com/) - My Hero Ultra Rumble Info Database / Wiki
@@ -999,17 +1013,17 @@
 * 🌐 **[r/PTCGP Resource Guide](https://redd.it/1gf94ey)** - Pokémon TCG Pocket Resources
 * ↪️ **[Pokémon Browser Games](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/games#wiki_.25B7_pokemon)**
 * ⭐ **[Bulbapedia](https://bulbapedia.bulbagarden.net/wiki/Main_Page)** - Pokémon Wiki
-* ⭐ **[Serebii.net](https://www.serebii.net/)**, [Pokémon Awesome](https://pokemon-awesome.vercel.app/), [PocketMonsters.net](https://pocketmonsters.net/) or [Pokémon Database](https://pokemondb.net/) - Pokémon Databases
+* ⭐ **[Serebii.net](https://www.serebii.net/)**, [⁠The Cave of Dragonflies](https://www.dragonflycave.com/), [⁠Marilland](https://marriland.com/), [Pokémon Awesome](https://pokemon-awesome.vercel.app/), [PocketMonsters.net](https://pocketmonsters.net/) or [Pokémon Database](https://pokemondb.net/) - Pokémon Databases / Guides / Tools
 * ⭐ **[PokeList](https://pokemonlist.netlify.app/)** or [PokeAPI](https://pokeapi.co/) - Pokédexes
 * ⭐ **[Pokémon Typechart](https://pokemondb.net/type)** or [Type Calculator](https://www.pkmn.help/) - Pokémon Type Charts
 * [⁠PokéMaps](https://pokemaps.net/) - Interactive Pokémon Maps & Catch Locations
 * [PokeCommunity](https://www.pokecommunity.com/) - Pokémon Community
 * [Project Pokémon](https://projectpokemon.org/) - Pokémon Tools, Saves, etc.
-* [⁠The Cave of Dragonflies](https://www.dragonflycave.com/) - Pokémon Mechanics Guides / Calculators & more
 * [Pokémon Damage Calculator](https://www.kinglercalc.com/) - Full Series Damage Calculator
 * [⁠Smogon](https://www.smogon.com/) - Competitive Pokémon Guides / [Discord](https://discord.gg/smogon)
 * [pret](https://github.com/orgs/pret/repositories) - Pokémon Disassembly / Decompilation Projects
 * [PKHeX](https://github.com/kwsch/PKHeX) - Pokémon Save File Editor
+* [⁠Sky Editor](https://projectpokemon.org/home/files/file/1509-sky-editor-save-editor-for-pokemon-mystery-dungeon/) - Mystery Dungeon Save File Editor
 * [PMD Generators](https://syphist.com/pmd/) - Pokémon Mystery Dungeon Generators
 * [GameBanana](https://gamebanana.com/mods/games/14783) - Pokémon Brilliant Diamond / Shining Pearl Mods
 * [pkNX](https://github.com/kwsch/pkNX) - Switch Pokémon ROM Editor / Randomizer
@@ -1110,11 +1124,12 @@
 
 * 🌐 **[GD Colon](https://gdcolon.com/)** - GD Tools Index
 * ↪️ **[GD Demon Lists](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/storage#wiki_geometry_dash_demon_lists)**
-* ⭐ **[Geode](https://geode-sdk.org/)** - Mod Menu / Modding Framework / [Modlist](https://geode-sdk.org/mods) / [X](https://twitter.com/GeodeSDK) / [Discord](https://discord.com/invite/9e43WMKzhp) / [GitHub](https://github.com/geode-sdk)
+* ⭐ **[Geode](https://geode-sdk.org/)** - Mod Menu / Modding Framework / [Modlist](https://geode-sdk.org/mods) / [Level Send Tracker](https://senddb.dev/) / [X](https://twitter.com/GeodeSDK) / [Discord](https://discord.com/invite/9e43WMKzhp) / [GitHub](https://github.com/geode-sdk)
 * ⭐ **[⁠Geometry Dash Wiki](https://geometrydash.wiki.gg/)** - ⁠Geometry Dash Wiki / [Subreddit](https://www.reddit.com/r/geometrydash) / [Discord](https://discord.gg/geometrydash)
 * ⭐ **[GDDP](https://gddp.pro/)** / [Discord](https://discord.gg/gddp) or **[GD Demon Ladder](https://gdladder.com/)** / [Discord](https://discord.gg/gddl) - Practice & Improve Your Skills
 * [GD Forum](https://gdforum.freeforums.net/) - ⁠Geometry Dash Forum
-* [⁠Global Stats Viewer](https://globalstatsviewer.com/) or [⁠EDI](https://edi-d6y.pages.dev/) / [Discord](https://discord.gg/TEqvKS5H5N) - Global Stats / Leaderboards
+* [⁠Global Stats Viewer](https://globalstatsviewer.com/), [⁠EDI](https://edi-d6y.pages.dev/) / [Discord](https://discord.gg/TEqvKS5H5N) or [⁠DashStats](https://dashstats.net/) / [Discord](https://discord.com/invite/Qumx6ZmNG7) - Global Stats / Leaderboards
+* [speedrun.gd](https://speedrun.gd/) - Speedrun Leaderboards / [Discord](https://discord.com/invite/5whXv5Y)
 * [Soluble Texture Packs](https://solubletexturepacks.com/) - GD Texture Packs / [Manager](https://geode-sdk.org/mods/geode.texture-loader/)
 * [⁠Icons Gallery](https://iconsgallery.pages.dev/) - Custom GD Icons
 * [Song File Hub](https://songfilehub.com/home) - GD Songs & Mashups / [Discord](https://discord.com/invite/maSgd4zpEF)
@@ -1160,11 +1175,11 @@
 
 * ⭐ **[RimWorld Wiki](https://rimworldwiki.com/)** - Official Wiki / [Discord](https://discord.com/invite/UTaMDWc)
 * ⭐ **[RimSort](https://rimsort.github.io/RimSort/)** - Mod Manager / [GitHub](https://github.com/RimSort/RimSort)
+* [Void Archives](https://sites.google.com/view/void-archives/) - Modding, Troubleshooting & Performance-Optimization Guides
 * [RimWorld Discord](https://discord.com/invite/rimworld) - Official Community Discord
 * [r/RimWorld](https://www.reddit.com/r/RimWorld/) - Official Community Subreddit
 * [Judge My List](https://jumli.sysrqmagician.dev/) - Automated Modlist Feedback / [GitHub](https://github.com/sysrqmagician/jumli)
 * [Workshop Walker](https://workshop-walker.disconsented.com/) - Improved Steam Workshop UI / [GitHub](https://github.com/disconsented/workshop-walker)
-* [Void Archives](https://sites.google.com/view/void-archives/) - RimWorld Guides
 * RimWorld Infographs - [Basic](https://mortalsmurph.com/?page_id=184) / [Anomaly DLC](http://mortalsmurph.com/?page_id=50)
 
 ***

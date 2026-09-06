@@ -27,6 +27,7 @@
 * ⭐ **[GIMP](https://www.gimp.org/)** / Windows, macOS, Linux / [Photoshop UI](https://github.com/Diolinux/PhotoGIMP) / [Texture Synthesizer](https://github.com/bootchk/resynthesizer) / [Discord](https://discord.gg/kHBNw2B) / [Subreddit](https://www.reddit.com/r/GIMP/) / [GitLab](https://gitlab.gnome.org/GNOME/gimp)
 * ⭐ **[ImageMagick](https://imagemagick.org/)** / Windows, macOS, Linux, iOS / [Scripts](https://www.fmwconcepts.com/imagemagick/index.php) / [GitHub](https://github.com/imagemagick/imagemagick)
 * [⁠Affinity](https://www.affinity.studio/) or [⁠AffinityOnLinux](https://github.com/ryzendew/Linux-Affinity-Installer) / Windows, macOS, Linux / [No Login Method](https://rentry.co/FMHYB64#affinity)
+* [⁠PaintFE](https://paintfe.com/) - Windows, macOS, Linux / [GitHub](https://github.com/kylejckson/PaintFE)
 * [LazPaint](https://lazpaint.github.io/) / Windows, macOS, Linux / [GitHub](https://github.com/bgrabitmap/lazpaint/)
 * [PhotoDemon](https://photodemon.org/) / Windows / [GitHub](https://github.com/tannerhelland/PhotoDemon)
 * [⁠RapidRAW](https://www.getrapidraw.com/) / Windows, macOS, Linux / [Discord](https://discord.com/invite/cvFugZ2Hw8) / [GitHub](https://github.com/CyberTimon/RapidRAW)
@@ -41,10 +42,11 @@
 
 * ⭐ **[Pixlr](https://pixlr.com/)** - Simple Editor / [Hide Premium](https://greasyfork.org/en/scripts/425737) / [Unlimited Saves](https://greasyfork.org/en/scripts/460881), [2](https://greasyfork.org/en/scripts/490940)
 * ⭐ **[Lunapic](https://lunapic.com/)** - Multi-Tool
-* ⭐ **[Photopea](https://www.photopea.com/)** - Photoshop Alt
-* [BitMappery](https://www.igorski.nl/application/bitmappery/) - Photoshop Alt
-* [iPiccy](https://ipiccy.com/) - Photoshop Alt
-* [Stet](https://stet.io/) - Photoshop Alt
+* ⭐ **[Photopea](https://www.photopea.com/)** - Full-Featured
+* [BitMappery](https://www.igorski.nl/application/bitmappery/) - Full-Featured
+* [⁠PaintFE (Web)](https://www.paintfe.com/online/) - Full-Featured
+* [iPiccy](https://ipiccy.com/) - Full-Featured
+* [Stet](https://stet.io/) - Full-Featured
 * [Polarr](https://photoeditor.polarr.co/) - Multi-Tool
 * [Resize Pixel](https://www.resizepixel.com/) - Multi-Tool
 * [Tom's Editor](https://tomseditor.com/editor/) - Multi-Tool
@@ -329,6 +331,7 @@
 * [Texture Labs](https://texturelabs.org/) - Textures
 * [Transparent Textures](https://www.transparenttextures.com/) - Textures
 * [Texture Club](https://www.sketchuptextureclub.com/) - Textures
+* [⁠ShareTextures](https://www.sharetextures.com/) - Textures
 * [TexturesForFree](https://texturesforfree.com/) - Textures
 * [texture4photoshop](https://t.me/texture4photoshop) - Textures
 * [MatLib](https://matlib.gpuopen.com/main/materials/all) - Textures
@@ -494,6 +497,7 @@
 * [Fresh Folk](https://fresh-folk.com/) or [lukaszadam](https://lukaszadam.com/illustrations) - Illustrations of People
 * [free-gophers-pack](https://github.com/MariaLetta/free-gophers-pack) - Gophers Illustrations
 * [freeillustrations](https://freeillustrations.xyz/), [Kitbitz](https://kitbitz.art/), [DrawKit](https://www.drawkit.com/), [Irasutoya](https://irasutoya.com/), [NiceIllustrations](https://niceillustrations.com/free-illustrations/) or [manypixels](https://www.manypixels.co/gallery) - Misc Illustrations
+* [⁠Old Book Illustrations](https://www.oldbookillustrations.com/) - Public Domain Illustrations
 * [Buhitter](https://buhitter.com/) - X.com Illustration Search
 * [⁠Boorusama](https://play.google.com/store/apps/details?id=com.degenk.boorusama) - Multi-Booru App / Android
 * [imgbrd-grabber](https://www.bionus.org/imgbrd-grabber/) - Booru Image Downloader
@@ -563,7 +567,7 @@
 ## ▷ 3D Modeling Apps
 
 * ⭐ **[Blender](https://www.blender.org/)** - FOSS 3D Modeling App / [Forums](https://blenderartists.org/) / [Source Code](https://projects.blender.org/blender/blender)
-* ⭐ **Blender Tools** - [Resources](https://awesome-blender.netlify.app/), [GitHub](https://github.com/agmmnn/awesome-blender) / [Communities](https://www.blender.org/community/) / [Addons](https://t.me/BlenderUniverse/3) / [Plugins](https://t.me/blenderplugs) / [Textures](https://github.com/carson-katri/dream-textures) / [Renderer](https://github.com/prman-pixar/RenderManForBlender) / [3D Nodes](https://t.me/geometrynodes) / [AI Render](https://github.com/benrugg/AI-Render)
+* ⭐ **Blender Tools** - [Resources](https://awesome-blender.netlify.app/), [GitHub](https://github.com/agmmnn/awesome-blender) / [Extensions](https://extensions.blender.org/) / [Communities](https://www.blender.org/community/) / [Addons](https://t.me/BlenderUniverse/3) / [Plugins](https://t.me/blenderplugs) / [Textures](https://github.com/carson-katri/dream-textures) / [Renderer](https://github.com/prman-pixar/RenderManForBlender) / [3D Nodes](https://t.me/geometrynodes) / [AI Render](https://github.com/benrugg/AI-Render)
 * ⭐ **[MCprep](https://theduckcow.com/dev/blender/mcprep/)** - All-in-one Minecraft Blender Addon / [Discord](https://discord.com/invite/mb8hBUC) / [GitHub](https://github.com/Moo-Ack-Productions/MCprep)
 * ⭐ **[Shap-e](https://github.com/openai/shap-e)** - Generate 3D Objects Based on Text / Image Prompts
 * [Meshy.ai](https://www.meshy.ai/) / [Discord](https://discord.com/invite/KgD5yVM9Y4), [⁠Tripo Studio](https://studio.tripo3d.ai/) (temp mail) or [TRELLIS](https://trellis3d.github.io/) / [GitHub](https://github.com/microsoft/TRELLIS) / [Hugging Face](https://huggingface.co/spaces/JeffreyXiang/TRELLIS) - AI 3D Model Generators
@@ -609,7 +613,7 @@
 * [3D Printer Recs](https://redd.it/1bh9jud) - Hobbyist 3D Printer Recommendations
 * [⁠SpoolScout](https://www.spoolscout.com/) - Search / Compare 3D Printing Filament Prices 
 * [⁠step.parts](https://www.step.parts/) - 3D Printing Step Files
-* [OrcaSlicer](https://www.orcaslicer.com/) / [X](https://x.com/real_OrcaSlicer) / [Discord](https://discord.gg/P4VE9UY9gJ) / [GitHub](https://github.com/OrcaSlicer/OrcaSlicer), [⁠PrusaSlicer](https://help.prusa3d.com/product/prusaslicer) / [GitHub](https://github.com/prusa3d/PrusaSlicer), [⁠CrealityPrint](https://github.com/CrealityOfficial/CrealityPrint) or [Ultimaker Cura](https://ultimaker.com/software/ultimaker-cura) - 3D Printing Software
+* [OrcaSlicer](https://www.orcaslicer.com/) / [X](https://x.com/real_OrcaSlicer) / [Discord](https://discord.gg/P4VE9UY9gJ) / [GitHub](https://github.com/OrcaSlicer/OrcaSlicer), [⁠PrusaSlicer](https://www.prusa3d.com/p/prusaslicer/) / [GitHub](https://github.com/prusa3d/PrusaSlicer), [⁠CrealityPrint](https://github.com/CrealityOfficial/CrealityPrint) or [Ultimaker Cura](https://ultimaker.com/software/ultimaker-cura) - 3D Printing Software
 * [⁠keygen](https://keygen.co/) - Print High-Quality Copies of Your Keys 
 * [⁠e-NABLE](https://enablingthefuture.org/) - Volunteer Own 3D Printer for use in Prosthetic Limb Printing
 
@@ -841,6 +845,7 @@
 * [Kepkuldes](https://kepkuldes.com/) - 40MB / Forever
 * [⁠Img Fish](https://img.fish/) - 95MB / Forever
 * [Pikky](https://pikky.net/) - 20MB / Forever
+* [⁠Lightshot](https://prnt.sc/) - Forever
 * [imagebam](https://www.imagebam.com/) - 20MB / Forever
 * [imagevenue](https://www.imagevenue.com/) - 20MB / Forever
 * [FastPic](https://fastpic.org/) - 25MB / Forever
@@ -909,7 +914,7 @@
 * [r/Photography Guide](https://www.reddit.com/r/photography/wiki/introduction) or [Cambridge In Colour](https://www.cambridgeincolour.com/) - Photography / Camera Guides
 * [Camera Wiki](http://camera-wiki.org/) - Camera Model Wiki
 * [PhotoFeeler](https://www.photofeeler.com/) - Get Photo Feedback
-* [⁠DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve) / [X](https://x.com/Blackmagic_News), [darktable](https://www.darktable.org/) / [GitHub](https://github.com/darktable-org/darktable), [⁠RapidRAW](https://www.getrapidraw.com/) / [Discord](https://discord.com/invite/cvFugZ2Hw8) / [GitHub](https://github.com/CyberTimon/RapidRAW), [RawTherapee](https://www.rawtherapee.com/) / [GitHub](https://github.com/RawTherapee/RawTherapee) or [⁠LightZone](https://github.com/ktgw0316/LightZone) - RAW Photo Editors / Windows, macOS, Linux
+* [⁠DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve) / [X](https://x.com/Blackmagic_News), [darktable](https://www.darktable.org/) / [GitHub](https://github.com/darktable-org/darktable), [⁠RapidRAW](https://www.getrapidraw.com/) / [Discord](https://discord.com/invite/cvFugZ2Hw8) / [GitHub](https://github.com/CyberTimon/RapidRAW), [RawTherapee](https://www.rawtherapee.com/) / [GitHub](https://github.com/RawTherapee/RawTherapee), [⁠LightZone](https://github.com/ktgw0316/LightZone) or [Lightroom Classic on Linux](https://github.com/6im0n/lightroom-classic-on-linux) - RAW Photo Editors / Windows, macOS, Linux
 * [HDRMerge](https://jcelaya.github.io/hdrmerge/) - RAW Photography HDR Merge Tool / [GitHub](https://github.com/jcelaya/hdrmerge)
 * [PixelPeeper](https://pixelpeeper.com/) - Extract Lightroom Edits / Settings
 * [⁠Photons to Photos](https://www.photonstophotos.net/) - Photographic Sensor Performance Data

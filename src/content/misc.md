@@ -140,6 +140,7 @@
 
 ## ▷ Assistance / Charity
 
+* 🌐 **[Global Crisis Support Resources](https://fluffle.cc/provide)**
 * ⭐ **[GiveWell](https://www.givewell.org/)**, [CharityNavigator](https://www.charitynavigator.org/), [Effective Altruism Funds](https://funds.effectivealtruism.org/), [Arab.org](https://arab.org/), [CharityWatch](https://www.charitywatch.org/) or [ProPublica](https://projects.propublica.org/nonprofits/) - Charity Ratings / Resources
 * ⭐ **[⁠FindHelp](https://www.findhelp.org/)** - Find Free or Reduced-Cost Resources / US Only
 * [⁠Single Mother Guide](https://singlemotherguide.com/) - Single Mother Government Benefits Guide / US Only
@@ -201,6 +202,7 @@
 * [PublicDomainRecipes](https://publicdomainrecipes.com/) - Recipe Search / [GitHub](https://github.com/ronaldl29/public-domain-recipes) 
 * [Recipe Search](https://recipe-search.typesense.org/) - Recipe Search
 * [Hari Recipes](https://hari.recipes/) - Recipe Search
+* [⁠Delicious Recipes](https://www.gzrecipes.com/en/) - Recipe Search
 * [KitchenAid](https://www.kitchenaid.com/recipes.html) - Recipe Search
 * [⁠Budget Bytes](https://www.budgetbytes.com/) - Budget Recipes
 * [Recipeeper](https://www.recipeeper.com/) - Dietary-Based Recipes
@@ -381,6 +383,7 @@
 * ⭐ **[ADS-B Exchange](https://globe.adsbexchange.com/)**, [FlightRadar24](https://www.flightradar24.com/), [PlaneFinder](https://planefinder.net/), [Airplanes.live](https://globe.airplanes.live/) / [Mobile](https://github.com/d4rken-org/airplanes-live-app), [⁠Flight Viz](https://flight-viz.com/), [Radarbox](https://www.airnavradar.com/), [Air Loom](https://objectiveunclear.com/airloom.html) or [FlightAware](https://www.flightaware.com/) - Live Flight Trackers
 * [VisaIndex](https://visaindex.com/) - Worldwide Travel Visa Guides
 * [Google Flights](https://www.google.com/travel/flights) or [⁠SkyScanner](https://skyscanner.net/) - Compare / Book Flights
+* [AZair](https://www.azair.eu/) - Compare / Search European & Middle East Flights
 * [⁠SeatMaps](https://seatmaps.com/) - Flight Seat Data / Reviews
 * [seats.aero](https://seats.aero/) - Flight Search Engine / [X](https://x.com/seatsaero) / [Discord](https://discord.gg/PaHdCqb7eh)
 * [Matrix](https://matrix.itasoftware.com/) - Airfare Search
@@ -740,13 +743,14 @@
 * ↪️ **[Relaxation / Ambient](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/audio/#wiki_.25B7_ambient_.2F_relaxation)**
 * ⭐ **[Medito](https://github.com/meditohq/medito-app)** or [⁠Plum Village](https://plumvillage.app/) - Meditation Apps
 * ⭐ **[Breath Ball](https://breathball.com/)** - Guided Breathing Practice App
+* ⭐ **[/mental health/](https://rentry.co/mentalhealthy)** - Mental Help Tips
 * [Health Assessment Tools](https://www.nhs.uk/mental-health/) - General Health Tools
-* [/mental health/](https://rentry.co/mentalhealthy) - Mental Help Tips
 * [How We Feel](https://play.google.com/store/apps/details?id=org.howwefeel.moodmeter&hl=en-US) / [iOS](https://apps.apple.com/app/id1562706384), [Nomie](https://v5.nomie.app/), [Koduko](https://github.com/Mazahir26/koduko) or [Respawn](https://respawn.pro/) - Wellbeing Apps / Journals
 * [You feel like shit.](https://philome.la/jace_harr/you-feel-like-shit-an-interactive-self-care-guide/play/index.html), [2](https://youfeellikeshit.com/) - Interactive Self-Care Guide
 * [deskspace](https://npckc.itch.io/deskspace) - Self-Care App
 * [Mindfulness Coach](https://mobile.va.gov/app/mindfulness-coach) - Mindfulness / Stress Reduction App
 * [Coping Skills Masterlist](https://docs.google.com/document/d/1KI1kzj6Bjx_O3ggYXfgEuTtOsLiCW0V-JeWpTyX5OOU/) - Mental Health Coping Skills
+* [The FM Project](https://www.freemindfulness.org/download) - Guided Mindfulness Exercises
 * [IIB Mindfulness](https://informationisbeautiful.net/visualizations/what-is-meditation-mindfulness-good-for/) - Meditation Techniques / Infographic
 * [⁠Pause Point](https://greasyfork.org/scripts/578391) - Add Breathing / Activity Pause Before Site Entrances
 * [Conversations](https://conversations.movember.com/en/conversations/) - Mental Health Conversation Practice
@@ -831,7 +835,7 @@
 * [Edamam](https://www.edamam.com/) - Food-Related APIs
 * [⁠CaffeineHealth](https://github.com/ohuc/CaffeineHealth) - Caffeine Intake Calculator / Android
 * [Examine.com](https://examine.com/) - Supplement & Nutrition Analysis
-* [MyFoodData](https://www.myfooddata.com) or [Spelt](https://spe.lt/) - Food Nutrition Info
+* [MyFoodData](https://www.myfooddata.com) - Food Nutrition Info
 * [Nutrient Sorter](https://michaelf314.github.io/nutrient-sorter/) - Vegan Food Nutrient Sorter
 * [FoodStruct](https://foodstruct.com/) - Food Encyclopedia & Comparison
 
@@ -947,7 +951,7 @@
 ## ▷ Resume / Portfolio
 
 * 🌐 **[⁠r/Resumes Wiki](https://www.reddit.com/r/resumes/wiki/index/)** - Resume Resources / Guides
-* ⭐ **[RX Resume](https://rxresu.me/)** / [GitHub](https://github.com/amruthpillai/reactive-resume), [FlowCV](https://flowcv.com/), [HeyCV](https://heycv.app/), [Resuminator](https://www.resuminator.in/) / [GitHub](https://github.com/resuminator/resuminator), [EZCV](https://www.ezcv.pro/) or [Sheets](https://sheetsresume.com/builder) - Resume / CV Builders
+* ⭐ **[RX Resume](https://rxresu.me/)** / [GitHub](https://github.com/amruthpillai/reactive-resume), [FlowCV](https://flowcv.com/), [HeyCV](https://heycv.app/), [Resuminator](https://www.resuminator.in/) / [GitHub](https://github.com/resuminator/resuminator), [EZCV](https://www.ezcv.pro/) or [Sheets](https://sheetsresume.com/) - Resume / CV Builders
 * ⭐ **[KickResume Samples](https://www.kickresume.com/en/help-center/resume-samples/)** - Resume Samples
 * [ResumGO](https://www.resumgo.com/) - Resume Templates
 * [⁠YAMLResume](https://yamlresume.dev/) / [GitHub](https://github.com/yamlresume/yamlresume) or [RenderCV](https://rendercv.com/) / [GitHub](https://github.com/rendercv/rendercv) - YAML Based Resume Builders
@@ -1123,7 +1127,10 @@
 * ⭐ **[Consumer Rights Wiki](https://consumerrights.wiki/)** - Documents Practices That Impact Consumer Rights / [Extension](https://github.com/FULU-Foundation/CRW-Extension) / [Discord](https://discord.gg/8w5rSNAXRf)
 * ⭐ **[Dark Patterns Tip Line](https://darkpatternstipline.org/)** or [Dark Patterns](https://hallofshame.design/collection/) - Deceptive Services to Avoid
 * ⭐ **[Fragrantica](https://www.fragrantica.com/)**, [Basenotes](https://basenotes.com/) or [Parfumo](https://www.parfumo.com/) - Perfume / Fragrance Databases
+* [⁠Worse on Purpose](https://www.worseonpurpose.com/) - Brand Product Quality Tracking / Investigations 
 * [Dark Patterns Detective](https://games.productartistry.com/games/dark-patterns) - Learn to Avoid Deceptive Services
+* [Boycott Buddy](https://www.boycottbuddy.app/) - Identify Brands with Unethical Practices (child labor, slave labor, etc.)
+* [⁠Slave Free Chocolate](https://www.slavefreechocolate.org/) - Chocolatiers that use Ethically Sourced (child slavery free) Cocoa
 * [ProductHunt](https://producthunt.com/) - Product / Service Reviews
 * [RTINGS](https://www.rtings.com/) - Product Comparisons / Reviews
 * [Pepper](https://www.pepperdeals.com/) or [SlickDeals](https://slickdeals.net/) - Shopping Deal Communities
@@ -1164,8 +1171,6 @@
 * [⁠INCIDecoder](https://incidecoder.com/) - Skincare Cosmetics Ingredients Databases / Search
 * [Models.dev](https://models.dev/) - AI Model Database / Pricing / [GitHub](https://github.com/anomalyco/models.dev)
 * [Build List](https://buildlist.org/) or [USA Parts Made Fast](https://partsmadefast.com/) / [X](https://x.com/mattfreed) - On-Demand Online Manufacturers
-* [⁠Slave Free Chocolate](https://www.slavefreechocolate.org/) - Chocolatiers that use Ethically Sourced (child slavery free) Cocoa
-* [Boycott Buddy](https://www.boycottbuddy.app/) - Identify Brands with Unethical Practices (child labor, slave labor, etc.)
 
 ***
 
@@ -1275,6 +1280,7 @@
 * ⭐ **[GG.deals](https://gg.deals/)** - Multi-Store / Multi-Platform / [Discord](https://discord.com/invite/NhsTFvdHXG)
 * ⭐ **[IsThereAnyDeal](https://isthereanydeal.com/)** - Multi-Store / [Extension](https://augmentedsteam.com/) / [Discord](https://discord.com/invite/C3K4bBh)
 * ⭐ **[SteamDB](https://steamdb.info/sales/)** - Steam Sales / [Extension](https://steamdb.info/extension/) / [Discord](https://discord.com/invite/steamdb)
+* [⁠Dark Pattern Games](https://www.darkpattern.games/) - Addictive Mobile Game Mechanic Avoidance Database
 * [⁠EGData](https://egdata.app/) - Epic Store Sales / [GitHub](https://github.com/nachoaldamav/egdata)
 * [r/SteamDeals](https://www.reddit.com/r/steamdeals/) - Steam Sales
 * [CheapShark](https://www.cheapshark.com/) - Multi-Store / [Discord](https://discord.com/invite/cheapshark)
@@ -1651,6 +1657,7 @@
 * [Origami Simulator](https://origamisimulator.org/) - Origami Simulation
 * [Super Snowflake Maker](https://supersnowflakemaker.com/) or [Fold & Cut](https://www.onemotion.com/fold-cut-paper/) - Make Digital Paper Snowflakes
 * [Iceberger](https://joshdata.me/iceberger.html) - Draw an Iceberg, See how it Floats
+* [Pointer Pointer](https://pointerpointer.com/) or [PointerPointerClone](https://pointerpointerclone.shiprzq.workers.dev/) - Have Your Pointer Pointed At
 * [BubblesPop](https://bubblespop.netlify.app/), [2](https://brainteaser.top/bubblespop.html) - Pop Bubble Wrap
 * [Checkbox Life](https://huth.me/checkbox-life/) or [Checkbox Olympics](https://checkbox.toys/) - Checkbox Games
 * [Fidget Page](https://www.fidgetpage.com/) - Play with Fidget Spinner
@@ -1844,6 +1851,7 @@
 * [The Red Button](https://clicktheredbutton.com/) - Random Video / Song Generator
 * [Things to Do](https://randomthingstodo.com/) or [TheZen](https://thezen.zone/) - Activity Suggestions
 * [Scattergories](https://swellgarfo.com/scattergories) - Scattergories List Generator
+* [⁠Jerma Sites](https://jerma.io/) or [Jerma](https://www.jerma.org/) - Jerma Resources / Content Sites
 * [Color Arena](https://color-arena.agpallav.com/) - Best Color Voting
 * [ColorNames](https://colornames.org/) - Help Name Colors
 * [Colorword](https://colorword.recu3125.com/) - Word Color Voting
