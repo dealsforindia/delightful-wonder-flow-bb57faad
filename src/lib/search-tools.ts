@@ -46,7 +46,7 @@ const sortKey = (name: string) => {
   const m = name.match(/[a-z0-9]/i);
   return (m ? name.slice(m.index).toLowerCase() : name.toLowerCase());
 };
-const isRecommended = (t: Tool) => t.tags.includes("recommended");
+const isRecommended = (t: Tool) => t.tags?.includes("recommended") ?? false;
 const byName = (a: Tool, b: Tool) =>
   sortKey(a.name).localeCompare(sortKey(b.name)) || a.name.localeCompare(b.name);
 
