@@ -40,12 +40,23 @@ export function searchTools(index: Fuse<Tool>, tools: Tool[], filters: SearchFil
   return sortResults(out, effectiveSort);
 }
 
+// Compare names by their first real letter/digit so ".onion", ":)", "4K-…"
+// etc. don't cluster at the top of alphabetical lists.
+const sortKey = (name: string) => {
+  const m = name.match(/[a-z0-9]/i);
+  return (m ? name.slice(m.index).toLowerCase() : name.toLowerCase());
+};
+const isRecommended = (t: Tool) => t.tags?.includes("recommended") ?? false;
+const byName = (a: Tool, b: Tool) =>
+  sortKey(a.name).localeCompare(sortKey(b.name)) || a.name.localeCompare(b.name);
+
 function sortResults(tools: Tool[], sort: "relevance" | "name" | "category"): Tool[] {
   const out = [...tools];
   if (sort === "name") {
-    out.sort((a, b) => a.name.localeCompare(b.name));
+    // Default no-query view: recommended entries first, then alphabetical.
+    out.sort((a, b) => Number(isRecommended(b)) - Number(isRecommended(a)) || byName(a, b));
   } else if (sort === "category") {
-    out.sort((a, b) => a.category.localeCompare(b.category) || a.name.localeCompare(b.name));
+    out.sort((a, b) => a.category.localeCompare(b.category) || byName(a, b));
   }
   return out;
 }
