@@ -179,6 +179,8 @@ function parseTools(md: string, category: string): Entry[] {
       const name = m[1].replace(/[*_`]/g, "").trim();
       const url = m[2];
       if (!name || isSourceName(name) || isSourceLink(url)) continue;
+      // Skip mirror/footnote links like [2], [3] — they're alternates, not tools.
+      if (/^\d+$/.test(name)) continue;
       out.push({ n: name, u: url, c: category, s: section, d: description, t: tags });
     }
   }
