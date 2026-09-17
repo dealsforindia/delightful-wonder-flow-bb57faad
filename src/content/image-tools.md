@@ -12,11 +12,7 @@
 * [Croppola](https://croppola.com/), [AutoCropper](https://www.autocropper.io/), [Bulk Image Crop](https://bulkimagecrop.com/) or [Avatar Cropper](https://avatarcropper.com/) - Cropping Tools
 * [⁠PixelFrame](https://pixelframe.design/) - Custom Pop Culture Graphic Generator
 * [Scribus](https://www.scribus.net/) or [Quarkdown](https://quarkdown.com/) / [GitHub](https://github.com/iamgio/quarkdown) - Page Layout & Typesetting Programs
-* [Images.weserv.nl](https://images.weserv.nl/) - Image Editing Server
-* [GradientArt](https://gra.dient.art/) or [TailBlend](https://tailblend.vercel.app/) - Gradient Editor
-* [Canvas](https://www.nvidia.com/en-us/studio/creative-side-hustle/) - Turn Simple Art into Photorealistic Landscapes
 * [Image Splitter](https://ruyili.ca/image-splitter/) - Split Images into Tiles
-* [PicFont](https://picfont.com/) - Add Text to Images
 
 ***
 
@@ -32,30 +28,22 @@
 * [PhotoDemon](https://photodemon.org/) / Windows / [GitHub](https://github.com/tannerhelland/PhotoDemon)
 * [⁠RapidRAW](https://www.getrapidraw.com/) / Windows, macOS, Linux / [Discord](https://discord.com/invite/cvFugZ2Hw8) / [GitHub](https://github.com/CyberTimon/RapidRAW)
 * [Paint.net](https://www.getpaint.net/index.html) / Windows / [GitHub](https://github.com/paintdotnet)
-* [Gimel Studio](https://gimelstudio.com/) / Windows / [GitHub](https://github.com/GimelStudio/GimelStudio)
 * [Hugin](https://hugin.sourceforge.io/) - Panorama Image Generator / Windows, macOS, Linux
-* [IOPaint](https://github.com/Sanster/IOPaint) - AI Image Multitool Editor
   
 ***
 
 ## ▷ Online Editors
 
-* ⭐ **[Pixlr](https://pixlr.com/)** - Simple Editor / [Hide Premium](https://greasyfork.org/en/scripts/425737) / [Unlimited Saves](https://greasyfork.org/en/scripts/460881), [2](https://greasyfork.org/en/scripts/490940)
+* ⭐ **[Pixlr](https://pixlr.com/)** - Simple Editor / [Hide Premium](https://greasyfork.org/en/scripts/425737) / [Unlimited Saves](https://greasyfork.org/en/scripts/490940)
 * ⭐ **[Lunapic](https://lunapic.com/)** - Multi-Tool
 * ⭐ **[Photopea](https://www.photopea.com/)** - Full-Featured
 * [BitMappery](https://www.igorski.nl/application/bitmappery/) - Full-Featured
 * [⁠PaintFE (Web)](https://www.paintfe.com/online/) - Full-Featured
-* [iPiccy](https://ipiccy.com/) - Full-Featured
-* [Stet](https://stet.io/) - Full-Featured
 * [Polarr](https://photoeditor.polarr.co/) - Multi-Tool
 * [Resize Pixel](https://www.resizepixel.com/) - Multi-Tool
-* [Tom's Editor](https://tomseditor.com/editor/) - Multi-Tool
 * [MiNi Photo Editor](https://mini2-photo-editor.netlify.app/) - Simple Editor / [GitHub](https://github.com/xdadda/mini-photo-editor)
 * [Polotno Studio](https://studio.polotno.com/) - Simple Editor
-* [ILoveImg](https://www.iloveimg.com/photo-editor) - Simple Editor
 * [UpperPix](https://upperpix.com/) - Simple Editor
-* [Online Photo Editor](https://www.freeonlinephotoeditor.com/) - Simple Editor
-* [Picverse](https://www.picverse.com/online-photo-editor) - Simple Editor
 * [webp2jpg](https://renzhezhilu.github.io/webp2jpg-online/) - Simple Editor
 * [edit.photo](https://edit.photo/) - Simple Editor
 * [RedKetchup](https://redketchup.io/) - Multi-Tool
@@ -65,21 +53,20 @@
 
 ## ▷ Content Removers
 
-* ⭐ **[ObjectRemover](https://objectremover.com/)**, [wipe.photos](https://wipe.photos/), [Inpaint](https://theinpaint.com/) or [HAMA](https://www.hama.app/) - Object Removers
+* ⭐ **[wipe.photos](https://wipe.photos/)** or [HAMA](https://www.hama.app/) - Object Removers
 * ⭐ **[BG Bye](https://bgbye.io/)** - Background Remover / [GitHub](https://github.com/MangoLion/bgbye)
 * [Pixelcut](https://www.pixelcut.ai/) - Background Remover
 * [Change BG](https://www.change-bg.org/) - Background Remover
 * [Adobe Express Background Remover](https://www.adobe.com/express/feature/image/remove-background) - Background Remover
-* [remove.bg](https://www.remove.bg/) - Background Remover / [GIMP Plugin](https://github.com/manu12121999/RemoveBG-GIMP)
 * [Rembg](https://github.com/danielgatis/rembg) - Self-Hosted Background Remover
-* [Segment Anything](https://aidemos.meta.com/segment-anything) - Visual Segmentation / [GUI](https://github.com/dibrale/samist) / [Stable Diffusion WebUI](https://github.com/continue-revolution/sd-webui-segment-anything) / [Extensions](https://github.com/kevmo314/magic-copy)
+* [Segment Anything](https://aidemos.meta.com/segment-anything) - Visual Segmentation
 
 ***
 
 ## ▷ Upscale / Restore
 
 * ⭐ **[Waifu2x](https://github.com/nagadomi/nunif)** - Anime Image Upscaling / [WebUI](https://www.waifu2x.net/), [2](https://unlimited.waifu2x.net/), [3](https://waifu2x.pro/) / Self-Hosted
-* ⭐ **[WaifuXL](https://waifuxl.com/)** - Anime Image Upscaling / Self-Hosted / Web
+* ⭐ **[WaifuXL](https://waifuxl.com/)** - Anime Image Upscaling / Self-Hosted / Web / [GitHub](https://github.com/TheFutureGadgetsLab/WaifuXL)
 * ⭐ **[image-upscaling](https://image-upscaling.net/)** - Image Upscaling / Web
 * ⭐ **[Upscayl](https://upscayl.org/)** - Image Upscaling / Self-Hosted / [GitHub](https://github.com/upscayl/upscayl)
 * ⭐ **[chaiNNer](https://chainner.app/)** - Image Upscaling / Self-Hosted / [GitHub](https://github.com/chaiNNer-org/chaiNNer)
@@ -100,24 +87,22 @@
 
 ## ▷ Image Effects
 
-* ⭐ **[Mosh](https://moshpro.app/)**, [glitch2](https://akx.github.io/glitch2/) or [GlitchyImage](https://glitchyimage.com/) - Glitch Images
-* [PhotoFunia](https://photofunia.com/), [⁠Grainrad](https://grainrad.com/), [effect.app](https://effect.app/), [Polaroma](https://www.polaroma.online/), [⁠Tooooools](https://tooooools.app/) or [Image Mage](https://imagemageage.github.io/) - Image Effects / Filters
+* ⭐ **[Mosh](https://moshpro.app/)**, [PhotoFunia](https://photofunia.com/), [⁠Grainrad](https://grainrad.com/), [effect.app](https://effect.app/), [Polaroma](https://www.polaroma.online/), [⁠Tooooools](https://tooooools.app/) or [Image Mage](https://imagemageage.github.io/) - Image Effects / Filters
+* [glitch2](https://akx.github.io/glitch2/) or [GlitchyImage](https://glitchyimage.com/) - Glitch Images
 * [⁠Image95](https://image95.com/) - Retro Image Effects / Filters
 * [Palettum](https://palettum.com/) - Add Custom Color Palettes to Images & GIFs / [GitHub](https://github.com/arrowpc/palettum) 
 * [⁠Dual Shades](https://dual-shades.anmolagrawal.dev/) - Generate B&W Images w/ Colorized Subjects
 * [PhotoJoiner](https://www.photojoiner.com/) or [⁠Collaigo](https://www.collaigo.com/) / [Discord](https://discord.gg/WbVXpRkWZv) (chrome) - Collage Makers / Editors
-* [⁠shabzefilters](https://shabzefilters.netlify.app/) - ASCII, Dot, Braille, Block, Line, etc
+* [⁠shabzefilters](https://lumo-flt.vercel.app/) - ASCII, Dot, Braille, Block, Line, etc
 * [⁠Dot Shader](https://iamnoman.com/dot) - Halftone Image Filtering Tool 
 * [VHS-Engine](https://vhs-engine.netlify.app/) - VHS Effect Editor ⁠
 * [AIDraw](https://ai-draw.tokyo/en/) or [⁠FiniteCurve](https://www.finitecurve.com/) - Turn Photos into Line Art
 * [Tiler](https://github.com/nuno-faria/tiler) - Mosaic Image Generator
 * [Fotosketcher](https://fotosketcher.com/) - Turn Photos into Artwork / Windows
-* [⁠ImageToCartoon](https://imagetocartoon.com/) - Turn Images into Cartoons
 * [Mimi](https://mimi-panda.com/) - Turn Photos into Coloring Book Sketch
 * [Text-Image](https://www.text-image.com/) - Text Image Generator
 * [ordered-dither-maker](https://seleb.github.io/ordered-dither-maker/), [⁠Dithering Studio](https://ditheringstudio.com/), [BDFM](https://bitmap.designfamilymarket.com/), [Ditherista](https://github.com/robertkist/ditherista/) or [Dither Me This](https://doodad.dev/dither-me-this/) - Image Dithering / Bitmap Generators
 * [Rutt-Etra-Izer](https://airtightinteractive.com/demos/js/ruttetra/) - Scanned-line Images
-* [Tinter](https://github.com/uxie-io/tinter) - Hue Editor
 * [Geometrize](https://www.geometrize.co.uk/) - Redraw Images with Geometric Shapes / [GitHub](https://github.com/Tw1ddle/geometrize)
 * [PBNify](https://pbnify.com/) - Paint by Number Tool
 * [Party-ify](https://nathanielw.github.io/party-ify/) - Party-ify Images
@@ -142,19 +127,16 @@
 * ⭐ **[Krita](https://krita.org/en/)** - Painting App / Windows, macOS, Linux, Android / [AI Generation](https://github.com/Acly/krita-ai-diffusion/) / [Docs](https://docs.krita.org/en/) / [GitHub](https://github.com/KDE/krita)
 * ⭐ **[miniPaint](https://viliusle.github.io/miniPaint/)** - Browser Painting / Web / [GitHub](https://github.com/viliusle/miniPaint)
 * ⭐ **[Pinta](https://www.pinta-project.com/)** - Painting App / Windows, macOS, Linux / [GitHub](https://github.com/PintaProject/Pinta)
-* [Magma](https://magma.com/), [⁠MagicalDraw](https://draw.kuku.lu/) or [malmal](https://malmal.io/) - Collaborative Drawing / Web
+* [Magma](https://magma.com/), [⁠MagicalDraw](https://draw.kuku.lu/) or [malmal](https://malmal.app/) - Collaborative Drawing / Web
 * [DrawPile](https://drawpile.net/) - Collaborative Drawing / Windows, macOS, Linux, Android, Web
-* [SmoothDraw](https://qrli.github.io/smoothdraw/) - Painting App / Windows
 * [⁠Wigglypaint](https://beyondloom.com/tools/wigglypaint.html) or [FizzPaint](https://fizzpaint.ameniwa.com/) - Browser Painting / Animated Brushes / Web
 * [Inkscape](https://inkscape.org/) - Drawing / Sketching / Windows, macOS, Linux / [GitLab](https://gitlab.com/inkscape/inkscape)
 * [FireAlpaca](https://firealpaca.com/) - Painting App / Windows, macOS
 * [PixiEditor](https://pixieditor.net/) - Vector Editor / Painting App / Windows, macOS, Linux / [Discord](https://discord.com/invite/qSRMYmq) / [GitHub](https://github.com/PixiEditor/PixiEditor)
-* [SumoPaint](https://sumopaint.com/) - Browser Painting / Web
 * [KRESKA.art](https://kreska.art/) - Browser Painting / Drawing / Web
 * [Milton](https://www.miltonpaint.com/) - Infinite Canvas Painting / Windows, Linux / [GitHub](https://github.com/serge-rgb/milton)
 * [AutoDraw](https://www.autodraw.com/) - AI Drawing Tool / Web
 * [⁠VibePaintAI](https://vibepaint-ai-795372324720.us-west1.run.app/) - AI Painting Tool / Web
-* [VectorPaint](https://vectorpaint.yaks.co.nz/) - Vector Editor / Painting / Web
 * [⁠Provector](https://start.provector.app/) - Vector Editor / Web / [GitHub](https://github.com/diaoliu/provector)
 * [Graphite](https://graphite.art) - Vector Editor / Web / [Subreddit](https://www.reddit.com/r/graphite/) / [Discord](https://discord.com/invite/uMjBz5N68W) / [GitHub](https://github.com/GraphiteEditor/Graphite)
 * [⁠Vectorpea](https://www.vectorpea.com/) - Vector Editor / Web
@@ -187,7 +169,7 @@
 * ↪️ **[Pixel Art Animation](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/video-tools#wiki_.25B7_animation_tools)**
 * ↪️ **[ASCII Art](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/text-tools#wiki_.25B7_ascii_art)**
 * ⭐ **[Aseprite](https://github.com/aseprite/aseprite)** - Pixel Art Editor / Windows, macOS, Linux / [Guide](https://youtu.be/Z4Enx-Nb43E)
-* ⭐ **[LibreSprite](https://libresprite.github.io/)** - Pixel Art Editor / Windows, Linux, macOS / [GitHub](https://github.com/LibreSprite/LibreSprite)
+* ⭐ **[LibreSprite](https://libresprite.github.io/)** - Pixel Art Editor / Windows, macOS, Linux / [GitHub](https://github.com/LibreSprite/LibreSprite)
 * ⭐ **[Piskel](https://www.piskelapp.com/)** - Pixel Art Editor / Web
 * [rx](https://rx.cloudhead.io/) - Pixel Art Editor / macOS, Linux / [Discord](https://discord.com/invite/xHggPjfsS9) / [GitHub](https://github.com/cloudhead/rx)
 * [PixiEditor](https://pixieditor.net/) - Pixel Art Editor / Windows, macOS, Linux / [Discord](https://discord.com/invite/qSRMYmq) / [GitHub](https://github.com/PixiEditor/PixiEditor)
@@ -204,7 +186,6 @@
 * [SpookyGhost](https://encelo.itch.io/spookyghost) - Pixel Art Editor / Windows, macOS, Linux, Android
 * [PixelartVillage](https://pixelartvillage.com/), [⁠Pixel Art Village](https://pixelartvillage.org/), [⁠Pixel Converter](https://pixel-converter.ameniwa.com/), [Pixel It](https://giventofly.github.io/pixelit/) or [Pixelart Converter](https://app.monopro.org/pixel/?lang=en) - Image to Pixel Art Converters / Web
 * [GB Dot Converter](https://deepblizzard.itch.io/gb-dot-converter) - Image to Game Boy Style Art Converter / Web
-* [⁠GLORP](https://zack-gphom.itch.io/glorp-pixel-to-svg) - Convert Pixel Art to Optimized SVGs / Windows / [GitHub](https://github.com/ZackGphom/GLORP/)
 * [⁠Makapix Club](https://makapix.club/) - Pixel Art Sharing + Editor for LED/DIY Devices
 * [Pixelorama](https://pixelorama.org/) - 2D Sprite Editor / Windows, macOS, Linux, Web / [Discord](https://discord.com/invite/GTMtr8s) / [GitHub](https://github.com/Orama-Interactive/Pixelorama)
 * [⁠The Spriters Toolkit](https://tools.spriters-resource.com/) - Sprite Sheet Toolkit / Web
@@ -212,7 +193,7 @@
 * [Nasu](https://hundredrabbits.itch.io/nasu) - Sprite Sheet Editor / Windows, macOS, Linux, Android
 * [GIF to Frames](https://giftoframes.com/) - GIF to Sprite Sheet / Web
 * [Pixel Snapper](https://www.spritefusion.com/pixel-snapper) - Auto-Fix Pixel Art into Grids / Web / [Discord](https://discord.com/invite/8sCEAspmBV) / [GitHub](https://github.com/Hugo-Dz/spritefusion-pixel-snapper)
-* [Pixel Reconstructor](https://i-win.neocities.org/pixel/), [Pixel Art Upscaler](https://imaginarycatlab.com/free-pixel-art-upscaler.html), [⁠Pixel Art Fixer](https://www.retrodiffusion.ai/tools/pixel-art-fixer/) / [GitHub](https://github.com/Retro-Diffusion/pixel-art-fixer) or [Pixel Art Scaler](https://lospec.com/pixel-art-scaler/) - ⁠Pixel Art Upscalers / Web
+* [Pixel Reconstructor](https://i-win.neocities.org/pixel/), [Pixel Refiner](https://pixel-refiner.app/), [Pixel Art Upscaler](https://imaginarycatlab.com/free-pixel-art-upscaler.html), [⁠Pixel Art Fixer](https://www.retrodiffusion.ai/tools/pixel-art-fixer/) / [GitHub](https://github.com/Retro-Diffusion/pixel-art-fixer) or [Pixel Art Scaler](https://lospec.com/pixel-art-scaler/) - ⁠Pixel Art Upscalers / Web
 
 ***
 
@@ -227,7 +208,7 @@
 * [Giphy](https://giphy.com/), [Tenor](https://tenor.com/), [Gifer](https://gifer.com/en), [GIFVibe](https://gifvibe.com/), [GifCities](https://gifcities.org/), [Animations](https://bleuje.com/animationsite/) or [GIFBin](https://gifbin.com/) - View / Download GIFs
 * [⁠AnimGifMoji](https://www.animgifmoji.com/) - GIF to Emoji Converter
 * [DrawIsland](https://drawisland.com/) or [Sketch Machine](https://sketchmachine.net/) - Create GIFs from Drawings
-* [ScreenToGif](https://www.screentogif.com/) - GIF Recorder / Windows / [GitHub](https://github.com/NickeManarin/ScreenToGif)
+* [ScreenToGif](https://nicke.tech/screentogif) - GIF Recorder / Windows / [GitHub](https://github.com/NickeManarin/ScreenToGif)
 * [licecap](https://www.cockos.com/licecap/) - Create GIFs via Screencasts / Windows, macOS, Linux / [GitHub](https://github.com/justinfrankel/licecap)
 * [ugiffer](https://iobureau.com/ugiffer/) - Create GIFs via Screencasts / Windows
 * [Ultimate 88x31 Generator](https://pixelwolf.net/PWapps/88x31/), [blinkies.cafe](https://blinkies.cafe/) / [GitHub](https://github.com/piconaut/blinkies.cafe) or [⁠88x31px Button Generator](https://88x31.datakra.sh/) - Create Retro Blinkie GIFs / 88x31 Badges
@@ -269,10 +250,12 @@
 
 * ↪️ **[Design Resources](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/storage#wiki_design_resources)**
 * ⭐ **[archives.design](https://archives.design/)** - Graphic Design Archive
-* ⭐ **[Muzli](https://search.muz.li/)** or [⁠Cosmos](https://www.cosmos.so/) - Design Inspiration Sites
+* ⭐ **[Muzli](https://search.muz.li/)**, [⁠Fuse.kiwi](https://www.fuse.kiwi/) or [⁠Cosmos](https://www.cosmos.so/) - Design Inspiration Sites
 * [CARI](https://cari.institute/) or [CARI Are.na](https://www.are.na/consumer-aesthetics-research-institute/channels) - Design Aesthetics History
-* [People’s Graphic Design Archive](https://peoplesgdarchive.org/) - Graphic Design History
+* [People’s Graphic Design Archive](https://peoplesgdarchive.org/) - Graphic Design History / Archive
+* [⁠AIGA Design Archives](https://designarchives.aiga.org/) - Graphic Design History / Archive
 * [One Page Love](https://onepagelove.com/) - Single Page Site Design Ideas
+* [⁠Packaging of the World](https://packagingoftheworld.com/) - Package Design Archive / Inspiration / [X](https://x.com/packagings/)
 * [SMPoster](https://www.smposter.com/) - Poster Designs
 * [⁠Annual Report Archive](https://annualreport.gallery/) - Vintage Corporate Annual Report Covers
 * [AnotherGraphic](https://anothergraphic.org/) - Typography Designs
@@ -302,6 +285,7 @@
 * ↪️ **[SVG Icons](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/storage#wiki_svg_icons)** / **[SVG Tools](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/dev-tools#wiki_.25B7_svg_tools)**
 * ⭐ **[Alphacoders Avatars](https://avatars.alphacoders.com/)** - PFPs / Avatars
 * ⭐ **[Picrew](https://picrew.me/en/)** - Avatar Creator
+* [⁠DiceBear](https://www.dicebear.com/) - Avatar Creator / [GitHub](https://github.com/dicebear/dicebear)
 * [⁠Icon Gen](https://icon-gen.netlify.app/) - Logo to Avatar / Icon Generator
 * [⁠Pico](https://pico-icons.vercel.app/) - Icon Editor / Web
 * [PixelMe](https://xsgames.co/pixelme/) or [Avatar Mixer](https://kenney.itch.io/avatar-mixer) - 8-bit Avatar Creators
@@ -326,10 +310,12 @@
 
 * [AmbientCG](https://ambientcg.com/) - Textures
 * [TextureTown](https://textures.neocities.org/) - Textures
-* [3D textures](https://icons8.com/l/3d-textures/) - Textures
+* [Icons8 Textures](https://icons8.com/l/3d-textures/) - Textures
+* [⁠3D Textures](https://3dtextures.me/) - Textures
 * [Textureking](https://www.textureking.com/) - Textures
 * [Texture Labs](https://texturelabs.org/) - Textures
 * [Transparent Textures](https://www.transparenttextures.com/) - Textures
+* [⁠Free PBR](https://freepbr.com/) - Textures
 * [Texture Club](https://www.sketchuptextureclub.com/) - Textures
 * [⁠ShareTextures](https://www.sharetextures.com/) - Textures
 * [TexturesForFree](https://texturesforfree.com/) - Textures
@@ -435,7 +421,7 @@
 ***
 
 * 🌐 **[Awesome Stock Resources](https://github.com/neutraltone/awesome-stock-resources#photography)** - Stock Photo Index
-* ⭐ **[GetPaidStock](https://getpaidstock.com/)**, **[DownPic](https://downpic.cc)** or **[Downloader.la](https://downloader.la/)** - Paid Stock Photo Downloaders
+* ⭐ **[Downloader.la](https://downloader.la/)** or [DownPic](https://downpic.cc) - Paid Stock Photo Downloaders
 * ⭐ **[EveryPixel](https://www.everypixel.com/)**, [O-DAN](https://o-dan.net/en/) or [LibreStock](https://librestock.com/) - Stock Photo Search Engines
 * [Unsplash](https://unsplash.com/) - Stock Photos / Royalty-Free
 * [Pixabay](https://pixabay.com/) - Stock Photos
@@ -554,9 +540,9 @@
 * [⁠McMaster](https://www.mcmaster.com/) or [3D Find It](https://www.3dfindit.com/en/) - Industrial / Engineering 3D Models / 3D Printable Hardware Parts + Tools
 * [thebasemesh](https://www.thebasemesh.com/) - Mesh 3D Models
 * [BlenderKit](https://www.blendkit.com/) - 3D Model Library Integrated into Blender
-* [⁠Gridfinity](https://gridfinity.xyz/), [⁠Multiboard](https://www.multiboard.io/), [⁠openGrid](https://www.opengrid.world/) or [Jerrari Design](https://www.jerrari3d.com/) - 3D Storage Systems
+* [⁠Gridfinity](https://gridfinity.xyz/), [⁠Multiboard](https://multibuild.io/), [⁠openGrid](https://www.opengrid.world/) or [Jerrari Design](https://www.jerrari3d.com/) - 3D Storage Systems
 * [CosplayStaticFigure](https://t.me/CosplayStaticFigure) - Cosplay / Figurine 3D Models
-* [3DBrute](https://3dbrute.com/), [3DZip](https://3dzip.org/) or [DesignConnected](https://www.designconnected.com/) - 3D Furniture Models
+* [3DBrute](https://3dbrute.com/), [3DZip](https://3dzip.info/) or [DesignConnected](https://www.designconnected.com/) - 3D Furniture Models
 * [Vertex](https://vertex.im/) - 3D Icons
 * [Ameede](https://www.ameede.com/) - CNC / Laser Design Vectors
 * [Skybox](https://skybox.blockadelabs.com/) - AI Generated 3D Environments
@@ -569,8 +555,7 @@
 * ⭐ **[Blender](https://www.blender.org/)** - FOSS 3D Modeling App / [Forums](https://blenderartists.org/) / [Source Code](https://projects.blender.org/blender/blender)
 * ⭐ **Blender Tools** - [Resources](https://awesome-blender.netlify.app/), [GitHub](https://github.com/agmmnn/awesome-blender) / [Extensions](https://extensions.blender.org/) / [Communities](https://www.blender.org/community/) / [Addons](https://t.me/BlenderUniverse/3) / [Plugins](https://t.me/blenderplugs) / [Textures](https://github.com/carson-katri/dream-textures) / [Renderer](https://github.com/prman-pixar/RenderManForBlender) / [3D Nodes](https://t.me/geometrynodes) / [AI Render](https://github.com/benrugg/AI-Render)
 * ⭐ **[MCprep](https://theduckcow.com/dev/blender/mcprep/)** - All-in-one Minecraft Blender Addon / [Discord](https://discord.com/invite/mb8hBUC) / [GitHub](https://github.com/Moo-Ack-Productions/MCprep)
-* ⭐ **[Shap-e](https://github.com/openai/shap-e)** - Generate 3D Objects Based on Text / Image Prompts
-* [Meshy.ai](https://www.meshy.ai/) / [Discord](https://discord.com/invite/KgD5yVM9Y4), [⁠Tripo Studio](https://studio.tripo3d.ai/) (temp mail) or [TRELLIS](https://trellis3d.github.io/) / [GitHub](https://github.com/microsoft/TRELLIS) / [Hugging Face](https://huggingface.co/spaces/JeffreyXiang/TRELLIS) - AI 3D Model Generators
+* [Meshy.ai](https://www.meshy.ai/) / [Discord](https://discord.com/invite/KgD5yVM9Y4), [⁠Tripo Studio](https://studio.tripo3d.ai/) (temp mail) or [TRELLIS](https://trellis3d.github.io/) / [GitHub](https://github.com/microsoft/TRELLIS) / [Hugging Face](https://huggingface.co/spaces/trellis-community/TRELLIS) - AI 3D Model Generators
 * [VFXmed](https://www.vfxmed.com/) - Blender Addons
 * [Wings 3D](https://www.wings3d.com/) - Cross-Platform 3D Modeling App / [GitHub](https://github.com/dgud/wings)
 * [⁠Dust3D](https://dust3d.org/) - Cross-Platform 3D Modeling App / [GitHub](https://github.com/huxingyi/dust3d)
@@ -591,7 +576,7 @@
 
 ## ▷ 3D Modeling Tools
 
-* [Embossify](https://www.embossify.com/), [⁠Image to 3D](https://image-to-3d.ai/) or [Tripo3D](https://www.tripo3d.ai/app/home) - Image to 3D Model Converters
+* [Embossify](https://www.embossify.com/), [⁠Image to 3D](https://image-to-3d.ai/) or [Tripo3D](https://studio.tripo3d.ai/) - Image to 3D Model Converters
 * [⁠Kiri:Moto](https://grid.space/kiri/) - Web-Based 3D Model Slicer 
 * [3D Transformer](https://www.3dtransformer.com/) - Rotate 3D Images
 * [3DConvert](https://3d-convert.com/en/) - Online 3D Image Converter
@@ -631,7 +616,7 @@
 * [BRL-CAD](https://brlcad.org/) or [OpenSCAD](https://openscad.org/) - Cross-Platform CSG CAD Modeling
 * [LibreCAD](https://librecad.org/) or [QCAD](https://www.qcad.org/en/) - 2D CAD Modeling
 * [Mayo](https://github.com/fougue/mayo) - 3D CAD Viewer and Converter
-* [CadHub](https://cadhub.xyz/), [CAD Mapper](https://cadmapper.com/) or [GrabCAD](https://grabcad.com/library) - Free CAD Files
+* [CadHub](https://cadhub.xyz/), [CAD Mapper](https://cadmapper.com/, [⁠CAD Blocks](https://cad-blocks.net/) or [GrabCAD](https://grabcad.com/library) - Free CAD Files
 
 ***
 
@@ -652,13 +637,13 @@
 * [Adobe Bridge](https://adobe.com/products/bridge.html) - Adobe Assets Manager
 * [behind!](https://github.com/kubuzetto/behind) - View Background Images
 * [Visual Center](https://javier.xyz/visual-center/) - Find the Visual Center of an Image
-* [Watermarkly](https://watermarkly.com/), [BatchWatermark](https://batchwatermark.com/) or [Watermarkup](https://watermarkup.com/watermark.html) - Image Watermarking
+* [Watermarkly](https://watermarkly.com/), [BatchWatermark](https://watermarkimage.com/) or [Watermarkup](https://watermarkup.com/watermark.html) - Image Watermarking
 * [Watermark Remover](https://www.watermarkremover.io/), [Unwatermark](https://unwatermark.ai/) or [DeWatermark](https://dewatermark.ai/) - Watermark Removal
 * [Glaze](https://glaze.cs.uchicago.edu/index.html) or [Nightshade](https://nightshade.cs.uchicago.edu/downloads.html) - Protect Digital Art from AI Copies
 * [APNG Maker](https://rukario.github.io/Schande/Uninteresting%20stuff/APNG%20Maker.html) - Create / Optimize APNG Images
 * [JPEGMedic ARWE](https://www.jpegmedic.com/tools/jpegmedic-arwe/) - Ransomware-Encrypted Image Recovery Tool
 * [CamScanner](https://apps.apple.com/us/app/camscanner-pdf-scanner-app/id388627783) - Scan & Digitize Documents / iOS
-* [Swapface](https://swapface.org/) / [Discord](https://discord.com/invite/5yPew6Cy6a), [Face Swapper](https://faceswapper.ai/), [FaceSwapVideo](https://faceswapvideo.io/), [facy.ai](https://facy.ai/swap-face-ai/photo), [AIFaceSwap](https://aifaceswap.io/) or [FaceFusion](https://github.com/facefusion/facefusion) - Face Swapping
+* [Swapface](https://swapface.org/) / [Discord](https://discord.com/invite/5yPew6Cy6a), [Face Swapper](https://faceswapper.ai/), [FaceSwapVideo](https://faceswapvideo.io/), [facy.ai](https://facy.ai/photo-face-swap), [AIFaceSwap](https://aifaceswap.io/) or [FaceFusion](https://github.com/facefusion/facefusion) - Face Swapping
 * [WiseTagger](https://github.com/0xb8/WiseTagger) - Image Tagger
 * [BooruDatasetTagManager](https://github.com/starik222/BooruDatasetTagManager) - Booru Image Tagger
 * [Cluttr](https://gitlab.com/bearjaws/cluttr), [⁠Allusion](https://github.com/RafaUC/Allusion/), [Diffractor](https://www.diffractor.com/) / [GitHub](https://github.com/diffractor/diffractor), [Exif Sorter](https://www.amok.am/en/freeware/amok_exif_sorter/) or [TagStudio](https://github.com/TagStudioDev/TagStudio) - Image File Organizers / Managers
@@ -692,7 +677,6 @@
 * [Pingo](https://css-ig.net/pingo) - Image Optimization / [GUI](https://css-ig.net/pinga)
 * [Ihancer](https://ihancer.com) - Image Optimization
 * [Oxipng](https://github.com/shssoichiro/oxipng) - PNG Optimization
-* [Crunch](https://github.com/chrissimpkins/Crunch) - PNG Optimization / Self-Hosted / No Sign-Up
 
 ***
 
@@ -703,7 +687,7 @@
 * [Knvrt](https://www.knvrt.one/)
 * [Convertmyimage](https://convert-my-image.com/)
 * [ImageConvert](https://imageconvert.org/)
-* [imverter](https://www.imverter.com/)
+* [imverter](https://online.reaconverter.com/)
 * [Raw Pics](https://raw.pics.io/)
 * [Converseen](https://converseen.fasterland.net/)
 
@@ -731,10 +715,9 @@
 ***
 
 * ⭐ **[ImageToText](https://www.imagetotext.info/)** - Online OCR
-* ⭐ **[Capture2Text](https://capture2text.sourceforge.net/)**, [TextShot](https://github.com/ianzhao05/textshot), [⁠NormCap](https://dynobo.github.io/normcap/) / [GitHub](https://github.com/dynobo/normcap), [Umi-OCR](https://github.com/hiroi-sora/Umi-OCR/blob/main/README_en.md) / [Alt Engines](https://github.com/hiroi-sora/Umi-OCR_plugins/)
-, [ImageScanOCR](https://github.com/ttop32/ImageScanOCR), [tesseract](https://github.com/tesseract-ocr/tesseract) or [gImageReader](https://github.com/manisandro/gImageReader) - OCR Desktop Apps
+* ⭐ **[Capture2Text](https://capture2text.sourceforge.net/)**, [TextShot](https://github.com/ianzhao05/textshot), [⁠NormCap](https://dynobo.github.io/normcap/) / [GitHub](https://github.com/dynobo/normcap), [Umi-OCR](https://github.com/hiroi-sora/Umi-OCR/blob/main/README_en.md) / [Alt Engines](https://github.com/hiroi-sora/Umi-OCR_plugins/),
+[ImageScanOCR](https://github.com/ttop32/ImageScanOCR), [tesseract](https://github.com/tesseract-ocr/tesseract) or [gImageReader](https://github.com/manisandro/gImageReader) - OCR Desktop Apps
 * ⭐ **[Text Grab](https://github.com/TheJoeFin/Text-Grab)** - Minimal OCR Windows Tool
-* [Handwriting-OCR](https://github.com/Breta01/handwriting-ocr) - Handwriting OCR
 * [Project Naptha](https://projectnaptha.com/) - Automatic OCR while Browsing Images
 * [i2ocr](https://www.i2ocr.com/) - Online OCR
 * [GLM-OCR](https://ocr.z.ai/) - Online OCR
@@ -750,7 +733,7 @@
 ## ▷ Image Viewers
 
 * ⭐ **[IrfanView](https://www.irfanview.com/)**
-* ⭐ **[JPEGView](https://github.com/sylikc/jpegview)**
+* ⭐ **[JPEGView](https://github.com/KrokusPokus/JPEGView_L)**
 * ⭐ **[FastStone](https://www.faststone.org/index.htm)**
 * ⭐ **[qView](https://interversehq.com/qview/)** / [GitHub](https://github.com/jurplel/qView)
 * ⭐ **[XnView MP](https://www.xnview.com/en/xnviewmp/)**
@@ -760,6 +743,7 @@
 * [nomacs](https://nomacs.org/) / [GitHub](https://github.com/nomacs/nomacs)
 * [qimgv](https://github.com/easymodo/qimgv)
 * [oculante](https://github.com/woelper/oculante)
+* [⁠FlyPhotos](https://github.com/riyasy/FlyPhotos)
 * [QuickView](https://github.com/justnullname/QuickView)
 * [Diffractor](https://www.diffractor.com/) / [GitHub](https://github.com/diffractor/diffractor)
 * [PhotoQt](https://github.com/luspi/photoqt)
@@ -868,7 +852,6 @@
 * [FRAMED](https://framedsc.com/index.htm) - In-Game Screenshotting Tips
 * [Moocup](https://moocup.jaydip.me/) / [GitHub](https://github.com/jellydeck/moocup/) or [Screenshot Studio](https://www.screenshot-studio.com/) / [GitHub](https://github.com/KartikLabhshetwar/screenshot-studio) - Screenshot Editors / Mockups
 * [Screenshot Guru](https://screenshot.guru/), [Site-Shot](https://www.site-shot.com/) or [Pikwy](https://pikwy.com/) - Take Screenshots of Websites
-* [Screenshot Rocks](https://screenshot.rocks/) / [GitHub](https://github.com/daveearley/screenshot.rocks) - Create Screenshot Mockups of Websites
 * [paste.photos](https://www.paste.photos/) - Paste Image to Download / [GitHub](https://github.com/AlejandroAkbal/Paste-Image-to-Download)
 * [How to Screenshot](https://screenshot.help/) - Multi-Platform Screenshot Tutorials / [GitHub](https://github.com/s-thom/howtoscreenshot)
 
@@ -895,7 +878,7 @@
 * 🌐 **[React Color](https://casesandberg.github.io/react-color/)** - Color Pickers Index
 * 🌐 **[BrandColors](https://brandcolors.net/)** - Brand Color Palettes Index
 * [Material UI](https://materialui.co/colors/), [OKLCH](https://oklch.com/), [Color Deck](https://color.obscuredetour.com/), [Picular](https://picular.co/) or [ColorKit's Color Picker](https://colorkit.co/color-picker/) - Color Pickers
-* [Colorpicker](https://colorpicker.fr/), [Just Color Picker](https://annystudio.com/software/colorpicker/) or [epick](https://github.com/vv9k/epick) - Color Picker Desktop Apps
+* [Colorpicker](https://colorpicker.fr/) or [Just Color Picker](https://annystudio.com/software/colorpicker/) - Color Picker Desktop Apps
 * [Colorscales](https://www.colorscales.com/en/start) - Find Colors in Color Space
 * [ColourCode](https://www.toptal.com/designers/colourcode/) or [Colordot](https://color.hailpixel.com/) - Find Colors by Moving Mouse
 * [Geenes](https://geenes.app/welcome) or [Leonardo](https://leonardocolor.io/) - Find UI Color Palettes
@@ -914,7 +897,7 @@
 * [r/Photography Guide](https://www.reddit.com/r/photography/wiki/introduction) or [Cambridge In Colour](https://www.cambridgeincolour.com/) - Photography / Camera Guides
 * [Camera Wiki](http://camera-wiki.org/) - Camera Model Wiki
 * [PhotoFeeler](https://www.photofeeler.com/) - Get Photo Feedback
-* [⁠DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve) / [X](https://x.com/Blackmagic_News), [darktable](https://www.darktable.org/) / [GitHub](https://github.com/darktable-org/darktable), [⁠RapidRAW](https://www.getrapidraw.com/) / [Discord](https://discord.com/invite/cvFugZ2Hw8) / [GitHub](https://github.com/CyberTimon/RapidRAW), [RawTherapee](https://www.rawtherapee.com/) / [GitHub](https://github.com/RawTherapee/RawTherapee), [⁠LightZone](https://github.com/ktgw0316/LightZone) or [Lightroom Classic on Linux](https://github.com/6im0n/lightroom-classic-on-linux) - RAW Photo Editors / Windows, macOS, Linux
+* [⁠DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve) / [X](https://x.com/Blackmagic_News), [darktable](https://www.darktable.org/) / [GitHub](https://github.com/darktable-org/darktable), [⁠RapidRAW](https://www.getrapidraw.com/) / [Discord](https://discord.com/invite/cvFugZ2Hw8) / [GitHub](https://github.com/CyberTimon/RapidRAW), [RawTherapee](https://www.rawtherapee.com/) / [GitHub](https://github.com/RawTherapee/RawTherapee), [FerrumPix](https://ferrumpix.app/) / [GitHub](https://github.com/Bitpainter75/FerrumPix), [⁠LightZone](https://github.com/ktgw0316/LightZone) or [Lightroom Classic on Linux](https://github.com/6im0n/lightroom-classic-on-linux) - RAW Photo Editors / Windows, macOS, Linux
 * [HDRMerge](https://jcelaya.github.io/hdrmerge/) - RAW Photography HDR Merge Tool / [GitHub](https://github.com/jcelaya/hdrmerge)
 * [PixelPeeper](https://pixelpeeper.com/) - Extract Lightroom Edits / Settings
 * [⁠Photons to Photos](https://www.photonstophotos.net/) - Photographic Sensor Performance Data
@@ -940,7 +923,7 @@
 * [Picarta](https://picarta.ai/) / [Discord](https://discord.gg/g5BAd2UFbs), [GeoSpy](https://geospy.net/)
  or [GeoEstimation](https://labs.tib.eu/geoestimation) - Image Geolocation / Location Estimation
 * [Image Identification Project](https://www.imageidentify.com/) - Image Identification Tool
-* [StegOnline](https://georgeom.net/StegOnline/upload), [OpenStego](https://www.openstego.com/), [OpenPuff](https://embeddedsw.net/OpenPuff_Steganography_Home.html), [Steganography-PNG](https://pedrooaugusto.github.io/steganography-png/) / [GitHub](https://github.com/pedrooaugusto/steganography-png), [ImSter](https://github.com/DJayalath/ImSter), [stegano](https://bztsrc.gitlab.io/stegano/), [hide-text](https://all-tools.github.io/hide-text-in-image/) or [stegpy](https://github.com/izcoser/stegpy) - Images Steganography Tools
+* [StegOnline](https://georgeom.net/StegOnline/upload), [OpenStego](https://www.openstego.com/), [OpenPuff](https://embeddedsw.net/OpenPuff_Steganography_Home.html), [stegano](https://bztsrc.gitlab.io/stegano/), [hide-text](https://all-tools.github.io/hide-text-in-image/) or [stegpy](https://github.com/izcoser/stegpy) - Images Steganography Tools
 * [Aperisolve](https://aperisolve.fr/) / [2](https://www.aperisolve.com/) or [stegextract](https://github.com/evyatarmeged/stegextract) - Steganography Analysis Tool
 * [Redacted](https://redacted.app/) - Blur, Pixelate or Blackout parts of Images
 * [Image Scrubber](https://everestpipkin.github.io/image-scrubber/) - Blur Images / Scrub Metadata

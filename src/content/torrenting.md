@@ -31,15 +31,15 @@
 
 * ⭐ **[ExT](https://ext.to/)**, [2](https://search.extto.com/) / [Proxy](https://extranet.torrentbay.st/)
 * ⭐ **[Knaben](https://knaben.org/)**
-* [TorrentProject](https://torrentproject.cc/), [2](https://torrentproject2.net/) - DHT-Based
 * [DaMagNet](https://damag.net/) - DHT-Based
+* [BT4G](https://bt4gprx.com/)
+* [FileMood](https://filemood.com/)
+* [TorrentProject](https://torrentproject.cc/), [2](https://torrentproject2.net/) - DHT-Based
 * [TorrentQuest](https://torrentquest.com/)
 * [ExtraTorrent](https://extratorrent.st/)
 * [Cleanbay](https://cleanbay.netlify.app/)
 * [Torrents-CSV](https://torrents-csv.com/) / [Source Code](https://codeberg.org/heretic/torrents-csv-server)
-* [FileMood](https://filemood.com/)
-* [BT4G](https://bt4gprx.com/)
-* [⁠The Black Hole Bay](https://theblackholebay.lol/) / [Discord](https://discord.gg/Qb2GQqW3Uq)
+* [⁠The Black Hole Bay](https://theblackholebay.lol/) - DHT-Based / [Discord](https://discord.gg/Qb2GQqW3Uq)
 * [snowfl](https://snowfl.com/)
 * [Torlock](https://www.torlock.com/)
 * [uIndex](https://uindex.org/)
@@ -78,9 +78,9 @@
 ***
 
 * ⭐ **[qBittorrent](https://www.qbittorrent.org/)** / [2](https://qbittorrent.github.io/qBittorrent-website/) or [qBittorrent Enhanced](https://github.com/c0re100/qBittorrent-Enhanced-Edition) - Torrent Client / Windows, macOS, Linux / [Tools](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/torrent#wiki_.25B7_qbittorrent_tools) / [GitHub](https://github.com/qbittorrent/qBittorrent)
-* ⭐ **[Deluge](https://www.deluge-torrent.org/)** - Torrent Client / [Plugins](https://deluge-torrent.org/plugins/) / [Config](https://github.com/ratanakvlun/deluge-ltconfig/releases) / [Telegram Plugin](https://github.com/noam09/deluge-telegramer) / Windows, macOS, Linux
+* ⭐ **[Deluge](https://www.deluge-torrent.org/)** - Torrent Client / [Plugins](https://deluge-torrent.org/plugins/) / [Telegram Plugin](https://github.com/noam09/deluge-telegramer) / Windows, macOS, Linux
 * ⭐ **[Transmission](https://transmissionbt.com/)** - Torrent Client / Windows, macOS, Linux
-* ⭐ **[rTorrent](https://rakshasa.github.io/rtorrent/)** - Torrent Client / [Extended](https://rtorrent-ps.readthedocs.io/) / [Tools](https://pyrocore.readthedocs.org/), [2](https://github.com/pyroscope/pyrocore) / [Mods](https://calomel.org/rtorrent_mods.html) / Linux / [GitHub](https://github.com/rakshasa/rtorrent) 
+* ⭐ **[rTorrent](https://rtorrent.net/)** - Torrent Client / [Extended](https://rtorrent-ps.readthedocs.io/) / [Tools](https://pyrocore.readthedocs.io/), [2](https://github.com/pyroscope/pyrocore) / [Mods](https://calomel.org/rtorrent_mods.html) / Linux / [GitHub](https://github.com/rakshasa/rtorrent) 
 * [RuTorrent](https://github.com/Novik/ruTorrent) - RTorrent Web Frontend
 * [flood](https://flood.js.org/) - rTorrent, Transmission & qBittorrent WebUI / [GitHub](https://github.com/jesec/flood)
 * [torrent-control](https://github.com/Mika-/torrent-control) or [Remote Torrent Adder](https://github.com/bogenpirat/remote-torrent-adder) - Easily Send Torrents to Client

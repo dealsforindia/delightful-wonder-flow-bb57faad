@@ -45,7 +45,7 @@
 ## ▷ Archiving / Compression
 
 * 🌐 **[SuperCompression](https://supercompression.org/)** - File Compression Resources
-* ⭐ **[NanaZip](https://nanazip.org/)** / [GitHub](https://github.com/M2Team/NanaZip) or **[7-Zip](https://www.7-zip.org/)** - File Archiver
+* ⭐ **[NanaZip](https://nanazip.org/)** / [GitHub](https://github.com/M2Team/NanaZip) or **[7-Zip](https://www.7-zip.org/)** / [GitHub](https://github.com/ip7z/7zip) - File Archiver
 * ⭐ **[PeaZip](https://peazip.github.io/)** - Cross-Platform File Archiver / [GitHub](https://github.com/peazip/PeaZip/)
 * ⭐ **[CompactGUI](https://github.com/IridiumIO/CompactGUI)** - Transparent Compression
 * [Fileforums](https://fileforums.com/) or [Encode](https://encode.su/) - Data Compression Forums
@@ -189,7 +189,7 @@
 * [Attribute Changer](https://www.petges.lu/) - Edit File & Folder Properties
 * [WhatsLink](https://whatslink.info/) - View File Download Web Metadata
 * [Magika](https://github.com/google/magika) or [TridUI](https://github.com/JMcrafter26/TridUI) - File Type Detection Tools
-* [TagSpaces](https://www.tagspaces.org/) or [Tagging for Windows](https://tagging.connectpaste.com/) - Tag-Based File Systems
+* [TagSpaces](https://www.tagspaces.org/) or [Tagging for Windows](https://www.taggingforwindows.com/) - Tag-Based File Systems
 * [SKTimeStamp](https://tools.stefankueng.com/SKTimeStamp.html) - Change File Created / Modified Time
 
 ***
@@ -239,8 +239,7 @@
 * [BreezePDF](https://breezepdf.com/) - Client-Side
 * [⁠itinypdf](https://itinypdf.com/) - Client-Side
 * [⁠PDFKing](https://pdfking.app/) - Client-Side / [Discord](https://discord.gg/TdQeMGz3A)
-* [PDFClear](https://www.pdfclear.com/) - Client-Side
-* [DigiPDF](https://digipdf.app/?lang=en_US) - Client-Side
+* [DigiPDF](https://digipdf.app/?lang=en_US) - Client-Side / [Codeberg](https://codeberg.org/ladigitale/digipdf)
 * [Sejda](https://www.sejda.com/) - Server-Side
 * [ILovePDF](https://www.ilovepdf.com/) - Server-Side
 * [⁠PDFResizer](https://pdfresizer.com/) - Server-Side
@@ -285,10 +284,10 @@
 * [⁠Phone Link](https://www.microsoft.com/windows/sync-across-your-devices) - Hybrid / Windows, Android, iOS
 * [Google Quick Share](https://www.android.com/quick-share/) - Hybrid / Windows, Android, iOS
 * [Sefirah](https://github.com/shrimqy/Sefirah) - Local / Windows, Android
-* [⁠AlterSend](https://github.com/denislupookov/altersend) - Local / Windows, macOS, Linux, Android, iOS
+* [⁠AlterSend](https://github.com/denislupookov/altersend) - Online / Windows, macOS, Linux, Android, iOS
 * [QRServ](https://play.google.com/store/apps/details?id=dev.uint.qrserv) - Local / Android / [GitHub](https://github.com/uintdev/qrserv)
 * [Magic Wormhole](https://github.com/magic-wormhole/magic-wormhole) - Online / Windows, macOS, Linux, Android
-* [croc](https://github.com/schollz/croc) - Online / Windows, macOS, Linux, Android / [GUI](https://github.com/howeyc/crocgui)
+* [croc](https://getcroc.com/ ) - Online / Windows, macOS, Linux, Android / [GUI](https://github.com/howeyc/crocgui) / [GitHub](https://github.com/schollz/croc)
 * [LANDrop](https://landrop.app/) - Local / All Platforms / [Discord](https://discord.com/invite/5adm6sPugT) / [X](https://x.com/LANDropApp)
 * [NahrajSoubor](https://new.nahrajsoubor.cz/) - Online / Web
 * [IPFS](https://ipfs.tech/) - Desktop / Mobile Transfer / [Discord](https://discord.gg/vj7qWuAyHY)
@@ -311,7 +310,7 @@
 * [ToffeeShare](https://toffeeshare.com/) - Web / [GitHub](https://github.com/ToffeeShare)
 * [⁠Station307](https://www.station307.com/) - Web
 * [new.space](https://new.space/) - iOS, Web
-* [WebWormhole](https://webwormhole.io/) - [Chrome](https://chromewebstore.google.com/detail/webwormhole/jhombkhjanncdalcbcahinpjoacaiidn) / [Firefox](https://addons.mozilla.org/en-US/firefox/addon/webwormhole/) / Windows, macOS, Linux, Web / [GitHub](https://github.com/saljam/webwormhole)
+* [WebWormhole](https://webwormhole.com/) - [Chrome](https://chromewebstore.google.com/detail/webwormhole/jhombkhjanncdalcbcahinpjoacaiidn) / [Firefox](https://addons.mozilla.org/en-US/firefox/addon/webwormhole/) / Windows, macOS, Linux, Web / [GitHub](https://github.com/saljam/webwormhole)
 * [⁠Clip Fish](https://clip.fish/) - Web / [GitHub](https://github.com/clip-fish/web)
 
 ***
@@ -327,15 +326,14 @@
 * ↪️ **[Video File Hosts](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/video-tools#wiki_.25B7_video_file_hosts)**
 * ↪️ **[Image File Hosts](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/image-tools#wiki_.25B7_image_hosts)**
 * ⭐ **[Gofile](https://gofile.io/)** - 100GB Monthly / Unlimited / 10 Days After Last Download / [Manager Export](https://greasyfork.org/en/scripts/515250)
-* ⭐ **[Pixeldrain](https://pixeldrain.com/)** - 10GB / 60 Days After Last Download (10% min) / [Mirrors](https://docs.pixeldrain.com/questions_and_answers/#alternative-domain-names) / [Speedtest](https://pixeldrain.com/speedtest) / [Bypass](https://pixeldrain-bypass.gamedrive.to/)
+* ⭐ **[Pixeldrain](https://pixeldrain.com/)** - 10GB / 60 Days After Last Download (10% min) / Signup Required for Upload / [Mirrors](https://docs.pixeldrain.com/questions_and_answers/#alternative-domain-names) / [Speedtest](https://pixeldrain.com/speedtest)
 * ⭐ **[VikingFile](https://vikingfile.com/)** - Unlimited / 15 Days After Last Download / [Discord](https://discord.gg/EPEFC6KkpF)
 * ⭐ **[0807](https://0807.st/)** - 10GB / 30 Days After Last Download / [Discord](https://discord.gg/0807) / [Codeberg](https://codeberg.org/Sauul/0807)
 * ⭐ **[⁠DropDrive](https://dropdrive.org/)** - 100GB / 60 Days After Last Download / [Discord](https://discord.com/invite/YSABtmnD7a)
-* ⭐ **[Mocha](https://mocha.my/)** - 15GB / 30 Days After Last Download / Signup Required / [Multi-Tool App](https://github.com/nxllvxxd/Mocha-Tools) / [Lite Version](https://lite.mocha.my/) (500MB, No Signup) / [Discord](https://discord.gg/hWPqHpCD3A)
+* ⭐ **[Mocha](https://mocha.my/)** - 100GB / 20GB / 30 Days After Last Download / Signup Required / [Multi-Tool App](https://github.com/nxllvxxd/Mocha-Tools) / [Lite Version](https://lite.mocha.my/) (500MB, No Signup) / [Discord](https://discord.gg/hWPqHpCD3A)
 * ⭐ **[Pillowcase](https://pillows.su/)** - Audio File Host / 200MB (500MB w/ Account) / Forever
 * [Buzzheavier](https://buzzheavier.com/), [2](https://fuckingfast.net/), [3](https://bzzhr.co/) - Unlimited / 15 Day Expiry / +1 Hour Per DDL / 500MB Permanent (with account) / **Use uBlock** / [File Expiry](https://buzzheavier.com/help) / [Discord](https://discord.gg/ttQjgC28WP) / [Warning](https://github.com/fmhy/edit/blob/main/docs/.vitepress/notes/buzzheavier-warning.md)
 * [⁠Rootz](https://rootz.so/) - 25GB / 15 Days After Last Download / Account Required / Unlimited for Backstage Users / **Use uBlock**
-* [FileQ](https://fileq.net/) - 50GB / 20GB / 3 Days After Last Download / Has Unlimited Plans / **Use uBlock** / [Discord](https://discord.gg/zc2r9pZzF)
 * [FileMirage](https://filemirage.com/) - 50GB / 30 Days After Last View / **Use uBlock**
 * [Send.now](https://send.now/) - 100GB / 15 Days After Last Download (w/ Account)
 * [⁠Patrins](https://patrins.com/) - 1TB / 7 Days / [Discord](https://discord.gg/TrSHTfUaSN)
@@ -348,9 +346,9 @@
 * [Transfer.it](https://transfer.it/) - Unlimited / 90 Days / Owned by MEGA.nz
 * [MediaFire](https://www.mediafire.com/) - 4GB / Forever
 * [Hxfile](https://hxfile.co/), [2](https://down.mdiaload.com/), [3](https://down.fast-down.com/) - 5GB / 180 Days After Last View
-* [⁠UpClouds](https://upclouds.to/) - 10GB / 30 Days After Last View
 * [⁠pone](https://pone.rs/) - 1GB / Forever
 * [⁠Filester](https://filester.me/) - 10GB / 45 Days After Last Download
+* [⁠Origrid](https://origrid.io/) - 100GB / 25GB / 7 Days After Last Download (30 w/ Account, Never w/ Plus)
 * [FileDitch](https://new.fileditch.com/) / [Discord](https://discord.gg/gACnap5kKx) or [SendGB](https://www.sendgb.com/) - 150GB / 90 Days
 * [hostb](https://hostb.org/) - Unlimited / 30 Days After Last Download / [Source Code](https://r-w-x.org/r/hostb.git)
 * [MixDrop](https://mixdrop.ag/) - Unlimited / 60 Days / Requires Signup
@@ -371,7 +369,7 @@
 * [UploadNow](https://uploadnow.io/) - 100GB / 7 Days After Last Download
 * [eDisk](https://www.edisk.cz/) - 20GB / 30 Days
 * [SwissTransfer](https://www.swisstransfer.com/) - 50GB / 30 Days / 250 Downloads
-* [⁠Dfiles](https://dfiles.com/) - 10GB / 90 Days
+* [Depositfiles](https://depositfiles.com/) - 10GB / 90 Days
 * [BowFile](https://bowfile.com/) - 20GB / 20 Days / **Use uBlock**
 * [⁠TheUserCloud](https://theuser.cloud/) - 10GB / 60 Days
 * [Hexupload](https://hexload.com/) - 15GB / 30 Days
@@ -407,6 +405,7 @@
 * [FilesPayouts](https://filespayouts.com/) - 10GB / Forever / Requires Sign-Up
 * [Clicknupload](https://clicknupload.click) - 10GB / 8 Days / Requires Sign-Up
 * [Smash](https://fromsmash.com/) - 2GB / 7 Days / Requires Email
+* [FileQ](https://fileq.net/) - 50GB / 20GB / 3 Days After Last Download / Has Unlimited Plans / Webmaster Only / **Use uBlock** / [Discord](https://discord.gg/jaNvVK5zqh)
 * [MultiUp.io](https://multiup.io/) (use uBlock) / [Extract / Upload](https://github.com/Reddiepoint/MultiUp-Direct) / [Discord](https://discord.gg/2yUEQPxTTU) or [Mirrored.to](https://www.mirrored.to/) - Multi Host Uploaders
 * [⁠PolyUploader](https://polyuploader.vercel.app/) / [GitHub](https://github.com/spel987/PolyUploader) or [Z-o-o-m](https://z-o-o-m.eu/) - Multi-Host Upload Desktop Apps
 * [Limited Upload Hosts](https://rentry.org/xc48kg) - More Hosts / 1GB or Below
