@@ -6,7 +6,7 @@
 
 # ► Adblocking
 
-* **Note** - Many sites contain ads, popups or redirects, so we [highly recommend](https://fmhy.net/beginners-guide#adblocking) using an adblocker. Don't run multiple general adblockers (e.g., uBlock Origin and AdGuard) simultaneously to [avoid breakage](https://x.com/gorhill/status/1033706103782170625). Combining general adblockers with tools like SponsorBlock is fine. Also note full version of uBO works significantly better than the lite version.
+* **Note** - Many sites contain ads, popups or redirects, so we [highly recommend](https://fmhy.net/beginners-guide#adblocking) using an adblocker. Don't run multiple general adblockers (e.g., uBlock Origin and AdGuard) simultaneously to [avoid breakage](https://x.com/gorhill/status/1033706103782170625) / [2](https://xcancel.com/gorhill/status/1033706103782170625). Combining general adblockers with tools like SponsorBlock is fine. Also note full version of uBO works significantly better than the lite version.
 
 ***
 
@@ -200,9 +200,8 @@
 * [⁠Whonix Wiki](https://www.whonix.org/wiki) - Educational Guide / [Forum](https://forums.whonix.org/)
 * [⁠Kicksecure Wiki](https://www.kicksecure.com/wiki) - Educational Guide / [Forum](https://forums.kicksecure.com/)
 * [OPSEC guide](https://whos-zycher.github.io/opsec-guide/) - Educational Guide
-* [paranoiaprivacy.wiki](https://codeberg.org/Sauul/paranoiaprivacy) - Educational Guide
 * [PrivSec](https://privsec.dev/) - Educational Guide / [GitHub](https://github.com/PrivSec-dev)
-* [Hostux](https://hostux.network/) - Privacy Tools / [Source Code](https://git.hostux.net/valere/hostux.network)
+* [Hostux](https://hostux.network/) - Privacy Tools / [Source Code](https://git.hostux.net/hostux.net/hostux.network)
 * [Privacy Settings](https://github.com/StellarSand/privacy-settings) - Privacy Setting Guides
 * [Privacy Not Included](https://www.mozillafoundation.org/en/privacynotincluded/) - Product Privacy Ratings
 * [EncryptedList](https://encryptedlist.xyz/) - List of Encrypted Services/Apps
@@ -214,7 +213,7 @@
 
 * ⭐ **[Safing Portmaster](https://safing.io/)** - Network Monitor / DNS Resolver / Firewall / [X](https://twitter.com/SafingIO) / [Discord](https://discord.com/invite/9ScnccuXaZ) / [GitHub](https://github.com/safing)
 * [⁠DNSLeakTest](https://dnsleaktest.com/) - DNS Leak Test
-* [I2P](https://geti2p.net/en/) - Encrypted Private Network Layer / [Client](https://i2pd.website/) / [Subreddit](https://www.reddit.com/r/i2p/) / [GitLab](https://i2pgit.org/)
+* [I2P](https://i2p.net/) - Encrypted Private Network Layer / [Client](https://i2pd.website/) / [Subreddit](https://www.reddit.com/r/i2p/) / [GitLab](https://i2pgit.org/)
 * [Freenet](https://freenet.org/) - Decentralized P2P Web / [GitHub](https://github.com/freenet/web)
 * [Hyphanet](https://www.hyphanet.org/) - Decentralized P2P Web / [GitHub](https://github.com/hyphanet)
 * [⁠RustNet](https://github.com/domcyrus/rustnet) - Network Monitor TUI 
@@ -243,9 +242,9 @@
 
 # ► Web Privacy
 
-* 🌐 **[Google Alt List](https://www.techspot.com/article/2752-all-google-alternatives/)**, [r/degoogle](https://www.reddit.com/r/degoogle) or [No More Google](https://nomoregoogle.com/) - Google App Alternatives
 * ↪️ **[Encode / Decode URLs](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/text-tools#wiki_.25B7_encode_.2F_decode)**
 * ⭐ **[JustDeleteMe](https://justdeleteme.xyz/)** / [GitHub](https://github.com/jdm-contrib/jdm) or [JustDeleteAccount](https://www.justdeleteaccount.com/) - Find / Terminate Old Accounts
+* [r/degoogle](https://www.reddit.com/r/degoogle) - Google App Alternatives
 * [Phish Report](https://phish.report/), [OpenPhish](https://openphish.com/), [Netcraft Report](https://report.netcraft.com/report), [isitPhishing](https://isitphishing.org/), [PhishStats](https://phishstats.info/) / [Telegram](https://t.me/joinchat/AAAAAElZRwd0aBrYTaHHcQ) / [GitHub](https://github.com/eschultze/phishstats-api-network) or [PhishTank](https://phishtank.org/) - Report Phishing Sites
 * [ToS;DR](https://tosdr.org/) - Sites Privacy Policies / [Discord](https://discord.gg/tosdr) / [GitHub](https://github.com/tosdr)
 * [DNS Jumper](https://www.sordum.org/7952/dns-jumper-v2-3/) - DNS Switcher

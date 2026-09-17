@@ -13,7 +13,7 @@
 ## ▷ Official Model Sites
 
 * ⭐ **[Qwen Studio](https://chat.qwen.ai/)** - Qwen3.8 Max / Qwen3.7 Plus / Sign-Up / [Subreddit](https://www.reddit.com/r/Qwen_AI/) / [Discord](https://discord.com/invite/CV4E9rpNSD) / [GitHub](https://github.com/QwenLM)
-* ⭐ **[DeepSeek](https://chat.deepseek.com/)** - DeepSeek V4 Pro 0813 / DeepSeek V4 Flash / Sign-Up / Unlimited / [Add Features](https://github.com/EdgeTypE/better-deepseek/) / [Subreddit](https://www.reddit.com/r/DeepSeek/) / [Discord](https://discord.com/invite/Tc7c45Zzu5) / [GitHub](https://github.com/deepseek-ai)
+* ⭐ **[DeepSeek](https://chat.deepseek.com/)** - DeepSeek-V4.1-Flash / Sign-Up / Unlimited / [Add Features](https://github.com/EdgeTypE/better-deepseek/) / [Subreddit](https://www.reddit.com/r/DeepSeek/) / [Discord](https://discord.com/invite/Tc7c45Zzu5) / [GitHub](https://github.com/deepseek-ai)
 * ⭐ **[⁠Z.ai](https://chat.z.ai/)** - GLM 5.3 / GLM 5.3 Flash / Agent / Slides / Sign-Up / [Discord](https://discord.gg/QR7SARHRxK) / [GitHub](https://github.com/zai-org)
 * ⭐ **[Google AI Studio](https://aistudio.google.com/app/prompts/new_chat)** - Gemini 3.8 Flash / Gemini 3.1 Pro Preview / Gemini 3.5 Flash-Lite / Google Sign-Up / [Add Features](https://github.com/Nagi-ovo/voyager) / [Subreddit](https://www.reddit.com/r/Bard/) / [Discord](https://discord.com/invite/gemini)
 * ⭐ **[Gemini](https://gemini.google.com/)** - Gemini 3.6 Flash / Gemini 3.1 Pro Preview / Gemini 3.5 Flash-Lite / [Add Features](https://github.com/Nagi-ovo/voyager) / [Limits](https://support.google.com/gemini/answer/16275805) / [Subreddit](https://www.reddit.com/r/Bard/) / [Discord](https://discord.com/invite/gemini)
@@ -21,10 +21,11 @@
 * [Kimi](https://www.kimi.ai/), [2](https://www.kimi.com/) - Kimi K3 / Slides / Google Login or Phone # Required / [Subreddit](https://www.reddit.com/r/kimi/) / [Discord](https://discord.gg/TYU2fdJykW) / [GitHub](https://github.com/MoonshotAI)
 * [ChatGPT](https://chatgpt.com/) - GPT-5.6 Luna / Unlimited / [Add Features](https://github.com/Nagi-ovo/voyager) / [r/OpenAI](https://www.reddit.com/r/OpenAI/) / [r/ChatGPT](https://www.reddit.com/r/ChatGPT/) / [Discord](https://discord.com/invite/openai) / [Limits](https://help.openai.com/en/articles/9275245-chatgpt-free-tier-faq#how-do-rate-limits-work-on-the-free-tier)
 * [⁠LongCat](https://longcat.ai/chat/) - LongCat 2.0 / Sign-Up / Unlimited / [X](https://x.com/Meituan_LongCat)
+* [Tencent AI Studio](https://aistudio.tencent.com/) - ⁠Hy3 / Unlimited / Sign-Up
 * [⁠MiMo Studio](https://aistudio.xiaomimimo.com/) - MiMo-V2.5-Pro / MiMo-V2.5 / Sign-Up
 * [Grok](https://grok.com/) - Grok 4.5 / Agent / Traffic-Based / [Rate Display](https://greasyfork.org/en/scripts/558017), [2](https://chromewebstore.google.com/detail/grok-rate-limit-display/fcoijmefliggikpeofhojmkpoooocifk) / [Subreddit](https://www.reddit.com/r/grok/) / [Discord](https://discord.com/invite/kqCc86jM55)
 * [Microsoft Copilot](https://copilot.microsoft.com) - GPT-5.1 (Think Deeper) / Sign-Up / Unlimited
-* [Claude](https://claude.ai/) - Claude Sonnet 5 / Requires Sign-Up + Phone # / [Add Features](https://github.com/Nagi-ovo/voyager) / [Resources](https://awesomeclaude.ai/) / [Learning](https://github.com/ComposioHQ/awesome-claude-skills), [2](https://github.com/BehiSecc/awesome-claude-skills) / [Usage Tracker](https://github.com/lugia19/Claude-Usage-Extension) / [Subreddit](https://www.reddit.com/r/ClaudeAI/) / [Discord](https://discord.com/invite/6PPFFzqPDZ)
+* [Claude](https://claude.ai/) - Claude Sonnet 5 / Requires Sign-Up + Sometimes Phone # / [Add Features](https://github.com/Nagi-ovo/voyager) / [Resources](https://awesomeclaude.ai/) / [Learning](https://github.com/ComposioHQ/awesome-claude-skills), [2](https://github.com/BehiSecc/awesome-claude-skills) / [Usage Tracker](https://github.com/lugia19/Claude-Usage-Extension) / [Subreddit](https://www.reddit.com/r/ClaudeAI/) / [Discord](https://discord.com/invite/6PPFFzqPDZ)
 * [⁠Chat Motif](https://chat.motiftech.io/chat) - Motif 3 / Unlimited
 * [MiniMax AI](https://agent.minimax.io/) - MiniMax M3 / Agent / Sign-Up / [GitHub](https://github.com/MiniMax-AI/)
 * [Mistral](https://chat.mistral.ai) or [Mistral Studio](https://console.mistral.ai/home) - Mistral Medium 3.5 / [Subreddit](https://www.reddit.com/r/MistralAI/) / [Discord](https://discord.gg/mistralai)
@@ -41,12 +42,13 @@
 ## ▷ Multiple Model Sites
 
 * ⭐ **[⁠Together.ai](https://chat.together.ai/)** - GLM-5.3 / Kimi K3 / Qwen3.8 2.4T A95B / DeepSeek V4 Pro 0813 / Up To 110 Daily / [Discord](https://discord.gg/9Rk6sSeWEG)
-* [NVIDIA NIM](https://build.nvidia.com/models) - Kimi K3 /  DeepSeek V4 Pro 0813 / MiniMax M3 / Unlimited / No Sign-Up
-* [⁠Tryingopen](https://www.tryingopen.com/) - DeepSeek V4 Pro/ Qwen3.8 27B / GLM-5.3-Flash / Unlimited (12 per chat) / [OpenAI Bridge](https://github.com/khrotu/radio-house-api)
-* [⁠ISH](https://beta.ish.chat/) - Claude Opus 5 / GPT-5.6 Sol / Kimi K3 / 50K Tokens Daily / [Subreddit](https://www.reddit.com/r/Ishchat/) / [Discord](https://discord.gg/cwDTVKyKJz)
-* [Arena](https://arena.ai/text/direct), [2](https://canaryarena.ai/text/direct) - Multiple Models / Agent / Sign-Up / [OpenAI Bridge](https://github.com/CloudWaddie/LMArenaBridge) / [X](https://x.com/arena) / [Discord](https://discord.com/invite/lmarena)
-* [⁠ChatWave](https://chatwave.crunchflix.site/) - Claude Opus 5 / Claude Fable 5 / GPT-5.6 Sol / [Discord](https://discord.gg/RNxFvbP2D)
+* [NVIDIA NIM](https://build.nvidia.com/models) - Kimi K3 / DeepSeek V4 Pro 0813 / MiniMax M3 / Unlimited / No Sign-Up
+* [⁠Tryingopen](https://www.tryingopen.com/) - DeepSeek V4 Pro / Qwen3.8 27B / GLM-5.3-Flash / Unlimited (12 per chat) / [OpenAI Bridge](https://github.com/khrotu/radio-house-api)
+* [⁠ISH](https://ish.chat/) - Claude Opus 5 / GPT-5.6 Sol / Kimi K3 / 50K Tokens Daily / [Subreddit](https://www.reddit.com/r/Ishchat/) / [Discord](https://discord.gg/cwDTVKyKJz)
+* [Arena](https://arena.ai/text/direct), [2](https://canaryarena.ai/text/direct) - Multiple Models / Agent / Sign-Up / [X](https://x.com/arena) / [Discord](https://discord.com/invite/lmarena)
+* [⁠ChatWave](https://chatwave.crunchflix.site/) - Claude Opus 5 / Claude Fable 5 / GPT 6 Astra / GPT-5.6 Sol / [Discord](https://discord.gg/RNxFvbP2D)
 * [⁠Lumo](https://lumo.proton.me/) - Qwen3.5 122B A10B (Lite, 100 Daily) / GLM 5.2 (Max, 20 Daily) / Sign-Up / [OpenAI Bridge](https://github.com/KHROTU/lucky-cat-api) / [Reasoning](https://github.com/fmhy/edit/blob/main/docs/.vitepress/notes/better-reasoning.md)
+* [⁠Ecosia AI](https://www.ecosia.org/ai-chat) - Mistral Small 4 / Mistral Small 3.2 / Unlimited
 * [AI Assistant](https://aiassistantbot.pages.dev/) - GLM 4.7 / gpt-oss-120b / No Sign-Up
 * [Apertus](https://publicai.co/chat), [2](https://chat.publicai.co/) - Apertus v1.5 70B Thinking / ALIA 40B (Spain) / Apertus v1.5 8B Thinking (No Sign-Up)
 
@@ -60,8 +62,7 @@
 * ⭐ **[⁠Ask Brave](https://search.brave.com/ask)** - AI Search Engine
 * ⭐ **[TextFX](https://textfx.withgoogle.com/)** / [GitHub](https://github.com/google/generative-ai-docs/tree/main/demos/palm/web/textfx), [NeverWrite](https://neverwrite.app/) / [GitHub](https://github.com/jsgrrchg/NeverWrite), [Toolbaz](https://toolbaz.com/) / [2](https://app.toolbaz.com/ai-tools/list) or [Rytr](https://rytr.me/) - AI Creative Writing Tools
 * [Perplexity](https://www.perplexity.ai/) - AI Search Engine / [Enhancements](https://www.cplx.app/) / [Discord](https://discord.com/invite/perplexity-ai)
-* [Arena](https://arena.ai/?mode=direct&chat-modality=search), [2](https://canaryarena.ai/search/direct) - AI Search Engine / Sign-Up / [OpenAI Bridge](https://github.com/CloudWaddie/LMArenaBridge) / [X](https://x.com/arena) / [Discord](https://discord.com/invite/lmarena)
-* [⁠iAsk AI](https://iask.ai/) - Research Chatbot
+* [Arena](https://arena.ai/?mode=direct&chat-modality=search), [2](https://canaryarena.ai/search/direct) - AI Search Engine / Sign-Up / [X](https://x.com/arena) / [Discord](https://discord.com/invite/lmarena)
 * [⁠Exa](https://exa.ai/search) - AI Search Engine
 * [Alphaxiv](https://www.alphaxiv.org/) - Research Chatbot
 * [Vane](https://github.com/ItzCrazyKns/Vane) - FOSS AI Search Engine / Self-Hosted / [Discord](https://discord.gg/26aArMy8tT)
@@ -88,10 +89,10 @@
 * ⭐ **[LM Studio](https://lmstudio.ai/download)** - Desktop App / Self-Hosted Models Only / [Discord](https://discord.gg/aPQfnNkxGC) / [GitHub](https://github.com/lmstudio-ai)
 * ⭐ **[TextGen](https://github.com/oobabooga/textgen)** - Web UI / Self-Hosted Models Only / [Colab](https://colab.research.google.com/github/pcrii/Philo-Colab-Collection/blob/main/4bit_TextGen_Gdrive.ipynb) / [Subreddit](https://www.reddit.com/r/Oobabooga/) / [Discord](https://discord.gg/jwZCF2dPQN)
 * ⭐ **[Cherry Studio](https://cherryai.com/)** - Desktop App / [Mobile](https://github.com/CherryHQ/cherry-studio-app) / [Discord](https://discord.gg/wez8HtpxqQ) / [GitHub](https://github.com/CherryHQ/cherry-studio)
-* ⭐ **[⁠Unsloth](https://unsloth.ai/)** - Desktop App / Self-Hosted / [Notebooks](https://github.com/unslothai/notebooks) / [Guide](https://docs.unsloth.ai/get-started/fine-tuning-guide) / [GitHub](https://github.com/unslothai/unsloth)
+* ⭐ **[⁠Unsloth](https://unsloth.ai/)** - Desktop App / Self-Hosted / [Notebooks](https://github.com/unslothai/notebooks) / [Guide](https://unsloth.ai/docs/get-started/fine-tuning-llms-guide) / [GitHub](https://github.com/unslothai/unsloth)
 * [GobboNet](https://goblincorps.com/gobbonet) - Desktop App / [GitHub](https://github.com/ElodineOfficial/gobbonet)
 * [GPT4Free](https://github.com/xtekky/gpt4free) - Desktop App / [Web](https://g4f.dev/chat/) / [Telegram](https://telegram.me/g4f_channel) / [Discord](https://discord.com/invite/qXA4Wf4Fsm)
-* [Msty](https://msty.app/) - Desktop App / [Discord](https://discord.gg/2QBw6XxkCC)
+* [Msty](https://msty.ai/) - Desktop App / [Discord](https://discord.gg/2QBw6XxkCC)
 * [⁠Locally Uncensored](https://locallyuncensored.com/) - Desktop App
 * [⁠Lemonade](https://lemonade-server.ai/) - Desktop App / [Discord](https://discord.gg/5xXzkMu8Zk) / [GitHub](https://github.com/lemonade-sdk/lemonade)
 * [Chatbox](https://chatboxai.app/) - Desktop App / [GitHub](https://github.com/chatboxai/chatbox)
@@ -112,9 +113,8 @@
 * 🌐 **[Awesome Local LLM](https://github.com/rafska/awesome-local-llm/)** - Local LLM Platforms / Resources
 * ⭐ **[llama.cpp](https://llama.app/)** - Self-Hosted Transformer-Based LLMs / [GitHub](https://github.com/ggml-org/llama.cpp)
 * ⭐ **[KoboldCpp](https://github.com/LostRuins/koboldcpp)** - llama.cpp with API + GUI / [ROCm](https://github.com/YellowRoseCx/koboldcpp-rocm) / [Colab](https://colab.research.google.com/github/LostRuins/koboldcpp/blob/concedo/colab.ipynb)
-* ⭐ **[⁠Unsloth](https://unsloth.ai/)** - Self-Hosted / [Notebooks](https://github.com/unslothai/notebooks) / [Guide](https://docs.unsloth.ai/get-started/fine-tuning-guide) / [GitHub](https://github.com/unslothai/unsloth)
+* ⭐ **[⁠Unsloth](https://unsloth.ai/)** - Self-Hosted / [Notebooks](https://github.com/unslothai/notebooks) / [Guide](https://unsloth.ai/docs/get-started/fine-tuning-llms-guide) / [GitHub](https://github.com/unslothai/unsloth)
 * ⭐ **[Sonar](https://sonar.dphn.ai/)** - Serve LLMs at Scale with Kobold & OpenAI APIs / [Colab](https://colab.research.google.com/github/AlpinDale/misc-scripts/blob/main/Aphrodite.ipynb) / [GitHub](https://github.com/dphnAI/sonar)
-* [Petals](https://petals.dev/) - Self-Hosted / [Discord](https://discord.gg/D9MwApKgWa) / [GitHub](https://github.com/bigscience-workshop/petals)
 * [Leon](https://getleon.ai/) - Self-Hosted / [Discord](https://discord.gg/MNQqqKg) / [GitHub](https://github.com/leon-ai/leon)
 * [Ollama](https://ollama.com/) - Self-Hosted / [Discord](https://discord.com/invite/ollama) / [GitHub](https://github.com/ollama/ollama)
 * [GPT4All](https://www.nomic.ai/gpt4all) - Self-Hosted / [Discord](https://discord.com/invite/myY5YDR8z8) / [GitHub](https://github.com/nomic-ai/gpt4all)
@@ -150,6 +150,10 @@
 ***
 
 ## ▷ [Grammar Check](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/text-tools#wiki_.25B7_grammar_check)
+
+***
+
+# ► [AI Coding Tools](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/dev-tools#wiki_.25BA_ai_tools)
 
 ***
 
@@ -191,6 +195,7 @@
 * [Snapgen AI](https://snapgen.ai/app/imagen) - GPT Image 2 / Nano Banana Pro / Nano Banana 2 / Sign-Up / [Discord](https://discord.com/invite/vJnYe86T8F)
 * [Design Arena](https://www.designarena.ai/) - Multiple Generators / Editing / Sign-Up / Random Models / Reset Limits / w Temp Mail / [Discord](https://discord.com/invite/Bw9Ajcb3pR)
 * [Google AI Studio](https://aistudio.google.com/generate-image) - Nano Banana 2 Lite / Editing / Google Login / [Discord](https://discord.com/invite/gemini)
+* [⁠Ecosia AI](https://www.ecosia.org/ai-chat) - Flux.2 Dev / Unlimited
 * [Perchance](https://perchance.org/ai-photo-generator) / [2](https://perchance.org/ai-text-to-image-generator) - Chroma-Based / Unlimited / [Resources](https://perchance.org/perlist) / [Lemmy](https://lemmy.world/u/perchance) / [Subreddit](https://www.reddit.com/r/perchance/) / [Discord](https://discord.gg/43qAQEVV9a)
 * [Google AI Mode](https://google.com/aimode) / [Discord](https://discord.com/invite/googlelabs) - Nano Banana 2 Lite / 20 Per Day / Google Login
 * [⁠ChatWave Image](https://chatwave.crunchflix.site/) - GPT Image 2 / Nano Banana 2
@@ -199,7 +204,7 @@
 * [OpenSourceGen](https://opensourcegen.com/) - Hunyuan Image 3.0 / Z-Image Turbo / 1500 Credits Per Day / Sign-Up / [Discord](https://discord.gg/W4Svx2QhHb)
 * [Recraft](https://www.recraft.ai/) - 30 Daily / Sign-Up / [Discord](https://discord.gg/recraft)
 * [Reve Image](https://app.reve.com) - 20 Daily / Editing / Sign-Up / [X](https://x.com/reve) / [Discord](https://discord.gg/Nedxp9fYUZ)
-* [TheresAnAIForThat](https://theresanaiforthat.com/@taaft/image-to-image-generator/) or [⁠Vheer](https://vheer.com/dashboard/tools/image-to-image) / [X](https://x.com/VheerAI) / [Discord](https://discord.com/invite/33qfQRCp5j) - Editing / Unlimited / Flux Kontext Dev
+* [TheresAnAIForThat](https://theresanaiforthat.com/@taaft/image-to-image-generator/) or [⁠Vheer](https://vheer.com/app/image-to-image) / [X](https://x.com/VheerAI) / [Discord](https://discord.com/invite/33qfQRCp5j) - Editing / Unlimited / Flux Kontext Dev
 * [⁠PhotoGPT](https://photogpt.io/) - 8 Daily / Multiple Generators / Reset Limits w/ VPN
 * [⁠MAI Playground](https://playground.microsoft.ai/chat) - MAI-Image-2.5 / MAI-Image-2.5 Flash / MAI-Image-2.5-Pro / 10 Daily / Sign-Up
 * [ModelScope Images](https://modelscope.ai/civision/imageGeneration) - Qwen Image Edit / Z-Image Turbo / 100 Credits Daily / Model Cost Varies / [Note](https://github.com/fmhy/edit/blob/main/docs/.vitepress/notes/modelscope.md)
@@ -207,11 +212,11 @@
 * [ERNIE (HF)](https://huggingface.co/spaces/akhaliq/ERNIE-Image-Turbo) - Unlimited / Editing / Sign-Up
 * [LongCat AI](https://longcat.ai/chat/) - 100 Daily / Editing
 * [⁠ChatGPT Images](https://chatgpt.com/images/) - GPT Image 2 / 8 Daily / Sign-Up
-* [Arena](https://arena.ai/?mode=direct&chat-modality=image), [2](https://canaryarena.ai/image/direct) - Multiple Generators / Editing / 15 Daily / Sign-Up / [OpenAI Bridge](https://github.com/CloudWaddie/LMArenaBridge) / [X](https://x.com/arena) / [Discord](https://discord.com/invite/lmarena)
+* [Arena](https://arena.ai/?mode=direct&chat-modality=image), [2](https://canaryarena.ai/image/direct) - Multiple Generators / Editing / 15 Daily / Sign-Up / [X](https://x.com/arena) / [Discord](https://discord.com/invite/lmarena)
 * [Mage](https://www.mage.space/) / [Discord](https://discord.com/invite/GT9bPgxyFP), [⁠Tater AI](https://taterai.github.io/Text2Image-Generator.html), [Loras](https://www.loras.dev/) / [X](https://x.com/tater_ai) / [GitHub](https://github.com/Nutlope/loras-dev), [AI Gallery](https://aigallery.app/) / [Telegram](https://t.me/aigalleryapp), or [Art Genie](https://artgenie.pages.dev/) - Flux Schnell
 * [⁠Coze](https://space.coze.cn/) - Seadream 4.0 / 50 Daily / Sign-Up with Phone # / US Select CA
 * [Diffusers Image Outpaint](https://huggingface.co/spaces/fffiloni/diffusers-image-outpaint) - AI Image Extender / [Limits](https://github.com/fmhy/edit/blob/main/docs/.vitepress/notes/hugging-face-warning.md)
-* [Genie](https://lumalabs.ai/genie) / [Discord](https://discord.com/invite/ASbS3EykXm), [Shap-e](https://github.com/openai/shap-e), [Stable Dreamfusion](https://github.com/ashawkey/stable-dreamfusion) or [threestudio](https://github.com/threestudio-project/threestudio) / [Colab](https://colab.research.google.com/github/threestudio-project/threestudio/blob/main/threestudio.ipynb) / [Discord](https://discord.gg/ejer2MAB8N) - 3D Image Generators
+* [Genie](https://lumalabs.ai/genie) / [Discord](https://discord.com/invite/ASbS3EykXm) or [threestudio](https://github.com/threestudio-project/threestudio) / [Colab](https://colab.research.google.com/github/threestudio-project/threestudio/blob/main/threestudio.ipynb) / [Discord](https://discord.gg/ejer2MAB8N) - 3D Image Generators
 * [Interactive Scenes](https://lumalabs.ai/interactive-scenes) - Generate Interactive Scenes / [Discord](https://discord.com/invite/ASbS3EykXm)
 * [Illusion Diffusion](https://huggingface.co/spaces/AP123/IllusionDiffusion) - Illusion Artwork Generator / [Limits](https://github.com/fmhy/edit/blob/main/docs/.vitepress/notes/hugging-face-warning.md)
 
@@ -220,19 +225,17 @@
 ## ▷ Local Frontends
 
 * ⭐ **[Stability Matrix](https://lykos.ai/)** / [Discord](https://discord.com/invite/TUrgfECxHz) / [GitHub](https://github.com/LykosAI/StabilityMatrix)
-* ⭐ **[Invoke](https://invoke-ai.github.io/InvokeAI/)** / [Discord](https://discord.com/invite/ZmtBAhwWhy) / [GitHub](https://github.com/invoke-ai/InvokeAI)
+* ⭐ **[Invoke](https://invoke.ai/)** / [Discord](https://discord.com/invite/ZmtBAhwWhy) / [GitHub](https://github.com/invoke-ai/InvokeAI)
 * ⭐ **[ComfyUI](https://www.comfy.org/)** / [Subreddit](https://www.reddit.com/r/comfyui/) / [Discord](https://discord.gg/comfyorg) / [GitHub](https://github.com/comfyanonymous/ComfyUI)
 * ⭐ **[Fooocus](https://github.com/lllyasviel/Fooocus)**, [2](https://github.com/MoonRide303/Fooocus-MRE) / [Colab](https://colab.research.google.com/github/lllyasviel/Fooocus/blob/main/fooocus_colab.ipynb)
-* ⭐ **[⁠Unsloth](https://unsloth.ai/)** / [Notebooks](https://github.com/unslothai/notebooks) / [Guide](https://docs.unsloth.ai/get-started/fine-tuning-guide) / [GitHub](https://github.com/unslothai/unsloth)
+* ⭐ **[⁠Unsloth](https://unsloth.ai/)** / [Notebooks](https://github.com/unslothai/notebooks) / [Guide](https://unsloth.ai/docs/get-started/fine-tuning-llms-guide) / [GitHub](https://github.com/unslothai/unsloth)
 * ⭐ **[Mochi Diffusion](https://github.com/MochiDiffusion/MochiDiffusion)** - Stable Diffusion for Mac / [Discord](https://discord.com/invite/x2kartzxGv)
 * ⭐ **[DiffusionBee](https://diffusionbee.com/)** - Stable Diffusion for Mac / [Discord](https://discord.com/invite/t6rC5RaJQn) / [GitHub](https://github.com/divamgupta/diffusionbee-stable-diffusion-ui)
 * ⭐ **[⁠Amuse](https://github.com/saddam213/AmuseAI)** - Stable Diffusion / [X](https://x.com/Amuse_AI)
-* [SDNext](https://github.com/vladmandic/sdnext) / [Colab](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Online-Services#google-colab) / [Templates](https://github.com/ThereforeGames/unprompted) / [Upscaling](https://github.com/Coyote-A/ultimate-upscale-for-automatic1111), [2](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111)
-* [StableStudio](https://github.com/Stability-AI/StableStudio)
+* [SDNext](https://github.com/vladmandic/sdnext) / [Colab](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Online-Services#google-colab) / [Upscaling](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111)
 * [Easy Diffusion](https://easydiffusion.github.io/) / [Discord](https://discord.com/invite/u9yhsFmEkB) / [GitHub](https://github.com/easydiffusion/easydiffusion)
 * [Makeayo](https://makeayo.com) / [Discord](https://discord.gg/FbdSxdeV8m)
 * [biniou](https://github.com/Woolverine94/biniou)
-* [Dione](https://github.com/dioneapp/dioneapp)
 * [Sygil WebUI](https://sygil-dev.github.io/sygil-webui/) / [Colab](https://colab.research.google.com/github/Sygil-Dev/sygil-webui/blob/main/Web_based_UI_for_Stable_Diffusion_colab.ipynb) / [Discord](https://discord.com/invite/ttM8Tm6wge) / [GitHub](https://github.com/Sygil-Dev/sygil-webui)
 * [Radiata](https://ddpn08.github.io/Radiata/en/)
 * [SD WebUI Forge](https://github.com/lllyasviel/stable-diffusion-webui-forge)
@@ -263,13 +266,12 @@
 
 * ⭐ **[Suno](https://suno.com/)** - 10 Daily / [Guide](https://sunoaiwiki.com/en) / [Discord](https://discord.com/invite/suno)
 * [Treblo](https://treblo.com/) / Unlimited / [Discord](https://discord.gg/pfXar3ChH8)
-* [MusicFX](https://labs.google/fx/tools/music-fx) / Region-Based
+* [FlowMusic](https://www.flowmusic.app/) / Region-Based
 * [WolframTones](https://tones.wolfram.com/) / No Sign-Up
 * [Stable Audio](https://www.stableaudio.com/) / 10 Monthly / [Discord](https://discord.com/invite/stablediffusion)
 * [MusicGen](https://github.com/facebookresearch/audiocraft/blob/main/docs/MUSICGEN.md) / No Sign-Up / [Colab](https://colab.research.google.com/drive/1ECmNEoXk8kvnLEMBMF2LY82E7XmIG4yu) / [Limits](https://github.com/fmhy/edit/blob/main/docs/.vitepress/notes/hugging-face-warning.md)
 * [Waveformer](https://github.com/fofr/waveformer)
 * [SOUNDRAW](https://soundraw.io/) / No Sign-Up
-* [Google Flow Music](https://www.flowmusic.app/)
 * [⁠ACE-Step 1.5](https://huggingface.co/spaces/ACE-Step/Ace-Step-v1.5) / No Sign-Up / [GitHub](https://github.com/ace-step/ACE-Step-1.5)
 * [Mubert](https://mubert.com/)
 * [⁠Amuse](https://github.com/saddam213/AmuseAI) - ACE-Step 1.5 / [X](https://x.com/Amuse_AI)
@@ -286,17 +288,15 @@
 ## ▷ Text to Speech
 
 * 🌐 **[Awesome AI Sound](https://github.com/wildminder/awesome-ai-voice)** - TTS + Voice Generation Model Index
-* 🌐 **[Arena TTS](https://arena.ai4bharat.org/#/tts)** - Text to Speech Model Benchmarks / Leaderboards
+* 🌐 **[Arena TTS](https://voiceofindia.ai/)** - Text to Speech Model Benchmarks / Leaderboards
 * ⭐ **[TTS Online](https://www.text-to-speech.online/)** / No Sign-Up
-* ⭐ **[⁠Unsloth](https://unsloth.ai/)** / [Notebooks](https://github.com/unslothai/notebooks) / [Guide](https://docs.unsloth.ai/get-started/fine-tuning-guide) / [GitHub](https://github.com/unslothai/unsloth)
+* ⭐ **[⁠Unsloth](https://unsloth.ai/)** / [Notebooks](https://github.com/unslothai/notebooks) / [Guide](https://unsloth.ai/docs/get-started/fine-tuning-llms-guide) / [GitHub](https://github.com/unslothai/unsloth)
 * [Audiblez](https://github.com/santinic/audiblez), [Ebook2Audiobook](https://github.com/DrewThomasson/ebook2audiobook) / [2](https://huggingface.co/spaces/drewThomasson/ebook2audiobook), [ElevenReader](https://elevenreader.io/), [⁠Paper2Audio](https://www.paper2audio.com/) or [ReadWise](https://readwise.io/read) (reset trial) - Convert Books / Documents to Audiobooks
 * [Google Illuminate](https://illuminate.google.com/) - Generate AI Conversations
 * [ElevenLabs](https://elevenlabs.io/) / No Sign-Up / [Discord](https://discord.gg/elevenlabs) / [GitHub](https://github.com/elevenlabs)
 * [Google Speech Gen](https://aistudio.google.com/generate-speech)
 * [TTS-WebUI](https://ttswebui.com/) / No Sign-Up / [Colab](https://colab.research.google.com/github/rsxdalv/tts-webui/blob/main/notebooks/google_colab.ipynb) / [Discord](https://discord.gg/V8BKTVRtJ9) / [GitHub](https://github.com/rsxdalv/TTS-WebUI)
 * [FakeYou](https://fakeyou.com/) / No Sign-Up / [Discord](https://discord.gg/fakeyou)
-* [Tortoise TTS](https://github.com/neonbjb/tortoise-tts) / No Sign-Up
-* [Bark](https://github.com/suno-ai/bark) / No Sign-Up / [Colab](https://colab.research.google.com/drive/1eJfA2XUa-mXwdMy7DoYKVYHI1iTd9Vkt?usp=sharing) / [Discord](https://discord.com/invite/J2B2vsjKuE) / [Limits](https://github.com/fmhy/edit/blob/main/docs/.vitepress/notes/hugging-face-warning.md)
 * [OpenAI.fm](https://www.openai.fm/) / No Sign-Up / OpenAI's Bot
 * [⁠GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS) / No Sign-Up
 * [Kyutai TTS](https://kyutai.org/next/tts) / No Sign-Up
@@ -354,10 +354,6 @@
 
 ***
 
-# ► [AI Coding Tools](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/dev-tools#wiki_.25BA_ai_tools)
-
-***
-
 # ► AI Agents
 
 * **Note** - Keep in mind many agents run in root, so it's best to avoid giving them full drive / root access to avoid any sort of issues or accidental deletions as they can modify files and execute terminal commands without permission if not set up correctly and securely. Agents also tend to have lots of vulnerabilities so it's best to not put the agent on a machine with anything important on it. Running in a container, VPS, or VM is strongly recommended.
@@ -401,7 +397,7 @@
 * 🌐 **[L1B3RT4S](https://github.com/elder-plinius/L1B3RT4S)** - Jailbreak Prompts / [X](https://x.com/elder_plinius) / [Discord](https://discord.gg/basi)
 * ⭐ **[BlackFriday GPTs Prompts](https://github.com/friuns2/BlackFriday-GPTs-Prompts)** - Prompt Directory
 * ⭐ **[Leaked Prompts](https://github.com/linexjlin/GPTs)** - Prompt Directory
-* ⭐ **[Prompt Engineering Guide](https://www.promptingguide.ai)** / [Discord](https://discord.gg/FUyz9vPAwf) / [GitHub](https://github.com/dair-ai/Prompt-Engineering-Guide), [Google Whitepaper](https://www.kaggle.com/whitepaper-prompt-engineering), [Prompt_Engineering](https://github.com/NirDiamant/Prompt_Engineering), [LearnPrompting](https://learnprompting.org/docs/introduction), [OpenAI Guide](https://platform.openai.com/docs/guides/prompt-engineering) or [Claude Prompts](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview) / [Discord](https://discord.com/invite/6PPFFzqPDZ) - Prompting Guides
+* ⭐ **[Prompt Engineering Guide](https://www.promptingguide.ai)** / [Discord](https://discord.gg/FUyz9vPAwf) / [GitHub](https://github.com/dair-ai/Prompt-Engineering-Guide), [Google Whitepaper](https://www.kaggle.com/whitepaper-prompt-engineering), [Prompt_Engineering](https://github.com/NirDiamant/Prompt_Engineering), [LearnPrompting](https://learnprompting.org/docs/introduction), [OpenAI Guide](https://developers.openai.com/api/docs/guides/prompt-engineering) or [Claude Prompts](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview) / [Discord](https://discord.com/invite/6PPFFzqPDZ) - Prompting Guides
 * [ChatGPT System Prompt](https://github.com/LouisShark/chatgpt_system_prompt) - Prompt Directory
 * [The Big Prompt Library](https://github.com/0xeb/TheBigPromptLibrary) - Prompt Directory
 * [Jailbreak Listings](https://rentry.org/jb-listing) or [⁠Spiritual-Spell-Red-Teaming](https://github.com/Goochbeater/Spiritual-Spell-Red-Teaming) - Prompt Directories / Jailbreaks
@@ -434,7 +430,7 @@
 * ⭐ **[⁠Kaggle Benchmarks](https://www.kaggle.com/benchmarks)** - Chatbot Leaderboards / Benchmarks
 * ⭐ **[Arena](https://arena.ai/leaderboard)**, [2](https://canaryarena.ai/) - Chatbot Leaderboards / Benchmarks / [X](https://x.com/arena) / [Discord](https://discord.com/invite/lmarena)
 * [OpenRouter](https://openrouter.ai/rankings) - Chatbot Popularity Rankings / [Discord](https://discord.gg/fVyRaUDgxW) / [GitHub](https://github.com/OpenRouterTeam)
-* [SEAL LLM Leaderboards](https://scale.com/leaderboard) - Chatbot Leaderboards
+* [SEAL LLM Leaderboards](https://labs.scale.com/leaderboard) - Chatbot Leaderboards
 * [Context Arena](https://contextarena.ai/) - Chatbot Leaderboards / Benchmarks
 * [⁠RankedAGI](https://rankedagi.com/) - Chatbot Leaderboards / Benchmarks
 * [LLM Stats](https://llm-stats.com/) - Chatbot Leaderboard / [X](https://x.com/LlmStats) / [Discord](https://discord.com/invite/RxGUBvE42d)
@@ -467,21 +463,3 @@
 * [WebDev Arena](https://arena.ai/leaderboard/code/webdev) - Coding AI Leaderboard / Benchmarks
 * [Aider LLM Leaderboards](https://aider.chat/docs/leaderboards/) - Coding AI Leaderboard / Benchmarks
 * [⁠Vals AI](https://www.vals.ai/) - Coding AI Leaderboard / Benchmarks
-
-***
-
-# ► Machine Learning
-
-* 🌐 **[Awesome Machine Learning](https://github.com/josephmisiti/awesome-machine-learning)** - Machine Learning Framework Index
-* 🌐 **[Awesome ML](https://github.com/underlines/awesome-ml)**, [⁠Awesome LLM Resources](https://github.com/ilsilfverskiold/Awesome-LLM-Resources-List/) or [ML Resources](https://ml-resources.vercel.app/) - Machine Learning / LLM Resources
-* ↪️ **[AI / ML Learning](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/edu#wiki_.25B7_ai_.2F_ml_learning)** - Educational AI / ML Resources
-* ⭐ **[Hugging Face](https://huggingface.co/)**, [ModelScope](https://www.modelscope.ai/), [LLM Papers](https://potent-twister-29f.notion.site/b0fc32542854456cbde923e0adb48845?v=e2d14d2ef0c848f5a1d5b71f9977d7c5) or [OpenML](https://www.openml.org/) - Machine Learning Datasets / Papers
-* ⭐ **[Deep playground](https://playground.tensorflow.org/)** - Neural Networks Playground
-* ⭐ **[⁠Unsloth](https://unsloth.ai/)** - LLM Finetuning / Text Completion / [Notebooks](https://github.com/unslothai/notebooks) / [Guide](https://docs.unsloth.ai/get-started/fine-tuning-guide) / [GitHub](https://github.com/unslothai/unsloth)
-* [ModelScope Finetuning](https://modelscope.ai/civision/modelTraining) - Image Gen Model Finetuning / Up to 100 Images Per LoRA
-* [Markdown Web Browser](https://github.com/Dicklesworthstone/markdown_web_browser) - Webpage > Markdown Converter
-* [DeepSpeed](https://www.deepspeed.ai/) - Deep Learning Optimization Library
-* [Netron](https://github.com/lutzroeder/netron) - Visualizer for Neural Network, Deep Learning, and Machine Learning Models
-* [MMDeploy](https://mmdeploy.readthedocs.io/en/latest/) - Deep Learning Model Deployment Toolset / [GitHub](https://github.com/open-mmlab/mmdeploy)
-* [ChatGPT-Next-Web](https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web) - Cross-Platform ChatGPT / Gemini UI
-* [Nixified](https://nixified.ai/) - Nix Flake for AI Projects
