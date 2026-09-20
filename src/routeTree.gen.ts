@@ -18,6 +18,7 @@ import { Route as ApiAiChatRouteImport } from './routes/api/ai-chat'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
 import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[.mcp]/invoke-tool/$tool'
+import { Route as ApiPublicCronSyncRouteImport } from './routes/api/public/cron/sync'
 
 const McpRoute = McpRouteImport.update({
   id: '/mcp',
@@ -67,6 +68,11 @@ const Char91DotmcpChar93InvokeToolToolRoute =
     path: '/.mcp/invoke-tool/$tool',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiPublicCronSyncRoute = ApiPublicCronSyncRouteImport.update({
+  id: '/api/public/cron/sync',
+  path: '/api/public/cron/sync',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -78,6 +84,7 @@ export interface FileRoutesByFullPath {
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/api/ai-chat': typeof ApiAiChatRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
+  '/api/public/cron/sync': typeof ApiPublicCronSyncRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -89,6 +96,7 @@ export interface FileRoutesByTo {
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/api/ai-chat': typeof ApiAiChatRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
+  '/api/public/cron/sync': typeof ApiPublicCronSyncRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -101,6 +109,7 @@ export interface FileRoutesById {
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/api/ai-chat': typeof ApiAiChatRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
+  '/api/public/cron/sync': typeof ApiPublicCronSyncRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -114,6 +123,7 @@ export interface FileRouteTypes {
     | '/.well-known/oauth-protected-resource'
     | '/api/ai-chat'
     | '/.mcp/invoke-tool/$tool'
+    | '/api/public/cron/sync'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -125,6 +135,7 @@ export interface FileRouteTypes {
     | '/.well-known/oauth-protected-resource'
     | '/api/ai-chat'
     | '/.mcp/invoke-tool/$tool'
+    | '/api/public/cron/sync'
   id:
     | '__root__'
     | '/'
@@ -136,6 +147,7 @@ export interface FileRouteTypes {
     | '/.well-known/oauth-protected-resource'
     | '/api/ai-chat'
     | '/.mcp/invoke-tool/$tool'
+    | '/api/public/cron/sync'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -148,6 +160,7 @@ export interface RootRouteChildren {
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   ApiAiChatRoute: typeof ApiAiChatRoute
   Char91DotmcpChar93InvokeToolToolRoute: typeof Char91DotmcpChar93InvokeToolToolRoute
+  ApiPublicCronSyncRoute: typeof ApiPublicCronSyncRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -215,6 +228,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char91DotmcpChar93InvokeToolToolRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/cron/sync': {
+      id: '/api/public/cron/sync'
+      path: '/api/public/cron/sync'
+      fullPath: '/api/public/cron/sync'
+      preLoaderRoute: typeof ApiPublicCronSyncRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -229,6 +249,7 @@ const rootRouteChildren: RootRouteChildren = {
     Char91DotwellKnownChar93OauthProtectedResourceRoute,
   ApiAiChatRoute: ApiAiChatRoute,
   Char91DotmcpChar93InvokeToolToolRoute: Char91DotmcpChar93InvokeToolToolRoute,
+  ApiPublicCronSyncRoute: ApiPublicCronSyncRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
