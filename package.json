@@ -8,7 +8,7 @@
     "refresh-content": "bun scripts/refresh-content.ts && bun scripts/check-debranding.ts",
     "check-debranding": "bun scripts/check-debranding.ts",
     "build": "vite build",
-    "build:vercel": "NITRO_PRESET=vercel vite build",
+    "build:vercel": "bun scripts/refresh-content.ts && NITRO_PRESET=vercel vite build",
     "build:node": "NITRO_PRESET=node vite build",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
