@@ -149,9 +149,9 @@
   .fracture-title .ft-un {
     position: relative;
     z-index: 10;
-    color: #ffffff;
+    color: var(--foreground);
     display: inline-block;
-    text-shadow: 0 0 24px color-mix(in oklab, #ffffff 22%, transparent);
+    text-shadow: 0 0 24px color-mix(in oklab, var(--foreground) 22%, transparent);
     transition:
       transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
       letter-spacing 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -248,7 +248,7 @@
       90deg,
       transparent,
       color-mix(in oklab, var(--primary) 90%, transparent) 45%,
-      #ffffff 50%,
+      var(--foreground) 50%,
       color-mix(in oklab, var(--primary) 90%, transparent) 55%,
       transparent
     );
