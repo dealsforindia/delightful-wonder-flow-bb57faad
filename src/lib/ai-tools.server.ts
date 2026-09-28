@@ -8,6 +8,12 @@ const KEYWORD_MODEL = "google/gemini-2.5-flash";
 const RANKING_MODEL = "google/gemini-2.5-flash";
 const PLANNING_MODEL = "google/gemini-2.5-flash";
 
+const TOOL_SEARCH_INDEX = TOOLS.map((tool) => ({
+  haystack: `${tool.name} ${tool.section} ${tool.category} ${tool.description ?? ""}`.toLowerCase(),
+  name: tool.name.toLowerCase(),
+  category: tool.category.toLowerCase(),
+}));
+
 function safeJsonParse<T>(text: string, fallback: T): T {
   const cleaned = text.replace(/```json|```/g, "").trim();
   const m = cleaned.match(/\{[\s\S]*\}/) ?? cleaned.match(/\[[\s\S]*\]/);
@@ -183,14 +189,13 @@ function rankByTerms(
 ): number[] {
   const scored: Array<{ i: number; s: number }> = [];
   for (let i = 0; i < TOOLS.length; i++) {
-    const t = TOOLS[i];
-    const hay = (t.name + " " + t.section + " " + t.category + " " + (t.description ?? "")).toLowerCase();
+    const indexed = TOOL_SEARCH_INDEX[i];
     let s = 0;
     for (const term of terms) {
-      const idx = hay.indexOf(term);
-      if (idx >= 0) s += 100 - Math.min(idx, 80) + (t.name.toLowerCase().includes(term) ? nameBoost : 0);
+      const idx = indexed.haystack.indexOf(term);
+      if (idx >= 0) s += 100 - Math.min(idx, 80) + (indexed.name.includes(term) ? nameBoost : 0);
     }
-    if (s > 0 && boostCategories.has(t.category.toLowerCase())) s = Math.round(s * 1.6);
+    if (s > 0 && boostCategories.has(indexed.category)) s = Math.round(s * 1.6);
     if (s > 0) scored.push({ i, s });
   }
   scored.sort((a, b) => b.s - a.s);
