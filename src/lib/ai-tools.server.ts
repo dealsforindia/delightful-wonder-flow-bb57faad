@@ -339,8 +339,11 @@ Given a user intent, return the ${limit} MOST RELEVANT tools ranked best-first a
     .slice(0, limit);
 
   if (chosen.length === 0) {
-    // Fallback to fuzzy prefilter so the user never sees a blank result.
-    return ids.slice(0, limit).map((i) => ({ i, tool: TOOLS[i], why: "Top fuzzy match" }));
+    // Fallback: only entries whose keyword score is close to the best one —
+    // never pad with weak fuzzy matches, fewer honest results beat junk.
+    const best = scoredIds[0]?.s ?? 0;
+    const kept = scoredIds.filter((p) => p.s >= Math.max(1, best * 0.35)).slice(0, Math.min(limit, 4));
+    return kept.map(({ i, s }) => ({ i, tool: TOOLS[i], why: `closest keyword match (score ${s})` }));
   }
 
   return chosen.map((r) => ({ i: r.i, tool: TOOLS[r.i], why: String(r.why ?? "").slice(0, 120) }));
