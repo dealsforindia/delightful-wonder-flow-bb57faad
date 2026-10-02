@@ -289,7 +289,14 @@ export async function rankTools(
   previousIds: number[] | undefined,
   apiKey: string,
 ): Promise<Array<{ i: number; tool: Tool; why: string }>> {
-  const ids = prefilter(query, refine, 500);
+  const intent = expandIntent((query + " " + (refine ?? "")).toLowerCase());
+  const scoredIds = prefilterScored(
+    Array.from(new Set([...(query + " " + (refine ?? "")).toLowerCase().split(/[\s,./;]+/).filter((t) => t.length > 2), ...intent.terms])),
+    intent.categories,
+    50,
+    500,
+  );
+  const ids = scoredIds.map((p) => p.i);
   const index = ids.map(indexLine).join("\n");
   const prior = previousIds?.length
     ? `\nPREVIOUS RESULTS (already shown, prefer different picks unless still best): ${previousIds.join(",")}`
