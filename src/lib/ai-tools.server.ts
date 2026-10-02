@@ -206,10 +206,34 @@ function rankByTerms(
 // to the LLM every call. Score & keep top candidates, then let AI rank.
 export function prefilter(query: string, refine: string | undefined, k = 500): number[] {
   const q = (query + " " + (refine ?? "")).toLowerCase();
-  const literal = q.split(/[\s,./;]+/).filter((t) => t.length > 2);
+const literal = q.split(/[\s,./;]+/).filter((t) => t.length > 2);
   const intent = expandIntent(q);
   const terms = Array.from(new Set([...literal, ...intent.terms]));
-  return rankByTerms(terms, intent.categories, 50, k);
+  return prefilterScored(terms, intent.categories, 50, k).map((p) => p.i);
+}
+
+/** Same scoring as rankByTerms but keeps the raw scores, so callers can
+ *  tell strong matches from weak ones when the LLM ranker is unavailable. */
+function prefilterScored(
+  terms: string[],
+  boostCategories: Set<string>,
+  nameBoost: number,
+  k: number,
+): Array<{ i: number; s: number }> {
+  if (terms.length === 0) return [];
+  const scored: Array<{ i: number; s: number }> = [];
+  for (let i = 0; i < TOOLS.length; i++) {
+    const indexed = TOOL_SEARCH_INDEX[i];
+    let s = 0;
+    for (const term of terms) {
+      const idx = indexed.haystack.indexOf(term);
+      if (idx >= 0) s += 100 - Math.min(idx, 80) + (indexed.name.includes(term) ? nameBoost : 0);
+    }
+    if (s > 0 && boostCategories.has(indexed.category)) s = Math.round(s * 1.6);
+    if (s > 0) scored.push({ i, s });
+  }
+  scored.sort((a, b) => b.s - a.s);
+  return scored.slice(0, k);
 }
 
 
@@ -265,14 +289,21 @@ export async function rankTools(
   previousIds: number[] | undefined,
   apiKey: string,
 ): Promise<Array<{ i: number; tool: Tool; why: string }>> {
-  const ids = prefilter(query, refine, 500);
+  const intent = expandIntent((query + " " + (refine ?? "")).toLowerCase());
+  const scoredIds = prefilterScored(
+    Array.from(new Set([...(query + " " + (refine ?? "")).toLowerCase().split(/[\s,./;]+/).filter((t) => t.length > 2), ...intent.terms])),
+    intent.categories,
+    50,
+    500,
+  );
+  const ids = scoredIds.map((p) => p.i);
   const index = ids.map(indexLine).join("\n");
   const prior = previousIds?.length
     ? `\nPREVIOUS RESULTS (already shown, prefer different picks unless still best): ${previousIds.join(",")}`
     : "";
   const refineBlock = refine ? `\nUSER REFINEMENT: ${refine}` : "";
 
-  const system = `You are a search engine over a curated directory of ${TOOLS.length} free tools from FMHY.
+  const system = `You are a search engine over a curated directory of ${TOOLS.length} free tools.
 Each line: INDEX|NAME|SECTION|CATEGORY|DESCRIPTION|TAGS (tags may include recommended, open source, self-hostable, signup, paid, and platforms).\nUse the description and tags — prefer tools whose description actually matches the intent, and mention a signup or paid requirement in the reason when the tags say so.
 Given a user intent, return the ${limit} MOST RELEVANT tools ranked best-first as a JSON object: {"results":[{"i":INDEX,"why":"short reason"}]}. No prose, no markdown.`;
 
@@ -308,8 +339,11 @@ Given a user intent, return the ${limit} MOST RELEVANT tools ranked best-first a
     .slice(0, limit);
 
   if (chosen.length === 0) {
-    // Fallback to fuzzy prefilter so the user never sees a blank result.
-    return ids.slice(0, limit).map((i) => ({ i, tool: TOOLS[i], why: "Top fuzzy match" }));
+    // Fallback: only entries whose keyword score is close to the best one —
+    // never pad with weak fuzzy matches, fewer honest results beat junk.
+    const best = scoredIds[0]?.s ?? 0;
+    const kept = scoredIds.filter((p) => p.s >= Math.max(1, best * 0.35)).slice(0, Math.min(limit, 4));
+    return kept.map(({ i, s }) => ({ i, tool: TOOLS[i], why: `closest keyword match (score ${s})` }));
   }
 
   return chosen.map((r) => ({ i: r.i, tool: TOOLS[r.i], why: String(r.why ?? "").slice(0, 120) }));
