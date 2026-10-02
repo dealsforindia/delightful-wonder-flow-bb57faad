@@ -383,7 +383,7 @@
 
 ***
 
-* ⭐ **[ADS-B Exchange](https://globe.adsbexchange.com/)**, [FlightRadar24](https://www.flightradar24.com/), [PlaneFinder](https://planefinder.net/), [Airplanes.live](https://globe.airplanes.live/) / [Mobile](https://github.com/d4rken-org/airplanes-live-app), [⁠Flight Viz](https://flight-viz.com/), [Radarbox](https://www.airnavradar.com/), [Air Loom](https://objectiveunclear.com/airloom.html) or [FlightAware](https://www.flightaware.com/) - Live Flight Trackers
+* ⭐ **[ADS-B Exchange](https://globe.adsbexchange.com/)**, [Airplanes.live](https://globe.airplanes.live/) / [Mobile](https://github.com/d4rken-org/airplanes-live-app), [⁠Flight Viz](https://flight-viz.com/), [FlightAware](https://www.flightaware.com/), [FlightRadar24](https://www.flightradar24.com/), [PlaneFinder](https://planefinder.net/) or [Radarbox](https://www.airnavradar.com/) - Live Flight Trackers
 * [VisaIndex](https://visaindex.com/) - Worldwide Travel Visa Guides
 * [Google Flights](https://www.google.com/travel/flights) or [⁠SkyScanner](https://skyscanner.net/) - Compare / Book Flights
 * [⁠AeroLOPA](https://www.aerolopa.com/) or [⁠SeatMaps](https://seatmaps.com/) - Flight Seat Maps / Features / Reviews
@@ -1534,6 +1534,7 @@
 * [⁠SWF Rodeo](https://swf.rodeo/) or [TheBest404](https://thebest404pageeverredux.com/) - Random SWFs
 * [MSPFA](https://mspfa.com/) - MS Paint Fan Adventures
 * [GigaMacro](https://viewer.gigamacro.com/) - Panoramic Photography
+* [⁠The Hong Kong Phantasm](https://www.hkphantasm.com/) - Hong Kong Slide Photography Archive
 * [stringers.live](https://stringers.live/) - Live Freelance Journalist Streams
 * [Retro TV Simulator](https://www.myretrotvs.com/) - Simulate Oldschool TV Channels
 * [TheOfficeStareMachine](http://theofficestaremachine.com/) - The Office Video Emotion Search
