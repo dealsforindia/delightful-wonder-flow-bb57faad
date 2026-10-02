@@ -303,7 +303,7 @@ export async function rankTools(
     : "";
   const refineBlock = refine ? `\nUSER REFINEMENT: ${refine}` : "";
 
-  const system = `You are a search engine over a curated directory of ${TOOLS.length} free tools from FMHY.
+  const system = `You are a search engine over a curated directory of ${TOOLS.length} free tools.
 Each line: INDEX|NAME|SECTION|CATEGORY|DESCRIPTION|TAGS (tags may include recommended, open source, self-hostable, signup, paid, and platforms).\nUse the description and tags — prefer tools whose description actually matches the intent, and mention a signup or paid requirement in the reason when the tags say so.
 Given a user intent, return the ${limit} MOST RELEVANT tools ranked best-first as a JSON object: {"results":[{"i":INDEX,"why":"short reason"}]}. No prose, no markdown.`;
 
