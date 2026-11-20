@@ -4,9 +4,9 @@
 
 Sites generally contain ads, some of which can be harmful, often leading to unwanted pages or fake download buttons. Real download buttons are usually small, often text-based or subtly integrated into the site's design. Fake ones are frequently large, brightly colored, use generic terms like 'Download Now', and may appear multiple times on a page. It can be hard to tell them apart, so it's important to always have an adblocker. Keep in mind some file hosts have fake popups, real downloads happen within the download pages themselves, not redirected pages or popup tabs.
 
-For browsers, we recommend **[uBlock Origin (uBO)](https://github.com/gorhill/uBlock)**, and you can also use a **[Redirect Skipper](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/internet-tools/#wiki_.25B7_redirect_bypass)** to skip annoying countdowns. Note that uBO alone should be enough for browser adblocking; using DNS alongside it can cause conflicts. Check the section called Browsers below for our recommended ones. Also keep in mind we highly recommend using the full version of uBO rather than lite version.
+For browsers, we recommend **[uBlock Origin (uBO)](https://github.com/gorhill/uBlock)**, and you can also use a **[Redirect Skipper](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/internet-tools/#wiki_.25B7_redirect_bypass)** to skip annoying countdowns. Note that uBO alone should be enough for browser adblocking; using DNS alongside it can cause conflicts. Check the section called Browsers below for our recommended ones. Also keep in mind we highly recommend using the full version of uBO rather than the lite version.
 
-For mobile **[AdGuard Premium](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android/#wiki_.25B7_android_adblocking)** / [iOS](https://adguard.com/en/adguard-ios/overview.html) or **[Rethink DNS](https://rethinkdns.com/app)**, and you can block YouTube and Reddit ads with **[Morphe](https://morphe.software/)**, which you can optionally [set up easily](https://wispydocs.pages.dev/morphe-piko-obtainium/). Note that uBO works on mobile browsers like Firefox too.
+For mobile **[AdGuard Premium](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android/#wiki_.25B7_android_adblocking)** / [iOS](https://adguard.com/en/adguard-ios/overview.html), and you can block YouTube and Reddit ads with **[Morphe](https://morphe.software/)**, which you can optionally [set up easily](https://wispydocs.pages.dev/morphe-piko-obtainium/). Note that uBO works on mobile browsers like Firefox too.
 
 !!!note Using several ad blockers, like uBO and AdGuard at the same time can [mess things up](https://x.com/gorhill/status/1033706103782170625). This only happens with regular ad blockers, so it's perfectly okay to use uBO alongside something like SponsorBlock.
 
@@ -33,7 +33,7 @@ We recommend **[Firefox](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/interne
 
 For Android, we recommend **[Brave](https://brave.com/)** or **[Firefox](https://www.firefox.com/browsers/mobile/android/)**.
 
-For iOS, we recommend **Safari + [wBlock](https://apps.apple.com/app/wblock/id6746388723)** or **[Brave](https://brave.com/)**.
+For iOS, we recommend **Safari + [wBlock](https://skula.me/project/wblock/)** or **[Brave](https://brave.com/)**.
 
 !!!note We recommend looking through our [Extension](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/internet-tools#wiki_.25B7_browser_extensions) / [Userscript](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/internet-tools#wiki_.25B7_userscripts) sections to find ways to enhance your browser.
 
@@ -51,21 +51,23 @@ If you see a string of text that looks like this `aHR0cHM6Ly9mbWh5Lm5ldC8`, you 
 
 ### Movies / Shows
 
-* **Streaming: [NEPU](https://nepu.io/) / [Movy](https://www.movy.sx/) / [Cinejoy](https://cinejoy.pk/) / [P-Stream Forks](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/video#wiki_.25B7_p-stream_forks)**
+* **Streaming: [Stream Site List](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/video/)**
 * **Downloading: [Directories](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/video#wiki_.25BA_download_sites)**
 * **Torrenting: [ExT.to](https://ext.to/browse/?cat=1) / [1337x](https://1337x.to/movie-library/1/)**
-* **Sports Streaming: [Streamed](https://streamed.pk/) / [StreamFree](https://streamfree.top/) / [TimStreams](https://timstreams.st/)**
+* **Sports Streaming: [StreamCorner](https://streamcorner.st/) / [TimStreams](https://timstreams.st/)**
 * **Drama Streaming: [GoPlay](https://goplay.su/) / [DramaCool](https://dramacool-l.fun/)**
-* **Track / Discover: [Simkl](https://simkl.com/) / [Letterboxd](https://letterboxd.com/)**
+* **Tracking: [Simkl](https://simkl.com/) / [Letterboxd](https://letterboxd.com/)**
+* **Discovery: [They Shoot Pictures](https://theyshootpictures.com/) / [MDBList](https://mdblist.com/) / [SeriesGraph](https://seriesgraph.com/)**
 
 ***
 
 ### Anime
 
-* **Streaming: [Miruro](https://www.miruro.com/) / [All Manga](https://allmanga.to/) / [animepahe](https://animepahe.pw/)**
+* **Streaming: [Anikoto](https://anikototv.to/) / [Re:ANIME](https://reanime.to/) / [Miruro](https://www.miruro.com/) / [animepahe](https://animepahe.pw/)**
 * **Downloading: [Tokyo Insider](https://www.tokyoinsider.com/) / [Kayoanime](https://kayoanime.com/)**
 * **Torrenting: [Nyaa](https://nyaa.si/) / [Hayase](https://hayase.watch/) / [Extensions](https://rentry.co/FMHYB64#hayase)**
-* **Track / Discover: [MAL](https://myanimelist.net/) / [AniList](https://anilist.co/)** 
+* **Tracking: [MAL](https://myanimelist.net/) / [AniList](https://anilist.co/)**
+* **Discovery: [Anime-Planet](https://www.anime-planet.com/anime/recommendations) / [AnimeKarmaList](https://animekarmalist.com/)**
 
 ***
 
@@ -73,29 +75,32 @@ If you see a string of text that looks like this `aHR0cHM6Ly9mbWh5Lm5ldC8`, you 
 
 * **Streaming: [SpotX](https://github.com/SpotX-Official/SpotX) / [Monochrome](https://monochrome.st/)**
 * **Downloading: [lucida](https://lucida.to/) / [Nicotine+](https://nicotine-plus.org/)**
-* **Android: [⁠ArchiveTune](https://archivetune.koiiverse.cloud/) / [Morphe](https://wispydocs.pages.dev/morphe-piko-obtainium/) (YTM Patch) / [SpotiFLAC-Mobile](https://github.com/zarzet/SpotiFLAC-Mobile)**
-* **iOS: [⁠8SPINE](https://apps.apple.com/app/8spine-the-music-app/id6755934415) / [Modules](https://8spine-modules.vercel.app/) / [spoti.pw](https://t.me/eeveespotify_hazel)**
-* **Track / Discover: [RateYourMusic](https://rateyourmusic.com/) / [Last.fm](https://www.last.fm/home)**
+* **Android: [Morphe](https://wispydocs.pages.dev/morphe-piko-obtainium/) (YTM Patch) / [⁠ArchiveTune](https://archivetune.miuka.moe/) / [Mornye](https://mornye.com/)**
+* **iOS: [⁠8SPINE](https://apps.apple.com/app/8spine-the-music-app/id6755934415) / [Modules](https://8spine-modules.pages.dev/) / [EeveeSpotifyReincarnated](https://t.me/eeveespotify_hazel)**
+* **Tracking: [RateYourMusic](https://rateyourmusic.com/) / [Last.fm](https://www.last.fm/)**
+* **Discovery: [RYM Charts](https://rateyourmusic.com/charts/) / [AnyDecentMusic](https://www.anydecentmusic.com/) / [NTS Radio](https://www.nts.live/)**
 
 ***
 
 ### Gaming
 
-* **Download / Torrent: [⁠HizSearch](https://hizsearch.pages.dev/) / [Virgil Game Search](https://virgil.samidy.com/?engine=games) / [AnkerGames](https://ankergames.to/) / [SteamRIP](https://steamrip.com/) / [FitGirl Repacks](https://fitgirl-repacks.site/)**
+* **Download / Torrent: [⁠HizSearch](https://hizsearch.pages.dev/) / [Virgil Game Search](https://virgil.samidy.com/?engine=games) / [AnkerGames](https://ankergames.net/) / [SteamRIP](https://steamrip.com/) / [FitGirl Repacks](https://fitgirl-repacks.site/)**
 * **Emulation / ROMs: [Emulation Wiki](https://emulation.gametechwiki.com/index.php/Main_Page) / [Axekin](https://www.axekin.com/) / [r/ROMs Mega](https://r-roms.github.io/)**
-* **Track / Discover: [Backloggd](https://www.backloggd.com/) / [Glitchwave](https://glitchwave.com/)**
+* **Tracking: [Backloggd](https://www.backloggd.com/) / [Glitchwave](https://glitchwave.com/)**
+* **Discovery: [AcclaimedVideoGames](https://www.acclaimedvideogames.com/) / [SteamDB Ratings](https://steamdb.info/stats/gameratings/)**
 
 ***
 
 ### Reading
 
 * **Downloading: [Anna's Archive](https://annas-archive.gl/) / [Z-Library](https://z-lib.gd/)**
-* **Audiobooks: [Mobilism Audiobooks](https://forum.mobilism.org/viewforum.php?f=124) / [AudiobookBay](https://audiobookbay.lu/) / [Warning](https://github.com/fmhy/edit/blob/main/docs/.vitepress/notes/audiobookbay-warning.md)**
+* **Audiobooks: [Mobilism Audiobooks](https://forum.mobilism.org/viewforum.php?f=124) / [AudiobookBay](https://audiobookbay.lu/) / [Warning](https://github.com/fmhy/edit/blob/main/docs/.vitepress/notes/audiobookbay-critical.md)**
 * **Ebook Readers: [Readest](https://readest.com/) / [Koodo](https://www.koodoreader.com/) / [Google Play Books](https://play.google.com/books)**
-* **Manga: [Weeb Central](https://weebcentral.com/) / [⁠Comix](https://comix.to/)**
+* **Manga: [Weeb Central](https://weebcentral.com/) / [Kagane](https://kagane.org/) / [MangaDot](https://mangadot.net/)**
 * **Comics: [BatCave](https://batcave.biz/) / [GetComics](https://getcomics.org/)**
 * **Android Readers: [Librera](https://librera.mobi/) / [Moon+ Reader](https://www.moondownload.com/) + [Theme Guide](https://clarasguide.valeena.workers.dev/Guides/moontheme/)**
-* **Track / Discover: [StoryGraph](https://www.thestorygraph.com/)** (books) / **[Hardcover](https://hardcover.app/)** (books) / **[MAL](https://myanimelist.net/)** (manga) / **[LeagueOfComicGeeks](https://leagueofcomicgeeks.com/)** (comics)
+* **Tracking: [StoryGraph](https://www.thestorygraph.com/) / [Hardcover](https://hardcover.app/) (Books) / [MAL](https://myanimelist.net/) (Manga) / [League of Comic Geeks](https://leagueofcomicgeeks.com/) (Comics)**
+* **Discovery: [Five Books](https://fivebooks.com/) / [The Greatest Books](https://thegreatestbooks.org/) (Books) / [MangaBaka](https://mangabaka.org/) (Manga) / [ComicBookCanon](https://www.comicbookcanon.com/) (Comics)**
 
 ***
 
@@ -137,7 +142,7 @@ Downloading files through torrenting can cause issues with your ISP, so using a 
 
 > What is Port Forwarding? Do I need it?
 
-[Port forwarding](https://wispydocs.pages.dev/torrenting/#port-forwarding) (having an open port) is recommended for users torrenting without a VPN, or those with a VPN that supports port forwarding. While it's not strictly needed, it benefits the swarm, can sometimes boost download speeds, and improves connectivity for torrents with fewer seeds. 
+[Port forwarding](https://wispydocs.pages.dev/torrenting/#port-forwarding) (having an open port) is recommended for users torrenting without a VPN, or those with a VPN that supports port forwarding. While it's not strictly needed, it benefits the swarm, can sometimes boost download speeds, and improves connectivity for torrents with fewer seeds.
 
 ***
 
@@ -164,5 +169,11 @@ Downloading files through torrenting can cause issues with your ISP, so using a 
 * **Download Managers: [AB Download Manager](https://abdownloadmanager.com/)**
 * **[Translate Web Pages](https://github.com/FilipePS/Traduzir-paginas-web)** - Translate Web Pages to Your Language
 * **[Glossary / Terminology](https://fluffle.cc/piracyglossary)** - Common piracy term definitions
-* **[Unsafe Sites / Software](https://fmhy.net/unsafe)** / [2](https://redd.it/10bh0h9) - Things we recommend avoiding
+* **[Unsafe Sites / Software](https://fmhy.net/unsafe)** - Things we recommend avoiding
 * **[FMHY.net](https://fmhy.net/)** - Our website with many more sites / tools
+
+***
+
+**Beginners Guide Links**
+* https://fmhy.net/beginners-guide
+* https://rentry.org/Piracy-BG/

@@ -49,17 +49,27 @@ Anonymous comments taken from Reddit, Discord, X.com and our feedback system.
 
 * *"Great site! It's so useful, I now know about a lot more apps and such. Definitely made my life easier!"*
 
+* *"The entirety of the site is a treasure trove for anybody that's looking access for virtually anything possible. I'm proud of you guys and the work you do. This site to me, is on par with the Internet Archive in terms of importance. Take care and keep going."*
+
 * "*Your single domain which is now printed in my memory (fmhy.net) has been so much of a help to me cannot explain truly in words. Each one of you and others who contribute in this are saviors for us, I regularly check your site and visit some section to see some cool stuff, and yes I eventually find them. I should also mention the monthly updates which occurs when the month ends, I love to scroll through it entirely to check what I missed the last month, so yeah keep growing and keep providing the things you do.*."
 
 * *"I am in egypt where everything is not cheap and i discovered FMHY mid 2021, it has been one of the best websites for me as I have learned about computers and piracy as a whole, I also learned to use linux and programming which has lead me to find a job way easier now and I could provide for my whole family. You also made me the IT guy of the house and made me look like the cool nerd guy who has a website for anything."*
 
 * *"I recently finished my exams and im happy to say i got into med school. i am so beyond grateful for what you do. I didnt have the money for cram school and tutoring, i heavily relied on the resources here, and i will probably continue to do so. I want to become a gynecologist and hopefully bring some real change for the health of my fellow women. Thank you all!"*
 
+* *"When I first started my BSL class, I found it difficult, mainly because I had no idea how to study. The course was expensive, and many of the other learning tools I looked into also cost money, which only increased the pressure. Then I discovered FMHY, and it truly became a fantastic resource! It supported me through British Sign Language Level 3 and made a significant, positive impact on my learning. I passed a few months ago, and I still enjoy watching the list grow. It makes me smile every time I check it. Free Media Heck Yeah! Please continue adding to it! I can't wait to see what comes next, and I am very grateful for all the effort you've put into FMHY."*
+
 * *"I want to express my sincere appreciation for the wiki of useful resources. It has proven to be an invaluable source of information, providing a wide range of knowledge on various topics. The well-organized and comprehensive nature of the wiki has been instrumental in aiding my research and learning. I am truly grateful for the effort and dedication that has gone into curating and maintaining such a valuable repository of knowledge. Thank you for this exceptional resource."*
 
 * *"I've never had a dedicated site I can immediately go to that has virtually everything I need all in one singular organized, accessible and easy-to-use place. One thing I personally love is the flow of how everything is designed, it's super simple yet also very informative while still being incredibly appealing visually. Thank you to everyone who contributed to the compilation of this website!"*
 
+* *"FMHY has truly transformed my life, and I am honored to support it with my contributions. I genuinely cherish the opportunity to learn from and explore valuable resources, and FMHY brings me joy every day. I take great pleasure in sharing its helpful insights with my friends. I was excited to introduce my family to this wonderful website, and I am pleased to say they have come to love it just as much as I do."*
+
+* *"FREE MEDIA, HECK YEAH! THAT SITE SAVED MY DAMN LIFE, AND I DON'T CARE WHO JUDGES ME FOR IT! YOU WANNA LOOK AT ME LIKE I'M CRAZY? GO AHEAD! I'LL SCREAM IT FROM THE ROOFTOPS WHILE POUNDING MY FIST ON THE TABLE! It's my lifeline, my everything, and you can't take that away from me!"*
+
 * *"I'm not kidding when I say my quality of life would be SO. MUCH. LOWER. if it wasn't for the people running this thing, as well as the people running all the tools we get to use. I seriously pray we get at least several more solid years of this style of internet."*
+
+* *"When I first started my BSL class, I found it difficult, mainly because I had no idea how to study. The course was expensive, and many of the other learning tools I looked into also cost money, which only increased the pressure. Then I discovered FMHY, and it truly became a fantastic resource! It supported me through British Sign Language Level 3 and made a significant, positive impact on my learning. I passed a few months ago, and I still enjoy watching the list grow. It makes me smile every time I check it. Free Media Heck Yeah! Please continue adding to it! I can't wait to see what comes next, and I am very grateful for all the effort you've put into FMHY."*
 
 * *"FMHY genuinely made my life better. I am someone who loves video editing and I think it is my true passion, and if it weren't for fmhy and r/piracy megathread, I would be extremely sad. Editing would be so pay to win. I don't think I have spent money in the last while because while most people window shop or look for stuff to buy to fill the void in their hearts, I can just find cool plugins and resources. Thank you to everyone in the community, your hard work is greatly appreciated."*
 

@@ -248,6 +248,10 @@ ${modeHint}${memoryBlock}`;
         return result.toUIMessageStreamResponse({
           originalMessages: body.messages,
           sendReasoning: true,
+          onError: (error) => {
+            console.error("ai-chat stream error:", error);
+            return "The AI service hiccuped mid-reply — please try again.";
+          },
         });
       },
     },

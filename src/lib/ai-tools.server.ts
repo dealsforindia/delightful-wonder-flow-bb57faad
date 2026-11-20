@@ -12,7 +12,31 @@ const TOOL_SEARCH_INDEX = TOOLS.map((tool) => ({
   haystack: `${tool.name} ${tool.section} ${tool.category} ${tool.description ?? ""}`.toLowerCase(),
   name: tool.name.toLowerCase(),
   category: tool.category.toLowerCase(),
+  // Companion entries ("FlowCV Discord", "FlowCV GitHub") mirror their parent
+  // tool's description, so they outrank real tools on vague intents — penalize.
+  companion: (tool.tags ?? []).includes("companion"),
 }));
+
+/** Words too common to distinguish tools — "for" alone matches thousands of entries. */
+const STOPWORDS = new Set([
+  "the", "and", "for", "with", "from", "that", "this", "want", "need", "make",
+  "get", "got", "how", "can", "are", "was", "were", "will", "would", "should",
+  "could", "have", "has", "had", "not", "but", "all", "any", "some", "what",
+  "when", "where", "which", "who", "why", "out", "about", "into", "over",
+  "use", "using", "used", "like", "just", "also", "than", "then", "them",
+  "they", "you", "your", "yours", "our", "ours", "their", "theirs", "its",
+  "best", "good", "free", "tool", "tools", "site", "sites", "website", "app",
+  "apps", "way", "ways", "something", "anything", "everything", "stuff",
+  "things", "thing", "really", "very", "much", "many", "more", "most",
+]);
+
+/** Meaningful literal terms from a query — stopwords and short tokens removed. */
+function queryTerms(q: string): string[] {
+  return q
+    .toLowerCase()
+    .split(/[\s,./;:?!'"()]+/)
+    .filter((t) => t.length > 2 && !STOPWORDS.has(t));
+}
 
 function safeJsonParse<T>(text: string, fallback: T): T {
   const cleaned = text.replace(/```json|```/g, "").trim();
@@ -196,6 +220,7 @@ function rankByTerms(
       if (idx >= 0) s += 100 - Math.min(idx, 80) + (indexed.name.includes(term) ? nameBoost : 0);
     }
     if (s > 0 && boostCategories.has(indexed.category)) s = Math.round(s * 1.6);
+    if (s > 0 && indexed.companion) s = Math.round(s * 0.25);
     if (s > 0) scored.push({ i, s });
   }
   scored.sort((a, b) => b.s - a.s);
@@ -206,7 +231,7 @@ function rankByTerms(
 // to the LLM every call. Score & keep top candidates, then let AI rank.
 export function prefilter(query: string, refine: string | undefined, k = 500): number[] {
   const q = (query + " " + (refine ?? "")).toLowerCase();
-const literal = q.split(/[\s,./;]+/).filter((t) => t.length > 2);
+  const literal = queryTerms(q);
   const intent = expandIntent(q);
   const terms = Array.from(new Set([...literal, ...intent.terms]));
   return prefilterScored(terms, intent.categories, 50, k).map((p) => p.i);
@@ -230,6 +255,7 @@ function prefilterScored(
       if (idx >= 0) s += 100 - Math.min(idx, 80) + (indexed.name.includes(term) ? nameBoost : 0);
     }
     if (s > 0 && boostCategories.has(indexed.category)) s = Math.round(s * 1.6);
+    if (s > 0 && indexed.companion) s = Math.round(s * 0.25);
     if (s > 0) scored.push({ i, s });
   }
   scored.sort((a, b) => b.s - a.s);
@@ -239,7 +265,7 @@ function prefilterScored(
 
 export function scoreTools(query: string, k: number): number[] {
   const q = query.toLowerCase();
-  const literal = q.split(/[\s,./;]+/).filter((t) => t.length > 2);
+  const literal = queryTerms(q);
   const intent = expandIntent(q);
   const terms = Array.from(new Set([...literal, ...intent.terms]));
   if (terms.length === 0) return [];
@@ -291,7 +317,7 @@ export async function rankTools(
 ): Promise<Array<{ i: number; tool: Tool; why: string }>> {
   const intent = expandIntent((query + " " + (refine ?? "")).toLowerCase());
   const scoredIds = prefilterScored(
-    Array.from(new Set([...(query + " " + (refine ?? "")).toLowerCase().split(/[\s,./;]+/).filter((t) => t.length > 2), ...intent.terms])),
+    Array.from(new Set([...queryTerms(query + " " + (refine ?? "")), ...intent.terms])),
     intent.categories,
     50,
     500,
@@ -515,8 +541,8 @@ export async function swapStep(
 ): Promise<{ i: number; tool: Tool; why: string } | { tool: null }> {
   const catLower = data.category.toLowerCase();
   const secLower = data.section.toLowerCase();
-  const goalTerms = data.goal.toLowerCase().split(/\s+/).filter((t) => t.length > 2);
-  const actTerms = data.stepAction.toLowerCase().split(/\s+/).filter((t) => t.length > 2);
+  const goalTerms = queryTerms(data.goal);
+  const actTerms = queryTerms(data.stepAction);
   const excluded = new Set(data.exclude ?? []);
   excluded.add(data.currentToolId);
 

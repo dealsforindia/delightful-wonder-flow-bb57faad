@@ -159,6 +159,35 @@ function lineTags(line: string, description: string): string[] {
   return Array.from(new Set(tags)).slice(0, 8);
 }
 
+/** Link text that names a platform, not a tool — "GitHub", "Discord", "Site". */
+const GENERIC_NAME =
+  /^(site|website|github|gitlab|discord|telegram|subreddit|reddit|x|twitter|source code|\.onion|colab|chrome|firefox|wiki|forum|guide|status|mirrors?|link|docs?|documentation)$/i;
+
+/** Derive a real name from a URL when the link text is generic. */
+function nameFromUrl(url: string): string | null {
+  try {
+    const u = new URL(url);
+    const host = u.hostname.replace(/^www\./, "");
+    const seg = u.pathname.replace(/\/+$/, "").split("/").filter(Boolean);
+    if (host === "github.com" || host === "gitlab.com") {
+      return seg.length >= 2 ? `${seg[0]}/${seg[1]}` : null;
+    }
+    if (host === "reddit.com") {
+      const m = u.pathname.match(/^\/(r|u|user)\/([^/]+)/);
+      return m ? `${m[1] === "r" ? "r" : "u"}/${m[2]}` : null;
+    }
+    if (host === "t.me" || host === "telegram.me" || host === "telegram.dog") {
+      return seg[0] ? `@${seg[0]}` : null;
+    }
+    if (host === "x.com" || host === "twitter.com") {
+      return seg[0] && !["i", "home", "explore", "search"].includes(seg[0]) ? `@${seg[0]}` : null;
+    }
+  } catch {
+    /* fall through */
+  }
+  return null;
+}
+
 function parseTools(md: string, category: string): Entry[] {
   const out: Entry[] = [];
   let section = "General";
@@ -173,15 +202,42 @@ function parseTools(md: string, category: string): Entry[] {
     }
     const description = lineDescription(line);
     const tags = lineTags(line, description);
+    // Text before the first link — often the real tool name ("FlowCV - [Site]…").
+    const lead = line
+      .replace(/^[\s*\-+]+/, "")
+      .split("[")[0]
+      .replace(/[*_`]/g, "")
+      .trim()
+      .slice(0, 60);
     const re = /\[([^\]\n]+)\]\((https?:\/\/[^)\s]+)\)/g;
     let m: RegExpExecArray | null;
+    let primaryName = "";
     while ((m = re.exec(line))) {
-      const name = m[1].replace(/[*_`]/g, "").trim();
+      let name = m[1].replace(/[*_`]/g, "").trim();
       const url = m[2];
       if (!name || isSourceName(name) || isSourceLink(url)) continue;
       // Skip mirror/footnote links like [2], [3] — they're alternates, not tools.
       if (/^\d+$/.test(name)) continue;
-      out.push({ n: name, u: url, c: category, s: section, d: description, t: tags });
+      const wasGeneric = GENERIC_NAME.test(name);
+      if (wasGeneric) {
+        const derived = nameFromUrl(url);
+        if (derived) name = derived;
+        else if (!primaryName && lead && !GENERIC_NAME.test(lead)) name = lead;
+        else if (primaryName) name = `${primaryName} ${name}`.slice(0, 80);
+      }
+      // A secondary link whose text was generic ("Discord", "GitHub", "Mirror")
+      // is a companion of the line's main tool, not a standalone entry — tag it
+      // so search and AI can rank it below real tools.
+      const companion = primaryName !== "" && wasGeneric;
+      if (!primaryName) primaryName = name;
+      out.push({
+        n: name,
+        u: url,
+        c: category,
+        s: section,
+        d: description,
+        t: companion ? [...tags, "companion"] : tags,
+      });
     }
   }
   return out;
