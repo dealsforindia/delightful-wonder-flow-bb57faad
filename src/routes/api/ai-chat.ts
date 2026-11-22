@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { convertToModelMessages, streamText, stepCountIs, tool, type UIMessage } from "ai";
 import { z } from "zod";
 import { createLovableAiGatewayProvider } from "@/lib/ai-gateway.server";
+import { aiErrorMessage } from "@/lib/ai-errors";
 import { buildRoadmap, rankTools } from "@/lib/ai-tools.server";
 import { TOOLS } from "@/lib/tools-data.server";
 import type { Tool } from "@/lib/tools-data";
@@ -83,9 +84,12 @@ export const Route = createFileRoute("/api/ai-chat")({
           body.messages = body.messages.slice(-MAX_MESSAGES);
         }
 
-        const gateway = createLovableAiGatewayProvider();
-        // Real Gemini model id available on Google's free tier.
-        const model = gateway("google/gemini-2.5-flash");
+        let model;
+        try {
+          model = createLovableAiGatewayProvider()("google/gemini-2.5-flash");
+        } catch {
+          return new Response("AI is not configured yet. The site owner needs to connect the AI service.", { status: 503 });
+        }
 
 
         const mode = body.mode === "roadmap" ? "roadmap" : body.mode === "search" ? "search" : "auto";
@@ -117,7 +121,7 @@ How you help:
 - Think first. If the ask is vague, ask ONE sharp clarifying question before spending a tool call.
 
 Reply format — be GENUINELY USEFUL, not terse:
-- Aim for a substantive answer (typically 150–400 words). Use markdown: short intro, then **## Top picks** with a bullet per recommended tool.
+- Keep the answer focused (typically 100–200 words). Recommend at most three top picks unless the user asks for more. Use markdown: short intro, then **## Top picks** with a bullet per recommended tool.
 - Tool results include a 'description' (what it does) and 'tags' (recommended / open source / self-hostable / signup / paid / platforms). Ground your answer in them: never invent capabilities the description doesn't support, and always state plainly when a tool needs a signup or has a paid tier. If nothing in the directory genuinely fits, say so instead of recommending the least-bad option.
 - For each recommended tool, write 2–4 sentences covering: what it actually does, why it fits THIS user's ask, one concrete tip / gotcha / how to start, and when to pick it over an alternative. Reference tools by name (the UI renders link cards separately — don't re-paste URLs).
 - If you built a roadmap, add a **## How to run it** section: what to do first, what "done" looks like at each step, realistic time expectations, and where people usually get stuck.
@@ -125,7 +129,11 @@ Reply format — be GENUINELY USEFUL, not terse:
 - End with a **## Next step** line: one concrete thing the user should do right now, or a sharp follow-up question.
 - Never re-list raw tool names as a bare list — always add reasoning. Never say "here are some tools" and stop. No filler, no hedging, no "I hope this helps".
 - If the user's message starts with a "> " quoted block (from the "📌 Ask about this" button), they are pointing at that EXACT phrase from your previous reply. Treat it as the topic. Do NOT ask what they mean — answer directly about that specific tool/section/idea, expand on it, give concrete steps, tips, and next actions. Any text after the quote is their extra context (e.g. "> Kagi Search\n\nis it worth $10/mo?"). Answer using the directory tools when relevant.
-- Talk like a knowledgeable friend who has actually used these tools.
+- Never claim first-hand use, guaranteed earnings, or verified live website availability. You search directory records, not website contents.
+- Do not transfer one tool's features or badges to another. A name or a tag is not evidence of specific features. If details are missing, say they are not documented.
+- Generic job-search requests must not assume a software-engineering career. Label specialist resources as specialist, and prefer general-purpose resources.
+- For follow-ups, preserve the user's original goal and constraints. Put new constraints in refine; do not interpret "no signup" as a new goal.
+- Talk plainly and avoid repeating the information already in tool cards.
 ${modeHint}${memoryBlock}`;
 
         const tools = {
@@ -136,7 +144,7 @@ ${modeHint}${memoryBlock}`;
               limit: z.number().int().min(1).max(10).default(6),
             }),
             execute: async ({ query, limit }) => {
-              const ranked = await rankTools(query, undefined, limit, undefined, "");
+              const ranked = await rankTools(query, undefined, limit, undefined, "", request.signal);
               return {
                 query,
                 results: ranked.map(({ i, tool: t, why }) => ({
@@ -147,9 +155,23 @@ ${modeHint}${memoryBlock}`;
           }),
           build_roadmap: tool({
             description: "Design a 3–6 step workflow to achieve a real-world GOAL, chaining free tools from the directory.",
-            inputSchema: z.object({ goal: z.string().min(3) }),
-            execute: async ({ goal }) => {
-              const roadmap = await buildRoadmap(goal, "");
+            inputSchema: z.object({
+              goal: z.string().min(3),
+              refine: z.string().max(1000).optional().describe("Additional constraints or changes requested in this turn"),
+            }),
+            execute: async ({ goal, refine }) => {
+              const priorSteps = body.messages?.flatMap((message) => message.parts ?? []) ?? [];
+              const prior = [...priorSteps].reverse().find((part) =>
+                part.type === "tool-build_roadmap" && "state" in part && part.state === "output-available",
+              );
+              const previous = prior && "output" in prior
+                ? z.object({ title: z.string(), steps: z.array(z.object({ i: z.number(), action: z.string(), output: z.string(), why: z.string().optional(), estMinutes: z.number().optional() })) }).safeParse(prior.output)
+                : undefined;
+              const roadmap = await buildRoadmap(goal, "", {
+                refine,
+                ...(previous?.success ? { previous: previous.data } : {}),
+                abortSignal: request.signal,
+              });
               return {
                 goal: roadmap.goal,
                 title: roadmap.title,
@@ -238,10 +260,20 @@ ${modeHint}${memoryBlock}`;
 
         const result = streamText({
           model,
+          maxRetries: 0,
+          abortSignal: request.signal,
           system,
           messages: convertToModelMessages(body.messages),
           tools,
-          stopWhen: stepCountIs(12),
+          stopWhen: [stepCountIs(12), ({ steps }) => {
+            const last = steps.at(-1);
+            return last?.content.some((part) => part.type === "tool-error") === true ||
+              last?.toolResults.some((part) => {
+                if (part.toolName !== "build_roadmap") return false;
+                const output = part.output as { steps?: unknown[] };
+                return !output.steps?.length;
+              }) === true;
+          }],
           temperature: 0.4,
         });
 
@@ -249,8 +281,9 @@ ${modeHint}${memoryBlock}`;
           originalMessages: body.messages,
           sendReasoning: true,
           onError: (error) => {
-            console.error("ai-chat stream error:", error);
-            return "The AI service hiccuped mid-reply — please try again.";
+            const message = aiErrorMessage(error);
+            console.error("ai-chat:", message);
+            return message;
           },
         });
       },

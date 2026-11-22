@@ -1,6 +1,7 @@
-import { generateText, NoObjectGeneratedError, Output } from "ai";
+import { streamText, NoObjectGeneratedError, Output } from "ai";
 import { z } from "zod";
 import { createLovableAiGatewayProvider } from "./ai-gateway.server";
+import { selectCandidates } from "./ai-selection";
 import { TOOLS } from "./tools-data.server";
 import type { Category, Tool } from "./tools-data";
 
@@ -36,6 +37,16 @@ function queryTerms(q: string): string[] {
     .toLowerCase()
     .split(/[\s,./;:?!'"()]+/)
     .filter((t) => t.length > 2 && !STOPWORDS.has(t));
+}
+
+async function consumeText(result: {
+  fullStream: AsyncIterable<{ type: string; error?: unknown }>;
+  text: PromiseLike<string>;
+}): Promise<string> {
+  for await (const chunk of result.fullStream) {
+    if (chunk.type === "error") throw chunk.error;
+  }
+  return result.text;
 }
 
 function safeJsonParse<T>(text: string, fallback: T): T {
@@ -273,12 +284,14 @@ export function scoreTools(query: string, k: number): number[] {
 }
 
 
-export async function expandKeywords(apiKey: string, goal: string): Promise<string[]> {
+export async function expandKeywords(apiKey: string, goal: string, abortSignal?: AbortSignal): Promise<string[]> {
   const gateway = createLovableAiGatewayProvider(apiKey);
   const model = gateway(KEYWORD_MODEL);
   try {
-    const result = await generateText({
+    const result = streamText({
+      maxRetries: 0,
       model,
+      abortSignal,
       system:
         'Break the user goal into 3-7 short workflow keywords, each 1-3 words, covering distinct sub-tasks needed end-to-end. Reply with JSON only: {"keywords":["...","..."]}. No prose.',
       prompt: goal,
@@ -287,8 +300,11 @@ export async function expandKeywords(apiKey: string, goal: string): Promise<stri
       }),
       temperature: 0.3,
     });
-    return result.experimental_output.keywords.map((k) => String(k).toLowerCase()).filter(Boolean).slice(0, 8);
+    const output = z.object({ keywords: z.array(z.string()) }).safeParse(safeJsonParse(await consumeText(result), {}));
+    if (!output.success) return queryTerms(goal).slice(0, 8);
+    return output.data.keywords.map((k) => String(k).toLowerCase()).filter(Boolean).slice(0, 8);
   } catch (error) {
+    if (!NoObjectGeneratedError.isInstance(error)) throw error;
     if (NoObjectGeneratedError.isInstance(error)) {
       const parsed = safeJsonParse<{ keywords?: string[] }>(error.text ?? "", {});
       if (Array.isArray(parsed.keywords)) {
@@ -314,6 +330,7 @@ export async function rankTools(
   limit: number,
   previousIds: number[] | undefined,
   apiKey: string,
+  abortSignal?: AbortSignal,
 ): Promise<Array<{ i: number; tool: Tool; why: string }>> {
   const intent = expandIntent((query + " " + (refine ?? "")).toLowerCase());
   const scoredIds = prefilterScored(
@@ -323,6 +340,7 @@ export async function rankTools(
     500,
   );
   const ids = scoredIds.map((p) => p.i);
+  if (ids.length === 0) return [];
   const index = ids.map(indexLine).join("\n");
   const prior = previousIds?.length
     ? `\nPREVIOUS RESULTS (already shown, prefer different picks unless still best): ${previousIds.join(",")}`
@@ -340,15 +358,18 @@ Given a user intent, return the ${limit} MOST RELEVANT tools ranked best-first a
 
   let parsed: z.infer<typeof RankSchema> = { results: [] };
   try {
-    const result = await generateText({
+    const result = streamText({
+      maxRetries: 0,
       model,
+      abortSignal,
       system,
       prompt: user,
       experimental_output: Output.object({ schema: RankSchema }),
       temperature: 0.2,
     });
-    parsed = result.experimental_output;
+    parsed = RankSchema.safeParse(safeJsonParse(await consumeText(result), {})).data ?? { results: [] };
   } catch (error) {
+    if (!NoObjectGeneratedError.isInstance(error)) throw error;
     if (NoObjectGeneratedError.isInstance(error)) {
       const raw = safeJsonParse<z.infer<typeof RankSchema> | Array<{ i: number; why?: string }>>(
         error.text ?? "",
@@ -360,9 +381,7 @@ Given a user intent, return the ${limit} MOST RELEVANT tools ranked best-first a
     }
   }
 
-  const chosen = parsed.results
-    .filter((r) => Number.isInteger(r.i) && r.i >= 0 && r.i < TOOLS.length)
-    .slice(0, limit);
+  const chosen = selectCandidates(parsed.results, ids, limit);
 
   if (chosen.length === 0) {
     // Fallback: only entries whose keyword score is close to the best one —
@@ -413,15 +432,18 @@ export async function buildRoadmap(
   apiKey: string,
   options?: {
     refine?: string;
+    abortSignal?: AbortSignal;
     previous?: {
       title: string;
       steps: Array<{ i: number; action: string; output: string; why?: string; estMinutes?: number }>;
     };
   },
 ): Promise<RoadmapResult> {
-  const keywords = await expandKeywords(apiKey, goal);
+  const abortSignal = options?.abortSignal;
+  const searchGoal = [goal, options?.refine].filter(Boolean).join(" ");
+  const keywords = await expandKeywords(apiKey, searchGoal, abortSignal);
   const perKeyword = keywords.map((k) => k.split(/\s+/).filter(Boolean));
-  const merged = new Set<number>(scoreTools(goal, 300));
+  const merged = new Set<number>(scoreTools(searchGoal, 300));
   for (const kw of perKeyword) {
     for (const id of scoreTools(kw.join(" "), 80)) merged.add(id);
   }
@@ -429,7 +451,7 @@ export async function buildRoadmap(
 
   // If fuzzy matching is too sparse, pull a wider ranked net from the LLM.
   if (finalIds.length < 20) {
-    const ranked = await rankTools(goal, options?.refine ?? undefined, 60, undefined, apiKey);
+    const ranked = await rankTools(goal, options?.refine ?? undefined, 60, undefined, apiKey, abortSignal);
     for (const r of ranked) merged.add(r.i);
     finalIds = Array.from(merged);
   }
@@ -461,23 +483,24 @@ Reply ONLY with JSON matching the schema. No prose, no markdown fences.`;
 
   let parsed: z.infer<typeof RoadmapSchema> = { title: null, steps: [] };
   try {
-    const result = await generateText({
+    const result = streamText({
+      maxRetries: 0,
       model,
+      abortSignal,
       system,
       prompt: user,
       experimental_output: Output.object({ schema: RoadmapSchema }),
       temperature: 0.2,
     });
-    parsed = result.experimental_output;
+    parsed = RoadmapSchema.safeParse(safeJsonParse(await consumeText(result), {})).data ?? { title: null, steps: [] };
   } catch (error) {
+    if (!NoObjectGeneratedError.isInstance(error)) throw error;
     if (NoObjectGeneratedError.isInstance(error)) {
       parsed = safeJsonParse<z.infer<typeof RoadmapSchema>>(error.text ?? "", { title: null, steps: [] });
     }
   }
 
-  let steps = (parsed.steps ?? [])
-    .filter((s) => Number.isInteger(s.i) && s.i >= 0 && s.i < TOOLS.length)
-    .slice(0, 6)
+  const steps = selectCandidates(parsed.steps ?? [], finalIds, 6)
     .map((s) => {
       const t = TOOLS[s.i];
       return {
@@ -492,25 +515,6 @@ Reply ONLY with JSON matching the schema. No prose, no markdown fences.`;
         estMinutes: Math.max(5, Math.min(240, Math.round(Number(s.estMinutes ?? 20)))),
       };
     });
-
-  // Fallback: if the AI couldn't compose a chain, build one from the best ranked matches.
-  if (steps.length === 0 && finalIds.length > 0) {
-    const ranked = await rankTools(goal, options?.refine ?? undefined, 6, undefined, apiKey);
-    steps = ranked.slice(0, 6).map((r, idx) => {
-      const t = r.tool;
-      return {
-        i: r.i,
-        name: t.name,
-        url: t.url,
-        category: t.category,
-        section: t.section,
-        action: `Use ${t.name} for the "${goal}" workflow — ${t.section}.`,
-        output: `Completed work with ${t.name}`,
-        why: r.why,
-        estMinutes: 20 + idx * 10,
-      };
-    });
-  }
 
   return {
     goal,
@@ -538,6 +542,7 @@ export interface SwapInput {
 export async function swapStep(
   data: SwapInput,
   apiKey: string,
+  abortSignal?: AbortSignal,
 ): Promise<{ i: number; tool: Tool; why: string } | { tool: null }> {
   const catLower = data.category.toLowerCase();
   const secLower = data.section.toLowerCase();
@@ -567,15 +572,18 @@ export async function swapStep(
 
   let parsed: z.infer<typeof SwapSchema> = { i: null, why: null };
   try {
-    const result = await generateText({
+    const result = streamText({
+      maxRetries: 0,
       model,
+      abortSignal,
       system,
       prompt: user,
       experimental_output: Output.object({ schema: SwapSchema }),
       temperature: 0.2,
     });
-    parsed = result.experimental_output;
+    parsed = SwapSchema.safeParse(safeJsonParse(await consumeText(result), {})).data ?? { i: null, why: null };
   } catch (error) {
+    if (!NoObjectGeneratedError.isInstance(error)) throw error;
     if (NoObjectGeneratedError.isInstance(error)) {
       parsed = safeJsonParse<z.infer<typeof SwapSchema>>(error.text ?? "", { i: null, why: null });
     }
@@ -586,10 +594,10 @@ export async function swapStep(
     !Number.isInteger(parsed.i) ||
     parsed.i < 0 ||
     parsed.i >= TOOLS.length ||
-    excluded.has(parsed.i)
+    excluded.has(parsed.i) ||
+    !pool.includes(parsed.i)
   ) {
-    const fallback = pool[0];
-    return { i: fallback, tool: TOOLS[fallback], why: "Similar tool from the same category." };
+    return { tool: null };
   }
   return { i: parsed.i, tool: TOOLS[parsed.i], why: String(parsed.why ?? "").slice(0, 100) };
 }
