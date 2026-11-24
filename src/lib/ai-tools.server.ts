@@ -319,6 +319,7 @@ const RankSchema = z.object({
   results: z.array(
     z.object({
       i: z.number(),
+      name: z.string().nullable().optional(),
       why: z.string(),
     }),
   ),
@@ -341,15 +342,15 @@ export async function rankTools(
   );
   const ids = scoredIds.map((p) => p.i);
   if (ids.length === 0) return [];
-  const index = ids.map(indexLine).join("\n");
+  const index = ids.map((id, n) => indexLine(id).replace(/^\d+/, String(n + 1))).join("\n");
   const prior = previousIds?.length
-    ? `\nPREVIOUS RESULTS (already shown, prefer different picks unless still best): ${previousIds.join(",")}`
+    ? `\nPREVIOUS RESULTS (already shown, prefer different picks unless still best): ${previousIds.map((id) => TOOLS[id]?.name).filter(Boolean).join(", ")}`
     : "";
   const refineBlock = refine ? `\nUSER REFINEMENT: ${refine}` : "";
 
   const system = `You are a search engine over a curated directory of ${TOOLS.length} free tools.
 Each line: INDEX|NAME|SECTION|CATEGORY|DESCRIPTION|TAGS (tags may include recommended, open source, self-hostable, signup, paid, and platforms).\nUse the description and tags — prefer tools whose description actually matches the intent, and mention a signup or paid requirement in the reason when the tags say so.
-Given a user intent, return the ${limit} MOST RELEVANT tools ranked best-first as a JSON object: {"results":[{"i":INDEX,"why":"short reason"}]}. No prose, no markdown.`;
+Given a user intent, return the ${limit} MOST RELEVANT tools ranked best-first as a JSON object: {"results":[{"i":INDEX,"name":"exact NAME from the same line","why":"short reason"}]}. No prose, no markdown.`;
 
   const user = `INTENT: ${query}${refineBlock}${prior}\n\nCANDIDATES:\n${index}`;
 
@@ -381,7 +382,7 @@ Given a user intent, return the ${limit} MOST RELEVANT tools ranked best-first a
     }
   }
 
-  const chosen = selectCandidates(parsed.results, ids, limit);
+  const chosen = selectCandidates(resolveNamedPicks(parsed.results, ids, (id) => TOOLS[id]?.name ?? ""), ids, limit);
 
   if (chosen.length === 0) {
     // Fallback: only entries whose keyword score is close to the best one —
@@ -531,6 +532,7 @@ Reply ONLY with JSON matching the schema. No prose, no markdown fences.`;
 
 const SwapSchema = z.object({
   i: z.number().nullable(),
+  name: z.string().nullable().optional(),
   why: z.string().nullable(),
 });
 
@@ -567,9 +569,9 @@ export async function swapStep(
   const pool = Array.from(new Set([...sameBucket, ...scored])).slice(0, 150);
   if (pool.length === 0) return { tool: null };
 
-  const index = pool.map(indexLine).join("\n");
-  const system = `Pick ONE alternative tool for the given step. Reply ONLY as JSON matching the schema. No prose.`;
-  const user = `GOAL: ${data.goal}\nSTEP ACTION: ${data.stepAction}\nCURRENT: ${TOOLS[data.currentToolId]?.name}\nEXCLUDE INDEXES: ${Array.from(excluded).join(",")}\n\nCANDIDATES:\n${index}`;
+  const index = pool.map((id, n) => indexLine(id).replace(/^\d+/, String(n + 1))).join("\n");
+  const system = `Pick ONE alternative tool for the given step. Return its INDEX as i and its exact NAME as name. Reply ONLY as JSON matching the schema. No prose.`;
+  const user = `GOAL: ${data.goal}\nSTEP ACTION: ${data.stepAction}\nCURRENT: ${TOOLS[data.currentToolId]?.name}\nDO NOT PICK: ${Array.from(excluded).map((id) => TOOLS[id]?.name).filter(Boolean).join(", ")}\n\nCANDIDATES:\n${index}`;
 
   const gateway = createLovableAiGatewayProvider(apiKey);
   const model = gateway(RANKING_MODEL);
@@ -593,6 +595,9 @@ export async function swapStep(
     }
   }
 
+  if (typeof parsed.i === "number") {
+    parsed = { ...parsed, i: resolveNamedPicks([{ i: parsed.i, name: parsed.name ?? null }], pool, (id) => TOOLS[id]?.name ?? "")[0]?.i ?? -1 };
+  }
   if (
     typeof parsed.i !== "number" ||
     !Number.isInteger(parsed.i) ||

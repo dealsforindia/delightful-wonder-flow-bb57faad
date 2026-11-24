@@ -31,3 +31,7 @@ test("a pick naming a tool outside the shortlist is dropped", () => {
   const out = resolveNamedPicks([{ i: 1, name: "DaVinci Resolve" }], [500], () => "OBS Studio");
   deepStrictEqual(out[0]?.i, -1);
 });
+test("hidden characters in a directory name do not break the match", () => {
+  const out = resolveNamedPicks([{ i: 1, name: "BG0" }], [7], () => "\u2060BG0");
+  deepStrictEqual(out[0]?.i, 7);
+});

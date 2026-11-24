@@ -17,7 +17,7 @@ export function selectCandidates<T extends { i: number }>(
 export function resolveNamedPicks<T extends { i: number; name?: string | null }>(
   picks: T[], candidates: number[], nameOf: (id: number) => string,
 ): Array<T & { i: number }> {
-  const norm = (v: string) => v.trim().toLowerCase();
+  const norm = (v: string) => v.replace(/[\u200B-\u200D\u2060\uFEFF]/g, "").trim().toLowerCase();
   return picks.map((pick) => {
     const byNumber = candidates[pick.i - 1];
     if (!pick.name) return { ...pick, i: byNumber ?? -1 };
