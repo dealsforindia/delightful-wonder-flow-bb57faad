@@ -1,7 +1,7 @@
 import { streamText, NoObjectGeneratedError, Output } from "ai";
 import { z } from "zod";
 import { createLovableAiGatewayProvider } from "./ai-gateway.server";
-import { selectCandidates } from "./ai-selection";
+import { resolveNamedPicks, selectCandidates } from "./ai-selection";
 import { TOOLS } from "./tools-data.server";
 import type { Category, Tool } from "./tools-data";
 
@@ -399,6 +399,7 @@ const RoadmapSchema = z.object({
   steps: z.array(
     z.object({
       i: z.number(),
+      name: z.string().nullable(),
       action: z.string().nullable(),
       why: z.string().nullable(),
       output: z.string().nullable(),
@@ -456,7 +457,8 @@ export async function buildRoadmap(
     finalIds = Array.from(merged);
   }
 
-  const index = finalIds.map(indexLine).join("\n");
+  // Models reliably cite short local numbers, not large global IDs.
+  const index = finalIds.map((id, n) => indexLine(id).replace(/^\d+/, String(n + 1))).join("\n");
 
   const system = `You are a pragmatic expert who builds real, working roadmaps. Given a GOAL, design a 3-6 step plan using ONLY tools from CANDIDATES (referenced by INDEX).
 
@@ -466,13 +468,14 @@ Rules:
 - Steps must be sequential and actionable — each output feeds the next.
 - Do not repeat the same tool. Do not pad the plan.
 - Use each candidate's DESCRIPTION and TAGS to judge fit. If a tool is tagged signup or paid, say so in 'why'.
+- Each step: 'i' is the candidate's INDEX number and 'name' is that candidate's exact name, copied from the same line. The action must use that tool, not a different one.
 - 'action' is a concrete instruction the user can follow. 'output' is what they'll have after. 'why' explains the tool choice in one line.
 
 Reply ONLY with JSON matching the schema. No prose, no markdown fences.`;
 
 
   const priorBlock = options?.previous
-    ? `\n\nPREVIOUS PLAN (revise it, don't rebuild from scratch unless needed):\n${JSON.stringify(options.previous)}`
+    ? `\n\nPREVIOUS PLAN (revise it, don't rebuild from scratch unless needed):\n${JSON.stringify({ title: options.previous.title, steps: options.previous.steps.map(({ i, ...rest }) => ({ tool: TOOLS[i]?.name, ...rest })) })}`
     : "";
   const refineBlock = options?.refine ? `\n\nUSER REFINEMENT: ${options.refine}` : "";
   const kwBlock = keywords.length ? `\nWORKFLOW KEYWORDS: ${keywords.join(", ")}` : "";
@@ -500,7 +503,8 @@ Reply ONLY with JSON matching the schema. No prose, no markdown fences.`;
     }
   }
 
-  const steps = selectCandidates(parsed.steps ?? [], finalIds, 6)
+  const localSteps = resolveNamedPicks(parsed.steps ?? [], finalIds, (id) => TOOLS[id]?.name ?? "");
+  const steps = selectCandidates(localSteps, finalIds, 6)
     .map((s) => {
       const t = TOOLS[s.i];
       return {

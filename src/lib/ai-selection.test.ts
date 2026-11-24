@@ -16,3 +16,18 @@ describe("grounded AI selections", () => {
     deepStrictEqual(selectCandidates([{ i: 2 }], [], 6), []);
   });
 });
+import { resolveNamedPicks } from "./ai-selection";
+test("roadmap picks map local numbers back to real tool IDs", () => {
+  const names: Record<number, string> = { 500: "OBS Studio", 900: "Shotcut" };
+  const out = resolveNamedPicks([{ i: 2, name: "Shotcut" }], [500, 900], (id) => names[id] ?? "");
+  deepStrictEqual(out[0]?.i, 900);
+});
+test("a mismatched number is corrected by the tool name", () => {
+  const names: Record<number, string> = { 500: "OBS Studio", 900: "Shotcut" };
+  const out = resolveNamedPicks([{ i: 1, name: "Shotcut" }], [500, 900], (id) => names[id] ?? "");
+  deepStrictEqual(out[0]?.i, 900);
+});
+test("a pick naming a tool outside the shortlist is dropped", () => {
+  const out = resolveNamedPicks([{ i: 1, name: "DaVinci Resolve" }], [500], () => "OBS Studio");
+  deepStrictEqual(out[0]?.i, -1);
+});
