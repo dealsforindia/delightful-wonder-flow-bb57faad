@@ -140,7 +140,7 @@
 * [FOSS Torrents](https://fosstorrents.com/) - FOSS Software Torrents
 * [Open Source Linux Programs](https://files.catbox.moe/o99qyz.jpg) - FOSS Software Chart
 * [RUTracker Linux](https://rutracker.org/forum/viewforum.php?f=1376) - Linux Software
-* [Rim's Linux Wiki](https://rlw.pages.dev/), [2](https://rimswiki.xyz/) - Linux Software / Tool Index / [Discord](https://discord.gg/pQVYgjzM3w)
+* [Rim's Linux Wiki](https://rlw.pages.dev/) - Linux Software / Tool Index / [Discord](https://discord.gg/pQVYgjzM3w)
 * [KDE Applications](https://apps.kde.org/) or [KDE Store](https://store.kde.org/browse/) - KDE Apps & Themes
 * [Flatpak](https://flatpak.org/) - Sandboxed Package Manager / [Manage Permissions](https://github.com/tchx84/flatseal)
 * [SnapCraft](https://snapcraft.io/store) - Snap Repository
@@ -328,7 +328,7 @@
 * [⁠LeShade](https://github.com/Ishidawg/LeShade) - ReShade Manager
 * [DXVK](https://github.com/doitsujin/dxvk) - Vulkan-Based Direct3D for Linux / Wine
 * [⁠D7VK](https://github.com/WinterSnowfall/d7vk) - Vulkan-Based D3D7/6/5 for Linux / Wine
-* [DLSS5VKLayer](https://github.com/bmitch87/DLSS5VKLayerr) - Vulkan DLSS 5 Neural Rendering Layer
+* [DLSS5VKLayer](https://github.com/bmitch87/DLSS5VKLayer) - Vulkan DLSS 5 Neural Rendering Layer
 * [⁠dxvk-gplasync](https://gitlab.com/Ph42oN/dxvk-gplasync/) or [DXVK-Sarek](https://github.com/pythonlover02/DXVK-Sarek/) - DXVK Forks w/ Async / Vulkan-Based Direct3D & D3D3-11 / Stutter Reduction
 * [⁠lsfg-vk](https://lsfg-vk.dev/) - Lossless Scaling for Linux / [Source Code](https://git.lsfg-vk.dev/lsfg-vk)
 * [vkBasalt](https://github.com/DadSchoorse/vkBasalt) - Game Post Processing Layer
@@ -428,6 +428,7 @@
 * [Exo](https://github.com/exo-explore/exo/) - Run AI Clusters / [Telegram](https://t.me/+Kh-KqHTzFYg3MGNk) / [Discord](https://discord.gg/EUnjGpsmWw)
 * [⁠LXD UI](https://github.com/canonical/lxd-ui) - Linux Container + Virtual Machine Manager
 * [Proxmox](https://www.proxmox.com/) - Self-Hosted Server Tools / Virtual Environment / [Scripts](https://community-scripts.org/)
+* [pyLoad](https://github.com/pyload/pyload) - Download Manager / Headless Python WebUI
 * [yet another bench script](https://github.com/masonr/yet-another-bench-script) - Server Performance Script
 * [Docker-Jackett](https://github.com/linuxserver/docker-jackett) - Docker Jackett Container
 * [arch-delugevpn](https://github.com/binhex/arch-delugevpn) - Docker with Torrent client and VPN on Arch Linux base
@@ -441,7 +442,7 @@
 * [⁠SilverBullet](https://silverbullet.md/) - Self-Hosted Markdown Note-Taking
 * [Lightning](https://williamhorning.dev/lightning/) - Self-Hosted Cross-Platform Chatbot Framework
 * [⁠ConvertX](https://github.com/C4illin/ConvertX) or [Transmute](https://transmute.sh/) / [GitHub](https://github.com/transmute-app/transmute) - Self-Hosted File Converters
-* [SearXNG](https://docs.searxng.org/), [4get](https://git.lolcat.ca/lolcat/4get), [⁠Hister](https://hister.org/) / [Discord](https://discord.gg/6JzgjGKVFP) / [GitHub](https://github.com/asciimoo/hister) or [ZincSearch](https://zincsearch-docs.zinc.dev/) / [GitHub](https://github.com/zincsearch/zincsearch) - Self-Hosted Search Engines
+* [SearXNG](https://docs.searxng.org/), [4get](https://git.lolcat.ca/lolcat/4get), [⁠Hister](https://nogon.eu/) / [Discord](https://discord.gg/6JzgjGKVFP) / [GitHub](https://github.com/asciimoo/hister) or [ZincSearch](https://zincsearch-docs.zinc.dev/) / [GitHub](https://github.com/zincsearch/zincsearch) - Self-Hosted Search Engines
 * [Moe Memos](https://memos.moe/) (android) or [Kept](https://www.keepitkept.xyz/) / [GitHub](https://github.com/ericerkz/kept) - Self-Hosted Note-Taking
 * [BookStack](https://www.bookstackapp.com/) / [GitHub](https://github.com/BookStackApp/BookStack), [NoteDiscovery](https://www.notediscovery.com/) / [GitHub](https://github.com/gamosoft/NoteDiscovery/) or [Siyuan](https://b3log.org/siyuan/en) / [GitHub](https://github.com/siyuan-note/siyuan) - Self-Hosted Info Managers
 * [iRedMail](https://www.iredmail.org/), [Docker Mailserver](https://docker-mailserver.github.io/docker-mailserver/edge/), [Stalwart](https://stalw.art/) / [GitHub](https://github.com/stalwartlabs/stalwart), [UnInbox](https://github.com/un/inbox) or [Mail-in a Box](https://mailinabox.email/) - Self-Hosted Email Servers
@@ -481,6 +482,7 @@
 
 * ⭐ **[Waydroid](https://waydro.id/)** - Containerized Android on Linux / [Scripts](https://github.com/casualsnek/waydroid_script) / [WayDroid-ATV Images](https://github.com/WayDroid-ATV/waydroid-builds) / [GitHub](https://github.com/waydroid)
 * [Redroid](https://github.com/remote-android/redroid-doc) or [Docker-Android](https://github.com/budtmo/docker-android) - Containerized Android on Linux
+* [Droidloom](https://denialwm.org/droidloom) - Run Android Apps Inside Wayland Session / [GitHub](https://github.com/denialwm/droidloom)
 * [Genymotion](https://www.genymotion.com/) - Android Emulator
 * [Android-x86](https://www.android-x86.org/) - Android-Based OS for PC
 * [adbfs-rootless](https://github.com/spion/adbfs-rootless) - Mount Android on Linux via ADB
@@ -612,7 +614,7 @@
 * ⭐ **[NearDrop](https://github.com/grishka/NearDrop)** - File Sharing App
 * ⭐ **[shottr](https://shottr.cc/)** or [⁠Better Shot](https://www.bettershot.site/) / [GitHub](https://github.com/KartikLabhshetwar/better-shot) - Screenshot Tools
 * ⭐ **[Aptonic](https://aptonic.com/)** - Drag-and-Drop Shelf / Quick File Access
-* [Ghostty](https://ghostty.org/) - Terminal Emulator / [GitHub](https://github.com/ghostty-org/ghostty)
+* [Ghostty](https://ghostty.org/) / [GitHub](https://github.com/ghostty-org/ghostty) or [⁠rootshell](https://www.rootshell.com/) / [GitHub](https://github.com/kitknox/rootshell) - Terminal Emulators
 * [Ice Cubes](https://apps.apple.com/us/app/ice-cubes-for-mastodon/id6444915884) - Mastodon Client / [GitHub](https://github.com/Dimillian/IceCubesApp)
 * [Sky.app](https://github.com/jcsalterego/Sky.app) - Bluesky Client
 * [Beta Profiles](https://betaprofiles.com/) - Download Pre-Release Versions macOS

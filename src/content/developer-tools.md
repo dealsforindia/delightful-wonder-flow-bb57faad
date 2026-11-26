@@ -96,7 +96,7 @@
 * 🌐 **[Awesome DOS](https://github.com/balintkissdev/awesome-dos)** - DOS App Development Resources
 * 🌐 **[Awesome Smart TV](https://github.com/vitalets/awesome-smart-tv)** - Smart TV App Development Resources
 * ⭐ **[Every Programmer Should Know](https://github.com/mtdvio/every-programmer-should-know)** or [bookmarks](https://github.com/SansGuidon/bookmarks) - Software Development Tools
-* ⭐ **Electron Tools** - [App Store](https://www.electronjs.org/apps/) / [Debugger](https://github.com/pd4d10/debugtron) / [Builder](https://www.electron.build/)
+* ⭐ **Electron Tools** - [App Store](https://www.electronjs.org/) / [Debugger](https://github.com/pd4d10/debugtron) / [Builder](https://www.electron.build/)
 * [Budibase](https://budibase.com/) or [Appsmith](https://www.appsmith.com/) - Internal Tool Builders
 * [Open Source Guides](https://opensource.guide/) - Open Source Software Tips / [GitHub](https://github.com/github/opensource.guide)
 * [Dokploy](https://github.com/dokploy/dokploy) - App Deployment
@@ -211,7 +211,6 @@
 * [⁠GhGrab](https://ghgrab.readthedocs.io/) - GitHub Specific File Downloader / [GitHub](https://github.com/abhixdd/ghgrab)
 * [act](https://nektosact.com/) - Run GitHub Actions Locally / [GitHub](https://github.com/nektos/act)
 * [Star History](https://star-history.com/) - Repository Star History Graph
-* [Gitstar Ranking](https://gitstar-ranking.com/) - Git Repo Star Rankings
 * [GithubReleasesBot](https://telegram.me/GithubReleasesBot) - Repository Change Feeds
 * [GitHub Stats Extended](https://github.com/stats-organization/github-stats-extended) - Dynamically Generated GitHub Readme Stats
 * [Skill Icons](https://skillicons.dev/) or [⁠Badges 4 README](https://github.com/alexandresanlim/Badges4-README.md-Profile) - Skill Badges for GitHub Readme / Resumes
@@ -529,6 +528,7 @@
 
 ***
 
+* 🌐 **[⁠Free Coding Agents](https://docs.google.com/spreadsheets/d/1j0v2102Xznu06JJoscHZS2C0zdIQqWdA/)**
 * ↪️ **[AI Agents](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/ai#wiki_.25BA_ai_agents)**
 * ⭐ **[OpenCode](https://opencode.ai/)** - Coding AI / DeepSeek V4.1 Flash / GLM-5.3-Flash / MiMo-V2.6-Flash / [Config Manager](https://opencode-studio.micr.dev/) / [Discord](https://discord.com/invite/opencode) / [GitHub](https://github.com/anomalyco/opencode)
 * ⭐ **[⁠Pi](https://pi.dev/)** - Terminal Coding Agent / [GUI](https://pi-docs.aiuo.net/) / [GitHub](https://github.com/earendil-works/pi)
@@ -571,7 +571,7 @@
 * [Qwen](https://chat.qwen.ai/) - Qwen4-Max-Preview / Qwen3.8-Max / Qwen3.7-Plus / No Sign-Up / Unlimited / [Subreddit](https://www.reddit.com/r/Qwen_AI/) / [Discord](https://discord.com/invite/CV4E9rpNSD) / [GitHub](https://github.com/QwenLM)
 * [MiniMax AI](https://agent.minimax.io/) - MiniMax M3.1-Flash (Max) / MiniMax M3 (Thinking) / Sign-Up / [GitHub](https://github.com/MiniMax-AI/)
 * [⁠Cloud CLI](https://github.com/siteboon/claudecodeui) - AI Coding Agent Web Manager
-* [Perchance](https://perchance.org/minimal#edit) / [Subreddit](https://www.reddit.com/r/perchance/) / [Discord](https://discord.gg/43qAQEVV9a), [Fragments](https://fragments.e2b.dev/) / [Discord](https://discord.com/invite/U7KEcGErtQ) / [GitHub](https://github.com/e2b-dev), [Websim](https://websim.com/) / [Subreddit](https://www.reddit.com/r/websim) / [X](https://x.com/websim_ai), [⁠AnyCoder](https://huggingface.co/spaces/akhaliq/anycoder), or [Llama Coder](https://llamacoder.together.ai/) / [GitHub](https://github.com/Nutlope/llamacoder) - App Builders
+* [Perchance](https://perchance.org/minimal#edit) / [Subreddit](https://www.reddit.com/r/perchance/) / [Discord](https://discord.gg/43qAQEVV9a), [Websim](https://websim.com/) / [Subreddit](https://www.reddit.com/r/websim) / [X](https://x.com/websim_ai), [⁠AnyCoder](https://huggingface.co/spaces/akhaliq/anycoder), or [Llama Coder](https://llamacoder.together.ai/) / [GitHub](https://github.com/Nutlope/llamacoder) - App Builders
 * [v0](https://v0.app/) - Text to Site Code
 * [Bolt.new](https://bolt.new/) - AI Web App Builder / [Discord](https://discord.com/invite/stackblitz) / [GitHub](https://github.com/stackblitz/bolt.new)
 
@@ -896,7 +896,7 @@
 * ⭐ **[ThemeWagon](https://themewagon.com/theme-price/free/)** - Free HTML Templates
 * ⭐ **[awwwards](https://www.awwwards.com/websites)**, **[Boilerplate](https://html5boilerplate.com/)** or [html5up](https://html5up.net/) - Custom HTML Templates
 * [UI Design Daily](https://www.uidesigndaily.com/) or [UIVerse](https://uiverse.io/) - Free UI Design Resources
-* [CollectUI](https://collectui.com/), [Hoverstat](https://www.hoverstat.es/), [httpster](https://httpster.net/), [Recent](https://recent.design/), [Websitevice](https://websitevice.com/), [Dribbble](https://dribbble.com/), [ReallyGoodUX](https://goodux.appcues.com/), [Pixlpin](https://pixlpin.com/) or [Pageflows](https://pageflows.com/) - UI / Site Design Inspiration
+* [CollectUI](https://collectui.com/), [Hoverstat](https://www.hoverstat.es/), [httpster](https://httpster.net/), [Recent](https://recent.design/), [Websitevice](https://websitevice.com/), [Dribbble](https://dribbble.com/), [ReallyGoodUX](https://goodux.appcues.com/), [⁠Designeer](https://designeer.xyz/inspiration), [Pixlpin](https://pixlpin.com/) or [Pageflows](https://pageflows.com/) - UI / Site Design Inspiration
 * [⁠Supahero](https://supahero.io/) - Hero Design Inspiration
 * [Templatemo](https://www.templatemo.com/) - Free CSS Templates
 * [Repth Themes](https://repth.neocities.org/theme) - Y2K Anime Themes
@@ -972,7 +972,6 @@
 * [Web Vitals Leaderboard](https://vitals-leaderboard.pazguille.me/), [CodSpeed](https://codspeed.io/) or [Lighthouse Metrics](https://lighthouse-metrics.com/) - Website Performance Tests
 * [Prometheus](https://prometheus.io/) - Site Metrics / [Setup](https://thanos.io/)
 * [Carbon Calculator](https://www.websitecarbon.com/) - Estimate a Site's Carbon Footprint
-* [UX Check](https://chromewebstore.google.com/detail/ux-check/giekhiebdpmljgchjojblnekkcgpdobp) - Site Heuristic Evaluation
 * [Rankchart](https://rankchart.org/) - Optimization Reports
 * [Testmail](https://testmail.app/) - Site Signup Test
 * [Responsive Viewer](https://responsiveviewer.org/) - Test Site on Multiple Screen Types / [Chrome](https://chromewebstore.google.com/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb)
@@ -1140,7 +1139,7 @@
 * [Open Source Security Software](https://open-source-security-software.net/) - Cybersecurity Software
 * [osquery](https://osquery.io) or [Nmap](https://nmap.org/) / [Results](https://nmap.org/ndiff/) - Security Monitors
 * [Canarytokens](https://canarytokens.org/generate) - Network Breach Check
-* [masscan](https://github.com/robertdavidgraham/masscan) - Port Scanner
+* [masscan](https://github.com/robertdavidgraham/masscan) or [⁠RustScan](https://github.com/bee-san/RustScan) - Port Scanners
 * [Zeek](https://zeek.org/), [Kismet](https://www.kismetwireless.net/), [ntop](https://www.ntop.org/) or [Sniffnet](https://sniffnet.app/) / [GitHub](https://github.com/GyulyVGC/sniffnet) - Network Monitors
 * [Crowdsec](https://crowdsec.net/) - Crowd-Sourced Intrusion Detection / Prevention / [GitHub](https://github.com/crowdsecurity/crowdsec)
 * [BBRadar](https://bbradar.io/), [⁠Open Bug Bounty](https://www.openbugbounty.org/) or [BugBountyHunting](https://www.bugbountyhunting.com/) - Bug Bounty Trackers

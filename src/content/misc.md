@@ -27,7 +27,7 @@
 * [⁠ForumDirectory](https://www.forumdirectory.com/) - Forum Directory
 * [theindex.fyi](https://theindex.fyi/), [ooh.directory](https://ooh.directory/), [IndieBlogs](https://indieblog.page/), or [⁠Kagi Small Web](https://kagi.com/smallweb/) - Find Random Small / Indie Sites
 * [xRanks](https://xranks.com/), [Start.me Stats](https://start.me/pages), [StatCrop](https://www.statscrop.com/websites/top-sites/), [HypeStat](https://hypestat.com/), [10 Million Sites](https://openpagerank.keywordseverywhere.com/top-10-million-domains) or [CuteStat](https://www.cutestat.com/) - Site Rankings
-* [Store.app](https://store.app/), [NoSignups](https://nosignups.net/) / [GitHub](https://github.com/BraveOPotato/FckSignups), [SaaS Discovery](https://saasdiscovery.com/) or [Electron](https://www.electronjs.org/apps) - Web App Indexes
+* [NoSignups](https://nosignups.net/) / [GitHub](https://github.com/BraveOPotato/FckSignups), [SaaS Discovery](https://saasdiscovery.com/) or [Electron](https://www.electronjs.org/) - Web App Indexes
 * [⁠JustIndex](https://justindex.cc/) - Otaku Index / [Mirrors](https://projectjust.xyz/) / [Subreddit](https://www.reddit.com/r/ProjectJust) / [Discord](https://discord.gg/P3yqksmGun)
 * [ibiblio](https://www.ibiblio.org/) - Site / Tool Index
 * [Ripped](https://ripped.guide/) - Site Index / [Discord](https://discord.com/invite/6qVr2aR)
@@ -136,7 +136,6 @@
 * [Free250](https://steam250.com/price/free), [r/FreeGamesOnSteam](https://reddit.com/r/FreeGamesOnSteam) or [SteamDB](https://steamdb.info/upcoming/free/) - Steam Games
 * [SteamGifts](https://www.steamgifts.com/), [SteamDrops](https://steamdrops.net/) or [Key Hub](https://key-hub.eu/) - Steam Key Giveaways / [Discord](https://discord.gg/RbWahNY)
 * [IndieGala](https://freebies.indiegala.com/) - Games
-* [FreeGameCodes](https://freegames.codes/) - Games / [Discord](https://discord.gg/ZmUbRcp)
 * [r/freegames](https://www.reddit.com/r/freegames/) - Games
 * [FreeToKeep](https://freetokeep.gg/) - Games / [Discord](https://discord.gg/t3Yh5Pfw6Y)
 * [r/RandomActsOfGaming](https://www.reddit.com/r/RandomActsOfGaming/) - Games
@@ -242,6 +241,7 @@
 
 * ⭐ **[/coffee/](https://rentry.co/coffeeguide)** or [Coffee Time General](https://pastebin.com/UEzwuyLz) - Coffee Brewing Masterlists / Guides
 * ⭐ **[Beanconqueror](https://beanconqueror.com/)** / [GitHub](https://github.com/graphefruit/Beanconqueror) or **[Timer.Coffee](https://www.timer.coffee)** / [GitHub](https://github.com/antonkarliner/timer-coffee) - Coffee Tracking Apps / Timers
+* ⭐ **[⁠Difford's Guide](https://www.diffordsguide.com/)** - Cocktail Recipe Guide
 * [Cofi](https://github.com/rozPierog/Cofi) - Coffee Brew Timer / [Note](https://github.com/fmhy/edit/blob/main/docs/.vitepress/notes/cofi-note.md)
 * [Brew Great Coffee](https://www.brewgreat.coffee/) - Espresso / Pour-Over Brewing Tools + Tips
 * [The Minimal Pour](https://theminimalpour.com/) - Pour-Over Coffee Calculator
@@ -249,7 +249,6 @@
 * [Nahbucks!](https://nahbucks.com/) - Find Local Non-Starbucks Coffee Shops (US)
 * [⁠Aeromatic](https://aeromatic.app/) - AeroPress Recipe App
 * [/tea/](https://clarasguide.valeena.workers.dev/Guides/teageneral/) - Tea Brewing Masterlist / Guide
-* [⁠Difford's Guide](https://www.diffordsguide.com/) - Cocktail Recipe Guide
 * [Drinkable](https://github.com/MOIMOB/drinkable) - Create Cocktails from Home Ingredients
 * [Make Me a Cocktail](https://makemeacocktail.com/mybar/) - Cocktail Builders
 
@@ -923,7 +922,7 @@
 * [⁠FreeLife](https://rentry.org/FreeLife) - Porn Blocking Guide
 * [Plucky](https://pluckyfilter.com/) - Content Filter
 * [CleanBrowsing](https://cleanbrowsing.org/filters/) or [DNS for Family](https://dnsforfamily.com/) - Family DNS Filters
-* [cringeMDb](https://cringemdb.com/), [Age Rating JuJu](https://www.ageratingjuju.com/), [Common Sense Media](https://www.commonsensemedia.org/) or [Unconsenting Media](https://www.unconsentingmedia.org) - Find SFW Movies
+* [cringeMDb](https://cringemdb.com/), [Age Rating JuJu](https://www.ageratingjuju.com/) or [Common Sense Media](https://www.commonsensemedia.org/) - Find SFW Movies
 * [Movie Parser](https://raskie.com/post/practical-ai-autodetecting-nsfw) - Detect NSFW Scenes in Movies
 * [Wingman](https://github.com/wingman-jr-addon/wingman_jr) or [HaramBlur](https://haramblur.com/) / [2](https://linktr.ee/haramblur) - Block NSFW Images
 * [SAA Recovery](https://saa-recovery.org/), [Cosa Recovery](https://cosa-recovery.org/) or [Smart Recovery](https://www.smartrecovery.org/) - Find Sex Addiction Meetings
@@ -1293,6 +1292,7 @@
 * ⭐ **[r/MechanicalKeyboards Wiki](https://www.reddit.com/r/MechanicalKeyboards/wiki/index)**, [KeebFinder](https://keeb-finder.com/) or [Alexotos](https://www.alexotos.com/keyboard-vendor-list/) / [Discord](https://discord.com/invite/xMQArAaGRB) - Mechanical Keyboard Recommendations
 * ⭐ **[⁠MouseCTRL](https://mousectrl.com/)**, [Viscose's Friction Sheet](https://docs.google.com/spreadsheets/d/1Ix0RN4WDgRIn9uSUMy2smG_vWR3FTnZHgNpumChfHM0/) or [Mousepad Mastersheet](https://docs.google.com/spreadsheets/d/1RAnmZxDNduaGV8kB-GCvZ0MO6d9-0j9jmrU2f8dp0Ww/) - Mousepad Comparison Chart
 * [EloShapes](https://www.eloshapes.com/), [Sensor.fyi](https://sensor.fyi/info/), [RocketJumpNinja](https://www.rocketjumpninja.com/) or [r/MouseReview](https://www.reddit.com/r/MouseReview/) / [Discord](https://discord.gg/mousereview) - Mouse Buying Guides
+* [⁠Mouse Finder](https://shapefinder.cc/) - Interactive Mouse Hand Matching Tool
 * [Shwamper's Skate Tierlist](https://docs.google.com/spreadsheets/d/1EUffzKOidRJ1W3-I1ocRd7yE_QDqXL58rUTOyC5ZBj4) - Mouse Dot Skate Recommendations / [X](https://x.com/shwamper5)
 
 ***
@@ -1304,6 +1304,7 @@
 * [RetroCatalog](https://retrocatalog.com/) or [Handheld Emulation Compatibility](https://docs.google.com/spreadsheets/d/1irg60f9qsZOkhp0cwOU7Cy4rJQeyusEUzTNQzhoTYTU/) - Handheld Game Emulation Compatibility / Info
 * [⁠EmuReady](https://www.emuready.com/) - Mobile Game Emulation Compatibility / Info / [Discord](https://discord.gg/CYhCzApXav) / [GitHub](https://github.com/Producdevity/EmuReady)
 * [⁠Archcord](https://www.flashcarts.net/) - DS + GBA Flashcart Comparisons / YSMenu Compatibility
+* [⁠Flashcart Guides](https://sanrax.github.io/) - 3DS / DS Flashcart Guides
 * [Consolevariations](https://consolevariations.com/) - Game Console Rarity / Shopping
 
 ***
@@ -1334,6 +1335,7 @@
 * [⁠DVDBeaver](https://www.dvdbeaver.com/) - Blu-ray & DVD Release Calendar / Database / Reviews
 * [High Def Digest](https://www.highdefdigest.com/) - Blu-ray Release Calendar / Database / Reviews
 * [⁠DVDCompare](https://dvdcompare.net/) - Blu-ray & DVD Comparisons / Reviews
+* [⁠DVD Double Dip](https://www.dvddoubledip.com/) - Blu-ray & DVD Comparisons
 * [Releases](https://www.releases.com/) - Blu-Ray / DVD Release Calendar
 * [DVDs Release Dates](https://www.dvdsreleasedates.com/) - DVD Release Calendar
 * [Caps-A-Holic](https://caps-a-holic.com/) - Compare Movie Release Quality / Details
@@ -1415,7 +1417,7 @@
 * [Paper Sizes](https://papersizes.io/) - Common Paper Sizes
 * [wttr](https://wttr.in/) - Simple / Minimal Weather / [GitHub](https://github.com/chubin/wttr.in)
 * [⁠RetroCast Now](https://weather.com/retro/), [WeatherStar 4000+](https://weatherstar.netbymatt.com/) / [2](https://weatherstar.dev/) / [International](https://mwood77.github.io/ws4kp-international/), [WeatherStar 80's](https://weatherstar3000.netbymatt.com/) or [WeatherScan](https://weatherscan.net/) - Retro Style Weather / [GitHub](https://github.com/MistWeatherMedia/)
-* [Wheel Decide](https://wheeldecide.com/), [SpinWheelPlus](https://spinwheelplus.com/), [SpinTheWheel](https://spinthewheelweb.com/), [Ultimate Wheel](https://ultimatewheelspin.com/), [PickerWheel](https://pickerwheel.com/), [SpinWheelify](https://spinwheelify.com/), [SpinTheWheel](https://spinthewheel.io/), [HeySpinner](https://heyspinner.com/), [SpinTheWheel](https://spinthewheel.net/), [TheSpinnerWheel](https://thespinnerwheel.com/) or [Wheel of Names](https://wheelofnames.com/) - Wheel Randomizers / Spinners
+* [SpinWheelPlus](https://spinwheelplus.com/), [SpinTheWheel](https://spinthewheelweb.com/), [SpinTheWheel](https://spinthewheel.io/), [SpinTheWheel](https://spinthewheel.net/) or [Wheel of Names](https://wheelofnames.com/) - Wheel Randomizers / Spinners
 * [⁠Date Night Questions](https://www.datenightquestions.com/) - Friend / Date Q&A Cards
 * [SurveyHeart](https://surveyheart.com/) - Survey Creators
 * [Label Studio](https://labelstud.io/) or [Cvat](https://www.cvat.ai/) - Data Organizing Tools
@@ -1446,7 +1448,7 @@
 * [GoOnlineTools](https://goonlinetools.com/) - Text / Encode-Decode / Code / Random / Image
 * [⁠99Tools](https://99tools.net/) - Text / Encode-Decode / Code / Random / Image
 * [⁠Edge Tools](https://edgetools.io/) - Image / Text / PDF / Code
-* [Framasoft](https://degooglisons-internet.org/en/) - Text / Collaboration
+* [Framasoft](https://degooglisons-internet.org/) - Text / Collaboration
 * [10015.io](https://10015.io/) - Text / Image / Code / Colors
 * [⁠ClipZeal](https://clipzeal.com/) - Video / Audio / Image / GIF
 * [⁠VidhyaGen](https://vidhyagen.com/) - Image / PDF / Text
@@ -1512,7 +1514,7 @@
 
 * ↪️ **[To-Do Apps](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android/#wiki_.25B7_to-do_apps)**
 * ⭐ **[Cal.com](https://cal.com/)** - Business / Work Schedule Calendar / [GitHub](https://github.com/calcom/cal.com)
-* ⭐ **[LettuceMeet](https://lettucemeet.com)**, [Star Fit](https://starbestfit.com/), [Samay](https://samay.app/), [Pick Time](https://pick-time.io/), [Event Rallly](https://rallly.co/) / [GitHub](https://github.com/lukevella/Rallly), [Groop](https://joingroop.com/), [Cally](https://cally.com/), [Mobilizon](https://joinmobilizon.org/) or [Gancio](https://gancio.org/) - Event Planning / Schedule Voting
+* ⭐ **[LettuceMeet](https://lettucemeet.com)**, [Star Fit](https://starbestfit.com/), [Samay](https://samay.app/), [Pick Time](https://pick-time.io/), [Event Rallly](https://rallly.co/) / [GitHub](https://github.com/lukevella/Rallly), [Groop](https://joingroop.com/), [Cally](https://cally.com/) or [Gancio](https://gancio.org/) - Event Planning / Schedule Voting
 * [Luma](https://luma.com/), [⁠Heylo](https://www.heylo.com/), [⁠Eventbrite](https://www.eventbrite.com/) or [Meetup](https://www.meetup.com/) - Search or Post Local Events
 * [GanttProject](https://www.ganttproject.biz/) - Project Scheduling App
 * [⁠zcal](https://zcal.co/) - Scheduling / Meeting Tool
@@ -1590,7 +1592,6 @@
 * [GigaMacro](https://viewer.gigamacro.com/) - Panoramic Photography
 * [⁠The Hong Kong Phantasm](https://www.hkphantasm.com/) - Hong Kong Slide Photography Archive
 * [Retro TV Simulator](https://www.myretrotvs.com/) - Simulate Oldschool TV Channels
-* [TheOfficeStareMachine](http://theofficestaremachine.com/) - The Office Video Emotion Search
 * [BumpWorthy](https://www.bumpworthy.com/) - Adult Swim Bumps
 * [YouTune](https://youtune.elan.place/) - Random Low View Songs
 * [⁠Flipnote Studio Scratch](https://turbowarp.org/382497241) - Web-based Flipnote Studio
@@ -1806,6 +1807,7 @@
 * [Judge My Music](https://pudding.cool/2021/10/judge-my-music/) - Have an AI Judge Your Taste in Music
 * [Michaelbach](https://michaelbach.de/ot/) or [Optical Toys](https://optical.toys/) - Optical Illusions
 * [Strobe Illusion](https://strobe.cool/) - Hallucination Illusion
+* [⁠OpenPsychometrics](https://openpsychometrics.org/) - Interactive Personality Tests
 * [PoliticalTests](https://politicaltests.github.io/) - Political Alignment Tests
 * [Emoji to Scale](https://javier.xyz/emoji-to-scale/) - Emoji Size Scale
 * [⁠Read QR By Hand](https://noel-friedrich.github.io/read-qr-by-hand) - Learn How-To Read QR by Hand

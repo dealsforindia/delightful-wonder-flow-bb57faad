@@ -401,7 +401,6 @@
 * [ytcc](https://github.com/woefe/ytcc) - Keep Track of Your Playlists
 * [Multiselect (Firefox)](https://addons.mozilla.org/en-US/firefox/addon/multiselect-for-youtube/) or [Multiselect (Chrome)](https://chromewebstore.google.com/detail/gpgbiinpmelaihndlegbgfkmnpofgfei) - Playlist Manager
 * [Export YT Playlists](https://export-youtube-playlist.vercel.app/) or [⁠Export YouTube Playlist](https://exportyoutubeplaylist.com/) - Export Playlists to Excel, CSV, Text or Bookmark HTML ⁠
-* [Playlist Randomizer](https://playlist-randomizer.com/) - YouTube Playlist Randomizer
 * [playlist.tools](https://playlist.tools/) - Reverse YouTube Playlists
 * [YT Playlist Length](https://ytplaylist-len.sharats.dev/) or [Length Checker](https://youtube-playlist-length-calculator.onrender.com/) - Playlist Length Checkers
 * [YouTubePlaylistMerge](https://rentry.org/YouTubePlaylistMerge) - Playlist Merge Guide
@@ -422,7 +421,7 @@
 * [⁠Wayback YouTube](https://www.waybackyt.download/) - Download Deleted YouTube Videos via Wayback Machine
 * [Pinchflat](https://github.com/kieraneglin/pinchflat), [MeTube](https://github.com/alexta69/metube), [Downtify](https://github.com/henriquesebastiao/downtify) or [YoutubeDL-Material](https://github.com/Tzahi12345/YoutubeDL-Material) - Self-Hosted YT-DLP
 * [Tube All Images](https://imageyoutube.com/) - Download YouTube Images
-* [YTThumbnailHD](https://ytthumbnailhd.com/), [ThumbnailDownloader](https://www.thumbnaildownloader.art/) or [YT Thumbnail Grabber](https://youtube-thumbnail-grabber.com/) - Download Video Thumbnails
+* [YTThumbnailHD](https://ytthumbnailhd.com/) or [YT Thumbnail Grabber](https://youtube-thumbnail-grabber.com/) - Download Video Thumbnails
 * [youtube-comment-downloader](https://github.com/egbertbouman/youtube-comment-downloader) - Download YouTube Comments
 * [⁠ytsubdl](https://ytsubdl.com/) - Extract Subtitles/Transcript from YouTube Videos
 
@@ -433,10 +432,10 @@
 * 🌐 **[YT Channel Spreadsheet](https://docs.google.com/spreadsheets/d/1xZm5BcQTYJx8sfSuqHExHtIOPtSfod8beHKtYzp8DxE/)** or **[YouTube_Channels](https://github.com/PrejudiceNeutrino/YouTube_Channels)** - YouTube Channel Indexes
 * ⭐ **[Favoree](https://www.favoree.io/)** - Discover / Search YouTube Channels
 * ⭐ **[YouTube Advanced Search](https://playlists.at/youtube/search/)** - Search Engine
-* ⭐ **[Filmot](https://filmot.com/)** or [CTRL-F-VIDEO](https://github.com/Evan-Wildenhain/CTRL-F-VIDEO) - Search within YouTube Subs, Captions & Transcripts / [Firefox](https://addons.mozilla.org/en-US/firefox/addon/youtube-captions-search/) / [Chrome](https://chromewebstore.google.com/detail/youtube-captions-search/kimbeggjgnmckoikpckibeoaocafcpbg)
+* ⭐ **[Filmot](https://filmot.com/)** or [CTRL-F-VIDEO](https://github.com/Evan-Wildenhain/CTRL-F-VIDEO) - Search within YouTube Subs, Captions & Transcripts / [Firefox](https://addons.mozilla.org/en-US/firefox/addon/youtube-captions-search/)
 * [comb.io](https://comb.io/), [clip.cafe](https://clip.cafe/), [InPhrase](https://inphrase.com/) or [Yarn](https://yarn.co/) - Clip / Phrase Search Engines
 * [YT Non Biased Searcher](https://kvnaust.github.io/YouTube-NonBiasedVideoSearcher) - Algorithm-Free YouTube Search / Improved Sorting
-* [⁠fmhytube](https://fmhytube.suntown.town/) - Curated Video Directory / Based on YT Channel Spreadsheet
+* [⁠fmhytube](https://fmhytube.suntown.town/) - Curated Video Directory / Based on YT Channel Spreadsheet / [Discord](https://discord.gg/Ku8p5KRfqa)
 * [⁠YouTube Metadata Search](https://youtube.snivy.pl/) - ⁠YouTube Metadata Search
 * [yt-fts](https://github.com/NotJoeMartinez/yt-fts) - Full-Text Search of Subtitles from Channels / Videos
 * [Icono](https://www.icono-search.com/) - Description-Based Video Search / [Discord](https://discord.gg/RWv7bGKwHr)
@@ -515,7 +514,7 @@
 
 * ⭐ **[Chatterino](https://chatterino.com/)** / [2](https://github.com/SevenTV/chatterino7), [Chatterino Homies](https://chatterinohomies.com/) or [Chatty](https://chatty.github.io/) - Twitch Chat Clients
 * [Twitch App](https://gitlab.com/linuxbombay/twitch-application/application) or [Tress](https://gitlab.com/Ignamarte/tress) - Twitch Desktop Clients
-* [⁠TwitchUnblock](https://test2-fawn-eta.vercel.app/) - Twitch Frontend / Web / [GitHub](https://github.com/MXFia19/TwitchUnblock-Web)
+* [⁠TwitchUnblock](https://twitchunblock-web.pages.dev/) - Twitch Frontend / Web / [GitHub](https://github.com/MXFia19/TwitchUnblock-Web)
 * [SpeechChat](https://speechchat.com/) - Twitch Text to Speech Client
 * [Walrus](https://joinwalrus.tv/) - Make Twitch Watch Parties
 * [MultiTwitch.tv](https://multitwitch.tv/), [MultiTwitch.co](https://multitwitch.co/), [⁠100 Multiview](https://www.100multiview.com/twitch), [Twitch3D](https://hjjg200.github.io/twitch3d/), [MultiStre.am](https://multistre.am/), [MultiStreamer](https://multistreamer.tv/), [⁠Viewington](https://viewington.com/watch) or [TwitchTheater](https://twitchtheater.tv/) - Twitch Multi-Stream
@@ -553,7 +552,7 @@
 * ⭐ **[r/Twitter](https://reddit.com/r/Twitter)** - X.com Subreddit
 * ⭐ **[Nitter](https://nr.evilasswebsite.com/)**, [2](https://funkstelle.hoffnungfuerdiezukunft.net/), [3](https://tw1tter.com/) / [Redirector](https://xnotme.com/) / [Instances](https://codeberg.org/shitter/shitter/wiki/Instances) / [2](https://status.d420.de/) / [.onion](http://zcbxmgileoovnup5k4yj4w6r3vicqpawqc6b33rnmmsqy6n4micpzoad.onion/), [⁠Twitee](https://twitee.co/), [⁠sotwe](https://www.sotwe.com/), [twstalker](https://twstalker.com/), [Twitter Viewer](https://twitterviewer.net/) or [x⁠TwitterViewer](https://xtwitterviewer.com/) - X.com Frontends / Viewers
 * [Typefully](https://typefully.com/) - Schedule Tweets
-* [Chirr App](https://getchirrapp.com/) - Turn Articles into X.com Threads / [Firefox](https://addons.mozilla.org/en-US/firefox/addon/chirr-app/) / [Chrome](https://chromewebstore.google.com/detail/chirr-app/cmbconaimdngicdnbpjnjocbpkdpmfkg)
+* [Chirr App](https://getchirrapp.com/) - Turn Articles into X.com Threads / [Firefox](https://addons.mozilla.org/en-US/firefox/addon/chirr-app/)
 * [FollowerWonk](https://followerwonk.com/) - Find / Analyze / Optimize Followers
 * [Community Notes Leaderboard](https://community-notes-leaderboard.com/) - X.com Community Notes Leaderboard
 * [Osomenet](https://osome.iu.edu/tools/osomenet/) - Twitter Info Spread Data
@@ -642,7 +641,7 @@
 
 * ⭐ **[EinzzTools](https://einzzcookie.org/)** - TikTok User Lookup & Archive / Monitor / Viewer / Link Tracker / Comment & Video Exporter & more / [Telegram](https://t.me/tiktracksite)
 * [Urlebird](https://urlebird.com/) or [⁠PeekProfile](https://peekprofile.com/) - TikTok Frontend / Viewers
-* [SSSTik](https://ssstik.io/), [⁠TikWM](https://tikwm.com/originalDownloader.html), [myfaveTT](https://myfavett.com/), [TokSave](https://toksave.social/) or [tiktok-to-ytdlp](https://github.com/Dinoosauro/tiktok-to-ytdlp) - TikTok Video Downloaders
+* [myfaveTT](https://myfavett.com/), [TokSave](https://toksave.social/), [SSSTik](https://ssstik.io/), [⁠TikWM](https://tikwm.com/originalDownloader.html), or [tiktok-to-ytdlp](https://github.com/Dinoosauro/tiktok-to-ytdlp) - TikTok Video Downloaders
 * [TikTok Tools](https://omar-thing.site/) - TikTok User Finder / Search / Story Viewer / Downloader / Link Tracker & more / [Telegram](https://t.me/tiktokinfosite)
 * [⁠BXD Enhancer](https://method.billoxd.site/) - Bypass TikTok Compression
 * [⁠TikFinity](https://tikfinity.zerody.one/) - TikTok Live Toolkit / [Discord](https://discord.gg/uthtmVdpy8)

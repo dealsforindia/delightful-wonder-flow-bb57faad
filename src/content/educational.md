@@ -114,6 +114,7 @@
 * ⭐ **[Artic](https://www.artic.edu/collection)** - Art Institute of Chicago Collection / Open-Access Images
 * ⭐ **[NGA](https://www.nga.gov/)** - National Gallery of Art / Public-Domain Images / Open Data
 * ⭐ **[V&A](https://www.vam.ac.uk/)** - Victoria and Albert Museum Collections / Art / Design
+* ⭐ **[Museo](https://museo.app/)** - Art Collections / Public-Domain Image Search / [GitHub](https://github.com/chasemccoy/museo)
 * ⭐ **[Louvre](https://collections.louvre.fr/en/)** - Art / Antiquities Collections / Historical Research
 * [MoMA](https://www.moma.org/collection/) - Museum of Modern Art Collection
 * [Deutsche Digitale](https://www.deutsche-digitale-bibliothek.de/?lang=en) - German Digital Cultural Heritage Collections
@@ -131,7 +132,6 @@
 * [Guggenheim](https://www.guggenheim.org/collection-online) - Modern / Contemporary Art Collections
 * [Frick](https://www.frick.org/art) - The Frick Collection / Fine Art
 * [Gardner Museum](https://www.gardnermuseum.org/experience/collection) - Isabella Stewart Gardner Museum Collection
-* [Museo](https://museo.app/) - Art Collections / Public-Domain Image Search
 * [⁠Artnap](https://artnap.com/) - Art Collections / Public-Domain Image Search
 * [Haltadefinizione](https://www.haltadefinizione.com/en/) - High-Resolution Art Images / Italian Art
 * [Artchive](https://www.artchive.com/) - Art History / Artist Collections
@@ -466,7 +466,6 @@
 * [Apollo in Realtime](https://apolloinrealtime.org/) or [FirstMenOnTheMoon](https://www.firstmenonthemoon.com/) - Interactive Apollo Missions
 * [Artemis II Photo Timeline](https://artemistimeline.com/) - Artemis II Photo & Video Timeline
 * [⁠Lunaserv Global Explorer](https://data.im-ldi.com/lunaserv.html) - Interactive LROC / Moon Exploration Tool
-* [Marspedia](https://marspedia.org/) - Mars Wiki
 * [ESA](https://www.esa.int/) - European Space Agency Website / [X](https://x.com/ESA_Webb)
 * [JAXA](https://global.jaxa.jp/) - Japanese Space Agency Website / [Images / Videos](https://jda.jaxa.jp/?lang=e)
 * [CSA](https://www.asc-csa.gc.ca/eng/) - Canadian Space Agency Website
@@ -536,6 +535,7 @@
 * ⭐ **[Earth Observatory](https://science.nasa.gov/earth/earth-observatory/)**, [Copernicus Browser](https://browser.dataspace.copernicus.eu/), [SpaceFromSpace](https://spacefromspace.com/), [GOES-16 Satellite Imagery](https://slider.cira.colostate.edu/) or [Sentinel Hub](https://www.sentinel-hub.com/) - Satellite Imagery
 * [NASASpaceFlight](https://www.nasaspaceflight.com/) - Launch Livestreams / News / [Forum](https://forum.nasaspaceflight.com/) / [X](https://x.com/NASASpaceflight) / [YouTube](https://www.youtube.com/@NASASpaceflight)
 * [⁠Next Spaceflight](https://nextspaceflight.com/) / [X](https://x.com/NextSpaceflight) / [Discord](https://discord.gg/nextspaceflight), [⁠Space Notices](https://space-notices.com/), [nextrocket.space](https://nextrocket.space/) or [RocketLaunch](https://rocketlaunch.org/) - Rocket Launch & Spaceflight Schedules / Trackers
+* [⁠Booster Tracker](https://boostertracker.com/) - SpaceX Booster & Launch Statistics
 * [TonyBela Infographics](https://tonybela.com/) - Spacecraft / Rocket Infographics / [X](https://x.com/InfographicTony)
 * [⁠Historic Spacecraft](https://historicspacecraft.com/) - Spacecraft / Rocket Photos & illustrations
 * [⁠HeroicRelics](http://heroicrelics.org/) - Spacecraft Technical Information Archive
@@ -618,7 +618,7 @@
 
 ## ▷ Simulators
 
-* ⭐ **[Falcon BMS](https://www.falcon-bms.com/)** - Falcon 4.0 Modernization Project / [Manuals](https://wiki.falcon-bms.com/en/manuals) / [Wiki](https://wiki.falcon-bms.com/) / [Forum](https://forum.falcon-bms.com/) / [YouTube](https://www.youtube.com/@falcon-bms) / [Subreddit](https://www.reddit.com/r/falconbms/) / [Discord](https://discord.gg/KQNHQBz)
+* ⭐ **[Falcon BMS](https://www.falcon-bms.com/)** - Falcon 4.0 Modernization Project / [Companion](https://github.com/Scorpion-41/Falcon-BMS-Companion) / [Manuals](https://wiki.falcon-bms.com/en/manuals) / [Wiki](https://wiki.falcon-bms.com/) / [Forum](https://forum.falcon-bms.com/) / [YouTube](https://www.youtube.com/@falcon-bms) / [Subreddit](https://www.reddit.com/r/falconbms/) / [Discord](https://discord.gg/KQNHQBz)
 * [FlightGear](https://www.flightgear.org/) - Open-Source Flight Simulator / [X](https://x.com/flightgearsim) / [GitLab](https://gitlab.com/flightgear/flightgear)
 * [Phoenix RC](https://www.rc-thoughts.com/phoenix-sim/) - RC Plane + Helicopter Simulator
 * [SeligSIM](https://www.seligsim.com/) or [PicaSim](https://www.rowlhouse.co.uk/PicaSim/) / [GitHub](https://github.com/Rowlhouse/PicaSim) - Flight Simulators for RC Planes
@@ -638,7 +638,7 @@
 * ⭐ **[MorbidKuriosity](https://morbidkuriosity.com/)** - Dark History, Conspiracies, Crime, Myths, etc.
 * [LibreTexts History](https://human.libretexts.org/Bookshelves/History) - History Learning Texts
 * [Smithsonian Institution Archives](https://siarchives.si.edu/), [⁠Princeton Digital Collections](https://digital-collections.princeton.edu/) or [Rare Historical Photos](https://rarehistoricalphotos.com/) - Historical Photos / Documents
-* [Museo](https://museo.app/) - Museum Search
+* [Museo](https://museo.app/) - Museum Search / [GitHub](https://github.com/chasemccoy/museo)
 * [⁠The Rest is History Archive](https://archive.therestishistory.com/) - Era-Based Historical Podcast
 * [⁠Arachne](https://arachne.dainst.org/) - Archaeology Object Database
 * [Wonderous](https://play.google.com/store/apps/details?id=com.gskinner.flutter.wonders) - Learn About Ancient Structures
@@ -829,7 +829,7 @@
 * ↪️ **[Finance / Market Resources](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/misc#wiki_.25B7_finance_.2F_savings)**
 * ⭐ **[The Atlas of Economic Complexity](https://atlas.hks.harvard.edu/)** - Global Economic Growth Data
 * ⭐ **[⁠Integrity Index](https://integrityindex.us/)** - US Political Finance Integrity Database / [Subreddit](https://www.reddit.com/r/politicalintegrity/) / [Discord](https://discord.gg/bvrwaDJveC)
-* ⭐ **[⁠Wealth Shown to Scale](https://wealth-inequality.sucks.lt/)** / [Source Code](https://codeberg.org/litekin/pixel-wealth/), [2](https://evolving-thoughts.github.io/1-pixel-wealth/) / [GitHub](https://github.com/Evolving-Thoughts/1-pixel-wealth) - Global Wealth Inequality Visualization
+* ⭐ **[⁠Wealth Shown to Scale](https://wealth-inequality.sucks.lt/)** / [Source Code](https://codeberg.org/litekin/wealth-visualized), [2](https://github.com/Evolving-Thoughts/pixel-wealth) / [Codeberg](https://codeberg.org/litekin/wealth-visualize) - Global Wealth Inequality Visualization
 * [⁠CORE Econ](https://www.core-econ.org/) - Economics Textbooks
 * [OEC](https://oec.world/en), [⁠UNCTAD](https://unctad.org/) or [UN Comtrade](https://comtradeplus.un.org/) - Global Trade Data
 * [⁠CountryEconomy](https://countryeconomy.com/) - Country Economic Data
@@ -931,7 +931,7 @@
 * [The Preparedness Encyclopedia](https://www.fluidicice.com/tpe) - Preparedness Encyclopedia
 * [r/Preppers](https://www.reddit.com/r/preppers/) - Preparedness Subreddit
 * [r/PrepperFileShare](https://reddit.com/r/PrepperFileShare) - Preparedness File Sharing
-* [Project NOMAD](https://www.projectnomad.us/) - Self-Contained Offline Knowledge + Off-Grid Database / [GitHub](https://github.com/Crosstalk-Solutions/project-nomad)
+* [Project NOMAD](https://www.projectnomad.us/) / [GitHub](https://github.com/Crosstalk-Solutions/project-nomad) or [⁠Lastbook](https://lastbook.org/) / [GitHub](https://github.com/Immortal-Protocols/lastbook) - Self-Contained Offline Knowledge + Off-Grid Databases
 
 ***
 
@@ -1031,11 +1031,13 @@
 ## ▷ Rubiks Cube
 
 * 🌐 **[Cubing.net](https://www.cubing.net/)** - Cubing Tools
+* 🌐 **[⁠CubingAtlas](https://atlas.thecubeindex.com/)** - Speedcubing Learning Resources
 * 🌐 **[Rubiks Cube Guide](https://rentry.co/cubingguide)** - Guide to Rubiks Cube / Resources
 * ↪️ **[Cube Simulators / Solvers](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/games/#wiki_.25B7_rubiks_cube)**
 * ⭐ **[J Perm](https://jperm.net/)**, [CubeSkills](https://www.cubeskills.com/), [RubiksTrainer](https://rubikstrainer.com/) or [Easiest Solve](https://easiestsolve.com/) - Cubing Tutorials / Practice Resources
 * ⭐ **[CubeDesk](https://cubedesk.io/)** or **[csTimer](https://cstimer.net/)** - Feature-Rich Cubing Timers
 * ⭐ **[SpeedCubeDB](https://speedcubedb.com/)** or [SpeedcubeQuest](https://speedcube.quest/) - Algorithm Databases
+* [⁠reco.nz](https://reco.nz/) - Speedcubing Solve Reconstructions
 * [F2L Trainer](https://f2l-trainer.top/) - F2L Rubiks Trainer
 * [⁠crystalcube](https://crystalcuber.com/) - CFOP Cross Trainer / Edge Orientation Trainer
 * [⁠ZZ Method](https://www.zzmethod.com/) - Learn / Practice ZZ 3x3 Rubiks Speedrunning Method
@@ -1216,8 +1218,8 @@
 ## ▷ English
 
 * 🌐 **[Many Things](https://www.manythings.org/)** - ESL Resources
-* 🌐 **[ESOL](https://www.esolcourses.com/)** - English Learning Resources
-* [youglish](https://youglish.com/) or [YouDict](https://youdict.co/) - YouTube Word Pronunciations
+* 🌐 **[ESOL](https://www.esolcourses.com/)** or **[Awesome English](https://github.com/yvoronoy/awesome-english)** - English Learning Resources
+* [youglish](https://youglish.com/) - YouTube Word Pronunciations
 * [Forvo](https://forvo.com/) or [HowJSay](https://howjsay.com/) - Pronunciation Dictionary
 * [The Internet TESL Journal](http://iteslj.org/) - Resources for EFL and ESL Teachers
 * [EFSET](https://www.efset.org/) - English Proficiency Test
@@ -1274,7 +1276,7 @@
 * [HowToStudyKorean](https://www.howtostudykorean.com/) - Korean Lessons / Practice
 * [iksi](https://www.iksi.or.kr/) - Korean Classes
 * [TalkToMeInKorean](https://courses.talktomeinkorean.com/) - Korean Learning Courses
-* [Sogang](https://korean.sogang.ac.kr/) or [90 Day Korean](https://www.90daykorean.com/) - Korean Learning Lessons
+* [90 Day Korean](https://www.90daykorean.com/) - Korean Learning Lessons
 * [Mirinae](https://mirinae.io/) - Korean Word Breakdown
 * [National Institute of Korean Language](https://www.korean.go.kr/front_eng/main.do) - Korean Dictionaries / Expression Practice
 * [⁠LetsLearnHangul](http://letslearnhangul.com/) - Hangul Learning
@@ -1422,6 +1424,7 @@
 * 🌐 **[⁠pona.la](https://pona.la/)** - Toki Pona Learning / Resources
 * 🌐 **[Lojban.io](https://lojban.io/)** - Lojban Learning Resources / Focused on Logical Grammatical Structures
 * 🌐 **[⁠Languages of Arda](https://rentry.co/languages-of-arda)** - Guide to Tolkien Languages
+* [⁠FrathWiki](https://frathwiki.com/) - Constructed Language Wiki 
 * [⁠Esperanto12](https://esperanto12.net/) or [⁠Esperanto in 17 Minutes](https://unua.leciono.org/) - Esperanto Learning
 * [Toki Pona (.net)](https://tokipona.net/), [Toki Pona](https://tokipona.org/) / [Subreddit](https://www.reddit.com/r/tokipona/), [⁠mun!](https://mun.la/), [⁠lipu sona mi pi toki pona](https://lipu-sona.comforttiger.space/en/), [lipu sona pona](https://lipu-sona.pona.la/), [⁠Jan Lope Toki Pona](https://jan-lope.github.io/Toki_Pona_lessons_English/), [DuoStories Toki](https://duostories.org/tok-en) / [2](https://duostories.org/tok2-en) or [Wasona](https://wasona.com/) / [GitHub](https://github.com/wasona/wasona) - Toki Pona Learning Sites / Minimal Language
 * [⁠ma pona pi toki pona](https://discord.com/invite/mapona) (discord) - Toki Pona Community / Learning / Resources
@@ -1565,7 +1568,7 @@
 * [Web Design in 4 Minutes](https://jgthms.com/web-design-in-4-minutes/) or [Strml](https://www.strml.net/) - Interactive Web Design Tutorial
 * [WebGL and GLSL Workshop](https://mattdesl.github.io/workshop-webgl-glsl/) - Interactive WebGL / GLSL Tutorial
 * [HEAD](https://htmlhead.dev/) - HTML head Element Guide
-* [100DayCSS](https://100dayscss.com/), [CSS Challenges](https://css-challenges.com/) or [PlayCSS](https://playcss.app/) - CSS Challenges
+* [100DayCSS](https://100dayscss.com/) or [CSS Challenges](https://css-challenges.com/) - CSS Challenges
 * [⁠modern.css](https://modern-css.com/) - Modern CSS Snippet Comparisons
 * [Codepip](https://codepip.com/games/), [Grid Garden](https://cssgridgarden.com/), [CSS Battle](https://cssbattle.dev/), [CSS Speedrun](https://css-speedrun.netlify.app/), [CodingFantasy](https://codingfantasy.com/) or [CSS Diner](https://flukeout.github.io/) - CSS Learning Games
 * [Guess CSS](https://www.guess-css.app/) - CSS Guessing Game

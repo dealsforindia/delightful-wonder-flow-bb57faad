@@ -15,7 +15,7 @@
 * ⭐ **[r/CrackWatch](https://www.reddit.com/r/CrackWatch/)**, [r/RepackWorld](https://reddit.com/r/RepackWorld), [⁠IsItCracked](https://isitcracked.com/), [GameStatus](https://gamestatus.info/) or [GitGud](https://discord.gg/APfesEBjjn) - Release Trackers
 * ⭐ **[HowLongToBeat](https://howlongtobeat.com/)**, [2](https://hl2b.com/) - Find Average Game Lengths / [Discord](https://discord.gg/v5F26Dk)
 * ⭐ **[r/tipofmyjoystick](https://www.reddit.com/r/tipofmyjoystick/)** - Find Games via Screenshot or Description
-* ⭐ **[Sunshine](https://app.lizardbyte.dev/Sunshine/)** or [Apollo](https://github.com/ClassicOldSong/Apollo) - Remote Server for Moonlight / [Mobile](https://github.com/ClassicOldSong/moonlight-android) / [Discord](https://discord.com/invite/d6MpcrbYQs) / [GitHub](https://github.com/LizardByte/Sunshine)
+* ⭐ **[Apollo](https://github.com/ClassicOldSong/Apollo)** - Remote Server for Moonlight / [Mobile](https://github.com/ClassicOldSong/moonlight-android)
 * ⭐ **[Moonlight](https://moonlight-stream.org/)** - Gaming Remote Desktop Client / [Discord](https://discord.com/invite/CGg5JxN) / [GitHub](https://github.com/moonlight-stream)
 * [⁠Greenlight](https://github.com/unknownskl/greenlight) - Improved xCloud Client / Xbox Cloud Gaming
 * [⁠Better xCloud](https://better-xcloud.github.io/) - Add Features to xCloud / [X](https://x.com/redphx) / [Telegram](https://t.me/betterxcloud) / [GitHub](https://github.com/redphx/better-xcloud)
@@ -47,13 +47,13 @@
 
 * ⭐ **[Playnite](https://playnite.link/)** - Game Library / Launcher / [Guide](https://api.playnite.link/docs/) / [Extensions](https://playnite.link/addons.html), [2](https://github.com/darklinkpower/PlayniteExtensionsCollection) / Windows / [Subreddit](https://www.reddit.com/r/playnite/) / [Discord](https://discord.com/invite/BrtABqe) / [GitHub](https://github.com/JosefNemec/Playnite/)
 * ⭐ **[Hydra](https://hydralauncher.gg/)** - Game Launcher / Downloader / Torrent Client / Achievement Support / [Plugins](https://library.hydra.wiki/) / [Themes](https://hydrathemes.shop/) / Windows, Linux / [Telegram](https://t.me/hydralauncher) / [GitHub](https://github.com/hydralauncher/hydra)
-* ⭐ **[Ascendara](https://ascendara.app/)** - Game Library / Launcher / Downloader / Windows, Linux / [Discord](https://ascendara.app/discord) / [GitHub](https://github.com/Ascendara/ascendara)
+* ⭐ **[Ascendara](https://ascendara.app/)** - Game Library / Launcher / Downloader / Achievement Support / Windows, Linux / [Discord](https://ascendara.app/discord) / [GitHub](https://github.com/Ascendara/ascendara)
 * ⭐ **[Project GLD](https://y0urd34th.github.io/Project-GLD/)** / Windows / [GitHub](https://github.com/Y0URD34TH/Project-GLD/) or **[GOG Galaxy](https://www.gog.com/galaxy)** (closed source) - Game Libraries / Launchers
 * ⭐ **[Heroic Games Launcher](https://heroicgameslauncher.com/)** - Game Launcher / Windows, macOS, Linux / [Discord](https://discord.com/invite/rHJ2uqdquK) / [GitHub](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher)
 * ⭐ **[⁠Faugus Launcher](https://github.com/Faugus/faugus-launcher)** - Game Launcher / Linux
 * ⭐ **[Lutris](https://lutris.net/)** - Game Launcher / Linux / [Discord](https://discord.com/invite/Pnt5CuY) / [GitHub](https://github.com/lutris)
 * [⁠Kryoto Desktop](https://kryo.to/desktop) - Game Launcher / Downloader / Achievements / Windows, Linux / [Subreddit](https://www.reddit.com/r/kryoto/) / [Discord](https://discord.com/invite/Q2S8hRzrep) / [GitHub](https://github.com/kyrotooooo/kryoto-desktop)
-* [⁠Anker Launcher](https://ankergames.net/launcher) - Game Launcher / Windows, Linux
+* [⁠Anker Launcher](https://ankergames.net/launcher) - Game Launcher / Downloader / Achievement Support / Windows, Linux
 * [Fit Launcher](https://github.com/CarrotRub/Fit-Launcher/) - Unofficial Game Launcher / Torrent Client / Downloader / Windows, Linux / [Discord](https://discord.gg/cXaBWdcUSF)
 * [Orbit](https://github.com/MarchTheDev/Orbit) - Game Launcher / Windows, Linux
 * [Launchbox](https://www.launchbox-app.com/) - Retro / Console Game Library / Launcher / Windows, Android
@@ -203,7 +203,6 @@
 
 * 🌐 **[Map Genie](https://mapgenie.io/)**, [GamerMaps](https://www.gamermaps.net/), [IGN Maps](https://ign.com/maps), [VGMaps](https://www.vgmaps.com/), [⁠Better VGMaps](https://vgmaps.de/), [GameMaps](https://www.gamemaps.com/), [⁠PinDrop](https://pindrop.gg/) or [THGL](https://www.th.gl/) - Game Map Indexes
 * [noclip](https://noclip.website/) - Explore Game Maps
-* [KudosPrime](https://www.kudosprime.com/) - Racing Game Maps
 * [bspview](https://sbuggay.github.io/bspview) - Explore Quake & GoldSRC Maps / [GitHub](https://github.com/sbuggay/bspview)
 * [NES Maps](https://www.nesmaps.com/) - NES Game Maps
 * [SNES Maps](https://www.snesmaps.com/) - SNES Game Maps
@@ -369,7 +368,7 @@
 * [Backlog.rip](https://backlog.rip/) - Steam Library Organizers
 * [Steam Extensions](https://redd.it/1sp8quf) - How-To Add Chrome Extensions to Steam
 * [⁠Steam Overlay Customization](https://gist.github.com/JMcrafter26/bad71e96d9bee2900008cbca10075968) - Steam Overlay Customization / Extension Guide
-* [⁠Lib Shammes](https://github.com/Kirkland-Pickles/lib-shammes) - Find / Manage Game Art / Bulk Add Non-Steam Games
+* [⁠Lib Shammes](https://github.com/Kirkland-Pickles/Shammes) - Find / Manage Game Art / Bulk Add Non-Steam Games
 * [Steam Art Manager](https://github.com/Tormak9970/Steam-Art-Manager) - Find / Manage Game Art
 * [Millennium](https://steambrew.app/) - Steam Client Customization / [Discord](https://steambrew.app/discord) / [GitHub](https://github.com/shdwmtr/millennium)
 * [Watt Toolkit](https://steampp.net/) - Enhance Steam Functionality / [GitHub](https://github.com/BeyondDimension/SteamTools)
@@ -387,10 +386,10 @@
 * ⭐ **[CreamAPI](https://cs.rin.ru/forum/viewtopic.php?t=70576)** - Steam DLC Unlocker
 * ⭐ **[GreenLuma](https://cs.rin.ru/forum/viewtopic.php?f=29&t=103709)** - Steam DLC Unlocker / [Manager](https://github.com/3vil3vo/GreenLuma-Manager)
 * ⭐ **[Unsteam](https://cs.rin.ru/forum/viewtopic.php?f=20&t=134707&hilit=unsteam)** - Online Steam DRM Bypass / Cracked Servers Only / Multiplayer Emulator
-* ⭐ **[Steamless](https://github.com/atom0s/Steamless)**, **[Steam-Auto-Crack](https://github.com/SteamAutoCracks/Steam-auto-crack/)**, [RUNEAutoCracker](https://runeautocracker.vercel.app/) / [GitHHub](https://github.com/Mush-iii/RUNEAutoCracker) or [SteamAutoCracker](https://github.com/BigBoiCJ/SteamAutoCracker) / [GUI](https://github.com/harryeffinpotter/Steam-Autocracker-GUI/) - Steam DRM Removal / DLC Unlockers
+* ⭐ **[Steamless](https://github.com/atom0s/Steamless)**, **[Steam-Auto-Crack](https://github.com/SteamAutoCracks/Steam-auto-crack/)**, [RUNEAutoCracker](https://runeautocracker.vercel.app/) or [SteamAutoCracker](https://github.com/BigBoiCJ/SteamAutoCracker) / [GUI](https://github.com/harryeffinpotter/Steam-Autocracker-GUI/) - Steam DRM Removal / DLC Unlockers
 * ⭐ **[Goldberg Fork](https://github.com/Detanup01/gbe_fork)** / [Guide](https://rentry.co/goldberg_emulator) or [SmartSteamEmu](https://cs.rin.ru/forum/viewtopic.php?f=29&t=62935&sid=c6b5dadd40d56ac20a8789121bb743c5) - Offline Steam / Multiplayer Emulators
 * ⭐ **[Nemirtingas Epic Emulator](https://cs.rin.ru/forum/viewtopic.php?f=29&t=105551)** - Epic Online Service Emulator
-* [⁠OpenSteamTool](https://github.com/OpenSteam001/OpenSteamTool) - Steam Game + DLC Unlocker / [Guide](https://rentry.org/opensteamtoolguidefmhy)
+* [BetterSteamTools](https://github.com/madoiscool/BetterSteamTools) - Steam Game + DLC Unlocker
 * [⁠SmokeAPI](https://github.com/acidicoala/SmokeAPI) - Steam DLC Unlocker
 * [CreamInstaller Revival](https://cs.rin.ru/forum/viewtopic.php?f=20&t=154539) - Steam DLC Unlocker / [GitHub](https://github.com/FroggMaster/CreamInstaller)
 * [Koalageddon](https://gitlab.com/DumbCodeGenerator/koalageddon) - Steam DLC / Family Unlocker
@@ -508,7 +507,6 @@
 * [ElDewrito](https://www.eldewrito.org/) - Halo Online / Halo 3 Servers
 * [Project Cartographer](https://www.halo2.online/) - Halo 2 Online Servers
 * [BF2142 Reclamation](https://battlefield2142.co/) - BF2142 Servers / [Discord](https://discord.gg/MEwBW9U)
-* [SiMPLE](https://team-simple.org/forum/) - Battlefield 1942 Servers / [Discord](https://discord.team-simple.org/)
 * [Overwatch-Server-Selector](https://github.com/foryVERX/Overwatch-Server-Selector) - Overwatch Server Selector
 * [Northstar](https://thunderstore.io/c/northstar/), [2](https://northstar.tf/) - Titanfall 2 Server Hosting & Modding / Clean Files Required / [Guide](https://rentry.org/northstar-guide) / [Discord](https://discord.gg/CEszSguY3A) / [GitHub](https://github.com/R2Northstar/Northstar/)
 * [R1Delta](https://r1delta.net/) - Titanfall 1 Server Revival / [Discord](https://discord.com/invite/AFnMwrvPzV)
@@ -574,9 +572,11 @@
 * [NESC-SNESC-Modifications](https://github.com/KMFDManic/NESC-SNESC-Modifications) - NES, SNES & Playstation Mods
 * [ModMyClassic](https://modmyclassic.com/) - Classic Console Mods
 * [Wololo](https://wololo.net/) - Console Modding News
+* [MarioCube](https://mariocube.com/) - GameCube Homebrew Resources
+* [⁠Dolphin Depot](https://dolphindepot.org/) - GameCube Homebrew App Store
 * [N64Brew](https://n64brew.dev/wiki/Main_Page) - N64 Homebrew Wiki
 * [NKit](https://wiki.gbatemp.net/wiki/NKit) - Disc Image Processor
-* [NASOS](https://download.digiex.net/Consoles/GameCube/Apps/NASOSbeta1.rar) - Gamecube iso.dec to ISO Converter
+* [NASOS](https://download.digiex.net/Consoles/GameCube/Apps/NASOSbeta1.rar) - GameCube iso.dec to ISO Converter
 * [NESDev](https://www.nesdev.org/) - NES / SNES Dev Homebrew Guides / Forum
 * [hakchi2 CE](https://github.com/TeamShinkansen/Hakchi2-CE) - Add More Roms to NES/SNES Classic Mini / [Discord](https://discord.gg/UUvqsAR)
 * [ROM News](http://rom-news.org/) - Console Game Release PreDB / NFO Database
@@ -611,6 +611,7 @@
 * [r/WiiUHacks](https://www.reddit.com/r/WiiUHacks/) - Wii U Homebrew Subreddit
 * [r/WiiHacks](https://www.reddit.com/r/WiiHacks/) - Wii Homebrew Subreddit
 * [Open Shop Channel](https://oscwii.org/) - Wii Homebrew App Library
+* [MarioCube](https://mariocube.com/) - Wii & GameCube Homebrew Resources
 * [WiiMart](https://wiimart.org/) / [Discord](https://discord.com/invite/wiimart-1346485785284575335) / [GitHub](https://github.com/WiiMart/WiiMart) or [Wii Shop Web](https://rentry.co/FMHYB64#wsc) - Wii Shop Channel Revivals / Free Games & Points
 * [⁠TinyWiiBackupManager](https://github.com/mq1/TinyWiiBackupManager) - Wii Backup Manager / Homebrew App
 * [WBFStoISO](https://www.wbfstoiso.com/) - WBFS to ISO
@@ -624,6 +625,7 @@
 * ⭐ **[DSi Homebrew Guide](https://dsi.cfw.guide/)** - DSi Homebrew Guide
 * ⭐ **[Wiimmfi](https://wiimmfi.de/)** or [Kaeru Team](https://kaeru.world/) - DS Multiplayer Servers
 * [⁠Archcord](https://www.flashcarts.net/) - DS + GBA Flashcart Comparisons / YSMenu Compatibility
+* [⁠Flashcart Guides](https://sanrax.github.io/) - 3DS / DS Flashcart Guides
 * [Pretendo](https://pretendo.network/) - 3DS Network Replacement
 * [Universal DB](https://db.universal-team.net/) - 3DS / DS Modding Apps
 * [Theme Plaza](https://themeplaza.art/themes) - 3DS Themes / [Discord](https://discord.com/invite/Pz25PX5vr5)
@@ -696,7 +698,6 @@
 * [GameImage](https://github.com/ruanformigoni/gameimage) - Steam Deck Game Setup
 * [Bazzite](https://bazzite.gg/) - Alt Steam Deck OS
 * [Steam-Deck.Force](https://github.com/scawp/Steam-Deck.Force-SteamOS-On-Boot) - Force SteamOS Boot
-* [HoloISO](https://github.com/HoloISO/releases) - SteamOS 3 (Holo) Archiso Config / [Telegram](https://t.me/HoloISO)
 * [Steam Deck Repo](https://steamdeckrepo.com/) - Steam Deck Boot Videos
 
 ***
@@ -749,7 +750,7 @@
 * ⭐ **[PineconeMC](https://pineconemc.ru/)**, [2](https://elyprismlauncher.github.io/) / [Discord](https://discord.gg/5kcBCvnbTp) / [GitHub](https://github.com/ElyPrismLauncher/Launcher), **[Freesm Launcher](https://freesmlauncher.org/)** / [Theme Creator](https://new.freesmlauncher.org/themes) / [Telegram](https://t.me/freesmteam) / [Discord](https://discord.com/invite/6jjw4gjy4w) / [GitHub](https://github.com/FreesmTeam/FreesmLauncher) or [ShatteredPrism](https://github.com/LunaisLazier/ShatteredPrism) - Prism Launcher Forks w/ Alt Auth Server Support / Windows, macOS, Linux
 * ⭐ **[Zalith Launcher](https://www.zalithlauncher.cn/)** / [Offline](https://rentry.co/FMHYB64#zalith) / [Discord](https://discord.gg/yDDkTHp4cJ) / [GitHub](https://github.com/ZalithLauncher/ZalithLauncher2), [Mojolauncher](https://github.com/mojolauncher/mojolauncher) / [Discord](https://discord.com/invite/VHdwQFsaGX) or [FoldCraftLauncher](https://github.com/FCL-Team/FoldCraftLauncher) / [Discord](https://discord.com/invite/ffhvuXTwyV) - Java Edition for Mobile / Android
 * [HMCL](https://hmcl.huangyuhui.net/) / [GitHub](https://github.com/HMCL-dev/HMCL), [SKlauncher](https://skmedix.pl/) / [Ad Bypass](https://greasyfork.org/en/scripts/563188), [X Minecraft Launcher](https://xmcl.app/) / [Discord](https://discord.com/invite/W5XVwYY7GQ), [Quantum Launcher](https://mrmayman.github.io/quantumlauncher/) / [Discord](https://discord.com/invite/bWqRaSXar5) / [GitHub](https://github.com/Mrmayman/quantum-launcher/), [Legacy Launcher](https://llaun.ch/en), [AstralRinth](https://git.astralium.su/didirus/AstralRinth) or [PrismLauncher-Cracked](https://github.com/Diegiwg/PrismLauncher-Cracked) - Cross-Platform Launchers
-* [LeviLauncher](https://docs.levimc.org/LeviLauncher/) / [Mods](https://discord.gg/v5R5P4vRZk), [2](https://discord.gg/VqQaC8vWz8), [3](https://pkg.levimc.org/) / [GitHub](https://github.com/LiteLDev/LeviLauncher) or [Bedrock Launcher](https://bedrocklauncher.github.io/) / [GitHub](https://github.com/BedrockLauncher/BedrockLauncher) - Bedrock Launchers / [Guides](https://mcdoc.site/) / Windows
+* [LeviLauncher](https://docs.levimc.org/LeviLauncher/) / [Mods](https://discord.gg/v5R5P4vRZk), [2](https://discord.gg/VqQaC8vWz8) / [GitHub](https://github.com/LiteLDev/LeviLauncher) or [Bedrock Launcher](https://bedrocklauncher.github.io/) / [GitHub](https://github.com/BedrockLauncher/BedrockLauncher) - Bedrock Launchers / [Guides](https://mcdoc.site/) / Windows
 * [LeviLaunchroidUnlocked](https://github.com/0Sombra666/LeviLaunchroidUnlocked) - Bedrock Launcher (1.21.80+) / Android / [Mods](https://discord.gg/v5R5P4vRZk), [2](https://discord.gg/VqQaC8vWz8)
 * [Betacraft Launcher](https://betacraft.uk/) / [2](https://betacraft.ee/) / [3](https://betacraft.ovh/) / [LegacyFix](https://github.com/betacraftuk/legacyfix) or [Minecraft Legacy](https://rentry.co/FMHYB64#mc-legacy) - Legacy & Console Edition Launchers
 
@@ -760,11 +761,11 @@
 * **Note** - The following options require an official Minecraft account to use.
 
 ***
+
 * 🌐 **[Minecraft Launcher Comparisons](https://mc-launcher.tayou.org/)** - Minecraft Launcher Comparison Chart / [GitHub](https://github.com/TayouVR/MinecraftLauncherComparison)
 * ⭐ **[Prism Launcher](https://prismlauncher.org/)** - Feature-Rich Launcher / [CurseForge Downloads](https://rentry.co/FMHYB64#curseforge-overwolf) / Windows, macOS, Linux / [Subreddit](https://www.reddit.com/r/PrismLauncher/) / [Discord](https://discord.com/invite/ArX2nafFz2) / [GitHub](https://github.com/PrismLauncher/PrismLauncher)
 * [⁠OneClient](https://polyfrost.org/projects/oneclient) - Feature-Rich Launcher
 * [ATLauncher](https://atlauncher.com/) / [Discord](https://discord.com/invite/B7TrrzH) / [GitHub](https://github.com/ATLauncher/ATLauncher), [Technic Launcher](https://www.technicpack.net/) / [Discord](https://discord.com/invite/technic), [FjordLauncher](https://github.com/unmojang/FjordLauncher) or [PandoraLauncher](https://pandora.moulberry.com/) / [GitHub](https://github.com/Moulberry/PandoraLauncher) - Desktop Modpack Launchers
-* [WineGDK](https://github.com/Weather-OS/WineGDK) - Bedrock Launcher / macOS, Linux / [Guide](https://minecraft.wiki/w/Tutorial:Playing_Minecraft_on_Linux#WineGDK)
 * [BedrockOnLinux](https://github.com/Wyze3306/BedrockOnLinux) - Bedrock Launcher / Linux
 * [Amethyst](https://github.com/AngelAuraMC/Amethyst-Android) / [iOS](https://github.com/AngelAuraMC/Amethyst-iOS) / [Discord](https://discord.gg/5ptqkyZxEy) or [MB Loader](https://play.google.com/store/apps/details?id=io.github.bambosan.mbloader) - Mobile Launchers / Android, iOS
 
@@ -776,6 +777,7 @@
 * 🌐 **[UsefulMods](https://github.com/TheUsefulLists/UsefulMods)** - Optimization & Enhancement Mods / [Discord](https://discord.gg/8nzHYhVUQS)
 * 🌐 **[Microcontrollers' Alternatives](https://alternatives.microcontrollers.dev/)** - Mod / Client Alternatives List / [GitHub](https://github.com/MicrocontrollersDev/Alternatives)
 * 🌐 **[OptiFine Alternatives](https://optifine.alternatives.lambdaurora.dev/)** or [OptiFine Replacements](https://alternatives.microcontrollers.dev/latest/migrating/#optifine-replacements) - OptiFine Alternative Mods for Fabric
+* [dummy-proof optimization](https://rentry.co/dummyproofminecraftoptimizationguide) - Minecraft Optimization Guide
 * [⁠Additive](https://skywardmc.org/additive/) or [Fabulously Optimized](https://download.fo/) - OptiFine Alternative Modpacks
 * [ModpackIndex](https://www.modpackindex.com/) / [Discord](https://discord.com/invite/9QfENvm), [FiberMC](https://www.fibermc.com/) / [Discord](https://discord.com/invite/dwh9y7D) or [FTB Wiki](https://ftbwiki.org/Feed_The_Beast_Wiki) / [Discord](https://discord.com/invite/QsbEK52) - Modpack & Fabric Indexes
 * [Planet Minecraft](https://www.planetminecraft.com/) / [Discord](https://discord.com/invite/QQSWwyg) or [Minecraft Forum](https://www.minecraftforum.net/) / [Discord](https://discord.com/invite/wGrQNKX) - Community Content Directories
@@ -854,7 +856,7 @@
 * ⭐ **[NameMC](https://namemc.com/)** / [Discord](https://discord.com/invite/NameMC), [Laby](https://laby.net/) / [Discord](https://discord.com/invite/8JBMHDfWKp) or [Crafty](https://crafty.gg/) - Minecraft Name & Skin Trackers
 * [Iris Shaders](https://modrinth.com/mod/iris) / [Forge Version](https://modrinth.com/mod/oculus) or [ShadersMods](https://shadersmods.com/) / [MinecraftShader](https://minecraftshader.com/) - Minecraft Shader Mods & Downloads
 * [mcglint](https://mcglint.com/) - Customization Tools
-* [MinecraftSkins](https://www.minecraftskins.com/), [SkinMC](https://skinmc.net/), [MC-Skins](https://mc-skins.com/), [MC Profiles](https://mcprofiles.net/), [MCSkins](https://mcskins.top/) or [BedrockExplorer](https://www.bedrockexplorer.com/queries/free-content/everyone/all/) - Minecraft Skins
+* [MinecraftSkins](https://www.minecraftskins.com/), [SkinMC](https://skinmc.net/), [mcskincraft](https://mcskincraft.com/), [MC-Skins](https://mc-skins.com/), [MC Profiles](https://mcprofiles.net/), [MCSkins](https://mcskins.top/) or [BedrockExplorer](https://www.bedrockexplorer.com/queries/free-content/everyone/all/) - Minecraft Skins
 * [NeedCoolerShoes](https://needcoolershoes.com/) / [Discord](https://discord.gg/FEfbZYvQUa) / [GitHub](https://github.com/NeedCoolerShoes/needcoolershoes), [Nova Skin](https://minecraft.novaskin.me/), [MSkins](https://mskins.net/en), [Skin Closet](https://skin-closet.chabo.tokyo/), [SkinsRestorer](https://skinsrestorer.net/) / [GitHub](https://github.com/SkinsRestorer/SkinsRestorer) or [Ely.by](https://ely.by/) - Skin Editors, Grabbers & Server Systems
 * [MinecraftCapes](https://minecraftcapes.net/) / [Discord](https://discord.com/invite/jqRU9SN) or [Modrinth Capes](https://modrinth.com/mod/capes) - Custom Capes
 * [⁠Cosmetica](https://cosmetica.cc/) - Custom Capes + Cosmetics Fabric Mod
@@ -894,7 +896,6 @@
 * ⭐ **[OP.GG](https://www.op.gg/)** - LoL Player Stats / Match History / Rankings
 * ⭐ **[DPM.LOL](https://dpm.lol/)** or **[U.GG](https://u.gg/)** - LoL Builds / Tier Lists / Champion Stats
 * ⭐ **[Gol.gg](https://gol.gg/esports/home/)** - LoL Esports Statistics
-* ⭐ **[Rose](https://github.com/Alban1911/Rose)** - LoL Skin Manager / Unlocker / [Dependencies](https://github.com/LeagueToolkit/ltk-manager/releases) / [Discord](https://discord.com/invite/roseskins)
 * [LoL Wiki](https://wiki.leagueoflegends.com/) - Official LoL Wiki
 * [LoLalytics](https://lolalytics.com/) / [Discord](https://discord.com/invite/zKyaZ6w) - LoL Builds / Advanced Champion Statistics
 * [DeepLoL](https://www.deeplol.gg/) - LoL Player Performance / Champion Stats
@@ -908,6 +909,7 @@
 * [RuneForge](https://runeforge.dev/) - Custom LoL Skins / Mods
 * [Deceive](https://github.com/molenzwiebel/deceive) - Appear Offline in LoL
 * [Disenchanter](https://github.com/marvinscham/disenchanter) - LoL Mass Disenchanter
+* [⁠Liquipedia Dota 2](https://liquipedia.net/dota2/) - Dota 2 Wiki 
 * [DotaBuff](https://www.dotabuff.com/), [Stratz](https://stratz.com/), [OpenDota](https://www.opendota.com/) or [Dota2ProTracker](https://www.dota2protracker.com/) - Dota 2 Statistics / Hero Builds
 
 ***
@@ -991,7 +993,8 @@
 * ⭐ **[dice.run](https://dice.run/)**, [DiceSimulator.com](http://www.dicesimulator.com/), [Let's Roll](https://www.linepup.com/dice/) or [Desktop Dice](https://girkovarpa.itch.io/desktopdice) - Dice Simulators
 * [RPGBOT](https://rpgbot.net/), [Wargamer](https://www.wargamer.com/), [Roll for Fantasy](https://rollforfantasy.com/), [Kassoon](https://www.kassoon.com/) or [DragonsFoot](https://www.dragonsfoot.org/) - TTRPG Tools & Learning Resources
 * [OCTGN](https://www.octgn.net/) / [Discord](https://discord.gg/Yn3Jrpj) / [GitHub](https://github.com/octgn/OCTGN) or [⁠Pixelborn](https://pixelborn.app/) / [Discord](https://discord.gg/pixelborn) - Virtual Multiplayer Card Game / Tabletop Apps
-* [Scorecard.gg](https://scorecard.gg/) - Create Scorecards for Game Matches
+* [⁠PitMaster](https://pitmaster.cc/) - Poker Blind Clock & Game Manager / [GitHub](https://github.com/wyziedevs/pitmaster)
+* [Scorecard.gg](https://scorecard.gg/) - Create Scorecards for Board Games
 * [⁠Cthulhu Architect](https://handouts.cthulhuarchitect.com/) - Custom TRPG Handout Creator
 * [Tabletopy](https://tabletopy.com/), [Pocket Bard](https://www.pocketbard.app/) or [Tabletop Audio](https://tabletopaudio.com/) - Immersive SFX / Music for TTRPGs
 * [RPGnet](https://forum.rpg.net/) - RPG Forum
@@ -1063,6 +1066,8 @@
 * [⁠Elden Ring Wiki](https://eldenring.wiki.gg/) - Elden Ring Wiki / Encyclopedia
 * [Factorio Wiki](https://wiki.factorio.com/) - Factorio Info Database / Wiki
 * [Rust Clash](https://wiki.rustclash.com/) - Rust Info Database / Wiki
+* [KudosPrime](https://www.kudosprime.com/) - Racing Game Vehicle Database
+* [⁠Lapwerks](https://lapwerks.com/) - Custom Track Sketch + Import for Assetto Corsa & BeamNG.drive
 * [⁠UltraRumble](https://ultrarumble.com/) - My Hero Ultra Rumble Info Database / Wiki
 * [⁠Little Big Archive](https://littlebigarchive.com/) - LittleBigPlanet Community Level & Asset Archive
 * [Asphalt Database](https://www.reddit.com/r/Asphalt9/wiki/index/) - Asphalt Legends Unite Database / Wiki

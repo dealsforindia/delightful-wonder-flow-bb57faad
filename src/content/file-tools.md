@@ -32,13 +32,12 @@
 * [FDM](https://www.freedownloadmanager.org/) - Download Manager / [YTDL Addon](https://github.com/meowcateatrat/elephant) / [Firefox](https://addons.mozilla.org/en-US/firefox/addon/free-download-manager-addon/) / [Chrome](https://chrome.google.com/webstore/detail/free-download-manager-chr/ahmpjcflkgiildlgicmcieglgoilbfdp/RK%3D2/RS%3DfQzscgKGm9aMezJJ7Gf2Fcc.JSo-) / Windows, macOS, Linux, Android
 * [Brisk](https://github.com/BrisklyDev/brisk/) / Windows, macOS, Linux
 * [Plexo](https://anmolkapil.github.io/plexo) - Multi-Connection / Windows, macOS, Linux / [GitHub](https://github.com/anmolkapil/plexo)
-* [⁠HDM](https://hydra.javad.dev/) - Multi-Connection / Windows, macOS, Linux / [GitHub](https://github.com/ja7ad/hydra)
+* [Hydra](https://hydra.javad.dev/) - Multi-Connection / Windows, macOS, Linux / [GitHub](https://github.com/ja7ad/hydra)
 * [imFile](https://imfile.org/) / Windows, macOS, Linux / [GitHub](https://github.com/imfile-io/imfile-desktop)
-* [⁠Aria2 Next](https://github.com/AnInsomniacy/aria2-next) or [aria2](https://aria2.github.io/) / [GitHub](https://github.com/aria2/aria2) - Terminal Download Manager / [Download Bot](https://github.com/gaowanliang/DownloadBot) / [WebUI](https://github.com/ziahamza/webui-aria2), [2](https://ariang.mayswind.net/) / Windows, macOS, Android
+* [⁠Aria2 Next](https://github.com/AnInsomniacy/aria2-next) or [aria2](https://aria2.github.io/) / [GitHub](https://github.com/aria2/aria2) - Terminal Download Manager / [WebUI](https://github.com/ziahamza/webui-aria2), [2](https://ariang.mayswind.net/) / Windows, macOS, Android
 * [Persepolis](https://persepolisdm.github.io/) - Download Manager / Windows, macOS, Linux / [GitHub](https://github.com/persepolisdm/persepolis)
-* [pyLoad](https://pyload.net/) - Lightweight Download Manager / Windows, macOS, Linux / [GitHub](https://github.com/pyload/pyload)
 * [ArrowDL](https://www.arrow-dl.com/) - Download Manager / [Firefox](https://addons.mozilla.org/en-US/firefox/addon/arrow-dl/) / [Chrome](https://chrome.google.com/webstore/detail/arrow-dl/modofbhnhlagjmejdbalnijgncppjeio) / Windows, macOS, Linux / [GitHub](https://github.com/setvisible/ArrowDL)
-* [Varia](https://github.com/giantpinkrobots/varia) - Download Manager / [Firefox](https://addons.mozilla.org/firefox/addon/varia-integrator/) / [Chrome](https://chrome.google.com/webstore/detail/dacakhfljjhgdfdlgjpabkkjhbpcmiff) / [Extesnsion](https://github.com/BrisklyDev/brisk-browser-extension) / Windows, macOS, Linux
+* [Varia](https://github.com/giantpinkrobots/varia) - Download Manager / [Firefox](https://addons.mozilla.org/firefox/addon/varia-integrator/) / [Chrome](https://chrome.google.com/webstore/detail/dacakhfljjhgdfdlgjpabkkjhbpcmiff) / [Extension](https://github.com/BrisklyDev/brisk-browser-extension) / Windows, macOS, Linux
 * [⁠Surge](https://github.com/surge-downloader/surge) - TUI Download Manager / [Firefox](https://addons.mozilla.org/en-US/firefox/addon/surge/) / Windows, macOS, Linux
 * [Cyberdrop-DL](https://pypi.org/project/cyberdrop-dl-patched) - TUI Download Manager / [GitHub](https://github.com/Cyberdrop-DL/cyberdrop-dl) / Windows, macOS, Linux
 * [DownThemAll](https://www.downthemall.org/) - Download Management Extension / [Firefox](https://addons.mozilla.org/addon/downthemall/) / [Chrome](https://chrome.google.com/webstore/detail/downthemall/nljkibfhlpcnanjgbnlnbjecgicbjkge) / [GitHub](https://github.com/downthemall/downthemall)
@@ -83,7 +82,6 @@
 * [AnyConvert](https://anyconv.com/) - Online / File Converter / 100MB / Web
 * [MiConv](https://miconv.com/) - Online / File Converter / 75MB / Web
 * [⁠Docpose](https://docpose.cloud/convert) - Online / File Converter / 25MB / Web
-* [videoutils](https://www.videoutils.com/) - Online / File Converter / 500MB / Web
 * [ConvertFiles](https://www.convertfiles.com/) - Online / File Converter / 250MB / Web
 * [⁠ConvertX](https://github.com/C4illin/ConvertX) or [Transmute](https://transmute.sh/) / [GitHub](https://github.com/transmute-app/transmute) - Self-Hosted File Converters
 
@@ -185,7 +183,7 @@
 * [⁠HashCheck](https://github.com/idrassi/HashCheck), [⁠HashMyFiles](https://www.nirsoft.net/utils/hash_my_files.html) or [RapidCRC Unicode](https://github.com/OV2/RapidCRC-Unicode) - Checksum / Hash Verifier
 * [MediaInfo](https://mediaarea.net/en/MediaInfo) - Media File Analysis / Metadata Viewer / [Online](https://mediaarea.net/MediaInfoOnline)
 * [MediaPeek](https://mediapeek.plnk.workers.dev/) - Online Media File Analysis / Metadata Viewer / [GitHub](https://github.com/luminalreason/mediapeek)
-* [ExtractMetadata](https://www.extractmetadata.com/), [⁠FilesMD](https://www.filesmd.com/) or [Metadata2Go](https://www.metadata2go.com/) - Metadata Viewers / Editors
+* [⁠FilesMD](https://www.filesmd.com/) or [Metadata2Go](https://www.metadata2go.com/) - Metadata Viewers / Editors
 * [⁠PrivMeta](https://www.privmeta.com/) / [GitHub](https://github.com/DScaife/privmeta/), [MetaStrip](https://metastrip.app/) / [GitHub](https://github.com/lars-1987/metastrip), [Metadata Remover](https://ianonymous3000.github.io/metadata-remover/) / [GitHub](https://github.com/iAnonymous3000/metadata-remover) or [mat2](https://github.com/jvoisin/mat2) / [Web Version](https://0xacab.org/jvoisin/mat2-web) - Remove Metadata from Files
 * [Attribute Changer](https://www.petges.lu/) - Edit File & Folder Properties
 * [WhatsLink](https://whatslink.info/) - View File Download Web Metadata
@@ -201,8 +199,8 @@
 * [Eraser](https://eraser.heidi.ie/), [File Shredder](https://fileshredder.org/), [Alternate File Shredder](https://www.alternate-tools.com/pages/c_fileshredder.php?lang=ENG) or [Delapp](https://github.com/differentrain/Delapp) - File Shredding
 * [Parted Magic](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/download#wiki_.25BA_software_sites) (search) - Disk Partitioning / Data Recovery
 * [SSuite File Shredder and Burner](https://www.ssuiteoffice.com/software/ssuitefileshredder.htm) - File Shredder with Disk Burning
-* [Low Level Format](https://www.lowlevelformat.info/), [nwipe](https://github.com/martijnvanbrummelen/nwipe) or [ShredOS](https://github.com/PartialVolume/shredos.x86_64) - Complete Hard Drive Erasers
-* [RED](https://www.jonasjohn.de/red.htm) - Remove Empty Directories
+* [Low Level Format](https://www.lowlevelformat.info/), [nwipe](https://github.com/martijnvanbrummelen/nwipe) or [ShredOS](https://shredos.com/) / [GitHub-(https://github.com/PartialVolume/shredos.x86_64) Complete Hard Drive Erasers
+* [RED](https://www.jonasjohn.de/red.htm) / [GitHub](https://github.com/hxseven/Remove-Empty-Directories/) or [RED+](https://github.com/BookOfBeasts/Remove-Empty-Directories-Plus) - Remove Empty Directories 
 
 ***
 
@@ -243,6 +241,7 @@
 * [PDFWix](https://pdfwix.com/), [2](https://pdfwix.github.io/pdfwix/) - Client-Side
 * [⁠PDFkind](https://pdfkind.com/) - Client-Side
 * [DigiPDF](https://digipdf.app/?lang=en_US) - Client-Side / [Source Code](https://codeberg.org/ladigitale/digipdf)
+* [⁠FixMyPDFs](https://fixmypdfs.cc/) - Client-Side
 * [Sejda](https://www.sejda.com/) - Server-Side
 * [ILovePDF](https://www.ilovepdf.com/) - Server-Side
 * [⁠PDFResizer](https://pdfresizer.com/) - Server-Side
@@ -491,7 +490,7 @@
 
 ## ▷ MEGA Tools
 
-* ⭐ **[Megabasterd](https://github.com/tonikelope/megabasterd)** - Download Quota Bypass / [Note](https://github.com/fmhy/edit/blob/main/docs/.vitepress/notes/megabasterd-note.md)
+* ⭐ **[Megabasterd](https://github.com/tonikelope/megabasterd)** or [⁠Looker](https://github.com/x7ssss/looker) - Download Quota Bypass / Downloaders / [Note](https://github.com/fmhy/edit/blob/main/docs/.vitepress/notes/megabasterd-note.md)
 * ⭐ **[MEGA Account Generators](https://rentry.co/FMHYB64#mega-gen)** - Account Gen / Unlimited Upload Size / [Fix](https://rentry.co/mega_account_generator)
 * [MEGA Desktop](https://mega.io/desktop) - Official GUI App / [GitHub](https://github.com/meganz/MEGAsync)
 * [MEGA CMD](https://mega.io/cmd) - Official CLI App / [GitHub](https://github.com/meganz/MEGAcmd)

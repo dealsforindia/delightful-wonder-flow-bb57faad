@@ -158,21 +158,6 @@
 
 ***
 
-## LibGen Mirrors
-
-* <https://librarygenesis.net/> - site list
-* <https://libgen.li/> - clone
-* <https://libgen.la/> - clone
-* <https://rentry.co/m2hkqhwb> - Differences between the mirrors
-
-***
-
-## LibGen Tools
-
-[Search Extension](https://chromewebstore.google.com/detail/libgen-search/cbcehgllfaddbjidleabcdjpldlognad) / [Need Seeds](https://phillm.net/libgen-seeds-needed.php) / [Backup](https://redd.it/edwi9b)
-
-***
-
 ## Media Database Site Tools
 
 ### Trakt Tools
@@ -256,7 +241,7 @@
 * [Slides](https://maaslalani.com/slides/) - Terminal-Based Presentation Tool / [GitHub](https://github.com/maaslalani/slides)
 * [⁠Z.ai](https://chat.z.ai/), [Presentation](https://presenton.ai/) / [GitHub](https://github.com/presenton/presenton) or [PPTX](https://github.com/AmNotAGoose/PPTX-Presentation-Generator) - AI Presentation Generators
 
-[Marp](https://marp.app/), [ZoomIt](https://learn.microsoft.com/en-us/sysinternals/downloads/zoomit), [Presentator](https://presentator.io/), [Pitch](https://pitch.com/), [Zoho Show](https://www.zoho.com/show/), [Webslides](https://webslides.tv/), [FreeShow](https://freeshow.app/), [OpenLearning](https://www.openelearning.org/), [Slideshare](https://www.slideshare.net/) / [Downloader](https://slidesharedownloaderfree.com/), [Excalideck](https://excalideck.com/), [⁠Bento](https://github.com/nyblnet/bento)
+[Marp](https://marp.app/), [ZoomIt](https://learn.microsoft.com/en-us/sysinternals/downloads/zoomit), [Presentator](https://presentator.io/), [Pitch](https://pitch.com/), [Zoho Show](https://www.zoho.com/show/), [Webslides](https://webslides.tv/), [FreeShow](https://freeshow.app/), [OpenLearning](https://www.openelearning.org/), [Slideshare](https://www.slideshare.net/), [Excalideck](https://excalideck.com/), [⁠Bento](https://github.com/nyblnet/bento)
 
 ### Presentation Templates
 
@@ -280,7 +265,7 @@
 
 ## Searx Instances
 
-* 🌐 **[Instance Scores](https://searx.neocities.org/instancescores)**, [searx.space](https://searx.space/) or [Searx Index](https://www.startpage.com/sp/search?q=%22powered%20by%20Searx%22) - Searx Instance Indexes
+* 🌐 **[Instance Scores](https://searx.neocities.org/instancescores)** or [searx.space](https://searx.space/) - Searx Instance Indexes
 * ⭐ **[OpnXNG](https://opnxng.com/)**
 * [searx.fmhy](https://searx.fmhy.net/)
 * [foffgoogle](https://search.fuckoffgoogle.net/)
