@@ -27,9 +27,9 @@ export function MarkdownView({ source }: { source: string }) {
               </a>
             );
           },
-          h1: ({ children, ...rest }) => <h1 {...rest} className="text-3xl md:text-4xl font-bold tracking-tight mt-8 mb-4 text-foreground">{children}</h1>,
-          h2: ({ children, ...rest }) => <h2 {...rest} className="text-2xl font-semibold tracking-tight mt-10 mb-3 pt-4 border-t border-border text-primary">{children}</h2>,
-          h3: ({ children, ...rest }) => <h3 {...rest} className="text-lg font-semibold mt-6 mb-2 text-foreground">{children}</h3>,
+          h1: ({ children, ...rest }) => <h1 {...rest} className="scroll-mt-24 text-3xl md:text-4xl font-bold tracking-tight mt-8 mb-4 text-foreground">{children}</h1>,
+          h2: ({ children, ...rest }) => <h2 {...rest} className="scroll-mt-24 text-2xl font-semibold tracking-tight mt-10 mb-3 pt-4 border-t border-border text-primary">{children}</h2>,
+          h3: ({ children, ...rest }) => <h3 {...rest} className="scroll-mt-24 text-lg font-semibold mt-6 mb-2 text-foreground">{children}</h3>,
           ul: ({ children, ...rest }) => <ul {...rest} className="list-disc pl-6 space-y-1 my-3">{children}</ul>,
           ol: ({ children, ...rest }) => <ol {...rest} className="list-decimal pl-6 space-y-1 my-3">{children}</ol>,
           p: ({ children, ...rest }) => <p {...rest} className="my-3 leading-relaxed text-muted-foreground">{children}</p>,

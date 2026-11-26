@@ -1,6 +1,7 @@
 // FMHY-style full-content search: indexes every wiki page by section (##/###
 // headings) and matches against heading + body text. Lazy-built on first call.
 
+import GithubSlugger from "github-slugger";
 import { PAGE_MAP } from "./fmhy-pages";
 
 const raw = import.meta.glob("../content/*.md", {
@@ -28,19 +29,6 @@ interface Section {
   bodyLower: string;
 }
 
-// GitHub-slugger-ish: strip markdown, lowercase, non-alphanum → "-".
-function slugify(s: string): string {
-  return s
-    .replace(/[*_`]/g, "")
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9\s-]/g, "")
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-")
-    .replace(/^-|-$/g, "");
-}
-
 function stripMd(s: string): string {
   return s
     .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
@@ -57,6 +45,7 @@ function buildIndex(): Section[] {
     const slug = path.split("/").pop()!.replace(/\.md$/, "");
     if (!PAGE_MAP[slug]) continue;
     const lines = md.split("\n");
+    const slugger = new GithubSlugger();
     let cur: { heading: string; body: string[] } | null = null;
     const flush = () => {
       if (!cur) return;
@@ -66,7 +55,7 @@ function buildIndex(): Section[] {
       out.push({
         pageSlug: slug,
         heading,
-        anchor: slugify(heading),
+        anchor: slugger.slug(heading),
         headingLower: heading.toLowerCase(),
         body,
         bodyLower: body.toLowerCase(),

@@ -80,14 +80,18 @@ function BrowseRoute() {
   const virtualizer = useVirtualizer({
     count: results.length,
     getScrollElement: () => parentRef.current,
-    estimateSize: () => 64,
+    estimateSize: () => 88,
     overscan: 10,
   });
 
+  useEffect(() => {
+    parentRef.current?.scrollTo({ top: 0 });
+  }, [debouncedQ, search.cat, search.sort]);
+
   const [copied, setCopied] = useState(false);
 
-  function update(params: Partial<BrowseSearch>) {
-    navigate({ search: (prev: BrowseSearch) => ({ ...prev, ...params }) });
+  function update(params: Partial<BrowseSearch>, replace = false) {
+    navigate({ replace, search: (prev: BrowseSearch) => ({ ...prev, ...params }) });
   }
 
   async function copyLink() {
@@ -114,9 +118,8 @@ function BrowseRoute() {
         <div className="relative mt-6 max-w-2xl">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <input
-            autoFocus
             value={search.q ?? ""}
-            onChange={(e) => update({ q: e.target.value || undefined })}
+            onChange={(e) => update({ q: e.target.value || undefined }, true)}
             placeholder="Search anything…"
             className="w-full h-12 pl-10 pr-4 rounded-xl bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary"
           />
@@ -214,11 +217,10 @@ function BrowseRoute() {
               return (
                 <div
                   key={virtualItem.key}
+                  ref={virtualizer.measureElement}
+                  data-index={virtualItem.index}
                   className="absolute left-0 w-full"
-                  style={{
-                    transform: `translateY(${virtualItem.start}px)`,
-                    height: `${virtualItem.size}px`,
-                  }}
+                  style={{ transform: `translateY(${virtualItem.start}px)` }}
                 >
                   <ToolRow tool={t} index={virtualItem.index} />
                 </div>
@@ -252,7 +254,7 @@ function ToolRow({ tool, index }: { tool: Tool; index: number }) {
           <span className="text-xs text-muted-foreground truncate">{tool.section}</span>
         </div>
         {tool.description ? (
-          <p className="text-xs text-muted-foreground/80 truncate mt-0.5">{tool.description}</p>
+          <p className="text-xs leading-4 text-muted-foreground/80 line-clamp-2 mt-0.5">{tool.description}</p>
         ) : null}
         {tool.tags?.length ? (
           <div className="hidden sm:flex flex-wrap gap-1 mt-1">
